@@ -12,28 +12,11 @@
             <TabItem Header="Demo 1">
                 <local:Demo1Page />
             </TabItem>
-            <TabItem Header="Demo 1">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Slider x:Name="StrokeWidthElement"
-                            Width="100"
-                            Margin="8"
-                            Maximum="20"
-                            Minimum="0" />
-                    <Slider x:Name="FontSizeElement"
-                            Width="100"
-                            Margin="8"
-                            Maximum="100"
-                            Minimum="12"
-                            Value="50" />
-                    <local:OutlinedTextControl HorizontalAlignment="Center"
-                                               FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
-                                               FontWeight="Thin"
-                                               Foreground="Purple"
-                                               Stroke="Purple"
-                                               StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
-                                               Text="Windows 11" />
-
-                </StackPanel>
+            <TabItem Header="Demo 2">
+                <local:Demo2Page />
+            </TabItem>
+            <TabItem Header="Demo 3">
+                <local:Demo3Page />
             </TabItem>
         </TabControl>
     </Grid>
