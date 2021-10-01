@@ -39,10 +39,10 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
-        /// 标识 StrokeWidth 依赖属性。
+        /// 标识 StrokeThickness 依赖属性。
         /// </summary>
-        public static readonly DependencyProperty StrokeWidthProperty =
-            DependencyProperty.Register(nameof(StrokeWidth), typeof(double), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
+        public static readonly DependencyProperty StrokeThicknessProperty =
+            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
                     default(double),
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -84,12 +84,12 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
 
         /// <summary>
         /// <summary>
-        /// 获取或设置StrokeWidth的值
+        /// StrokeThickness
         /// </summary>
-        public double StrokeWidth
+        public double StrokeThickness
         {
-            get => (double)GetValue(StrokeWidthProperty);
-            set => SetValue(StrokeWidthProperty, value);
+            get => (double)GetValue(StrokeThicknessProperty);
+            set => SetValue(StrokeThicknessProperty, value);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
             var geometry = CreateText();
 
             // Draw the outline based on the properties that are set.
-            drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeWidth), geometry);
+            drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), geometry);
 
             if (_geometry == null || _geometry.Bounds.Size != geometry.Bounds.Size)
             {
@@ -118,6 +118,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
         }
 
         private double _height;
+        private double _width;
 
         private Geometry CreateText()
         {
@@ -142,6 +143,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
 
             //formattedText.MaxTextWidth = 500;
             _height = formattedText.Height;
+            _width = formattedText.Width;
             return formattedText.BuildGeometry(new Point(0, 0));
         }
 
@@ -150,7 +152,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
             if (_geometry == null)
                 return Size.Empty;
 
-            return new Size(_geometry.Bounds.Size.Width, _height);
+            return new Size(_width, _height);
         }
     }
 }
