@@ -31,7 +31,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
         <Style TargetType="local:OutlinedTextControl">
-            <Setter Property="Stroke" Value="{StaticResource Button.Static.Border}" />
+            <Setter Property="Stroke" Value="#88000000" />
             <Setter Property="StrokeThickness" Value="0.3" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -43,7 +43,7 @@
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}" />
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="Foreground" Value="{StaticResource Button.Static.Border}" />
             <Setter Property="BorderThickness" Value="0.5" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -117,7 +117,7 @@
                                                              To="1" />
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="1" />
+                                                             To=".4" />
 
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl2"
                                                              Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
@@ -127,7 +127,7 @@
                                                              To="2" />
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl2"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="1" />
+                                                             To=".3" />
 
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl3"
                                                              Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
@@ -137,7 +137,7 @@
                                                              To="3" />
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl3"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="1" />
+                                                             To=".2" />
 
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl4"
                                                              Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
@@ -147,11 +147,11 @@
                                                              To="4" />
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl4"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="1" />
+                                                             To="0.1" />
 
-                                            <DoubleAnimation Storyboard.TargetName="Ellipse"
+                                            <!--<DoubleAnimation Storyboard.TargetName="Ellipse"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="1" />
+                                                             To="1" />-->
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed" />
@@ -170,7 +170,7 @@
                 <Button Width="50"
                         Height="50"
                         VerticalAlignment="Center"
-                        Content="OK!"
+                        Content="Button"
                         Style="{DynamicResource ButtonStyle1}" />
             </Grid>
         </Viewbox>

@@ -18,6 +18,9 @@
             <TabItem Header="Demo 3">
                 <local:Demo3Page />
             </TabItem>
+            <TabItem Header="Demo 4">
+                <local:Demo4Page />
+            </TabItem>
         </TabControl>
     </Grid>
 </UserControl>
