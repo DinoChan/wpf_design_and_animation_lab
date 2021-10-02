@@ -19,4 +19,9 @@
     </Page>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AnimationDemos\ShapeAnimations\" />
+    <Folder Include="Common\" />
+  </ItemGroup>
+
 </Project>

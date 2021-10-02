@@ -8,22 +8,15 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-
 namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
 {
-    public class OutlinedTextControl : Control
+   public class InnerOutlinedTextControl:Control
     {
-
-        public OutlinedTextControl()
-        {
-            DefaultStyleKey = typeof(OutlinedTextControl);
-        }
-
         /// <summary>
         /// 标识 Stroke 依赖属性。
         /// </summary>
         public static readonly DependencyProperty StrokeProperty =
-            DependencyProperty.Register(nameof(Stroke), typeof(Brush), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
+            DependencyProperty.Register(nameof(Stroke), typeof(Brush), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
                    Brushes.Black,
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -31,7 +24,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
         /// 标识 StrokeThickness 依赖属性。
         /// </summary>
         public static readonly DependencyProperty StrokeThicknessProperty =
-            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
+            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
                     default(double),
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -39,7 +32,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
         /// 标识 Text 依赖属性。
         /// </summary>
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(nameof(Text), typeof(string), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
+            DependencyProperty.Register(nameof(Text), typeof(string), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
                     default(string),
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -72,6 +65,36 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
         }
 
 
-      
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            base.OnRender(drawingContext);
+            var geometry = CreateText();
+            // Draw the outline based on the properties that are set.
+            drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), geometry);
+        }
+
+
+        private Geometry CreateText()
+        {
+            System.Windows.FontStyle fontStyle = FontStyles.Normal;
+            FontWeight fontWeight = FontWeights.Medium;
+
+            // Create the formatted text based on the properties set.
+            FormattedText formattedText = new FormattedText(
+                Text,
+                CultureInfo.CurrentCulture,
+                FlowDirection.LeftToRight,
+                new Typeface(
+                    FontFamily,
+                    FontStyle,
+                    FontWeight,
+                    FontStretches.Normal),
+                FontSize,
+                System.Windows.Media.Brushes.Black,// This brush does not matter since we use the geometry of the text.
+                100);
+            // Build the geometry object that represents the text.
+
+            return formattedText.BuildGeometry(new Point(0, 0));
+        }
     }
 }
