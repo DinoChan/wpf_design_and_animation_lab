@@ -44,6 +44,7 @@
                             Stroke="#fff"
                             StrokeThickness="0.5"
                             Text="Windows 11" />
+            <Image x:Name="img" Height="70" VerticalAlignment="Top" />
             <!--  FontWeight="Thin"  -->
         </StackPanel>
 
