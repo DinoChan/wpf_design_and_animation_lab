@@ -37,6 +37,13 @@
                                        Stroke="Purple"
                                        StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
                                        Text="Windows 11" />
+            <local:TextPath x:Name="PathEdge"
+                            Fill="#333333"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Stroke="#fff"
+                            StrokeThickness="0.5"
+                            Text="Windows 11" />
             <!--  FontWeight="Thin"  -->
         </StackPanel>
 

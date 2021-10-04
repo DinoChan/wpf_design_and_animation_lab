@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\Triangle.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="AnimationDemos\OutlinedText\Demo4Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
