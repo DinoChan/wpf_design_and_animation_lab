@@ -6,6 +6,9 @@ using System.IO;
 
 namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
 {
+    /// <summary>
+    /// https://www.cnblogs.com/xunyou/p/11596220.html
+    /// </summary>
     public class FancyText
     {
         private static System.Windows.Media.Imaging.BitmapImage BitmapToBitmapImage(System.Drawing.Bitmap bitmap)
