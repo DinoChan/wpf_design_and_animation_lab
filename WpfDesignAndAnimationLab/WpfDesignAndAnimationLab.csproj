@@ -11,12 +11,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AnimationDemos\OutlinedText\Demo5Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AnimationDemos\OutlinedText\Demo4Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="AnimationDemos\OutlinedText\Demo5Page.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AnimationDemos\OutlinedText\Demo4Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
