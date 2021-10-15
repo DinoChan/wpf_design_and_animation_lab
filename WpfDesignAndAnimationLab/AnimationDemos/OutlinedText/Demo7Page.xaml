@@ -8,7 +8,6 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     FontSize="200"
-    Foreground="#F888"
     mc:Ignorable="d">
     <Grid Background="LightBlue">
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -25,9 +24,7 @@
                 Foreground="#f9a4c1"
                 Stroke="#f24983"
                 StrokeThickness="4"
-                Text="Windows">
-               
-            </local:OutlinedTextControl>
+                Text="Windows" />
             <!--<TextBlock Text="A" Margin="-1,1"/>
             <TextBlock Text="A" Margin="0,2"/>
             <TextBlock Text="A" Margin="1,3"/>

@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="WpfDesignAndAnimationLab.AnimationDemos.OutlinedText.Demo8Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.AnimationDemos.OutlinedText"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    d:DesignHeight="450"
+    d:DesignWidth="900"
+    FontSize="200"
+    mc:Ignorable="d">
+    <Grid Background="LightBlue">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <local:OutlinedTextControl
+               
+                Foreground="#f9a4c1"
+                Stroke="#f24983"
+                StrokeThickness="4"
+                Text="Windows" />
+
+            <ItemsControl>
+                <ItemsControl.Items>
+                    <sys:String>W</sys:String>
+                    <sys:String>i</sys:String>
+                    <sys:String>n</sys:String>
+                    <sys:String>d</sys:String>
+                    <sys:String>o</sys:String>
+                    <sys:String>w</sys:String>
+                    <sys:String>s</sys:String>
+                </ItemsControl.Items>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:OutlinedTextControl
+                            Foreground="LightBlue"
+                            Stroke="#f24983"
+                            StrokeThickness="4"
+                            RenderTransformOrigin=".5,.5"
+                            Loaded="OnItemLoaded"
+                            Text="{Binding}" >
+                            <FrameworkElement.RenderTransform>
+                                <TranslateTransform/>
+                            </FrameworkElement.RenderTransform>
+                        </local:OutlinedTextControl>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+        </Grid>
+    </Grid>
+</UserControl>
