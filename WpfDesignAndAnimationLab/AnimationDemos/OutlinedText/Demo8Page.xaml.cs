@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,12 +63,15 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
             foreach (var item in _items)
             {
                 var subPoint = position - item.Value;
-                var tempX = subPoint.X / 100;
+                var distance = subPoint.Length;
+                var k = subPoint.Y / subPoint.X;
+
+                Debug.WriteLine(distance);
+                var tempDistance = distance / 100;
                 var tempY = subPoint.Y / 100;
-                tempX = tempX > 0 ? Math.Min(Math.PI, tempX) : Math.Max(-Math.PI, tempX);
-                tempY = tempY > 0 ? Math.Min(Math.PI, tempY) : Math.Max(-Math.PI, tempY);
-                var x = 10 * Math.Sin(tempX);
-                var y = 10 * Math.Sin(tempY);
+                tempDistance = Math.Min(Math.PI, tempDistance);
+                var x = 10 * Math.Sin(tempDistance);
+                var y = 10 * Math.Sin(tempDistance);
                 if (Math.Abs(x) < 0.0001 || Math.Abs(y) < 0.0001)
                 {
                     x = 0;
