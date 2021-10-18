@@ -40,7 +40,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
         /// </summary>
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register(nameof(Text), typeof(string), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
-                    default(string),
+                    string.Empty,
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>

@@ -13,7 +13,6 @@
     <Grid Background="LightBlue">
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <local:OutlinedTextControl
-               
                 Foreground="#f9a4c1"
                 Stroke="#f24983"
                 StrokeThickness="4"
@@ -33,13 +32,13 @@
                     <DataTemplate>
                         <local:OutlinedTextControl
                             Foreground="LightBlue"
+                            Loaded="OnItemLoaded"
+                            RenderTransformOrigin=".5,.5"
                             Stroke="#f24983"
                             StrokeThickness="4"
-                            RenderTransformOrigin=".5,.5"
-                            Loaded="OnItemLoaded"
-                            Text="{Binding}" >
+                            Text="{Binding}">
                             <FrameworkElement.RenderTransform>
-                                <TranslateTransform/>
+                                <TranslateTransform />
                             </FrameworkElement.RenderTransform>
                         </local:OutlinedTextControl>
                     </DataTemplate>

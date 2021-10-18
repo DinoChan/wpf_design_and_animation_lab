@@ -64,20 +64,12 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
             {
                 var subPoint = position - item.Value;
                 var distance = subPoint.Length;
-                var k = subPoint.Y / subPoint.X;
-
-                Debug.WriteLine(distance);
+                var sinA = subPoint.Y / distance;
+                var cosA = subPoint.X / distance;
                 var tempDistance = distance / 100;
-                var tempY = subPoint.Y / 100;
-                tempDistance = Math.Min(Math.PI, tempDistance);
-                var x = 10 * Math.Sin(tempDistance);
-                var y = 10 * Math.Sin(tempDistance);
-                if (Math.Abs(x) < 0.0001 || Math.Abs(y) < 0.0001)
-                {
-                    x = 0;
-                    y = 0;
-                }
-
+                tempDistance = 10 * Math.Min(Math.PI, tempDistance);
+                var x = cosA * tempDistance;
+                var y = sinA * tempDistance; ;
                 item.Key.RenderTransform = new TranslateTransform(x, y);
             }
         }

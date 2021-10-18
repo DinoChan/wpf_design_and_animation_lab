@@ -33,7 +33,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
         /// </summary>
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register(nameof(Text), typeof(string), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
-                    default(string),
+                    string.Empty,
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
