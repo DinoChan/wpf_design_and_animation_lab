@@ -46,7 +46,7 @@
             <local:TextPath
                 x:Name="PathEdge"
                 Fill="#333333"
-                FontSize="12"
+                FontSize="12" HorizontalAlignment="Center"
                 FontWeight="Bold"
                 Stroke="#fff"
                 StrokeThickness="0.5"
