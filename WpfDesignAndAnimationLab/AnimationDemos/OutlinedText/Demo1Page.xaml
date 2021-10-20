@@ -5,8 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WpfDesignAndAnimationLab.AnimationDemos.OutlinedText"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
     d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignWidth="800" 
     mc:Ignorable="d">
 
     <Grid>
@@ -35,6 +36,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
+                    FontStretch="UltraExpanded"
                     Text="Windows 11" />
             </Grid>
             <local:OutlinedTextControl
@@ -45,12 +47,20 @@
                 Text="Windows 11" />
             <local:TextPath
                 x:Name="PathEdge"
+                HorizontalAlignment="Center"
                 Fill="#333333"
-                FontSize="12" HorizontalAlignment="Center"
+                FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
                 FontWeight="Bold"
                 Stroke="#fff"
                 StrokeThickness="0.5"
                 Text="Windows 11" />
+            <media:TextShape
+                HorizontalAlignment="Center"
+                Fill="Black"
+                FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
+                Stroke="Purple" Text="Windows 11"
+                StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}" />
+
             <Image
                 x:Name="img"
                 Height="70"

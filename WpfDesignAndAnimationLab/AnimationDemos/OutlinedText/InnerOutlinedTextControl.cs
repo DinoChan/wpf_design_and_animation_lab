@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
 {
-   public class InnerOutlinedTextControl:Control
+    public class InnerOutlinedTextControl : Control
     {
         /// <summary>
         /// 标识 Stroke 依赖属性。
@@ -88,7 +88,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
                     FontFamily,
                     FontStyle,
                     FontWeight,
-                    FontStretches.Normal),
+                   FontStretch),
                 FontSize,
                 System.Windows.Media.Brushes.Black,// This brush does not matter since we use the geometry of the text.
                 100);

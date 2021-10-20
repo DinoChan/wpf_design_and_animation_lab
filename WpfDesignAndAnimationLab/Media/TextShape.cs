@@ -1,123 +1,165 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace WpfDesignAndAnimationLab.Media
 {
     public class TextShape : Shape, IShape
     {
-        
+        //protected override Size ArrangeOverride(Size finalSize)
+        //{
+        //    this.RealizeGeometry();
+        //    base.ArrangeOverride(finalSize);
+        //    return new Size(Math.Min(finalSize.Width, _width), Math.Min(finalSize.Height, _height));
+        //}
+        private double _height;
+
+        private Geometry _textGeometry;
+
+        private double _width;
+
+        public TextShape()
+        {
+
+        }
 
         protected sealed override Geometry DefiningGeometry
         {
             get
             {
-                return this.GeometrySource.Geometry ?? Geometry.Empty;
+                return _textGeometry ?? Geometry.Empty;
             }
         }
+        #region Dependency Properties
+        /// <summary>
+        /// DependencyProperty for <see cref="FontFamily" /> property.
+        /// </summary>
+        public static readonly DependencyProperty FontFamilyProperty =
+                TextElement.FontFamilyProperty.AddOwner(typeof(TextShape));
 
+        /// <summary>
+        /// DependencyProperty for <see cref="FontSize" /> property.
+        /// </summary>
+        public static readonly DependencyProperty FontSizeProperty = TextElement.FontSizeProperty.AddOwner(typeof(TextShape));
 
-        static PrimitiveShape()
+        /// <summary>
+        /// DependencyProperty for <see cref="FontStretch" /> property.
+        /// </summary>
+        public static readonly DependencyProperty FontStretchProperty = TextElement.FontStretchProperty.AddOwner(typeof(TextShape));
+
+        /// <summary>
+        /// DependencyProperty for <see cref="FontStyle" /> property.
+        /// </summary>
+        public static readonly DependencyProperty FontStyleProperty = TextElement.FontStyleProperty.AddOwner(typeof(TextShape));
+
+        /// <summary>
+        /// DependencyProperty for <see cref="FontWeight" /> property.
+        /// </summary>
+        public static readonly DependencyProperty FontWeightProperty = TextElement.FontWeightProperty.AddOwner(typeof(TextShape));
+
+        /// <summary>
+        /// DependencyProperty for <see cref="Text" /> property.
+        /// </summary>
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+                                                                  "Text",
+                                                                  typeof(string),
+                                                                  typeof(TextShape),
+                                                                  new FrameworkPropertyMetadata(
+                                                                          string.Empty,
+                                                                          FrameworkPropertyMetadataOptions.AffectsMeasure |
+                                                                          FrameworkPropertyMetadataOptions.AffectsRender));
+
+        /// <summary>
+        /// The FontFamily property specifies the name of font family.
+        /// </summary>
+        [Localizability(LocalizationCategory.Font)]
+        public FontFamily FontFamily
         {
-            Shape.StretchProperty.OverrideMetadata(typeof(PrimitiveShape), new DrawingPropertyMetadata((object)Stretch.Fill, DrawingPropertyMetadataOptions.AffectsRender));
-            Shape.StrokeThicknessProperty.OverrideMetadata(typeof(PrimitiveShape), new DrawingPropertyMetadata((object)1, DrawingPropertyMetadataOptions.AffectsRender));
+            get { return (FontFamily)GetValue(FontFamilyProperty); }
+            set { SetValue(FontFamilyProperty, value); }
         }
 
-        protected PrimitiveShape()
+        /// <summary>
+        /// The FontSize property specifies the size of the font.
+        /// </summary>
+        [TypeConverter(typeof(FontSizeConverter))]
+        [Localizability(LocalizationCategory.None)]
+        public double FontSize
         {
+            get { return (double)GetValue(FontSizeProperty); }
+            set { SetValue(FontSizeProperty, value); }
         }
 
-        protected override Size ArrangeOverride(Size finalSize)
+        /// <summary>
+        /// The FontStretch property selects a normal, condensed, or extended face from a font family.
+        /// </summary>
+        public FontStretch FontStretch
         {
-            if (this.GeometrySource.UpdateGeometry(this, finalSize.Bounds()))
-            {
-                this.RealizeGeometry();
-            }
-            base.ArrangeOverride(finalSize);
-            return finalSize;
+            get { return (FontStretch)GetValue(FontStretchProperty); }
+            set { SetValue(FontStretchProperty, value); }
         }
 
-        protected abstract IGeometrySource CreateGeometrySource();
+        /// <summary>
+        /// The FontStyle property requests normal, italic, and oblique faces within a font family.
+        /// </summary>
+        public FontStyle FontStyle
+        {
+            get { return (FontStyle)GetValue(FontStyleProperty); }
+            set { SetValue(FontStyleProperty, value); }
+        }
 
+        /// <summary>
+        /// The FontWeight property specifies the weight of the font.
+        /// </summary>
+        public FontWeight FontWeight
+        {
+            get { return (FontWeight)GetValue(FontWeightProperty); }
+            set { SetValue(FontWeightProperty, value); }
+        }
+
+        /// <summary>
+        /// The Text property defines the content (text) to be displayed.
+        /// </summary>
+        [Localizability(LocalizationCategory.Text)]
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+        #endregion
         public void InvalidateGeometry(InvalidateGeometryReasons reasons)
         {
-            if (this.GeometrySource.InvalidateGeometry(reasons))
-            {
-                base.InvalidateArrange();
-            }
+            //base.InvalidateArrange();
         }
 
         protected override Size MeasureOverride(Size availableSize)
         {
-            return new Size(base.StrokeThickness, base.StrokeThickness);
+            this.RealizeGeometry();
+            return new Size(Math.Min(availableSize.Width, _width), Math.Min(availableSize.Height, _height));
         }
 
-        Stretch Microsoft.Expression.Media.IGeometrySourceParameters.get_Stretch()
-        {
-            return base.Stretch;
-        }
-
-        Brush Microsoft.Expression.Media.IGeometrySourceParameters.get_Stroke()
-        {
-            return base.Stroke;
-        }
-
-        double Microsoft.Expression.Media.IGeometrySourceParameters.get_StrokeThickness()
-        {
-            return base.StrokeThickness;
-        }
-
-        Brush Microsoft.Expression.Media.IShape.get_Fill()
-        {
-            return base.Fill;
-        }
-
-        Stretch Microsoft.Expression.Media.IShape.get_Stretch()
-        {
-            return base.Stretch;
-        }
-
-        Brush Microsoft.Expression.Media.IShape.get_Stroke()
-        {
-            return base.Stroke;
-        }
-
-        double Microsoft.Expression.Media.IShape.get_StrokeThickness()
-        {
-            return base.StrokeThickness;
-        }
-
-        void Microsoft.Expression.Media.IShape.set_Fill(Brush brush)
-        {
-            base.Fill = brush;
-        }
-
-        void Microsoft.Expression.Media.IShape.set_Stretch(Stretch stretch)
-        {
-            base.Stretch = stretch;
-        }
-
-        void Microsoft.Expression.Media.IShape.set_Stroke(Brush brush)
-        {
-            base.Stroke = brush;
-        }
-
-        void Microsoft.Expression.Media.IShape.set_StrokeThickness(double num)
-        {
-            base.StrokeThickness = num;
-        }
 
         private void RealizeGeometry()
         {
-            if (this.RenderedGeometryChanged != null)
-            {
-                this.RenderedGeometryChanged(this, EventArgs.Empty);
-            }
+            var formattedText = new FormattedText(
+                                       Text,
+                                       CultureInfo.CurrentCulture,
+                                       FlowDirection.LeftToRight,
+                                       new Typeface(FontFamily, FontStyle, FontWeight, FontStretch), FontSize, Brushes.Black, 100);
+
+            _height = formattedText.Height;
+            _width = formattedText.Width;
+            _textGeometry = formattedText.BuildGeometry(new Point());
         }
 
-        public event EventHandler RenderedGeometryChanged;
     }
 }
