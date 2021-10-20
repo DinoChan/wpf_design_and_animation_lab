@@ -130,10 +130,6 @@ namespace WpfDesignAndAnimationLab.Media
             set { SetValue(TextProperty, value); }
         }
         #endregion
-        public void InvalidateGeometry(InvalidateGeometryReasons reasons)
-        {
-            //base.InvalidateArrange();
-        }
 
         protected override Size MeasureOverride(Size availableSize)
         {
