@@ -13,14 +13,8 @@ using System.Windows.Shapes;
 
 namespace WpfDesignAndAnimationLab.Media
 {
-    public class TextShape : Shape, IShape
+    public class TextShape : Shape
     {
-        //protected override Size ArrangeOverride(Size finalSize)
-        //{
-        //    this.RealizeGeometry();
-        //    base.ArrangeOverride(finalSize);
-        //    return new Size(Math.Min(finalSize.Width, _width), Math.Min(finalSize.Height, _height));
-        //}
         private double _height;
 
         private Geometry _textGeometry;
