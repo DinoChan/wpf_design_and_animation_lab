@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfDesignAndAnimationLab.Infrastructure;
 
 namespace WpfDesignAndAnimationLab
 {
@@ -23,6 +24,16 @@ namespace WpfDesignAndAnimationLab
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var exampleDefinition = DemoItemsControl.SelectedItem as ExampleDefinition;
+            if (exampleDefinition == null)
+                return;
+
+            var container = new DemoContainer(exampleDefinition);
+            DemoContentControl.Content = container;
         }
     }
 }
