@@ -18,7 +18,7 @@ namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
     /// <summary>
     /// Demo1Page.xaml 的交互逻辑
     /// </summary>
-    public partial class Demo1Page : UserControl
+    public partial class Demo1Page 
     {
         public Demo1Page()
         {

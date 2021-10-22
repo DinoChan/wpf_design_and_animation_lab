@@ -8,24 +8,139 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3" />
+        <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF" />
+        <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9" />
+        <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+            <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border
+                            x:Name="Bd"
+                            Padding="1"
+                            SnapsToDevicePixels="true">
+                            <ScrollViewer
+                                Padding="{TemplateBinding Padding}"
+                                Background="Transparent"
+                                Focusable="false">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle
+                            Margin="2"
+                            SnapsToDevicePixels="true"
+                            Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                            StrokeDashArray="1 2"
+                            StrokeThickness="1" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#1F26A0DA" />
+        <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da" />
+        <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA" />
+        <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA" />
+        <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA" />
+        <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA" />
+        <Style x:Key="ListBoxItemContainerStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="4,1" />
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+            <Setter Property="Foreground" Value="#adb1bd" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border
+                            x:Name="Bd"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                Margin="18,6"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource HighlightForeground}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock x:Name="TitleElement" />
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <ContentControl x:Name="ContentControl" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            x:Name="TitleElement"
+            Margin="18"
+            FontSize="24"
+            Foreground="#feffff" />
+        <Rectangle
+            Grid.ColumnSpan="2"
+            Height="1"
+            VerticalAlignment="Bottom"
+            Fill="#323347" />
+        <ContentControl
+            x:Name="ContentControl"
+            Grid.Row="1"
+            Margin="0,28,28,28" />
+        <Rectangle
+            Grid.Row="1"
+            Width="1"
+            Margin="0,28"
+            HorizontalAlignment="Right"
+            Fill="#323347" />
 
-            <ListBox
-                x:Name="DemoItemsElement"
-                Grid.Column="1"
-                MaxHeight="300"
-                SelectionChanged="DemoItemsElement_SelectionChanged" />
-        </Grid>
+        <ListBox
+            x:Name="DemoItemsElement"
+            Grid.Row="1"
+            Grid.Column="1"
+            MinWidth="200"
+            MaxWidth="300"
+            Margin="0,28"
+            DisplayMemberPath="Name"
+            ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle}"
+            SelectionChanged="DemoItemsElement_SelectionChanged"
+            Style="{DynamicResource ListBoxStyle}" />
     </Grid>
 </UserControl>

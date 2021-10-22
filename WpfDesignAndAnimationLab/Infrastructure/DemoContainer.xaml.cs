@@ -24,6 +24,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
         {
             InitializeComponent();
             ExampleDefinition = exampleDefinition;
+            TitleElement.Text = exampleDefinition.Name;
             DemoItemsElement.ItemsSource = exampleDefinition.Items;
             DemoItemsElement.SelectedItem = exampleDefinition.Items.FirstOrDefault();
         }

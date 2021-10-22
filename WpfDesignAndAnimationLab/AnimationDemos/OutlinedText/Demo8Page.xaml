@@ -1,4 +1,4 @@
-﻿<UserControl
+﻿<wpfdesignandanimationlab:DemoPage
     x:Class="WpfDesignAndAnimationLab.AnimationDemos.OutlinedText.Demo8Page"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,11 +6,14 @@
     xmlns:local="clr-namespace:WpfDesignAndAnimationLab.AnimationDemos.OutlinedText"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
     d:DesignHeight="450"
     d:DesignWidth="900"
+    Background="LightBlue"
     FontSize="200"
+    Header="MouseMove"
     mc:Ignorable="d">
-    <Grid Background="LightBlue">
+    <Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <local:OutlinedTextControl
                 Foreground="#f9a4c1"
@@ -52,4 +55,4 @@
 
         </Grid>
     </Grid>
-</UserControl>
+</wpfdesignandanimationlab:DemoPage>
