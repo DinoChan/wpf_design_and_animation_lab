@@ -8,7 +8,7 @@
     <Application.Resources>
 
         <SolidColorBrush x:Key="RootBackground" Color="#242537" />
-        <SolidColorBrush x:Key="LightBackground" Color="#BEC1E6" />
+        <SolidColorBrush x:Key="LightBackground" Color="#d8d9e6" />
         <SolidColorBrush x:Key="DarkBackground" Color="#4A4B59" />
         <CornerRadius x:Key="ControlCornerRadius">4.0</CornerRadius>
         <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>

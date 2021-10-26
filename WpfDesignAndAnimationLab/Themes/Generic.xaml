@@ -6,7 +6,7 @@
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/AnimationDemos/OutlinedText/OutlinedTextControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <SolidColorBrush x:Key="RootBackground" Color="#242537" />
-    <SolidColorBrush x:Key="LightBackground" Color="#BEC1E6" />
+    <SolidColorBrush x:Key="LightBackground" Color="#d8d9e6" />
     <SolidColorBrush x:Key="DarkBackground" Color="#4A4B59" />
     <CornerRadius x:Key="ControlCornerRadius">4.0</CornerRadius>
     <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
@@ -21,20 +21,22 @@
                 <ControlTemplate TargetType="local:DemoPage">
                     <Border Background="{TemplateBinding Background}" CornerRadius="{StaticResource OverlayCornerRadius}">
                         <Grid>
-                            <Grid.RowDefinitions>
+                            <!--<Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
-                            </Grid.RowDefinitions>
+                            </Grid.RowDefinitions>-->
+                            <ContentControl
+                                Margin="20"
+                                VerticalAlignment="Top"
+                                Content="{TemplateBinding Header}"
+                                FontSize="32"
+                                Foreground="#9b9e9f" />
                             <ContentControl
                                 Grid.Row="1"
                                 Margin="20"
                                 HorizontalContentAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"
-                                Content="{TemplateBinding Header}"
-                                FontSize="16"
-                                FontWeight="Bold"
-                                Foreground="#fbfeff" />
-                            <ContentPresenter Margin="20" />
+                                Content="{TemplateBinding Content}" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
