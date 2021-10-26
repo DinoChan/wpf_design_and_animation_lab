@@ -7,10 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
     xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-    d:DesignHeight="750"
+    d:DesignHeight="850"
     d:DesignWidth="800"
     mc:Ignorable="d">
-
+    <FrameworkElement.Resources>
+        <FontFamily x:Key="OstrichSans">/WpfDesignAndAnimationLab;component/Assets/OstrichSans-Light.otf#Ostrich Sans Light</FontFamily>
+    </FrameworkElement.Resources>
     <Grid>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -66,17 +68,26 @@
                 StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
                 Text="Windows 11" />
 
+            <media:TextShape
+                HorizontalAlignment="Center"
+                Fill="Black"
+                FontFamily="{StaticResource OstrichSans}"
+                FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
+                
+                Stroke="Purple"
+                StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
+                Text="Windows 11" />
+            <TextBlock
+                FontFamily="{StaticResource OstrichSans}"
+                
+                FontSize="100"
+                FontWeight="ExtraLight"
+                Text="Windows 11" />
             <Image
                 x:Name="img"
                 Height="70"
                 VerticalAlignment="Top" />
-            <Rectangle
-                Width="100"
-                Height="100"
-                Stroke="Red"
-                StrokeDashArray="4 2"
-                StrokeThickness="1" />
-            <!--  FontWeight="Thin"  -->
+
         </StackPanel>
 
     </Grid>
