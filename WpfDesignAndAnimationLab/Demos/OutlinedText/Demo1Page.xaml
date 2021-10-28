@@ -1,9 +1,9 @@
 ﻿<wpfdesignandanimationlab:DemoPage
-    x:Class="WpfDesignAndAnimationLab.AnimationDemos.OutlinedText.Demo1Page"
+    x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.Demo1Page"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.AnimationDemos.OutlinedText"
+    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
     xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -49,15 +49,7 @@
                 Stroke="Purple"
                 StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
                 Text="Windows 11" />
-            <local:TextPath
-                x:Name="PathEdge"
-                HorizontalAlignment="Center"
-                Fill="#333333"
-                FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
-                FontWeight="Bold"
-                Stroke="#fff"
-                StrokeThickness="0.5"
-                Text="Windows 11" />
+           
             <media:TextShape
                 x:Name="TextPath"
                 HorizontalAlignment="Center"
@@ -73,21 +65,14 @@
                 Fill="Black"
                 FontFamily="{StaticResource OstrichSans}"
                 FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
-                
                 Stroke="Purple"
                 StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
                 Text="Windows 11" />
             <TextBlock
                 FontFamily="{StaticResource OstrichSans}"
-                
                 FontSize="100"
                 FontWeight="ExtraLight"
                 Text="Windows 11" />
-            <Image
-                x:Name="img"
-                Height="70"
-                VerticalAlignment="Top" />
-
         </StackPanel>
 
     </Grid>

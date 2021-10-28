@@ -27,6 +27,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             TitleElement.Text = exampleDefinition.Name;
             DemoItemsElement.ItemsSource = exampleDefinition.Items;
             DemoItemsElement.SelectedItem = exampleDefinition.Items.FirstOrDefault();
+            if (exampleDefinition.Items.Count() == 1)
+            {
+                ItemsSperator.Visibility =  Visibility.Collapsed;
+                DemoItemsElement.Visibility = Visibility.Collapsed;
+            }
         }
 
 

@@ -112,7 +112,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock
             x:Name="TitleElement"
-            Margin="18"
+            Margin="18,28,18,18"
             FontSize="24"
             Foreground="#feffff" />
         <Rectangle
@@ -125,6 +125,7 @@
             Grid.Row="1"
             Margin="0,28,28,28" />
         <Rectangle
+            x:Name="ItemsSperator"
             Grid.Row="1"
             Width="1"
             Margin="0,28"
@@ -135,8 +136,8 @@
             x:Name="DemoItemsElement"
             Grid.Row="1"
             Grid.Column="1"
-            MinWidth="200"
-            MaxWidth="300"
+            MinWidth="150"
+            MaxWidth="200"
             Margin="0,28"
             DisplayMemberPath="Name"
             ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle}"

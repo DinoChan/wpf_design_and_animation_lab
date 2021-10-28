@@ -6,10 +6,10 @@
     xmlns:infrastructure="clr-namespace:WpfDesignAndAnimationLab.Infrastructure"
     xmlns:local="clr-namespace:WpfDesignAndAnimationLab"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:outlinedtext="clr-namespace:WpfDesignAndAnimationLab.AnimationDemos.OutlinedText"
+    xmlns:outlinedtext="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
     Title="MainWindow"
     Width="800"
-    Height="450"
+    Height="450" WindowState="Maximized"
     mc:Ignorable="d">
     <Window.Resources>
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF" />

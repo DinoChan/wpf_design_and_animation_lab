@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDesignAndAnimationLab.AnimationDemos.OutlinedText
+namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 {
     /// <summary>
-    /// DemoPage.xaml 的交互逻辑
+    /// Demo3Page.xaml 的交互逻辑
     /// </summary>
-    public partial class OutlinedTextDemoPage : UserControl
+    public partial class Demo5Page 
     {
-        public OutlinedTextDemoPage()
+        public Demo5Page()
         {
             InitializeComponent();
         }

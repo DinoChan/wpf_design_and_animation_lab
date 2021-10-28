@@ -15,13 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AnimationDemos\OutlinedText\Demo6Page.xaml.cs">
+    <Compile Update="Demos\OutlinedText\Demo6Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="AnimationDemos\OutlinedText\Demo5Page.xaml.cs">
+    <Compile Update="Demos\OutlinedText\Demo5Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="AnimationDemos\OutlinedText\Demo4Page.xaml.cs">
+    <Compile Update="Demos\OutlinedText\Demo4Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AnimationDemos\OutlinedText\Demo7Page - 复制 - 复制 - 复制.xaml.cs">
@@ -44,7 +44,7 @@
       <SubType>Code</SubType>
       <DependentUpon>Demo7Page.xaml.cs</DependentUpon>
     </Compile>
-    <Compile Update="AnimationDemos\OutlinedText\Demo8Page.xaml.cs">
+    <Compile Update="Demos\OutlinedText\Demo8Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AnimationDemos\OutlinedText\Demo7Page - 复制.xaml.cs">
@@ -54,26 +54,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="AnimationDemos\OutlinedText\Demo6Page.xaml">
+    <Page Update="Demos\OutlinedText\Demo6Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="AnimationDemos\OutlinedText\Demo5Page.xaml">
+    <Page Update="Demos\OutlinedText\Demo5Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="AnimationDemos\OutlinedText\Demo4Page.xaml">
+    <Page Update="Demos\OutlinedText\Demo4Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="AnimationDemos\OutlinedText\Demo8Page.xaml">
+    <Page Update="Demos\OutlinedText\Demo8Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AnimationDemos\ShapeAnimations\" />
+    <Folder Include="Demos\ShapeAnimations\" />
   </ItemGroup>
 
   <ItemGroup>
