@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDesignAndAnimationLab.Demos.FancyText
+namespace WpfDesignAndAnimationLab.Demos.FancyTexts
 {
     /// <summary>
     /// FancyTextDemoPage.xaml 的交互逻辑

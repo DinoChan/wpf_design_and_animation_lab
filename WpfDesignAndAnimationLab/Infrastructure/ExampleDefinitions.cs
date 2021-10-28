@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfDesignAndAnimationLab.Demos.FancyText;
+using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
@@ -23,10 +23,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
               ),
 
             new ExampleDefinition("Fancy Text",null,typeof(FancyTextDemoPage)),
-            new ExampleDefinition("Demo",null,typeof(OutlinedTextDemoPage)),
-            new ExampleDefinition("Demo",null,typeof(OutlinedTextDemoPage)),
-            new ExampleDefinition("Demo",null,typeof(OutlinedTextDemoPage)),
-            new ExampleDefinition("Demo",null,typeof(OutlinedTextDemoPage)),
+           
         };
     }
 

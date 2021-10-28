@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.IO;
 
-namespace WpfDesignAndAnimationLab.Demos.FancyText
+namespace WpfDesignAndAnimationLab.Demos.FancyTexts
 {
     /// <summary>
     /// https://www.cnblogs.com/xunyou/p/11596220.html

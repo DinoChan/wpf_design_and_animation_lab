@@ -8,10 +8,15 @@
 
   <ItemGroup>
     <Compile Remove="Controls\Triangle.cs" />
+    <Compile Remove="Demos\OutlinedText\OutlinedTextDemoPage.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Assets\OstrichSans-Light.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Demos\OutlinedText\OutlinedTextDemoPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,6 +79,7 @@
 
   <ItemGroup>
     <Folder Include="Demos\ShapeAnimations\" />
+    <Folder Include="Demos\TextShapes\" />
   </ItemGroup>
 
   <ItemGroup>
