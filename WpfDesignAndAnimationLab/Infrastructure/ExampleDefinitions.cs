@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WpfDesignAndAnimationLab.Demos.FancyTexts;
+﻿using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
+using WpfDesignAndAnimationLab.Demos.TextShapes;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -23,8 +19,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
               ),
 
             new ExampleDefinition("Fancy Text",null,typeof(FancyTextDemoPage)),
-           
+            new ExampleDefinition("TextShape",null,
+                new ExampleDefinitionItem("Demo1",typeof(TextShapeDemo1Page)), 
+                new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page))),
         };
     }
-
 }
