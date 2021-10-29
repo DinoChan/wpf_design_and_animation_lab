@@ -75,11 +75,13 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Demos\TextShapes\TextShapeDemo1Page.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Demos\ShapeAnimations\" />
-    <Folder Include="Demos\TextShapes\" />
   </ItemGroup>
 
   <ItemGroup>
