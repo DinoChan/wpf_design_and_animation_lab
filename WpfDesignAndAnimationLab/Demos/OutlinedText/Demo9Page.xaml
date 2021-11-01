@@ -36,22 +36,24 @@
                 Fill="#dfcd8e"
                 Stroke="#dfcd8e"
                 StrokeThickness="15"
-                Text="1920" />
+                Text="1720" />
 
             <local1:TextShape
+                Margin="4,4,0,0"
                 Fill="Transparent"
-                Stroke="#dccb98"
+                Stroke="#594310"
                 StrokeThickness="15"
-                Text="1920">
-                <FrameworkElement.Effect>
-                    <DropShadowEffect BlurRadius="3" ShadowDepth="4" />
-                </FrameworkElement.Effect>
-            </local1:TextShape>
+                Text="1720" />
             <local1:TextShape
                 Fill="Transparent"
                 Stroke="#dccb98"
                 StrokeThickness="15"
-                Text="1920">
+                Text="1720" />
+            <local1:TextShape
+                Fill="Transparent"
+                Stroke="#dccb98"
+                StrokeThickness="15"
+                Text="1720">
                 <FrameworkElement.Effect>
                     <DropShadowEffect BlurRadius="3" ShadowDepth="-1" />
                 </FrameworkElement.Effect>
