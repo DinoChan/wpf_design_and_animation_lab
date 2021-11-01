@@ -18,9 +18,9 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
     /// <summary>
     /// Demo3Page.xaml 的交互逻辑
     /// </summary>
-    public partial class Demo3Page 
+    public partial class ButtonDemo2
     {
-        public Demo3Page()
+        public ButtonDemo2()
         {
             InitializeComponent();
         }

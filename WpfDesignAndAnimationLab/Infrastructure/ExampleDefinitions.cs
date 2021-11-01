@@ -9,10 +9,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
     {
         public static ExampleDefinition[] Definitions { get; } = {
              new ExampleDefinition("Outlined Text",null,
-                new ExampleDefinitionItem("Demo1",typeof(Demo1Page)),
-                new ExampleDefinitionItem("Demo2",typeof(Demo2Page)),
-                new ExampleDefinitionItem("Demo3",typeof(Demo3Page)),
-                new ExampleDefinitionItem("Demo4",typeof(Demo4Page)),
+                new ExampleDefinitionItem("Main",typeof(Demo1Page)),
+                new ExampleDefinitionItem("Buttons",typeof(OutlinedTextButtonDemo)),
                 new ExampleDefinitionItem("Demo5",typeof(Demo5Page)),
                 new ExampleDefinitionItem("Demo6",typeof(Demo6Page)),
                 new ExampleDefinitionItem("Demo7",typeof(Demo7Page)),
@@ -22,7 +20,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
             new ExampleDefinition("Fancy Text",null,typeof(FancyTextDemoPage)),
             new ExampleDefinition("TextShape",null,
-                new ExampleDefinitionItem("Demo1",typeof(TextShapeDemo1Page)), 
+                new ExampleDefinitionItem("Main",typeof(TextShapeDemo1Page)), 
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page))),
               new ExampleDefinition("InnerShadow",null,typeof(InnerShadow)),
         };

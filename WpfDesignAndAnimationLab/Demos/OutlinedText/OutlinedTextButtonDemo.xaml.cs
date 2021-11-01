@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 {
     /// <summary>
-    /// Demo2Page.xaml 的交互逻辑
+    /// OutlinedTextButtonDemo.xaml 的交互逻辑
     /// </summary>
-    public partial class Demo2Page 
+    public partial class OutlinedTextButtonDemo 
     {
-        public Demo2Page()
+        public OutlinedTextButtonDemo()
         {
             InitializeComponent();
         }

@@ -27,7 +27,7 @@
     <Compile Update="Demos\OutlinedText\Demo5Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Demos\OutlinedText\Demo4Page.xaml.cs">
+    <Compile Update="Demos\OutlinedText\ButtonDemo3.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AnimationDemos\OutlinedText\Demo7Page - 复制 - 复制 - 复制.xaml.cs">
@@ -68,7 +68,7 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Demos\OutlinedText\Demo4Page.xaml">
+    <Page Update="Demos\OutlinedText\ButtonDemo3.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
