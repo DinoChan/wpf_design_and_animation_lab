@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\hooge-0857.ttf" />
     <None Remove="Assets\OstrichSans-Light.otf" />
   </ItemGroup>
 
@@ -90,6 +91,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\hooge-0857.ttf" />
     <Resource Include="Assets\OstrichSans-Light.otf" />
   </ItemGroup>
 
