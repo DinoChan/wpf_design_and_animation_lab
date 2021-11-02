@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDesignAndAnimationLab.Demos.RadialProgresses
+namespace WpfDesignAndAnimationLab.Demos.ArcProgresses
 {
     /// <summary>
     /// RadialProgressDemo.xaml 的交互逻辑
     /// </summary>
-    public partial class RadialProgressDemo 
+    public partial class ArcProgressDemo
     {
-        public RadialProgressDemo()
+        public ArcProgressDemo()
         {
             InitializeComponent();
         }

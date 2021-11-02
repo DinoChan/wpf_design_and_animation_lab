@@ -24,7 +24,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Main",typeof(TextShapeDemo1Page)), 
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page))),
               new ExampleDefinition("InnerShadow",null,typeof(InnerShadow)),
-              new ExampleDefinition("RadialProgressBar",null,typeof(RadialProgressDemo)),
+              new ExampleDefinition("ArcProgressBar",null,typeof(ArcProgressDemo)),
         };
     }
 }

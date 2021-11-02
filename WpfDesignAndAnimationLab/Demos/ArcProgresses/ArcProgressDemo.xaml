@@ -1,10 +1,10 @@
-﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.RadialProgresses.RadialProgressDemo"
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.RadialProgresses.ArcProgressDemo"
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
                                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.RadialProgresses"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.ArcProgresses"
                                    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -27,7 +27,7 @@
                     Orientation="Horizontal">
             <StackPanel.Resources>
                 <Style TargetType="Grid">
-                    <Setter Property="Margin" Value="10" />
+                    <Setter Property="Margin" Value="15" />
                     <Setter Property="Height" Value="200" />
                     <Setter Property="Width" Value="200" />
                 </Style>
@@ -75,7 +75,7 @@
 
             <Grid Style="{StaticResource OutterGrid}">
                 <Ellipse Fill="#1f3542" />
-                <Grid Width="200" Height="200">
+                <Grid>
                     <ed:Arc ArcThickness="12"
                             ArcThicknessUnit="Pixel"
                             EndAngle="150"
@@ -101,7 +101,7 @@
             </Grid>
             <Grid Style="{StaticResource OutterGrid}">
                 <Ellipse Fill="#1f3542" />
-                <Grid Width="200" Height="200">
+                <Grid>
                     <Ellipse Stroke="#101a26"
                              StrokeDashCap="Round"
                              StrokeThickness="12">
