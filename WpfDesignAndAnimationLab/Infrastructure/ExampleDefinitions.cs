@@ -1,6 +1,7 @@
 ﻿using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
+using WpfDesignAndAnimationLab.Demos.RadialProgresses;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
@@ -23,6 +24,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Main",typeof(TextShapeDemo1Page)), 
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page))),
               new ExampleDefinition("InnerShadow",null,typeof(InnerShadow)),
+              new ExampleDefinition("RadialProgressBar",null,typeof(RadialProgressDemo)),
         };
     }
 }
