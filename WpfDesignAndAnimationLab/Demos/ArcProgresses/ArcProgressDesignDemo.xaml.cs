@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace WpfDesignAndAnimationLab.Demos.ArcProgresses
 {
     /// <summary>
-    /// ArcProgressDesignDemo.xaml 的交互逻辑
+    /// http://preview.binlive.cn/arc-progress
     /// </summary>
     public partial class ArcProgressDesignDemo 
     {
