@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDesignAndAnimationLab.Demos.OutlinedText
+namespace WpfDesignAndAnimationLab.Demos.ArcProgresses
 {
     /// <summary>
-    /// Demo9Page.xaml 的交互逻辑
+    /// ArcProgressDesignDemo.xaml 的交互逻辑
     /// </summary>
-    public partial class Demo9Page 
+    public partial class ArcProgressDesignDemo 
     {
-        public Demo9Page()
+        public ArcProgressDesignDemo()
         {
             InitializeComponent();
         }

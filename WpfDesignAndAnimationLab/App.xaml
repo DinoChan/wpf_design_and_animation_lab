@@ -1,10 +1,9 @@
-﻿<Application
-    x:Class="WpfDesignAndAnimationLab.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab"
-    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-    StartupUri="MainWindow.xaml">
+﻿<Application x:Class="WpfDesignAndAnimationLab.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
 
         <SolidColorBrush x:Key="RootBackground" Color="#242537" />

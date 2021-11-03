@@ -1,4 +1,4 @@
-﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.RadialProgresses.ArcProgressDemo"
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.ArcProgresses.ArcProgressDemo"
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -45,7 +45,10 @@
                 <Ellipse Fill="#1f3542" />
                 <Grid Width="204" Height="204">
 
-                    <Path Stroke="#101a26" StrokeThickness="12">
+                    <Path Stroke="#101a26"
+                          StrokeEndLineCap="Round"
+                          StrokeStartLineCap="Round"
+                          StrokeThickness="12">
                         <Path.Data>
                             <PathGeometry>
                                 <PathFigure IsClosed="False" StartPoint="30,170">
@@ -57,7 +60,10 @@
                             </PathGeometry>
                         </Path.Data>
                     </Path>
-                    <Path Stroke="SlateBlue" StrokeThickness="4">
+                    <Path Stroke="SlateBlue"
+                          StrokeEndLineCap="Round"
+                          StrokeStartLineCap="Round"
+                          StrokeThickness="4">
                         <Path.Data>
                             <PathGeometry>
                                 <PathFigure IsClosed="False" StartPoint="30,170">
@@ -81,13 +87,17 @@
                             EndAngle="150"
                             Fill="#101a26"
                             StartAngle="-150"
-                            Stretch="None" />
+                            Stretch="None"
+                            StrokeEndLineCap="Round"
+                            StrokeStartLineCap="Round" />
                     <ed:Arc ArcThickness="8"
                             ArcThicknessUnit="Pixel"
                             EndAngle="-49"
                             StartAngle="-148"
                             Stretch="None"
                             Stroke="#101a26"
+                            StrokeEndLineCap="Round"
+                            StrokeStartLineCap="Round"
                             StrokeThickness="4">
                         <ed:Arc.Fill>
                             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">

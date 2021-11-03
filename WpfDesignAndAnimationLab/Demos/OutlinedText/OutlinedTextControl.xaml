@@ -7,7 +7,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:OutlinedTextControl}">
                     <Grid>
-                        <local:InnerOutlinedTextControl Text="{TemplateBinding Text}" Stroke="{TemplateBinding Stroke}" StrokeThickness="{TemplateBinding StrokeThickness}"/>
+                        <local:InnerOutlinedTextControl Stroke="{TemplateBinding Stroke}"
+                                                        StrokeThickness="{TemplateBinding StrokeThickness}"
+                                                        Text="{TemplateBinding Text}" />
                         <TextBlock Text="{TemplateBinding Text}" />
                     </Grid>
                 </ControlTemplate>

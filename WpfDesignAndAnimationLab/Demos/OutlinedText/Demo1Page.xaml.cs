@@ -28,7 +28,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 
         private void Demo1Page_Loaded(object sender, RoutedEventArgs e)
         {
-           var l= GetLength(TextPath.RenderedGeometry);
+           //var l= GetLength(TextPath.RenderedGeometry);
         }
 
         public  double GetLength( Geometry geo)

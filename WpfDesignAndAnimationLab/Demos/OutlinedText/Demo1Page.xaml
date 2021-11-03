@@ -254,7 +254,7 @@
                 StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
                 Text="Windows 11" />
 
-            <media:TextShape
+            <!--<media:TextShape
                 x:Name="TextPath"
                 HorizontalAlignment="Center"
                 Fill="Black"
@@ -276,7 +276,7 @@
                 FontFamily="{StaticResource OstrichSans}"
                 FontSize="100"
                 FontWeight="ExtraLight"
-                Text="Windows 11" />
+                Text="Windows 11" />-->
         </StackPanel>
         <Grid
             Grid.Row="1"
