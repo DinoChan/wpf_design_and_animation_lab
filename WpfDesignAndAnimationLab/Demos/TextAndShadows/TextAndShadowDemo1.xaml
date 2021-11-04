@@ -1,0 +1,212 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.TextAndShadows.TextAndShadowDemo1"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextAndShadows"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   Header="MouseOver"
+                                   Background="#ffc0cb"
+                                   mc:Ignorable="d">
+    <Grid SnapsToDevicePixels="True">
+        <Grid.Resources>
+            <Style x:Key="BaseTextBlockHelper" TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="160" />
+                <Setter Property="FontWeight" Value="Bold" />
+            </Style>
+            <Style x:Key="ShadowTextBlockHelper"
+                   BasedOn="{StaticResource BaseTextBlockHelper}"
+                   TargetType="TextBlock">
+                <Setter Property="RenderTransformOrigin" Value=".5,.5" />
+
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="6,0" EndPoint="0,6">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="1" Color="#7f6065" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                                <GradientStop Offset="0.5" Color="Transparent" />
+                                <GradientStop Offset="0.5" Color="#7f6065" />
+                                <GradientStop Offset="0" Color="#7f6065" />
+                                <GradientStop Offset="0" Color="Transparent" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="160" />
+                <Setter Property="Padding" Value="40" />
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border">
+                                <Grid>
+                                    <Grid>
+                                        <Grid.Resources>
+                                            <Style BasedOn="{StaticResource ShadowTextBlockHelper}" TargetType="TextBlock" />
+                                        </Grid.Resources>
+
+                                        <TextBlock x:Name="t1" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t2" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t3" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t4" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t5" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t6" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t7" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t8" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t9" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock x:Name="t10" Text="{TemplateBinding Content}">
+                                            <TextBlock.RenderTransform>
+                                                <TranslateTransform />
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                    </Grid>
+                                    <media:TextShape x:Name="contentPresenter"
+                                                     HorizontalAlignment="Center"
+                                                     VerticalAlignment="Center"
+                                                     Fill="Black"
+                                                     FontSize="160"
+                                                     FontWeight="Bold"
+                                                     Stroke="Black"
+                                                     StrokeThickness="2"
+                                                     Text="{TemplateBinding Content}" />
+                                </Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition GeneratedDuration="00:00:00.5000000"
+                                                              From="Normal"
+                                                              To="MouseOver">
+                                                <VisualTransition.GeneratedEasingFunction>
+                                                    <CircleEase EasingMode="EaseOut" />
+                                                </VisualTransition.GeneratedEasingFunction>
+                                            </VisualTransition>
+                                            <VisualTransition GeneratedDuration="00:00:00.5000000"
+                                                              From="MouseOver"
+                                                              To="Normal">
+                                                <VisualTransition.GeneratedEasingFunction>
+                                                    <CircleEase EasingMode="EaseIn" />
+                                                </VisualTransition.GeneratedEasingFunction>
+                                            </VisualTransition>
+                                        </VisualStateGroup.Transitions>
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="t1"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="1" />
+                                                <DoubleAnimation Storyboard.TargetName="t1"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="1" />
+                                                <DoubleAnimation Storyboard.TargetName="t2"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="2" />
+                                                <DoubleAnimation Storyboard.TargetName="t2"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="2" />
+                                                <DoubleAnimation Storyboard.TargetName="t3"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="3" />
+                                                <DoubleAnimation Storyboard.TargetName="t3"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="3" />
+                                                <DoubleAnimation Storyboard.TargetName="t4"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="4" />
+                                                <DoubleAnimation Storyboard.TargetName="t4"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="4" />
+                                                <DoubleAnimation Storyboard.TargetName="t5"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="5" />
+                                                <DoubleAnimation Storyboard.TargetName="t5"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="5" />
+                                                <DoubleAnimation Storyboard.TargetName="t6"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="6" />
+                                                <DoubleAnimation Storyboard.TargetName="t6"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="6" />
+                                                <DoubleAnimation Storyboard.TargetName="t7"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="7" />
+                                                <DoubleAnimation Storyboard.TargetName="t7"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="7" />
+                                                <DoubleAnimation Storyboard.TargetName="t8"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="8" />
+                                                <DoubleAnimation Storyboard.TargetName="t8"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="8" />
+                                                <DoubleAnimation Storyboard.TargetName="t9"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="9" />
+                                                <DoubleAnimation Storyboard.TargetName="t9"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="9" />
+                                                <DoubleAnimation Storyboard.TargetName="t10"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                 To="10" />
+                                                <DoubleAnimation Storyboard.TargetName="t10"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                 To="10" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </Grid.Resources>
+        <Button Content="ABC" />
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

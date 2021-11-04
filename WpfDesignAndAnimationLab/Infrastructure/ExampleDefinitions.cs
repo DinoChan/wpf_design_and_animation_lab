@@ -3,6 +3,7 @@ using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
+using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -30,6 +31,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                new ExampleDefinition("ArcProgressBar",null,
                 new ExampleDefinitionItem("Basic",typeof(ArcProgressDemo)),
                 new ExampleDefinitionItem("Design ",typeof(ArcProgressDesignDemo))),
+
+                 new ExampleDefinition("TextAndShadows",null,
+                new ExampleDefinitionItem("Demo1",typeof(TextAndShadowDemo1))
+                ),
         };
     }
 }
