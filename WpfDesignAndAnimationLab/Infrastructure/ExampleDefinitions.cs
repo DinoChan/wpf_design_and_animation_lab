@@ -4,6 +4,7 @@ using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
+using WpfDesignAndAnimationLab.Demos.RainbowTexts;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -36,6 +37,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Demo1",typeof(TextAndShadowDemo1)),
                  new ExampleDefinitionItem("Demo2",typeof(TextAndShadowDemo2))
                 ),
+
+
+               new ExampleDefinition("RainbowText",null,
+                new ExampleDefinitionItem("Basic",typeof(RainbowTextDemo1)),
+                new ExampleDefinitionItem("Animation",typeof(RainbowTextWithAnimation))),
         };
     }
 }
