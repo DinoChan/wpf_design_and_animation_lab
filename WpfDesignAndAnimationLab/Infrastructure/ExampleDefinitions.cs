@@ -33,7 +33,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Design ",typeof(ArcProgressDesignDemo))),
 
                  new ExampleDefinition("TextAndShadows",null,
-                new ExampleDefinitionItem("Demo1",typeof(TextAndShadowDemo1))
+                new ExampleDefinitionItem("Demo1",typeof(TextAndShadowDemo1)),
+                 new ExampleDefinitionItem("Demo2",typeof(TextAndShadowDemo2))
                 ),
         };
     }
