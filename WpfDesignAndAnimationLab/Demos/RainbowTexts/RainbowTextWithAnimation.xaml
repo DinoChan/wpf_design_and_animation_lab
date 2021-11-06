@@ -12,8 +12,6 @@
                                    mc:Ignorable="d">
     <Grid>
         <Grid.Resources>
-
-
             <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.2" />
             <common:RepeatCollection x:Key="RepeatCollection">
                 <SolidColorBrush>#4a0e68</SolidColorBrush>
