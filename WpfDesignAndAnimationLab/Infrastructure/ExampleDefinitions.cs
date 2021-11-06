@@ -43,7 +43,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Basic",typeof(RainbowTextDemo1)),
                 new ExampleDefinitionItem("Animation",typeof(RainbowTextWithAnimation)),
                 new ExampleDefinitionItem("Wave",typeof(RainbowTextWithWave)),
-                new ExampleDefinitionItem("Wave",typeof(RainbowTextWithRandom))),
+                new ExampleDefinitionItem("Random",typeof(RainbowTextWithRandom))),
         };
     }
 }
