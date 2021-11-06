@@ -22,11 +22,11 @@
                 <SolidColorBrush>#0075a5</SolidColorBrush>
                 <SolidColorBrush>#0b0045</SolidColorBrush>
             </common:RepeatCollection>
-            <Style TargetType="ContentControl">
+            <Style TargetType="ContentControl" >
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ContentControl">
-                            <ItemsControl ItemsSource="{TemplateBinding Content}">
+                            <ItemsControl ItemsSource="{TemplateBinding Content}" >
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Horizontal" />
