@@ -1,14 +1,13 @@
-﻿<wpfdesignandanimationlab:DemoPage
-    x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.Demo5Page"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-    mc:Ignorable="d">
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.Demo5Page"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   mc:Ignorable="d">
     <Control.Background>
         <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
             <GradientStop Color="#3a3d4e" />
@@ -32,10 +31,9 @@
             </Style>
         </Grid.Resources>
 
-        <StackPanel
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
             <Grid>
                 <Rectangle Margin="-100" Opacity="0.3">
                     <Rectangle.Fill>
@@ -53,16 +51,14 @@
                         <BlurEffect Radius="40" RenderingBias="Quality" />
                     </TextBlock.Effect>
                 </TextBlock>
-                <local:OutlinedTextControl
-                    Foreground="Transparent"
-                    Stroke="#fbd8fa"
-                    Text="MICROSOFT">
+                <local:OutlinedTextControl Foreground="Transparent"
+                                           Stroke="#fbd8fa"
+                                           Text="MICROSOFT">
                     <FrameworkElement.Effect>
-                        <DropShadowEffect
-                            BlurRadius="32"
-                            RenderingBias="Quality"
-                            ShadowDepth="0"
-                            Color="#c43bb7" />
+                        <DropShadowEffect BlurRadius="32"
+                                          RenderingBias="Quality"
+                                          ShadowDepth="0"
+                                          Color="#c43bb7" />
                     </FrameworkElement.Effect>
                 </local:OutlinedTextControl>
 
@@ -84,16 +80,14 @@
                         <BlurEffect Radius="40" RenderingBias="Quality" />
                     </TextBlock.Effect>
                 </TextBlock>
-                <local:OutlinedTextControl
-                    Foreground="Transparent"
-                    Stroke="#ebfeff"
-                    Text="WINDOWS">
+                <local:OutlinedTextControl Foreground="Transparent"
+                                           Stroke="#ebfeff"
+                                           Text="WINDOWS">
                     <FrameworkElement.Effect>
-                        <DropShadowEffect
-                            BlurRadius="32"
-                            RenderingBias="Quality"
-                            ShadowDepth="0"
-                            Color="#2de4ea" />
+                        <DropShadowEffect BlurRadius="32"
+                                          RenderingBias="Quality"
+                                          ShadowDepth="0"
+                                          Color="#2de4ea" />
                     </FrameworkElement.Effect>
                 </local:OutlinedTextControl>
 

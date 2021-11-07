@@ -1,13 +1,12 @@
-﻿<UserControl
-    x:Class="WpfDesignAndAnimationLab.Infrastructure.DemoContainer"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Infrastructure"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-    mc:Ignorable="d">
+﻿<UserControl x:Class="WpfDesignAndAnimationLab.Infrastructure.DemoContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Infrastructure"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
     <UserControl.Resources>
         <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF" />
         <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3" />
@@ -25,14 +24,12 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBox}">
-                        <Border
-                            x:Name="Bd"
-                            Padding="1"
-                            SnapsToDevicePixels="true">
-                            <ScrollViewer
-                                Padding="{TemplateBinding Padding}"
-                                Background="Transparent"
-                                Focusable="false">
+                        <Border x:Name="Bd"
+                                Padding="1"
+                                SnapsToDevicePixels="true">
+                            <ScrollViewer Padding="{TemplateBinding Padding}"
+                                          Background="Transparent"
+                                          Focusable="false">
                                 <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                             </ScrollViewer>
                         </Border>
@@ -44,12 +41,11 @@
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Rectangle
-                            Margin="2"
-                            SnapsToDevicePixels="true"
-                            Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                            StrokeDashArray="1 2"
-                            StrokeThickness="1" />
+                        <Rectangle Margin="2"
+                                   SnapsToDevicePixels="true"
+                                   Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                   StrokeDashArray="1 2"
+                                   StrokeThickness="1" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -74,18 +70,16 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                        <Border
-                            x:Name="Bd"
-                            Padding="{TemplateBinding Padding}"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="true">
-                            <ContentPresenter
-                                Margin="18,6"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        <Border x:Name="Bd"
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="18,6"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
@@ -110,38 +104,33 @@
             <ColumnDefinition />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <TextBlock
-            x:Name="TitleElement"
-            Margin="18,28,18,18"
-            FontSize="24"
-            Foreground="#feffff" />
-        <Rectangle
-            Grid.ColumnSpan="2"
-            Height="1"
-            VerticalAlignment="Bottom"
-            Fill="#323347" />
-        <ContentControl
-            x:Name="ContentControl"
-            Grid.Row="1"
-            Margin="0,28,28,28" />
-        <Rectangle
-            x:Name="ItemsSperator"
-            Grid.Row="1"
-            Width="1"
-            Margin="0,28"
-            HorizontalAlignment="Right"
-            Fill="#323347" />
+        <TextBlock x:Name="TitleElement"
+                   Margin="18,28,18,18"
+                   FontSize="24"
+                   Foreground="#feffff" />
+        <Rectangle Grid.ColumnSpan="2"
+                   Height="1"
+                   VerticalAlignment="Bottom"
+                   Fill="#323347" />
+        <ContentControl x:Name="ContentControl"
+                        Grid.Row="1"
+                        Margin="0,28,28,28" />
+        <Rectangle x:Name="ItemsSperator"
+                   Grid.Row="1"
+                   Width="1"
+                   Margin="0,28"
+                   HorizontalAlignment="Right"
+                   Fill="#323347" />
 
-        <ListBox
-            x:Name="DemoItemsElement"
-            Grid.Row="1"
-            Grid.Column="1"
-            MinWidth="150"
-            MaxWidth="200"
-            Margin="0,28"
-            DisplayMemberPath="Name"
-            ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle}"
-            SelectionChanged="DemoItemsElement_SelectionChanged"
-            Style="{DynamicResource ListBoxStyle}" />
+        <ListBox x:Name="DemoItemsElement"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 MinWidth="150"
+                 MaxWidth="200"
+                 Margin="0,28"
+                 DisplayMemberPath="Name"
+                 ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle}"
+                 SelectionChanged="DemoItemsElement_SelectionChanged"
+                 Style="{DynamicResource ListBoxStyle}" />
     </Grid>
 </UserControl>
