@@ -61,7 +61,7 @@
                                                                                                                          Storyboard.TargetName="TextElement"
                                                                                                                          Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
                                                                                                                          To="{Binding Next, Source={StaticResource RandomDoubleCreator}}"
-                                                                                                                         Duration="0:0:.08" />
+                                                                                                                         Duration="0:0:.07" />
                                                                                                         <DoubleAnimation AutoReverse="True"
                                                                                                                          RepeatBehavior="Forever"
                                                                                                                          Storyboard.TargetName="TextElement"

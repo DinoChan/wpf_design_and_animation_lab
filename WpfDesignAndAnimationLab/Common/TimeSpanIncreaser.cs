@@ -5,7 +5,6 @@ namespace WpfDesignAndAnimationLab.Common
 {
     public class TimeSpanIncreaser : Increaser<TimeSpan>
     {
-        // Using a DependencyProperty as the backing store for Start.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StartProperty =
             DependencyProperty.Register("Start", typeof(TimeSpan), typeof(TimeSpanIncreaser), new PropertyMetadata(default(TimeSpan)));
 
