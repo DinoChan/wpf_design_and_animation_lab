@@ -5,6 +5,7 @@ using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
+using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -44,6 +45,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Animation",typeof(RainbowTextWithAnimation)),
                 new ExampleDefinitionItem("Wave",typeof(RainbowTextWithWave)),
                 new ExampleDefinitionItem("Random",typeof(RainbowTextWithRandom))),
+
+                 new ExampleDefinition("ColumnProgressBar",null,
+             
+                new ExampleDefinitionItem("ColumnProgressBar",typeof(ColumnProgressBarDemo))),
         };
     }
 }
