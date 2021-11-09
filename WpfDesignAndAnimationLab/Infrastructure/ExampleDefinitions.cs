@@ -1,11 +1,12 @@
-﻿using WpfDesignAndAnimationLab.Demos.FancyTexts;
+﻿using WpfDesignAndAnimationLab.Demos.ArcProgresses;
+using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
+using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
-using WpfDesignAndAnimationLab.Demos.ArcProgresses;
-using WpfDesignAndAnimationLab.Demos.TextShapes;
-using WpfDesignAndAnimationLab.Demos.TextAndShadows;
+using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
-using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
+using WpfDesignAndAnimationLab.Demos.TextAndShadows;
+using WpfDesignAndAnimationLab.Demos.TextShapes;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -19,12 +20,12 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Demo6",typeof(Demo6Page)),
                 new ExampleDefinitionItem("Demo7",typeof(Demo7Page)),
                 new ExampleDefinitionItem("Demo8",typeof(Demo8Page))
-                
+
               ),
 
             new ExampleDefinition("Fancy Text",null,typeof(FancyTextDemoPage)),
             new ExampleDefinition("TextShape",null,
-                new ExampleDefinitionItem("Main",typeof(TextShapeDemo1Page)), 
+                new ExampleDefinitionItem("Main",typeof(TextShapeDemo1Page)),
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page)),
                 new ExampleDefinitionItem("Demo9",typeof(TextShapeDemo3Page))),
 
@@ -39,7 +40,6 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                  new ExampleDefinitionItem("Demo2",typeof(TextAndShadowDemo2))
                 ),
 
-
                new ExampleDefinition("RainbowText",null,
                 new ExampleDefinitionItem("Basic",typeof(RainbowTextDemo1)),
                 new ExampleDefinitionItem("Animation",typeof(RainbowTextWithAnimation)),
@@ -47,8 +47,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Random",typeof(RainbowTextWithRandom))),
 
                  new ExampleDefinition("ColumnProgressBar",null,
-             
-                new ExampleDefinitionItem("ColumnProgressBar",typeof(ColumnProgressBarDemo))),
+                new ExampleDefinitionItem("ColumnProgressBar",typeof(ColumnProgressBarDemo))
+                     ),
+
+                 new ExampleDefinition("RainbowButton",null,
+                new ExampleDefinitionItem("Apple",typeof(RainbowAppleButton))),
         };
     }
 }
