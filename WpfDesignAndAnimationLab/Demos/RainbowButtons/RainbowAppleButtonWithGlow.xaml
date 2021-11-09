@@ -24,7 +24,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border"
+                        <Border x:Name="border" Padding="{TemplateBinding Padding}"
                                 Background="Transparent"
                                 SnapsToDevicePixels="true">
                             <VisualStateManager.VisualStateGroups>

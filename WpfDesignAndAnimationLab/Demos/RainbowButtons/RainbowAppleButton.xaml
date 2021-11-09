@@ -26,6 +26,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border"
+                                Padding="{TemplateBinding Padding}"
                                 Background="Transparent"
                                 SnapsToDevicePixels="true">
                             <VisualStateManager.VisualStateGroups>
@@ -33,52 +34,39 @@
 
                                     <VisualState x:Name="Normal">
                                         <Storyboard>
-                                            <PointAnimation Storyboard.TargetName="RainbowBrush"
-                                                            Storyboard.TargetProperty="StartPoint"
-                                                            To="0,0.5"
-                                                            Duration="0:0:0.5">
-                                                <PointAnimation.EasingFunction>
+                                            <DoubleAnimation Storyboard.TargetName="textBlock"
+                                                             Storyboard.TargetProperty="(TextBlock.Foreground).(Brush.RelativeTransform).(RotateTransform.Angle)"
+                                                             To="0"
+                                                             Duration="0:0:0.5">
+                                                <DoubleAnimation.EasingFunction>
                                                     <QuarticEase EasingMode="EaseOut" />
-                                                </PointAnimation.EasingFunction>
-                                            </PointAnimation>
-                                            <PointAnimation Storyboard.TargetName="RainbowBrush"
-                                                            Storyboard.TargetProperty="EndPoint"
-                                                            To="1,0.5"
-                                                            Duration="0:0:0.5">
-                                                <PointAnimation.EasingFunction>
-                                                    <QuarticEase EasingMode="EaseOut" />
-                                                </PointAnimation.EasingFunction>
-                                            </PointAnimation>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <PointAnimation Storyboard.TargetName="RainbowBrush"
-                                                            Storyboard.TargetProperty="StartPoint"
-                                                            To="0.5,0"
-                                                            Duration="0:0:0.5">
-                                                <PointAnimation.EasingFunction>
+                                            <DoubleAnimation Storyboard.TargetName="textBlock"
+                                                             Storyboard.TargetProperty="(TextBlock.Foreground).(Brush.RelativeTransform).(RotateTransform.Angle)"
+                                                             To="90"
+                                                             Duration="0:0:0.5">
+                                                <DoubleAnimation.EasingFunction>
                                                     <QuarticEase EasingMode="EaseOut" />
-                                                </PointAnimation.EasingFunction>
-                                            </PointAnimation>
-                                            <PointAnimation Storyboard.TargetName="RainbowBrush"
-                                                            Storyboard.TargetProperty="EndPoint"
-                                                            To=".5,1"
-                                                            Duration="0:0:0.5">
-                                                <PointAnimation.EasingFunction>
-                                                    <QuarticEase EasingMode="EaseOut" />
-                                                </PointAnimation.EasingFunction>
-                                            </PointAnimation>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard SpeedRatio="3">
-                                            <PointAnimation Storyboard.TargetName="RainbowBrush"
-                                                            Storyboard.TargetProperty="StartPoint"
-                                                            To="0.5,0" />
-                                            <PointAnimation Storyboard.TargetName="RainbowBrush"
-                                                            Storyboard.TargetProperty="EndPoint"
-                                                            To=".5,1" />
+                                            <DoubleAnimation Storyboard.TargetName="textBlock"
+                                                             Storyboard.TargetProperty="(TextBlock.Foreground).(Brush.RelativeTransform).(RotateTransform.Angle)"
+                                                             To="90"
+                                                             Duration="0:0:0.5">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
                                             <DoubleAnimation Storyboard.TargetName="G2"
                                                              Storyboard.TargetProperty="Offset"
                                                              To="0" />
@@ -88,7 +76,6 @@
                                             <DoubleAnimation Storyboard.TargetName="G4"
                                                              Storyboard.TargetProperty="Offset"
                                                              To="0" />
-
                                             <DoubleAnimation Storyboard.TargetName="G5"
                                                              Storyboard.TargetProperty="Offset"
                                                              To="0" />
@@ -98,7 +85,6 @@
                                             <DoubleAnimation Storyboard.TargetName="G7"
                                                              Storyboard.TargetProperty="Offset"
                                                              To="0" />
-
                                             <DoubleAnimation Storyboard.TargetName="G8"
                                                              Storyboard.TargetProperty="Offset"
                                                              To="1" />
@@ -125,6 +111,9 @@
                             <TextBlock x:Name="textBlock" Text="{TemplateBinding Content}">
                                 <TextBlock.Foreground>
                                     <LinearGradientBrush x:Name="RainbowBrush" StartPoint="0,0.5" EndPoint="1,.5">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5" />
+                                        </LinearGradientBrush.RelativeTransform>
                                         <GradientStop x:Name="G1" Offset="0" Color="#65b849" />
                                         <GradientStop x:Name="G2" Offset=".166" Color="#65b849" />
                                         <GradientStop x:Name="G3" Offset=".166" Color="#f7b423" />
