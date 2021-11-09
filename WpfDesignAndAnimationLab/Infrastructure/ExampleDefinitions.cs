@@ -51,7 +51,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                      ),
 
                  new ExampleDefinition("RainbowButton",null,
-                new ExampleDefinitionItem("Apple",typeof(RainbowAppleButton))),
+                new ExampleDefinitionItem("Apple",typeof(RainbowAppleButton)),
+                 new ExampleDefinitionItem("With Glow",typeof(RainbowAppleButtonWithGlow))
+
+                     ),
         };
     }
 }
