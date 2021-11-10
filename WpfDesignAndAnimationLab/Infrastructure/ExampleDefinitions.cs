@@ -6,6 +6,7 @@ using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
+using WpfDesignAndAnimationLab.Demos.TextEffects;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
@@ -53,8 +54,13 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                  new ExampleDefinition("RainbowButton",null,
                 new ExampleDefinitionItem("Apple",typeof(RainbowAppleButton)),
                  new ExampleDefinitionItem("With Glow",typeof(RainbowAppleButtonWithGlow))
-
                      ),
+
+                    new ExampleDefinition("TextEffect",null,
+                new ExampleDefinitionItem("Basic",typeof(TextEffectsBasicDemo))
+                        )
+
+                     
         };
     }
 }

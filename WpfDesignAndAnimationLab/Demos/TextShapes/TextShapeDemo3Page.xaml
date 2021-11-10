@@ -1,16 +1,15 @@
-﻿<wpfdesignandanimationlab:DemoPage
-    x:Class="WpfDesignAndAnimationLab.Demos.TextShapes.TextShapeDemo3Page"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextShapes"
-    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Media"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-    Background="#4e0000"
-    mc:Ignorable="d">
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.TextShapes.TextShapeDemo3Page"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextShapes"
+                                   xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Media"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   Background="#4e0000"
+                                   mc:Ignorable="d">
     <Grid SnapsToDevicePixels="True">
         <Grid.Resources>
             <FontFamily x:Key="hooge">/WpfDesignAndAnimationLab;component/Assets/hooge-0857.ttf#hooge 0857</FontFamily>
@@ -31,29 +30,25 @@
             <Grid.OpacityMask>
                 <VisualBrush Stretch="None" Visual="{Binding ElementName=TextBlock}" />
             </Grid.OpacityMask>
-            <local1:TextShape
-                x:Name="TextBlock"
-                Fill="#dfcd8e"
-                Stroke="#dfcd8e"
-                StrokeThickness="15"
-                Text="1720" />
+            <local1:TextShape x:Name="TextBlock"
+                              Fill="#dfcd8e"
+                              Stroke="#dfcd8e"
+                              StrokeThickness="15"
+                              Text="1720" />
 
-            <local1:TextShape
-                Margin="4,4,0,0"
-                Fill="Transparent"
-                Stroke="#594310"
-                StrokeThickness="15"
-                Text="1720" />
-            <local1:TextShape
-                Fill="Transparent"
-                Stroke="#dccb98"
-                StrokeThickness="15"
-                Text="1720" />
-            <local1:TextShape
-                Fill="Transparent"
-                Stroke="#dccb98"
-                StrokeThickness="15"
-                Text="1720">
+            <local1:TextShape Margin="4,4,0,0"
+                              Fill="Transparent"
+                              Stroke="#594310"
+                              StrokeThickness="15"
+                              Text="1720" />
+            <local1:TextShape Fill="Transparent"
+                              Stroke="#dccb98"
+                              StrokeThickness="15"
+                              Text="1720" />
+            <local1:TextShape Fill="Transparent"
+                              Stroke="#dccb98"
+                              StrokeThickness="15"
+                              Text="1720">
                 <FrameworkElement.Effect>
                     <DropShadowEffect BlurRadius="3" ShadowDepth="-1" />
                 </FrameworkElement.Effect>

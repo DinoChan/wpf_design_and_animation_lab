@@ -1,26 +1,23 @@
-﻿<UserControl
-    x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.ButtonDemo2"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-  
-    mc:Ignorable="d">
+﻿<UserControl x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.ButtonDemo2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Rectangle
-                            Margin="2"
-                            SnapsToDevicePixels="true"
-                            Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                            StrokeDashArray="1 2"
-                            StrokeThickness="1" />
+                        <Rectangle Margin="2"
+                                   SnapsToDevicePixels="true"
+                                   Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                   StrokeDashArray="1 2"
+                                   StrokeThickness="1" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -55,18 +52,16 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border
-                            x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="true">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
                             <Grid>
-                                <Ellipse
-                                    x:Name="Ellipse"
-                                    Fill="{TemplateBinding Background}"
-                                    Opacity="0"
-                                    Stroke="{TemplateBinding BorderBrush}"
-                                    StrokeThickness="0.5" />
+                                <Ellipse x:Name="Ellipse"
+                                         Fill="{TemplateBinding Background}"
+                                         Opacity="0"
+                                         Stroke="{TemplateBinding BorderBrush}"
+                                         StrokeThickness="0.5" />
                                 <local:OutlinedTextControl x:Name="outlinedTextControl" Text="{TemplateBinding Content}">
                                     <local:OutlinedTextControl.RenderTransform>
                                         <TranslateTransform />
@@ -87,29 +82,26 @@
                                         <TranslateTransform />
                                     </local:OutlinedTextControl.RenderTransform>
                                 </local:OutlinedTextControl>
-                                <TextBlock
-                                    x:Name="contentPresenter"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    Focusable="False"
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    Text="{TemplateBinding Content}" />
+                                <TextBlock x:Name="contentPresenter"
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                           Focusable="False"
+                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                           Text="{TemplateBinding Content}" />
                             </Grid>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualStateGroup.Transitions>
-                                        <VisualTransition
-                                            GeneratedDuration="00:00:00.1000000"
-                                            From="Normal"
-                                            To="MouseOver">
+                                        <VisualTransition GeneratedDuration="00:00:00.1000000"
+                                                          From="Normal"
+                                                          To="MouseOver">
                                             <VisualTransition.GeneratedEasingFunction>
                                                 <CircleEase EasingMode="EaseOut" />
                                             </VisualTransition.GeneratedEasingFunction>
                                         </VisualTransition>
-                                        <VisualTransition
-                                            GeneratedDuration="00:00:00.1000000"
-                                            From="MouseOver"
-                                            To="Normal">
+                                        <VisualTransition GeneratedDuration="00:00:00.1000000"
+                                                          From="MouseOver"
+                                                          To="Normal">
                                             <VisualTransition.GeneratedEasingFunction>
                                                 <CircleEase EasingMode="EaseIn" />
                                             </VisualTransition.GeneratedEasingFunction>
@@ -118,57 +110,45 @@
                                     <VisualState x:Name="Normal" />
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                                                To="1" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                                                To="1" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl"
-                                                Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                To=".4" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             To="1" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             To="1" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl"
+                                                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                             To=".4" />
 
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl2"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                                                To="2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl2"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                                                To="2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl2"
-                                                Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                To=".3" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl2"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             To="2" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl2"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             To="2" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl2"
+                                                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                             To=".3" />
 
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl3"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                                                To="3" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl3"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                                                To="3" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl3"
-                                                Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                To=".2" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl3"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             To="3" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl3"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             To="3" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl3"
+                                                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                             To=".2" />
 
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl4"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                                                To="4" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl4"
-                                                Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                                                To="4" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl4"
-                                                Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                To="0.1" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl4"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             To="4" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl4"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                             To="4" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl4"
+                                                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                             To="0.1" />
 
                                             <!--<DoubleAnimation Storyboard.TargetName="Ellipse"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
@@ -188,12 +168,11 @@
 
         <Viewbox Width="400" Height="400">
             <Grid Width="100" Height="100">
-                <Button
-                    Width="50"
-                    Height="50"
-                    VerticalAlignment="Center"
-                    Content="Button"
-                    Style="{DynamicResource ButtonStyle1}" />
+                <Button Width="50"
+                        Height="50"
+                        VerticalAlignment="Center"
+                        Content="Button"
+                        Style="{DynamicResource ButtonStyle1}" />
             </Grid>
         </Viewbox>
 

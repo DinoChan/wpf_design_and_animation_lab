@@ -1,15 +1,14 @@
-﻿<wpfdesignandanimationlab:DemoPage
-    x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.Demo6Page"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-    d:DesignHeight="450"
-    d:DesignWidth="900"
-    Background="#6e6eac"
-    mc:Ignorable="d">
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.Demo6Page"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="900"
+                                   Background="#6e6eac"
+                                   mc:Ignorable="d">
 
     <FrameworkElement.Resources>
 
@@ -23,11 +22,10 @@
     <Grid>
 
 
-        <local:OutlinedTextControl
-            FontFamily="Comic Sans MS"
-            FontSize="110"
-            StrokeThickness="10"
-            Text="Happy Birthday">
+        <local:OutlinedTextControl FontFamily="Comic Sans MS"
+                                   FontSize="110"
+                                   StrokeThickness="10"
+                                   Text="Happy Birthday">
             <local:OutlinedTextControl.Foreground>
                 <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Reflect" StartPoint="0,0" EndPoint="10,10">
                     <LinearGradientBrush.GradientStops>

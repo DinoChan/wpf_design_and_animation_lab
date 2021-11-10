@@ -1,26 +1,23 @@
-﻿<UserControl
-    x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.ButtonDemo3"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
- 
-    mc:Ignorable="d">
+﻿<UserControl x:Class="WpfDesignAndAnimationLab.Demos.OutlinedText.ButtonDemo3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Rectangle
-                            Margin="2"
-                            SnapsToDevicePixels="true"
-                            Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                            StrokeDashArray="1 2"
-                            StrokeThickness="1" />
+                        <Rectangle Margin="2"
+                                   SnapsToDevicePixels="true"
+                                   Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                                   StrokeDashArray="1 2"
+                                   StrokeThickness="1" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -54,43 +51,38 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border
-                            x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="true">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
                             <Grid>
 
-                                <local:OutlinedTextControl
-                                    x:Name="outlinedTextControl"
-                                    StrokeThickness="0.7"
-                                    Text="{TemplateBinding Content}" />
+                                <local:OutlinedTextControl x:Name="outlinedTextControl"
+                                                           StrokeThickness="0.7"
+                                                           Text="{TemplateBinding Content}" />
 
-                                <TextBlock
-                                    x:Name="contentPresenter"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    Focusable="False"
-                                    Foreground="{StaticResource Button.Static.Border}"
-                                    Opacity="0"
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    Text="{TemplateBinding Content}" />
+                                <TextBlock x:Name="contentPresenter"
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                           Focusable="False"
+                                           Foreground="{StaticResource Button.Static.Border}"
+                                           Opacity="0"
+                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                           Text="{TemplateBinding Content}" />
                             </Grid>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualStateGroup.Transitions>
-                                        <VisualTransition
-                                            GeneratedDuration="00:00:00.5000000"
-                                            From="Normal"
-                                            To="MouseOver">
+                                        <VisualTransition GeneratedDuration="00:00:00.5000000"
+                                                          From="Normal"
+                                                          To="MouseOver">
                                             <VisualTransition.GeneratedEasingFunction>
                                                 <CircleEase EasingMode="EaseOut" />
                                             </VisualTransition.GeneratedEasingFunction>
                                         </VisualTransition>
-                                        <VisualTransition
-                                            GeneratedDuration="00:00:00.5000000"
-                                            From="MouseOver"
-                                            To="Normal">
+                                        <VisualTransition GeneratedDuration="00:00:00.5000000"
+                                                          From="MouseOver"
+                                                          To="Normal">
                                             <VisualTransition.GeneratedEasingFunction>
                                                 <CircleEase EasingMode="EaseIn" />
                                             </VisualTransition.GeneratedEasingFunction>
@@ -100,15 +92,13 @@
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
 
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="outlinedTextControl"
-                                                Storyboard.TargetProperty="StrokeThickness"
-                                                To="0" />
+                                            <DoubleAnimation Storyboard.TargetName="outlinedTextControl"
+                                                             Storyboard.TargetProperty="StrokeThickness"
+                                                             To="0" />
 
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="contentPresenter"
-                                                Storyboard.TargetProperty="Opacity"
-                                                To="1" />
+                                            <DoubleAnimation Storyboard.TargetName="contentPresenter"
+                                                             Storyboard.TargetProperty="Opacity"
+                                                             To="1" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed" />
@@ -124,11 +114,10 @@
 
         <Viewbox Width="400" Height="400">
             <Grid Width="100" Height="100">
-                <Button
-                    VerticalAlignment="Center"
-                    Content="Button"
-                    FontWeight="DemiBold"
-                    Style="{DynamicResource ButtonStyle1}" />
+                <Button VerticalAlignment="Center"
+                        Content="Button"
+                        FontWeight="DemiBold"
+                        Style="{DynamicResource ButtonStyle1}" />
             </Grid>
         </Viewbox>
 

@@ -8,8 +8,8 @@
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
                                    d:DesignWidth="800"
-                                   Header="MouseOver"
                                    Background="#ffc0cb"
+                                   Header="MouseOver"
                                    mc:Ignorable="d">
     <Grid SnapsToDevicePixels="True">
         <Grid.Resources>

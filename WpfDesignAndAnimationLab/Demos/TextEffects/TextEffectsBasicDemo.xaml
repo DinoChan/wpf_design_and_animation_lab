@@ -1,0 +1,83 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.TextEffects.TextEffectsBasicDemo"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextEffects"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   mc:Ignorable="d">
+    <Grid>
+        <TextBlock Margin="50" FontSize="60">
+            Windows Vista
+            <TextBlock.TextEffects>
+                <!--  The TextEffect to animate.  -->
+                <TextEffect x:Name="MyTextEffect" PositionCount="1">
+                    <TextEffect.Transform>
+                        <RotateTransform x:Name="TextEffectRotateTransform" Angle="0" CenterX="10" CenterY="10" />
+                    </TextEffect.Transform>
+                </TextEffect>
+            </TextBlock.TextEffects>
+
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ParallelTimeline RepeatBehavior="Forever">
+
+                                    <!--
+                                        Animates the angle of the RotateTransform
+                                        applied to the TextEffect.
+                                    -->
+                                    <DoubleAnimation BeginTime="0:0:0.25"
+                                                     Storyboard.TargetName="TextEffectRotateTransform"
+                                                     Storyboard.TargetProperty="Angle"
+                                                     From="0"
+                                                     To="360"
+                                                     Duration="00:00:0.75" />
+                                </ParallelTimeline>
+
+                                <!--
+                                    Animates the horizontal center of the RotateTransform
+                                    applied to the TextEffect.
+                                -->
+                                <DoubleAnimation AutoReverse="True"
+                                                 RepeatBehavior="Forever"
+                                                 Storyboard.TargetName="TextEffectRotateTransform"
+                                                 Storyboard.TargetProperty="CenterX"
+                                                 From="30"
+                                                 To="370"
+                                                 Duration="00:00:13" />
+
+                                <!--  Animates the position of the TextEffect.  -->
+                                <Int32AnimationUsingKeyFrames AutoReverse="True"
+                                                              RepeatBehavior="Forever"
+                                                              Storyboard.TargetName="MyTextEffect"
+                                                              Storyboard.TargetProperty="PositionStart"
+                                                              Duration="0:0:13">
+                                    <Int32AnimationUsingKeyFrames.KeyFrames>
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:0" Value="0" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:1" Value="1" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:2" Value="2" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:3" Value="3" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:4" Value="4" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:5" Value="5" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:6" Value="6" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:7" Value="7" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:8" Value="8" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:9" Value="9" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:10" Value="10" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:11" Value="11" />
+                                        <DiscreteInt32KeyFrame KeyTime="0:0:12" Value="12" />
+                                    </Int32AnimationUsingKeyFrames.KeyFrames>
+                                </Int32AnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>
