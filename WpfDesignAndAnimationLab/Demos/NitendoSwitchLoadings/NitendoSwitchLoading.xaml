@@ -3,15 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.NitendoSwitchLoadings"
-             mc:Ignorable="d"  Background="#111"
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.NitendoSwitchLoadings" xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+                                    mc:Ignorable="d"  Background="#111"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100">
-            <Border BorderThickness="4" BorderBrush="White" CornerRadius="25,0,0,25" Width="40" Height="88">
-                <Ellipse Height="20" Width="20" Fill="White" VerticalAlignment="Top" Margin="0,15,0,0"/>
+        <Grid.Resources>
+            <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Start="0:0:0.08" Step="0:0:0.08" />
+        </Grid.Resources>
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100">
+            <Border x:Name="LeftJoycon" BorderThickness="4" BorderBrush="White" CornerRadius="25,0,0,25" Width="40" Height="88" RenderTransformOrigin=".5,.5">
+                <Border.RenderTransform>
+                    <TranslateTransform />
+                </Border.RenderTransform>
+                <FrameworkElement.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="Forever" >
+                                <DoubleAnimationUsingKeyFrames 
+                                                                             Storyboard.TargetName="LeftJoycon" 
+                                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                             Duration="0:0:4">
+
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.36" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="10">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                   
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </FrameworkElement.Triggers>
+                <Ellipse Height="20" Width="20" Fill="White" VerticalAlignment="Top" Margin="0,15,0,0" />
             </Border>
-            <Border  Margin="10,0,0,0" BorderBrush="White" Background="White" CornerRadius="0,25,25,0" Width="40" Height="88">
+            <Border x:Name="RightJoycon" Margin="10,0,0,0" BorderBrush="White" Background="White" CornerRadius="0,25,25,0" Width="40" Height="88" RenderTransformOrigin=".5,.5">
+                <Border.RenderTransform>
+                    <TranslateTransform />
+                </Border.RenderTransform>
+                <FrameworkElement.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="Forever" >
+                                <DoubleAnimationUsingKeyFrames 
+                                                                             Storyboard.TargetName="RightJoycon" 
+                                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                             Duration="0:0:4">
+
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.32" Value="-45">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="10">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseInOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </FrameworkElement.Triggers>
                 <Ellipse Height="20" Width="20" Fill="#111" VerticalAlignment="Bottom" Margin="0,0,0,29"/>
             </Border>
             <StackPanel Margin="15,0,0,0" VerticalAlignment="Bottom" >
@@ -27,16 +96,56 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding}"  
-                       Margin="0,0,10,0"/>
+                                        <TextBlock Text="{Binding}"  Margin="0,0,10,0"/>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
                         </DataTemplate>
                     </ContentControl.ContentTemplate>
                 </ContentControl>
-
-                <TextBlock Margin="0,-12,0,-4" Text="SWITCH" FontSize="60" FontWeight="Bold" LineHeight="45" Foreground="White" FontFamily="Microsoft Sans Serif"/>
+                <ContentControl Margin="0,-12,0,-4" Content="SWITCH" FontSize="60" FontWeight="Bold"  Foreground="White" FontFamily="Microsoft Sans Serif" >
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate >
+                            <ItemsControl ItemsSource="{Binding}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"  LineHeight="45"  x:Name="TextElement"
+                                                   RenderTransformOrigin=".5,.5">
+                                            <TextBlock.RenderTransform>
+                                                <ScaleTransform ScaleX="-1" />
+                                            </TextBlock.RenderTransform>
+                                            <TextBlock.LayoutTransform>
+                                                    <ScaleTransform ScaleX="-1"/>
+                                            </TextBlock.LayoutTransform>
+                                                <FrameworkElement.Triggers>
+                                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                                    <BeginStoryboard>
+                                                        <Storyboard RepeatBehavior="Forever" BeginTime="{Binding Next, Source={StaticResource TimeSpanIncreaser}}">
+                                                            <DoubleAnimationUsingKeyFrames 
+                                                                             Storyboard.TargetName="TextElement" 
+                                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                                             Duration="0:0:4">
+                                                                <LinearDoubleKeyFrame KeyTime="0:0:0.4" Value="-1"/>
+                                                                <LinearDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                                                                <LinearDoubleKeyFrame KeyTime="0:0:0.8" Value="-1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </EventTrigger>
+                                            </FrameworkElement.Triggers>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+                <!--<TextBlock Margin="0,-12,0,-4" Text="SWITCH" FontSize="60" FontWeight="Bold" LineHeight="45" Foreground="White" FontFamily="Microsoft Sans Serif"/>-->
             </StackPanel>
             <!--<Glyphs
 
@@ -46,7 +155,7 @@
    Fill                = "White"
    FontRenderingEmSize = "32"
 />-->
-
+           
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

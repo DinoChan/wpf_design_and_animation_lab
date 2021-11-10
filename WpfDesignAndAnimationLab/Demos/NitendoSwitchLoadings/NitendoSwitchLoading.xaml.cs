@@ -17,8 +17,9 @@ namespace WpfDesignAndAnimationLab.Demos.NitendoSwitchLoadings
 {
     /// <summary>
     /// NitendoSwitchLoading.xaml 的交互逻辑
+    /// https://codepen.io/recklessrainb0w/pen/zMeaNE
     /// </summary>
-    public partial class NitendoSwitchLoading : UserControl
+    public partial class NitendoSwitchLoading 
     {
         public NitendoSwitchLoading()
         {
