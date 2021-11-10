@@ -13,15 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDesignAndAnimationLab.Demos.NitendoSwitchLoadings
+namespace WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings
 {
     /// <summary>
     /// NitendoSwitchLoading.xaml 的交互逻辑
     /// https://codepen.io/recklessrainb0w/pen/zMeaNE
     /// </summary>
-    public partial class NitendoSwitchLoading 
+    public partial class NintendoSwitchLoading 
     {
-        public NitendoSwitchLoading()
+        public NintendoSwitchLoading()
         {
             InitializeComponent();
         }

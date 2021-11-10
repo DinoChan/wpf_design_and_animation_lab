@@ -2,7 +2,7 @@
 using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
-using WpfDesignAndAnimationLab.Demos.NitendoSwitchLoadings;
+using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
@@ -58,7 +58,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                      ),
 
                     new ExampleDefinition("Nintendo Switch",null,
-                 new ExampleDefinitionItem("Loading",typeof(NitendoSwitchLoading))
+                 new ExampleDefinitionItem("Loading",typeof(NintendoSwitchLoading))
                      ),
                     new ExampleDefinition("TextEffect",null,
                 new ExampleDefinitionItem("Basic",typeof(TextEffectsBasicDemo))
