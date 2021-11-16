@@ -4,6 +4,7 @@ using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
+using WpfDesignAndAnimationLab.Demos.ProgressRings;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
@@ -62,9 +63,13 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                      ),
                     new ExampleDefinition("TextEffect",null,
                 new ExampleDefinitionItem("Basic",typeof(TextEffectsBasicDemo))
+                        ),
+
+                        new ExampleDefinition("Progress Ring",null,
+                new ExampleDefinitionItem("Basic",typeof(ProgressRingBasicDemo))
                         )
 
-                     
+
         };
     }
 }
