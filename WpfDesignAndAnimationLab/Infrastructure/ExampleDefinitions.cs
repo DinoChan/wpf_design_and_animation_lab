@@ -58,7 +58,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                      ),
 
                     new ExampleDefinition("Nintendo Switch",null,
-                 new ExampleDefinitionItem("Loading",typeof(NintendoSwitchLoading))
+                 new ExampleDefinitionItem("Loading",typeof(NintendoSwitchLoading)),
+                   new ExampleDefinitionItem("eShop",typeof(NintendoEShopLoading))
                      ),
                     new ExampleDefinition("TextEffect",null,
                 new ExampleDefinitionItem("Basic",typeof(TextEffectsBasicDemo))
