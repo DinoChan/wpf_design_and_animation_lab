@@ -11,12 +11,12 @@
                                    mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style TargetType="local:NintendoEShopLoadingRow">
-            <Setter Property="Foreground" Value="#335f99" />
+            <Setter Property="Foreground" Value="#ff7f02" />
         </Style>
 
         <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.15" />
     </FrameworkElement.Resources>
-    <Grid>
+    <Grid SnapsToDevicePixels="True">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -31,6 +31,5 @@
         <local:NintendoEShopLoadingRow Grid.Row="3" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
         <local:NintendoEShopLoadingRow Grid.Row="4" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
         <local:NintendoEShopLoadingRow Grid.Row="5" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
-        <local:NintendoEShopLoadingRow Grid.Row="6" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
