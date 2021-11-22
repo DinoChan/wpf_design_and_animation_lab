@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31313.79
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDesignAndAnimationLab", "WpfDesignAndAnimationLab\WpfDesignAndAnimationLab.csproj", "{1AB1734B-B510-4195-A30F-8925256F9BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDesignAndAnimationLab", "WpfDesignAndAnimationLab\WpfDesignAndAnimationLab.csproj", "{1AB1734B-B510-4195-A30F-8925256F9BC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDesignAndAnimationLab.Effects", "WpfDesignAndAnimationLab.Effects\WpfDesignAndAnimationLab.Effects.csproj", "{BAECDCF7-8906-4224-9537-35A381005AF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1AB1734B-B510-4195-A30F-8925256F9BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB1734B-B510-4195-A30F-8925256F9BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AB1734B-B510-4195-A30F-8925256F9BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAECDCF7-8906-4224-9537-35A381005AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAECDCF7-8906-4224-9537-35A381005AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAECDCF7-8906-4224-9537-35A381005AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAECDCF7-8906-4224-9537-35A381005AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

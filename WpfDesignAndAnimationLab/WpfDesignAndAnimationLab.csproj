@@ -93,6 +93,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WpfDesignAndAnimationLab.Effects\WpfDesignAndAnimationLab.Effects.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\fixedsys.ttf" />
     <Resource Include="Assets\hooge-0857.ttf" />
     <Resource Include="Assets\OstrichSans-Light.otf" />

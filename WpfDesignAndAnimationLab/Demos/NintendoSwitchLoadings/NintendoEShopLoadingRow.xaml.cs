@@ -29,12 +29,6 @@ namespace WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings
 
         private async void NintendoEShopLoadingRow_Loaded(object sender, RoutedEventArgs e)
         {
-            var brush = Background as SolidColorBrush;
-            var color = brush.Color;
-            L1.Fill = brush;
-            L2.Fill = new SolidColorBrush(Color.FromRgb(Convert.ToByte(color.R / 0.4), Convert.ToByte(color.G * 0.4), Convert.ToByte(color.B * 0.4)));
-            L3.Fill = new SolidColorBrush(Color.FromRgb(Convert.ToByte(color.R / 0.6), Convert.ToByte(color.G * 0.6), Convert.ToByte(color.B * 0.6)));
-            L4.Fill = new SolidColorBrush(Color.FromRgb(Convert.ToByte(color.R / 0.8), Convert.ToByte(color.G * 0.8), Convert.ToByte(color.B * 0.8)));
             await Task.Delay(Delay);
             (this.Resources["Storyboard"] as Storyboard).Begin();
         }

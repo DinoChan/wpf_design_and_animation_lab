@@ -11,7 +11,7 @@
                                    mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style TargetType="local:NintendoEShopLoadingRow">
-            <Setter Property="Background" Value="#335f99" />
+            <Setter Property="Foreground" Value="#335f99" />
         </Style>
 
         <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.15" />
