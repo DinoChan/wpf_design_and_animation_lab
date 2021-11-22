@@ -1,0 +1,36 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings.NintendoEShopLoading"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <Style TargetType="local:NintendoEShopLoadingRow">
+            <Setter Property="Background" Value="#335f99" />
+        </Style>
+
+        <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.15" />
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:NintendoEShopLoadingRow />
+        <local:NintendoEShopLoadingRow Grid.Row="1" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+        <local:NintendoEShopLoadingRow Grid.Row="2" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+        <local:NintendoEShopLoadingRow Grid.Row="3" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+        <local:NintendoEShopLoadingRow Grid.Row="4" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+        <local:NintendoEShopLoadingRow Grid.Row="5" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+        <local:NintendoEShopLoadingRow Grid.Row="6" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>
