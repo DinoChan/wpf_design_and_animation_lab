@@ -18,7 +18,7 @@
                 <FrameworkElement.Triggers>
                     <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                         <BeginStoryboard>
-                            <Storyboard RepeatBehavior="Forever" >
+                            <Storyboard RepeatBehavior="Forever">
                                 <DoubleAnimationUsingKeyFrames 
                                                                              Storyboard.TargetName="LeftJoycon" 
                                                                              Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"

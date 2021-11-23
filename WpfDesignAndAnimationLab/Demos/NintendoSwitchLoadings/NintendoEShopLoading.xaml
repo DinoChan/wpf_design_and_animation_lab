@@ -16,7 +16,9 @@
 
         <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.15" />
     </FrameworkElement.Resources>
-    <Grid SnapsToDevicePixels="True">
+    <Grid MaxWidth="800"
+          MaxHeight="450"
+          SnapsToDevicePixels="True">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />

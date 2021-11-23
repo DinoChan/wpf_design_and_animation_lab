@@ -29,7 +29,7 @@ namespace WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings
 
         private async void NintendoEShopLoadingRow_Loaded(object sender, RoutedEventArgs e)
         {
-            await Task.Delay(Delay);
+            await Task.Delay(TimeSpan.FromSeconds(2) + Delay);
             (this.Resources["Storyboard"] as Storyboard).Begin();
         }
 
