@@ -27,7 +27,7 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <local:NintendoEShopLoadingRow />
+        <local:NintendoEShopLoadingRow Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
         <local:NintendoEShopLoadingRow Grid.Row="1" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
         <local:NintendoEShopLoadingRow Grid.Row="2" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
         <local:NintendoEShopLoadingRow Grid.Row="3" Delay="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />

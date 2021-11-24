@@ -1,5 +1,6 @@
 ﻿using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
+using WpfDesignAndAnimationLab.Demos.Effects;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
@@ -68,6 +69,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
                         new ExampleDefinition("Progress Ring",null,
                 new ExampleDefinitionItem("Basic",typeof(ProgressRingBasicDemo))
+                        ),
+
+                            new ExampleDefinition("Effects",null,
+                new ExampleDefinitionItem("Lighten",typeof(LightenDemo))
                         )
 
 

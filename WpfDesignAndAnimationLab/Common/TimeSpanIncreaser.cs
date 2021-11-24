@@ -10,7 +10,15 @@ namespace WpfDesignAndAnimationLab.Common
 
         private TimeSpan _current;
 
-        public override TimeSpan Next => Start + (_current += Step);
+        public override TimeSpan Next
+        {
+            get
+            {
+                var result = Start + _current;
+                _current += Step;
+                return result;
+            }
+        }
 
         public override TimeSpan Start
         {

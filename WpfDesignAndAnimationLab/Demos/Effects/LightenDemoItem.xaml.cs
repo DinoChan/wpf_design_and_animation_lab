@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfDesignAndAnimationLab.Demos.Effects
 {
     /// <summary>
-    /// LightenDemo.xaml 的交互逻辑
+    /// LightenDemoItem.xaml 的交互逻辑
     /// </summary>
-    public partial class LightenDemo 
+    public partial class LightenDemoItem : UserControl
     {
-        public LightenDemo()
+        public LightenDemoItem()
         {
             InitializeComponent();
         }
