@@ -61,6 +61,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Demos\NintendoSwitchLoadings\NintendoEShopLoadingUsingEffect.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Demos\NintendoSwitchLoadings\NintendoEShopLoadingRowUsingEffect.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Demos\OutlinedText\Demo6Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Shaders\HorizontalLightenEffect.ps" />
     <None Remove="Shaders\LightenEffect.ps" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Shaders\HorizontalLightenEffect.ps" />
     <Resource Include="Shaders\LightenEffect.ps">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
