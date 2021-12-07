@@ -269,8 +269,9 @@ namespace WpfDesignAndAnimationLab.Common
         /// <summary>
         /// Display of the DisplayMode state group.
         /// </summary>
-        public const string StateUnlocked = "Unlocked";
+        public const string StateUnlocked = "Unlocked"; 
         #endregion GroupLocked
+          
 
         #region GroupActive
 

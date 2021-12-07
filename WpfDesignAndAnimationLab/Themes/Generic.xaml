@@ -1,9 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:local="clr-namespace:WpfDesignAndAnimationLab">
+    
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Demos/OutlinedText/OutlinedTextControl.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/ProgressRing.xaml" />
+        <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/BusyIndicator.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <SolidColorBrush x:Key="RootBackground" Color="#242537" />
     <SolidColorBrush x:Key="LightBackground" Color="#d8d9e6" />
