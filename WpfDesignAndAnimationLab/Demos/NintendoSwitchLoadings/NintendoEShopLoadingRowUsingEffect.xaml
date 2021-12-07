@@ -48,6 +48,9 @@
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Effect" Storyboard.TargetProperty="Left">
                 <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value=".6"/>
+                <DiscreteDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Effect" Storyboard.TargetProperty="Right">
                 <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value=".8"/>
             </DoubleAnimationUsingKeyFrames>
             <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetName="L2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">

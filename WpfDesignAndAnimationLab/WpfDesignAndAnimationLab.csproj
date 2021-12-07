@@ -61,6 +61,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Controls\BusyIndicator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Demos\NintendoSwitchLoadings\NintendoEShopLoadingUsingEffect.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
@@ -90,6 +94,7 @@
 
   <ItemGroup>
     <Folder Include="Demos\ShapeAnimations\" />
+    <Folder Include="Demos\Transitions\" />
   </ItemGroup>
 
   <ItemGroup>
