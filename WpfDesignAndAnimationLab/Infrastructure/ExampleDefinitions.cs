@@ -78,8 +78,12 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                         ),
 
                                new ExampleDefinition("Transitions",null,
-                new ExampleDefinitionItem("RippleBase",typeof(RippleBasic))
+                new ExampleDefinitionItem("RippleBase",typeof(RippleBasic)),
+                 new ExampleDefinitionItem("BusyIndicator",typeof(TransitionBusyIndicatorDemo))
                         )
+
+
+                
         };
     }
 }
