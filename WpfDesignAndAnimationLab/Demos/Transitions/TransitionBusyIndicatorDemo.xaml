@@ -153,7 +153,7 @@
             </Style>
         </Grid.Resources>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <CheckBox Margin="20"
+            <CheckBox Margin="20" 
                       Content="IsBusy"
                       IsChecked="{Binding IsBusy, ElementName=BusyIndicator, Mode=TwoWay}" />
             <controls:BusyIndicator x:Name="BusyIndicator" IsBusy="True">
