@@ -6,14 +6,20 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <SolidColorBrush x:Key="RootBackground" Color="#242537" />
-        <SolidColorBrush x:Key="LightBackground" Color="#d8d9e6" />
-        <SolidColorBrush x:Key="DarkBackground" Color="#4A4B59" />
-        <CornerRadius x:Key="ControlCornerRadius">4.0</CornerRadius>
-        <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
-        <SolidColorBrush x:Key="Foreground">#fbfffe</SolidColorBrush>
-        <SolidColorBrush x:Key="SelectionForeground">#dce1f4</SolidColorBrush>
-        <SolidColorBrush x:Key="HighlightForeground">#2fcfe9</SolidColorBrush>
-        <SolidColorBrush x:Key="TipsForeground">#9296af</SolidColorBrush>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="RootBackground" Color="#242537" />
+            <SolidColorBrush x:Key="LightBackground" Color="#d8d9e6" />
+            <SolidColorBrush x:Key="DarkBackground" Color="#4A4B59" />
+            <CornerRadius x:Key="ControlCornerRadius">4.0</CornerRadius>
+            <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
+            <SolidColorBrush x:Key="Foreground">#fbfffe</SolidColorBrush>
+            <SolidColorBrush x:Key="SelectionForeground">#dce1f4</SolidColorBrush>
+            <SolidColorBrush x:Key="HighlightForeground">#2fcfe9</SolidColorBrush>
+            <SolidColorBrush x:Key="TipsForeground">#9296af</SolidColorBrush>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

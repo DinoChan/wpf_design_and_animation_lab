@@ -11,6 +11,7 @@ using WpfDesignAndAnimationLab.Demos.RainbowTexts;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 using WpfDesignAndAnimationLab.Demos.TextEffects;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
+using WpfDesignAndAnimationLab.Demos.Transitions;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -74,9 +75,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
                             new ExampleDefinition("Effects",null,
                 new ExampleDefinitionItem("Lighten",typeof(LightenDemo))
+                        ),
+
+                               new ExampleDefinition("Transitions",null,
+                new ExampleDefinitionItem("RippleBase",typeof(RippleBasic))
                         )
-
-
         };
     }
 }

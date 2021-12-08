@@ -18,9 +18,9 @@ namespace WpfDesignAndAnimationLab.Demos.Transitions
     /// <summary>
     /// RappleBasic.xaml 的交互逻辑
     /// </summary>
-    public partial class RappleBasic : UserControl
+    public partial class RippleBasic 
     {
-        public RappleBasic()
+        public RippleBasic()
         {
             InitializeComponent();
         }
