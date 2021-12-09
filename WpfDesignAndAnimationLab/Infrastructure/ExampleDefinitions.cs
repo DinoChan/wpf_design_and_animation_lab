@@ -11,6 +11,7 @@ using WpfDesignAndAnimationLab.Demos.RainbowTexts;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 using WpfDesignAndAnimationLab.Demos.TextEffects;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
+using WpfDesignAndAnimationLab.Demos.TextShimmers;
 using WpfDesignAndAnimationLab.Demos.Transitions;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
@@ -80,10 +81,14 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                                new ExampleDefinition("Transitions",null,
                 new ExampleDefinitionItem("RippleBase",typeof(RippleBasic)),
                  new ExampleDefinitionItem("BusyIndicator",typeof(TransitionBusyIndicatorDemo))
-                        )
+                        ),
 
 
-                
+                                               new ExampleDefinition("TextShimmers",null,
+                new ExampleDefinitionItem("UsingOpacityMask",typeof(TextShimmerUsingOpacityMask))
+                        ),
+
+
         };
     }
 }

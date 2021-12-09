@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -36,8 +37,38 @@ namespace WpfDesignAndAnimationLab.Demos.TextShimmers
             };
 
             brush.GradientStops.Add(new GradientStop(Colors.Black, 0));
-            brush.GradientStops.Add(new GradientStop(Color.FromArgb(100,0,0,0),.5));
+            brush.GradientStops.Add(new GradientStop(Color.FromArgb(100, 0, 0, 0), .5));
             brush.GradientStops.Add(new GradientStop(Color.FromArgb(34, 0, 0, 0), 1));
+
+            var centerH = TextBlock.ActualHeight / 2;
+
+            TextBlock.OpacityMask = brush;
+
+            var storyboard = new Storyboard();
+            var centerAnimation = new PointAnimation
+            {
+                From = new Point(-centerH * 6, centerH),
+                To = new Point(centerH * 6, centerH),
+                Duration = TimeSpan.FromSeconds(3.3)
+            };
+
+            Storyboard.SetTarget(centerAnimation, brush);
+            Storyboard.SetTargetProperty(centerAnimation, new PropertyPath(RadialGradientBrush.CenterProperty));
+
+            var gradientOriginAnimation = new PointAnimation
+            {
+                From = new Point(-centerH * 6, centerH),
+                To = new Point(centerH * 6, centerH),
+                Duration = TimeSpan.FromSeconds(3.3)
+            };
+
+            Storyboard.SetTarget(gradientOriginAnimation, brush);
+            Storyboard.SetTargetProperty(gradientOriginAnimation, new PropertyPath(RadialGradientBrush.GradientOriginProperty));
+
+            storyboard.Children.Add(centerAnimation);
+            storyboard.Children.Add(gradientOriginAnimation);
+            storyboard.RepeatBehavior = RepeatBehavior.Forever;
+            storyboard.Begin();
         }
     }
 }
