@@ -18,11 +18,26 @@ namespace WpfDesignAndAnimationLab.Demos.TextShimmers
     /// <summary>
     /// TextShimmerUsingOpacityMask.xaml 的交互逻辑
     /// </summary>
-    public partial class TextShimmerUsingOpacityMask 
+    public partial class TextShimmerUsingOpacityMask
     {
         public TextShimmerUsingOpacityMask()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            var brush = new RadialGradientBrush
+            {
+                RadiusX = TextBlock.ActualHeight * 2.2,
+                RadiusY = TextBlock.ActualHeight * 2.2,
+                MappingMode = BrushMappingMode.Absolute
+            };
+
+            brush.GradientStops.Add(new GradientStop(Colors.Black, 0));
+            brush.GradientStops.Add(new GradientStop(Color.FromArgb(100,0,0,0),.5));
+            brush.GradientStops.Add(new GradientStop(Color.FromArgb(34, 0, 0, 0), 1));
         }
     }
 }

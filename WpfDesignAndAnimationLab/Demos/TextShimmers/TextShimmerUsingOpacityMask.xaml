@@ -9,10 +9,23 @@
                                    d:DesignWidth="800"
                                    Background="Black"
                                    mc:Ignorable="d">
-    <Grid >
-        <TextBlock  Text="Text Shimmer" FontSize="100" Foreground="DimGray" FontFamily="SegoeUI" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   >
-            
+    <Grid>
+        <TextBlock x:Name="TextBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="SegoeUI"
+                   FontSize="100"
+                   FontWeight="Thin"
+                   Foreground="DimGray"
+                   Text="Text Shimmer">
+            <!--<TextBlock.OpacityMask>
+                <RadialGradientBrush MappingMode="Absolute" RadiusX="250" RadiusY="250" Center="300,50" GradientOrigin="300,50">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#6000" Offset=".5"/>
+                    <GradientStop Color="#2000" Offset="1"/>
+                </RadialGradientBrush>
+            </TextBlock.OpacityMask>-->
+
         </TextBlock>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
