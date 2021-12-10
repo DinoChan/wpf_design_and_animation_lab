@@ -10,6 +10,32 @@
                                    Background="Black"
                                    mc:Ignorable="d">
     <Grid>
+        <FrameworkElement.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <!--<DoubleAnimation RepeatBehavior="Forever"
+                                         Storyboard.TargetName="ScaleTransform"
+                                         Storyboard.TargetProperty="CenterX"
+                                         From=".8"
+                                         To="-0.8"
+                                         Duration="0:0:3.3" />-->
+                        <PointAnimation RepeatBehavior="Forever"
+                                        Storyboard.TargetName="Brush"
+                                        Storyboard.TargetProperty="Center"
+                                        From="-2,.5"
+                                        To="3,.5"
+                                        Duration="0:0:3.3" />
+                        <PointAnimation RepeatBehavior="Forever"
+                                        Storyboard.TargetName="Brush"
+                                        Storyboard.TargetProperty="GradientOrigin"
+                                        From="-2,.5"
+                                        To="3,.5"
+                                        Duration="0:0:3.3" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </FrameworkElement.Triggers>
         <TextBlock x:Name="TextBlock"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
@@ -17,14 +43,21 @@
                    FontSize="100"
                    FontWeight="Thin"
                    Foreground="DimGray"
+                   RenderTransformOrigin="0.5,0.5"
                    Text="Text Shimmer">
-            <!--<TextBlock.OpacityMask>
-                <RadialGradientBrush MappingMode="Absolute" RadiusX="250" RadiusY="250" Center="300,50" GradientOrigin="300,50">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#6000" Offset=".5"/>
-                    <GradientStop Color="#2000" Offset="1"/>
+            <TextBlock.OpacityMask>
+                <RadialGradientBrush x:Name="Brush" Center="2.5,.5" GradientOrigin="2,.5" RadiusX="1" RadiusY="262">
+                    <!--<RadialGradientBrush.RelativeTransform>
+                        <ScaleTransform x:Name="ScaleTransform" CenterX="0" ScaleX="-1" />
+                    </RadialGradientBrush.RelativeTransform>
+                    <RadialGradientBrush.Transform>
+                        <ScaleTransform ScaleX="-1" />
+                    </RadialGradientBrush.Transform>-->
+                    <GradientStop Color="Black" />
+                    <GradientStop Offset=".5" Color="#6000" />
+                    <GradientStop Offset="1" Color="#2000" />
                 </RadialGradientBrush>
-            </TextBlock.OpacityMask>-->
+            </TextBlock.OpacityMask>
 
         </TextBlock>
     </Grid>

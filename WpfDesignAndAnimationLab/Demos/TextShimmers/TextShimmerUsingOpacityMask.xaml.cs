@@ -25,50 +25,58 @@ namespace WpfDesignAndAnimationLab.Demos.TextShimmers
         {
             InitializeComponent();
             Loaded += OnLoaded;
+            TextBlock.SizeChanged += TextBlock_SizeChanged;
+        }
+
+        private void TextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            RadialGradientBrush brush = TextBlock.OpacityMask as RadialGradientBrush;
+            brush.RadiusX = e.NewSize.Height/e.NewSize.Width;
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            var brush = new RadialGradientBrush
-            {
-                RadiusX = TextBlock.ActualHeight * 2.2,
-                RadiusY = TextBlock.ActualHeight * 2.2,
-                MappingMode = BrushMappingMode.Absolute
-            };
+            //var brush = new RadialGradientBrush
+            //{
+            //    RadiusX = TextBlock.ActualHeight * 2.2,
+            //    RadiusY = TextBlock.ActualHeight * 2.2,
+            //    MappingMode = BrushMappingMode.Absolute
+            //};
 
-            brush.GradientStops.Add(new GradientStop(Colors.Black, 0));
-            brush.GradientStops.Add(new GradientStop(Color.FromArgb(100, 0, 0, 0), .5));
-            brush.GradientStops.Add(new GradientStop(Color.FromArgb(34, 0, 0, 0), 1));
+            //brush.GradientStops.Add(new GradientStop(Colors.Black, 0));
+            //brush.GradientStops.Add(new GradientStop(Color.FromArgb(100, 0, 0, 0), .5));
+            //brush.GradientStops.Add(new GradientStop(Color.FromArgb(34, 0, 0, 0), 1));
 
-            var centerH = TextBlock.ActualHeight / 2;
+            //var centerH = TextBlock.ActualHeight / 2;
+            //var width = TextBlock.ActualWidth;
+            //TextBlock.OpacityMask = brush;
 
-            TextBlock.OpacityMask = brush;
+            //var storyboard = new Storyboard();
+            //var centerAnimation = new PointAnimation
+            //{
+            //    From = new Point(-width, centerH),
+            //    To = new Point(width * 2, centerH),
+            //    Duration = TimeSpan.FromSeconds(3.3),
+            //    RepeatBehavior = RepeatBehavior.Forever
+            //};
 
-            var storyboard = new Storyboard();
-            var centerAnimation = new PointAnimation
-            {
-                From = new Point(-centerH * 6, centerH),
-                To = new Point(centerH * 6, centerH),
-                Duration = TimeSpan.FromSeconds(3.3)
-            };
+            //Storyboard.SetTarget(centerAnimation, brush);
+            //Storyboard.SetTargetProperty(centerAnimation, new PropertyPath(RadialGradientBrush.CenterProperty));
 
-            Storyboard.SetTarget(centerAnimation, brush);
-            Storyboard.SetTargetProperty(centerAnimation, new PropertyPath(RadialGradientBrush.CenterProperty));
+            //var gradientOriginAnimation = new PointAnimation
+            //{
+            //    From = new Point(-width, centerH),
+            //    To = new Point(width * 2, centerH),
+            //    Duration = TimeSpan.FromSeconds(3.3),
+            //    RepeatBehavior= RepeatBehavior.Forever
+            //};
 
-            var gradientOriginAnimation = new PointAnimation
-            {
-                From = new Point(-centerH * 6, centerH),
-                To = new Point(centerH * 6, centerH),
-                Duration = TimeSpan.FromSeconds(3.3)
-            };
+            //Storyboard.SetTarget(gradientOriginAnimation, brush);
+            //Storyboard.SetTargetProperty(gradientOriginAnimation, new PropertyPath(RadialGradientBrush.GradientOriginProperty));
 
-            Storyboard.SetTarget(gradientOriginAnimation, brush);
-            Storyboard.SetTargetProperty(gradientOriginAnimation, new PropertyPath(RadialGradientBrush.GradientOriginProperty));
-
-            storyboard.Children.Add(centerAnimation);
-            storyboard.Children.Add(gradientOriginAnimation);
-            storyboard.RepeatBehavior = RepeatBehavior.Forever;
-            storyboard.Begin();
+            //storyboard.Children.Add(centerAnimation);
+            //storyboard.Children.Add(gradientOriginAnimation);
+            //storyboard.Begin();
         }
     }
 }
