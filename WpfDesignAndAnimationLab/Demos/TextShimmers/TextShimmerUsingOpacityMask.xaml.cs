@@ -31,7 +31,7 @@ namespace WpfDesignAndAnimationLab.Demos.TextShimmers
         private void TextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             RadialGradientBrush brush = TextBlock.OpacityMask as RadialGradientBrush;
-            brush.RadiusX = e.NewSize.Height/e.NewSize.Width;
+            brush.RadiusX = 2 * e.NewSize.Height / e.NewSize.Width;
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
