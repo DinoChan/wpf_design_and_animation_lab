@@ -23,14 +23,14 @@
                         <PointAnimation RepeatBehavior="Forever"
                                         Storyboard.TargetName="Brush"
                                         Storyboard.TargetProperty="Center"
-                                        From="-2,.5"
-                                        To="3,.5"
+                                        From="-3,.5"
+                                        To="4,.5"
                                         Duration="0:0:3.3" />
                         <PointAnimation RepeatBehavior="Forever"
                                         Storyboard.TargetName="Brush"
                                         Storyboard.TargetProperty="GradientOrigin"
-                                        From="-2,.5"
-                                        To="3,.5"
+                                        From="-3,.5"
+                                        To="4,.5"
                                         Duration="0:0:3.3" />
                     </Storyboard>
                 </BeginStoryboard>
