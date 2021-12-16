@@ -8,6 +8,7 @@ using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.ProgressRings;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
+using WpfDesignAndAnimationLab.Demos.Shapes;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 using WpfDesignAndAnimationLab.Demos.TextEffects;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
@@ -88,7 +89,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("UsingOpacityMask",typeof(TextShimmerUsingOpacityMask))
                         ),
 
-
+               new ExampleDefinition("Shape",null,
+                new ExampleDefinitionItem("TriangleLoading",typeof(TriangleLoading)),
+                   new ExampleDefinitionItem("TriangleLoading2",typeof(TriangleLoading2))
+                        ),
         };
     }
 }
