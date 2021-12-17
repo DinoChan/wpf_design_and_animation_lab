@@ -1,0 +1,54 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.Shapes.PointsAnimation"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Shapes"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   mc:Ignorable="d">
+    <FrameworkElement.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard>
+                <Storyboard FillBehavior="HoldEnd" RepeatBehavior="Forever" AutoReverse="True">
+                    <DoubleAnimation FillBehavior="HoldEnd"
+                                     Storyboard.TargetName="ProgressToPointCollectionBridge"
+                                     Storyboard.TargetProperty="Progress"
+                                     To="100"
+                                     Duration="0:0:2">
+                        <DoubleAnimation.EasingFunction>
+                            <ElasticEase EasingMode="EaseInOut" />
+                        </DoubleAnimation.EasingFunction>
+                    </DoubleAnimation>
+                    <ColorAnimation d:IsOptimized="True"
+                                    Storyboard.TargetName="polygon"
+                                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                    To="#FF48F412"
+                                    Duration="0:0:2">
+                        <ColorAnimation.EasingFunction>
+                            <ElasticEase EasingMode="EaseInOut" />
+                        </ColorAnimation.EasingFunction>
+                    </ColorAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </FrameworkElement.Triggers>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.Tag>
+            <local:ProgressToPointCollectionBridge x:Name="ProgressToPointCollectionBridge">
+                <PointCollection>97.3,0 127.4,60.9 194.6,70.7 145.9,118.1 157.4,185.1 97.3,153.5 37.2,185.1 48.6,118.1 0,70.7 67.2,60.9</PointCollection>
+                <PointCollection>110,58.2 147.3,0 192.1,29 141.7,105.1 118.7,139.8 88.8,185.1 46.1,156.5 0,125 23.5,86.6 71.1,116.7</PointCollection>
+            </local:ProgressToPointCollectionBridge>
+        </Grid.Tag>
+        <Polygon x:Name="polygon"
+                 Width="250"
+                 Height="250"
+                 Fill="#FFEBF412"
+                 Points="{Binding Tag.Points, ElementName=LayoutRoot}"
+                 Stretch="Fill"
+                 Stroke="DarkOliveGreen"
+                 StrokeThickness="2" />
+
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

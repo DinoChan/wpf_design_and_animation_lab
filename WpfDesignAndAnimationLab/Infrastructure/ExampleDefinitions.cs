@@ -93,7 +93,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("TriangleLoading",typeof(TriangleLoading)),
                    new ExampleDefinitionItem("TriangleLoading2",typeof(TriangleLoading2)),
                      new ExampleDefinitionItem("TriangleLoading3",typeof(TriangleLoading3)),
-                      new ExampleDefinitionItem("EllipseButton",typeof(EllipseButtonDemo))
+                      new ExampleDefinitionItem("EllipseButton",typeof(EllipseButtonDemo)),
+                        new ExampleDefinitionItem("PointsAnimation",typeof(PointsAnimation))
                         ),
         };
     }
