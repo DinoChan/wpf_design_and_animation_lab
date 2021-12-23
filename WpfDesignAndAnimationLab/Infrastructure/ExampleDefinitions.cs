@@ -1,4 +1,5 @@
 ﻿using WpfDesignAndAnimationLab.Demos.ArcProgresses;
+using WpfDesignAndAnimationLab.Demos.Buttons;
 using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.Effects;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
@@ -96,6 +97,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                       new ExampleDefinitionItem("EllipseButton",typeof(EllipseButtonDemo)),
                         new ExampleDefinitionItem("PointsAnimation",typeof(PointsAnimation))
                         ),
+
+                                                 new ExampleDefinition("Buttons",null,
+                new ExampleDefinitionItem("Demo 1",typeof(ButtonDesignDemo1))
+                        ),
+
         };
     }
 }
