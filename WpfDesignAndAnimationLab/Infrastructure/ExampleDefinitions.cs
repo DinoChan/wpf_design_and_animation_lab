@@ -37,7 +37,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page)),
                 new ExampleDefinitionItem("Demo9",typeof(TextShapeDemo3Page))),
 
-              new ExampleDefinition("InnerShadow",null,typeof(InnerShadow)),
+
+                                             new ExampleDefinition("InnerShadow",null,
+                new ExampleDefinitionItem("InnerShadow",typeof(InnerShadow)),
+                 new ExampleDefinitionItem("Variable Size",typeof(VariableSizeInnerShadowDemo))
+                        ),
 
                new ExampleDefinition("ArcProgressBar",null,
                 new ExampleDefinitionItem("Basic",typeof(ArcProgressDemo)),
@@ -99,7 +103,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                         ),
 
                                                  new ExampleDefinition("Buttons",null,
-                new ExampleDefinitionItem("Demo 1",typeof(ButtonDesignDemo1))
+                new ExampleDefinitionItem("Demo 1",typeof(ButtonDesignDemo1)),
+                 new ExampleDefinitionItem("Demo 2",typeof(ButtonDesignDemo2))
                         ),
 
         };

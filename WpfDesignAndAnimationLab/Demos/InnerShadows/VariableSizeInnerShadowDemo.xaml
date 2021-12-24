@@ -1,0 +1,25 @@
+﻿<wpfdesignandanimationlab:DemoPage  xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab" x:Class="WpfDesignAndAnimationLab.Demos.InnerShadows.VariableSizeInnerShadowDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.InnerShadows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Height="400" Width="400">
+                <Rectangle RadiusX="50" RadiusY="50" Fill="White" x:Name="Rectangle"/>
+                <Border BorderBrush="Black" x:Name="ShadowElement" CornerRadius="50">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="0" ShadowDepth="0" x:Name="Shadow"/>
+                    </Border.Effect>
+                </Border>
+                <Grid.OpacityMask>
+                    <VisualBrush Stretch="None" Visual="{Binding ElementName=Rectangle}" />
+                </Grid.OpacityMask>
+            </Grid>
+            <Slider Margin="20" Minimum="0" Maximum="50" ValueChanged="Slider_ValueChanged"/>
+        </StackPanel>
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>
