@@ -100,7 +100,6 @@
                     <Grid Width="100"
                           Height="100"
                           Margin="10">
-
                         <Rectangle x:Name="Rectangle2"
                                    Fill="White"
                                    RadiusX="8"

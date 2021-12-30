@@ -246,7 +246,7 @@
                      VerticalAlignment="Center"
                      Columns="3">
             <Button Background="#494949" Content="WPF Button" />
-            <Button Content="WPF Button" />
+            <Button Background="#3a617e" Content="WPF Button" />
             <Button Background="#435d3a" Content="WPF Button" />
             <Button Background="#5e2d2c" Content="WPF Button" />
             <Button Background="#40394d" Content="WPF Button" />
