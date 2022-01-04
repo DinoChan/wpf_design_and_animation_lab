@@ -4,6 +4,7 @@ using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.Effects;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
+using WpfDesignAndAnimationLab.Demos.LongShadows;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.ProgressRings;
@@ -107,6 +108,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                                                  new ExampleDefinition("Buttons",null,
                 new ExampleDefinitionItem("Demo 1",typeof(ButtonDesignDemo1)),
                  new ExampleDefinitionItem("Demo 2",typeof(ButtonDesignDemo2))
+                        ),
+
+
+                                                 new ExampleDefinition("LongShadow",null,
+                new ExampleDefinitionItem("Demo 1",typeof(LongShadowDemo1))
                         ),
 
         };
