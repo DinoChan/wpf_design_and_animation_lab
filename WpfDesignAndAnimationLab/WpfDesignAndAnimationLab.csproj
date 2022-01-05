@@ -15,6 +15,7 @@
     <None Remove="Assets\fixedsys.ttf" />
     <None Remove="Assets\hooge-0857.ttf" />
     <None Remove="Assets\OstrichSans-Light.otf" />
+    <None Remove="Demos\LongShadows\text.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -111,6 +112,7 @@
     <Resource Include="Assets\fixedsys.ttf" />
     <Resource Include="Assets\hooge-0857.ttf" />
     <Resource Include="Assets\OstrichSans-Light.otf" />
+    <Resource Include="Demos\LongShadows\text.png" />
   </ItemGroup>
 
 </Project>

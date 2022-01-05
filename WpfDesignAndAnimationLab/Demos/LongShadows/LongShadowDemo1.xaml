@@ -13,15 +13,15 @@
         <Grid.Effect>
             <effects:LongShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
                                       Height="{Binding ElementName=Root, Path=ActualHeight}"
-                                      ShadowLength="100" />
+                                      ShadowLength="100" Opacity=".1" Color="Gray"/>
         </Grid.Effect>
-        <TextBlock x:Name="TextBlock"
+        <!--<TextBlock x:Name="TextBlock"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="100"
                    FontWeight="Bold"
                    Text="Text" />
-
-
+        <Rectangle Height="300" Width="300" />-->
+        <Image Source="text.png"/>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
