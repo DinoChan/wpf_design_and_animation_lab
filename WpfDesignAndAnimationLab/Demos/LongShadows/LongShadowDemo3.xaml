@@ -1,0 +1,31 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.LongShadows.LongShadowDemo3"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.LongShadows"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="1050"
+                                   d:DesignWidth="1900"
+                                   Background="#666666"
+                                   mc:Ignorable="d">
+    <Grid>
+        <Border MaxHeight="600">
+        <Grid x:Name="Root" Background="Transparent">
+            <Grid.Effect>
+                <effects:LongShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
+                                          Height="{Binding ElementName=Root, Path=ActualHeight}"
+                                          ShadowLength="10000"
+                                          Color="#272727" />
+            </Grid.Effect>
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="sans-serif"
+                       FontSize="300" Foreground="White"
+                       FontWeight="ExtraBold"
+                       Text="TEXT" />
+        </Grid>
+        </Border>
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

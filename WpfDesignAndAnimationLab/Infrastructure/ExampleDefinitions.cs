@@ -112,7 +112,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
 
                                                  new ExampleDefinition("LongShadow",null,
-                new ExampleDefinitionItem("Demo 1",typeof(LongShadowDemo1))
+                new ExampleDefinitionItem("Demo 1",typeof(LongShadowDemo1)),
+                  new ExampleDefinitionItem("Demo 2",typeof(LongShadowDemo2)),
+                    new ExampleDefinitionItem("Demo 3",typeof(LongShadowDemo3))
+
                         ),
 
         };

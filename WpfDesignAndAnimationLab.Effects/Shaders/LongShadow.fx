@@ -26,7 +26,7 @@ float Width : register(C2);
 float Height : register(C3);
 
 /// <summary>Color.</summary>
-/// <defaultValue>Blue</defaultValue>
+/// <defaultValue>Black</defaultValue>
 float4 Color : register(C4);
 
 
@@ -40,7 +40,7 @@ float4 main(float2 uv : TEXCOORD) : COLOR
 
     float4 tempColor=0;
     float2 offset=0;
-    int maxDepth=255;
+    int maxDepth=400;
     //maxDepth=min(maxDepth, ShadowLength);
     float a=0;
     for (float i = 1; i < maxDepth; i++)
