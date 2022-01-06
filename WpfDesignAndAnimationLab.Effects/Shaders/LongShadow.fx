@@ -26,41 +26,51 @@ float Width : register(C2);
 float Height : register(C3);
 
 /// <summary>Color.</summary>
-/// <defaultValue>Black</defaultValue>
+/// <defaultValue>Blue</defaultValue>
 float4 Color : register(C4);
 
 
 float4 main(float2 uv : TEXCOORD) : COLOR
 {
+	float4 srcColor = tex2D(input, uv);
+	if( srcColor.a==1)
+    {
+        return srcColor;
+    }
 
-	float4 color = tex2D(input, uv);
-	if (color.a == 1)
+    float4 tempColor=0;
+    float2 offset=0;
+    int maxDepth=255;
+    //maxDepth=min(maxDepth, ShadowLength);
+    float a=0;
+    for (float i = 1; i < maxDepth; i++)
 	{
-		return color;
-	}
-	
-	float4 tempColor = 0;
-	float2 offset = 0;
-	int maxDepth = 255;
-	//maxDepth=min(maxDepth, ShadowLength);
-	float a = 0;
-	for (float i = 1; i < maxDepth; i++)
-	{
-		if (i < ShadowLength)
-		{
-			if (a < 1)
-			{
-				offset = uv.xy - float2(i / Width, i / Height);
-				if (offset.x > 0 && offset.y > 0)
-				{
-					tempColor = tex2D(input, offset);
-					a += tempColor.a * (1 - (i / (ShadowLength + 1))) * Opacity;
-				}
-			}
-		}
+	    if( i<ShadowLength)
+        {
+            if(a==0 )
+            {
+    
+                offset = uv.xy - float2(i / Width, i / Height);
+		        if (offset.x > 0 && offset.y > 0)
+		        {
+                    tempColor = tex2D(input, offset);
+                    if(tempColor.a==1 )
+                    {
+                        a=( 1-i/max(1,ShadowLength));
+                    }
+		        }		
+	        }
+        }
 	}
 
-	tempColor.a = min(1, a);
-	tempColor.rgb = Color.rgb;
-	return tempColor;
+	if( a==0)
+    {
+        return srcColor;
+    }
+    
+    a=min(1,a);
+    tempColor.rgb=Color.rgb*a *Opacity;
+    tempColor.a=a *Opacity;
+    float4 outColor=  (1 - srcColor.a)*tempColor + srcColor;
+	return outColor;
 }

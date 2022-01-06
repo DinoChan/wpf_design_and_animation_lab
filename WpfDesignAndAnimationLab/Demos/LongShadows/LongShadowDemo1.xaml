@@ -8,20 +8,20 @@
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
                                    d:DesignWidth="800"
+                                   Background="Black"
                                    mc:Ignorable="d">
-    <Grid x:Name="Root">
+    <Grid x:Name="Root" Background="Transparent">
         <Grid.Effect>
             <effects:LongShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
                                       Height="{Binding ElementName=Root, Path=ActualHeight}"
-                                      ShadowLength="100" Opacity=".1" Color="Gray"/>
+                                      ShadowLength="100"
+                                      Color="Red" />
         </Grid.Effect>
-        <!--<TextBlock x:Name="TextBlock"
+        <TextBlock x:Name="TextBlock"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="100"
+                   FontSize="150"
                    FontWeight="Bold"
-                   Text="Text" />
-        <Rectangle Height="300" Width="300" />-->
-        <Image Source="text.png"/>
+                   Text="NEXT" />
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
