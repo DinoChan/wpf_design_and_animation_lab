@@ -14,9 +14,9 @@ float4 main(float2 uv : TEXCOORD) : COLOR
 {
   	float4 srcColor = tex2D(input, uv);
 	
-   
-    //srcColor.rgb *= srcColor.a *Amount;
-    srcColor.a *= Amount;
-    srcColor.a=min(1,srcColor.a);
+
+    srcColor.rgb *= Amount;
+    srcColor.a  *=Amount;
+    //srcColor.a=min(1,srcColor.a);
   	return srcColor;
 }

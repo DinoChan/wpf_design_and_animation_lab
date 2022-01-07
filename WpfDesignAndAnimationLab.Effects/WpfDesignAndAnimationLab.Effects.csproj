@@ -11,6 +11,7 @@
     <None Remove="Shaders\HorizontalLightenEffect.ps" />
     <None Remove="Shaders\LightenEffect.ps" />
     <None Remove="Shaders\LongShadowEffect.ps" />
+    <None Remove="Shaders\MyShadowEffect.ps" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Shaders\LongShadowEffect.ps" />
+    <Resource Include="Shaders\MyShadowEffect.ps" />
   </ItemGroup>
 
 </Project>
