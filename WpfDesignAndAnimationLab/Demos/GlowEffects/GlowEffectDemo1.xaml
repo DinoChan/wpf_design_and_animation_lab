@@ -20,25 +20,24 @@
             </Style>
         </Grid.Resources>
         <Grid>
-            <Grid.Effect>
+            <!--<Grid.Effect>
                 <BlurEffect Radius="1000" RenderingBias="Quality" />
-            </Grid.Effect>
+            </Grid.Effect>-->
             <Grid Background="Transparent">
                 <Grid.Effect>
-                    <effects:GlowEffect Amount="100" />
+                    <effects:GlowEffect Amount="3" />
                 </Grid.Effect>
                 <StackPanel HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
                     <StackPanel.Effect>
-                        <BlurEffect Radius="1000" RenderingBias="Quality" />
+                        <BlurEffect Radius="100" RenderingBias="Quality" />
                     </StackPanel.Effect>
                     <TextBlock Foreground="#c43bb7"
-                               Opacity=".2"
+                              
                                Text="MICROSOFT" />
                     <TextBlock Margin="50,0,0,0"
                                Foreground="#2de4ea"
-                               Opacity=".2"
                                Text="WINDOWS" />
                 </StackPanel>
             </Grid>

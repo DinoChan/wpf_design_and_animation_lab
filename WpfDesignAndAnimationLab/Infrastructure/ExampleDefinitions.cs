@@ -3,6 +3,7 @@ using WpfDesignAndAnimationLab.Demos.Buttons;
 using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.Effects;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
+using WpfDesignAndAnimationLab.Demos.GlowEffects;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.LongShadows;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
@@ -116,6 +117,12 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                   new ExampleDefinitionItem("Demo 2",typeof(LongShadowDemo2)),
                     new ExampleDefinitionItem("Demo 3",typeof(LongShadowDemo3)),
                     new ExampleDefinitionItem("Demo 4",typeof(LongShadowDemo4))
+
+                        ),
+
+                                                                                    new ExampleDefinition("GlowEffects",null,
+                new ExampleDefinitionItem("Neon Love",typeof(NeonLoveDemo)),
+                  new ExampleDefinitionItem("Demo 1",typeof(GlowEffectDemo1))
 
                         ),
 

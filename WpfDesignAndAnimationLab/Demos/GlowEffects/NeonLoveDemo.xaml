@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="WpfDesignAndAnimationLab.Demos.GlowEffects.NeonLoveDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
+             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.GlowEffects"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Background="Black"
+             mc:Ignorable="d">
+    <Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <FrameworkElement.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation RepeatBehavior="Forever"
+                                             Storyboard.TargetName="P1"
+                                             Storyboard.TargetProperty="StrokeDashOffset"
+                                             To="89.8"
+                                             Duration="0:0:2" />
+                            <DoubleAnimation RepeatBehavior="Forever"
+                                             Storyboard.TargetName="P1b"
+                                             Storyboard.TargetProperty="StrokeDashOffset"
+                                             To="89.8"
+                                             Duration="0:0:2" />
+                            <ParallelTimeline BeginTime="0:0:1">
+                                <DoubleAnimation RepeatBehavior="Forever"
+                                                 Storyboard.TargetName="P2"
+                                                 Storyboard.TargetProperty="StrokeDashOffset"
+                                                 To="89.8"
+                                                 Duration="0:0:2" />
+                                <DoubleAnimation RepeatBehavior="Forever"
+                                                 Storyboard.TargetName="P2b"
+                                                 Storyboard.TargetProperty="StrokeDashOffset"
+                                                 To="89.8"
+                                                 Duration="0:0:2" />
+                            </ParallelTimeline>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </FrameworkElement.Triggers>
+            <Grid.Resources>
+                <Style TargetType="Path">
+                    <Setter Property="Data" Value="M 80.8594 18.75 C 91.7969 18.75 102.2217 20.8496 112.1338 25.0488 C 122.0459 29.248 130.8594 35.2051 138.5742 42.9199 C 140.5273 44.8731 142.4072 46.7774 144.2139 48.6328 C 146.0205 50.4883 147.9004 52.3926 149.8535 54.3457 C 151.709 52.3926 153.54 50.4883 155.3467 48.6328 C 157.1533 46.7774 159.0332 44.9219 160.9863 43.0664 C 168.6035 35.4492 177.3438 29.5654 187.207 25.415 C 197.0703 21.2646 207.4219 19.1895 218.2617 19.1895 C 229.5898 19.1895 240.2344 21.3623 250.1953 25.708 C 260.1563 30.0537 268.8232 35.9619 276.1963 43.4326 C 283.5693 50.9033 289.3799 59.6192 293.6279 69.5801 C 297.876 79.541 300 90.1856 300 101.5137 C 300 112.2559 297.9736 122.6807 293.9209 132.7881 C 289.8682 142.8955 284.0332 151.7578 276.416 159.375 L 159.375 277.5879 C 156.9336 280.0293 153.9551 281.25 150.4394 281.25 C 147.0215 281.25 144.0918 280.0293 141.6504 277.5879 L 23.877 158.6426 C 16.1621 150.8301 10.2539 141.8945 6.1523 131.8359 C 2.0508 121.7773 0 111.2793 0 100.3418 C 0 89.1113 2.0996 78.5645 6.2988 68.7012 C 10.498 58.8379 16.2354 50.1953 23.5107 42.7734 C 30.7861 35.3516 39.3311 29.4922 49.1455 25.1953 C 58.96 20.8984 69.5313 18.75 80.8594 18.75 z" />
+                    <Setter Property="Stroke" Value="White" />
+                    <Setter Property="StrokeThickness" Value="10" />
+                    <Setter Property="StrokeDashCap" Value="Round" />
+                    <Setter Property="StrokeDashArray" Value="29.9 59.9" />
+                </Style>
+            </Grid.Resources>
+            <Grid>
+                <Grid.Effect>
+                    <effects:GlowEffect Amount="5" />
+                </Grid.Effect>
+                <Grid>
+                    <!--<Grid.Effect>
+                        <BlurEffect Radius="30" RenderingBias="Quality" />
+                    </Grid.Effect>-->
+                    <Grid>
+                        <Grid.Effect>
+                            <BlurEffect Radius="70" RenderingBias="Quality" />
+                        </Grid.Effect>
+                        <Path x:Name="P1b" Stroke="#f24983" />
+                        <Path x:Name="P2b"
+                              d:StrokeDashOffset="45"
+                              Stroke="#37c1ff" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid>
+                <Path x:Name="P1" />
+                <Path x:Name="P2" d:StrokeDashOffset="45" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
