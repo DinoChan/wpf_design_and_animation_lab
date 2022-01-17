@@ -26,7 +26,7 @@
                                              Storyboard.TargetProperty="StrokeDashOffset"
                                              To="89.8"
                                              Duration="0:0:2" />
-                            <ParallelTimeline BeginTime="0:0:1">
+                            <ParallelTimeline BeginTime="-0:0:1">
                                 <DoubleAnimation RepeatBehavior="Forever"
                                                  Storyboard.TargetName="P2"
                                                  Storyboard.TargetProperty="StrokeDashOffset"
