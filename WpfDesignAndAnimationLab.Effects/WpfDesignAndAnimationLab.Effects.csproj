@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Shaders\ClipEffect.ps" />
     <None Remove="Shaders\GlowEffect.ps" />
     <None Remove="Shaders\HorizontalLightenEffect.ps" />
     <None Remove="Shaders\LightenEffect.ps" />
@@ -15,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Shaders\ClipEffect.ps" />
     <Resource Include="Shaders\GlowEffect.ps" />
     <Resource Include="Shaders\HorizontalLightenEffect.ps" />
     <Resource Include="Shaders\LightenEffect.ps">
