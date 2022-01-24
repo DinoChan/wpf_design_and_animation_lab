@@ -17,7 +17,7 @@
                 <TextBlock x:Name="Text"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="100"
+                           FontSize="150"
                            FontWeight="Bold"
                            Foreground="{StaticResource LightBackground}"
                            TextAlignment="Center">
