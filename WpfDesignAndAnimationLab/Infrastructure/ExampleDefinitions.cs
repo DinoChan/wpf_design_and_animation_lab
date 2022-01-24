@@ -41,7 +41,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
 
                                              new ExampleDefinition("InnerShadow",null,
-                new ExampleDefinitionItem("InnerShadow",typeof(InnerShadow)),
+                new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowDemo)),
                  new ExampleDefinitionItem("Variable Size",typeof(VariableSizeInnerShadowDemo)),
                     new ExampleDefinitionItem("Path Inner Shadow",typeof(PathInnerShadowDemo))
                  
@@ -85,7 +85,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                         ),
 
                             new ExampleDefinition("Effects",null,
-                new ExampleDefinitionItem("Lighten",typeof(LightenDemo))
+                new ExampleDefinitionItem("Lighten",typeof(LightenDemo)),
+                  new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowEffectDemo))
                         ),
 
                                new ExampleDefinition("Transitions",null,
