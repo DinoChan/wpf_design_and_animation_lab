@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -76,9 +71,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 
         private Geometry CreateText()
         {
-            System.Windows.FontStyle fontStyle = FontStyles.Normal;
-            FontWeight fontWeight = FontWeights.Medium;
-
             // Create the formatted text based on the properties set.
             FormattedText formattedText = new FormattedText(
                 Text,
@@ -88,7 +80,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
                     FontFamily,
                     FontStyle,
                     FontWeight,
-                   FontStretch),
+                    FontStretch),
                 FontSize,
                 System.Windows.Media.Brushes.Black,// This brush does not matter since we use the geometry of the text.
                 100);
