@@ -11,21 +11,22 @@
                                    Background="#666666"
                                    mc:Ignorable="d">
     <Grid>
-        <Border MaxHeight="600">
-        <Grid x:Name="Root" Background="Transparent">
-            <Grid.Effect>
-                <effects:LongShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
-                                          Height="{Binding ElementName=Root, Path=ActualHeight}"
-                                          ShadowLength="10000"
-                                          Color="#272727" />
-            </Grid.Effect>
-            <TextBlock HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontFamily="sans-serif"
-                       FontSize="300" Foreground="White"
-                       FontWeight="ExtraBold"
-                       Text="TEXT" />
-        </Grid>
+        <Border MaxHeight="550">
+            <Grid x:Name="Root" Background="Transparent">
+                <Grid.Effect>
+                    <effects:DeepShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
+                                              Height="{Binding ElementName=Root, Path=ActualHeight}"
+                                              ShadowLength="1000"
+                                              Color="#272727" />
+                </Grid.Effect>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="sans-serif"
+                           FontSize="300"
+                           FontWeight="ExtraBold"
+                           Foreground="White"
+                           Text="TEXT" />
+            </Grid>
         </Border>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

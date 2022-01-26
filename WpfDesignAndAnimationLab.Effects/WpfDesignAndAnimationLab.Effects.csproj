@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Shaders\ClipEffect.ps" />
+    <None Remove="Shaders\DeepShadowEffect.ps" />
     <None Remove="Shaders\FakeDropShadow.ps" />
     <None Remove="Shaders\GlowEffect.ps" />
     <None Remove="Shaders\HorizontalLightenEffect.ps" />
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <Resource Include="Shaders\ClipEffect.ps" />
+    <Resource Include="Shaders\DeepShadowEffect.ps" />
     <Resource Include="Shaders\FakeDropShadow.ps" />
     <Resource Include="Shaders\GlowEffect.ps" />
     <Resource Include="Shaders\HorizontalLightenEffect.ps" />

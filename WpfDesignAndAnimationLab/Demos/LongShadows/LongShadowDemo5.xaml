@@ -5,6 +5,7 @@
                                    xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
                                    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.LongShadows"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="950"
                                    d:DesignWidth="800"
@@ -12,39 +13,40 @@
     <wpfdesignandanimationlab:DemoPage.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Offset="1" Color="#FFEB8B17" />
-            <GradientStop Offset="0" Color="#FFED8D1E" />
+            <GradientStop Offset="0" Color="#f28e18" />
         </LinearGradientBrush>
     </wpfdesignandanimationlab:DemoPage.Background>
 
     <Grid Background="Transparent">
         <Grid.Resources>
-            <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#f1d4b0" />
-                <Setter Property="FontFamily" Value="STHupo" />
+
+            <Style TargetType="media:TextShape">
+                <Setter Property="Fill" Value="#f1d4b0" />
+                <Setter Property="Stroke" Value="#f1d4b0" />
+                <Setter Property="FontFamily" Value="Microsoft YaHei UI" />
+                <Setter Property="FontWeight" Value="ExtraBold" />
             </Style>
         </Grid.Resources>
         <Grid.Effect>
-            <effects:LongShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
+            <effects:DeepShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
                                       Height="{Binding ElementName=Root, Path=ActualHeight}"
                                       Opacity="1"
-                                      ShadowLength="55"
-                                      Color="#737373" />
+                                      ShadowLength="40"
+                                      Color="#070707" />
         </Grid.Effect>
-        <StackPanel>
-            <TextBlock VerticalAlignment="Center"
-                       FontFamily="STHupo"
-                       FontSize="168"
-                       FontWeight="ExtraBold"
-                       Foreground="#f7e681"
-                       TextAlignment="Center">
-                FAKE<LineBreak />
-                SHADOW</TextBlock>
+        <StackPanel VerticalAlignment="Center">
+
+            <media:TextShape x:Name="TextPath"
+                             HorizontalAlignment="Center"
+                             FontSize="168"
+                             StrokeThickness="2"
+                             Text="微软" />
+            <media:TextShape Margin="0,-45,0,0"
+                             HorizontalAlignment="Center"
+                             FontSize="168"
+                             StrokeThickness="2"
+                             Text="雅黑" />
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontFamily="Century Gothic"
-                   FontSize="72"
-                   FontWeight="Normal"
-                   Text="LONG SHADOW" />
+
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

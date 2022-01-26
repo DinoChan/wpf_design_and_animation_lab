@@ -31,8 +31,8 @@
         </Grid>
         <Grid x:Name="Foreground">
             <TextBlock VerticalAlignment="Center"
-                       FontFamily="STHupo"
-                       FontSize="168"
+                       FontFamily="Lucida Handwriting"
+                       FontSize="148"
                        FontWeight="ExtraBold"
                        Foreground="#f7e681"
                        TextAlignment="Center">
