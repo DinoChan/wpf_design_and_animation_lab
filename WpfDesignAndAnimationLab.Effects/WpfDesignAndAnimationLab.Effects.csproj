@@ -8,22 +8,22 @@
 
   <ItemGroup>
     <None Remove="Shaders\ClipEffect.ps" />
+    <None Remove="Shaders\FakeDropShadow.ps" />
     <None Remove="Shaders\GlowEffect.ps" />
     <None Remove="Shaders\HorizontalLightenEffect.ps" />
     <None Remove="Shaders\LightenEffect.ps" />
     <None Remove="Shaders\LongShadowEffect.ps" />
-    <None Remove="Shaders\MyShadowEffect.ps" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Shaders\ClipEffect.ps" />
+    <Resource Include="Shaders\FakeDropShadow.ps" />
     <Resource Include="Shaders\GlowEffect.ps" />
     <Resource Include="Shaders\HorizontalLightenEffect.ps" />
     <Resource Include="Shaders\LightenEffect.ps">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Shaders\LongShadowEffect.ps" />
-    <Resource Include="Shaders\MyShadowEffect.ps" />
   </ItemGroup>
 
 </Project>

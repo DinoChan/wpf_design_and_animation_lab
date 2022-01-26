@@ -1,0 +1,50 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.LongShadows.LongShadowDemo5"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.LongShadows"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="950"
+                                   d:DesignWidth="800"
+                                   mc:Ignorable="d">
+    <wpfdesignandanimationlab:DemoPage.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Offset="1" Color="#FFEB8B17" />
+            <GradientStop Offset="0" Color="#FFED8D1E" />
+        </LinearGradientBrush>
+    </wpfdesignandanimationlab:DemoPage.Background>
+
+    <Grid Background="Transparent">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#f1d4b0" />
+                <Setter Property="FontFamily" Value="STHupo" />
+            </Style>
+        </Grid.Resources>
+        <Grid.Effect>
+            <effects:LongShadowEffect Width="{Binding ElementName=Root, Path=ActualWidth}"
+                                      Height="{Binding ElementName=Root, Path=ActualHeight}"
+                                      Opacity="1"
+                                      ShadowLength="55"
+                                      Color="#737373" />
+        </Grid.Effect>
+        <StackPanel>
+            <TextBlock VerticalAlignment="Center"
+                       FontFamily="STHupo"
+                       FontSize="168"
+                       FontWeight="ExtraBold"
+                       Foreground="#f7e681"
+                       TextAlignment="Center">
+                FAKE<LineBreak />
+                SHADOW</TextBlock>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="Century Gothic"
+                   FontSize="72"
+                   FontWeight="Normal"
+                   Text="LONG SHADOW" />
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

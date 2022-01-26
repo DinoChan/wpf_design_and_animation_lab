@@ -86,7 +86,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
                             new ExampleDefinition("Effects",null,
                 new ExampleDefinitionItem("Lighten",typeof(LightenDemo)),
-                  new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowEffectDemo))
+                  new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowEffectDemo)),
+                  new ExampleDefinitionItem("FakeDropShadow",typeof(FakeDropShadowDemo))
                         ),
 
                                new ExampleDefinition("Transitions",null,
