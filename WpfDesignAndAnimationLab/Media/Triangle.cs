@@ -28,7 +28,7 @@ namespace WpfDesignAndAnimationLab.Media
             set { SetValue(DirectionProperty, value); }
         }
 
-        protected override sealed Geometry DefiningGeometry
+        protected sealed override Geometry DefiningGeometry
         {
             get => _definingGeometry;
         }

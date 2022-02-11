@@ -16,8 +16,7 @@ namespace WpfDesignAndAnimationLab
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var exampleDefinition = DemoItemsControl.SelectedItem as ExampleDefinition;
-            if (exampleDefinition == null)
+            if (DemoItemsControl.SelectedItem is not ExampleDefinition exampleDefinition)
                 return;
 
             var container = new DemoContainer(exampleDefinition);

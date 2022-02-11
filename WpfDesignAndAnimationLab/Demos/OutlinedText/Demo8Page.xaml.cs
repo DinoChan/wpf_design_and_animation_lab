@@ -11,7 +11,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
     /// </summary>
     public partial class Demo8Page
     {
-        private Dictionary<FrameworkElement, Point> _items;
+        private readonly Dictionary<FrameworkElement, Point> _items;
         private bool _hasPoints;
 
         public Demo8Page()

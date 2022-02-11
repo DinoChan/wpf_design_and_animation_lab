@@ -28,8 +28,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
         private void DemoItemsElement_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var item = DemoItemsElement.SelectedItem as ExampleDefinitionItem;
-            if (item == null)
+            if (DemoItemsElement.SelectedItem is not ExampleDefinitionItem item)
                 return;
 
             var demo = Activator.CreateInstance(item.Control);

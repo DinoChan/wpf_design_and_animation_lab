@@ -19,7 +19,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             //var l= GetLength(TextPath.RenderedGeometry);
         }
 
-        public double GetLength(Geometry geo)
+        public static double GetLength(Geometry geo)
         {
             var path = geo.GetFlattenedPathGeometry();
 

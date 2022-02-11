@@ -20,7 +20,7 @@ namespace WpfDesignAndAnimationLab.Media
         {
         }
 
-        protected override sealed Geometry DefiningGeometry
+        protected sealed override Geometry DefiningGeometry
         {
             get
             {

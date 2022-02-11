@@ -25,8 +25,7 @@ namespace WpfDesignAndAnimationLab.Media
 
         public System.Windows.Media.Color ToRgb()
         {
-            int r, g, b;
-            HlsToRgb(h, l, s, out r, out g, out b);
+            HlsToRgb(h, l, s, out var r, out var g, out var b);
             return System.Windows.Media.Color.FromArgb((byte)(a * 255.0), (byte)r, (byte)g, (byte)b);
         }
 
