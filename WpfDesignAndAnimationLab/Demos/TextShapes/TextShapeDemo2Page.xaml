@@ -63,7 +63,6 @@
                 </FrameworkElement.Effect>
             </media:TextShape>
 
-
             <media:TextShape x:Name="TextPathWhite"
                              HorizontalAlignment="Center"
                              Fill="Transparent"
@@ -82,8 +81,6 @@
                 </FrameworkElement.Effect>
             </media:TextShape>
 
-
-
             <media:TextShape x:Name="TextPathBlue"
                              HorizontalAlignment="Center"
                              Fill="Transparent"
@@ -101,9 +98,6 @@
                                       Color="#1de4ea" />
                 </FrameworkElement.Effect>
             </media:TextShape>
-
-
         </Grid>
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

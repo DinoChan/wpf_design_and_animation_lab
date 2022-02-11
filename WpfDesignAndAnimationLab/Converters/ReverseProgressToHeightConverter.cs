@@ -10,7 +10,7 @@ namespace WpfDesignAndAnimationLab.Converters
     {
         /// <summary>
         /// 获取或设置TargetContentControl的值
-        /// </summary>  
+        /// </summary>
         public ContentControl TargetContentControl
         {
             get { return (ContentControl)GetValue(TargetContentControlProperty); }
@@ -22,8 +22,6 @@ namespace WpfDesignAndAnimationLab.Converters
         /// </summary>
         public static readonly DependencyProperty TargetContentControlProperty =
             DependencyProperty.Register("TargetContentControl", typeof(ContentControl), typeof(ReverseProgressToHeightConverter), new PropertyMetadata(null));
-
-
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -46,5 +44,4 @@ namespace WpfDesignAndAnimationLab.Converters
             throw new NotImplementedException();
         }
     }
-
 }

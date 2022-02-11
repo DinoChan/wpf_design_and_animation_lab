@@ -73,12 +73,7 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
-
-
-
             </Border>
-
-
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

@@ -59,7 +59,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             set => SetValue(TextProperty, value);
         }
 
-
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
@@ -67,7 +66,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             // Draw the outline based on the properties that are set.
             drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), geometry);
         }
-
 
         private Geometry CreateText()
         {

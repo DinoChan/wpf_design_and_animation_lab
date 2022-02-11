@@ -58,7 +58,6 @@
                     <GradientStop Offset="1" Color="#2000" />
                 </RadialGradientBrush>
             </TextBlock.OpacityMask>
-
         </TextBlock>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

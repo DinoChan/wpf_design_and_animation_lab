@@ -141,6 +141,5 @@
             <Button Background="#40394d" Content="WPF Button" />
             <Button Background="#523822" Content="WPF Button" />
         </UniformGrid>
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

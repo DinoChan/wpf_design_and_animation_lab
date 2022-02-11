@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -12,16 +8,14 @@ namespace WpfDesignAndAnimationLab.Behaviors
 {
     public class PathProgressBehavior : Behavior<UIElement>
     {
-
         protected override void OnAttached()
         {
             base.OnAttached();
-
         }
 
         /// <summary>
         /// 获取或设置Progress的值
-        /// </summary>  
+        /// </summary>
         public double Progress
         {
             get { return (double)GetValue(ProgressProperty); }
@@ -42,7 +36,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             if (oldValue != newValue)
                 target.OnProgressChanged(oldValue, newValue);
         }
-
 
         protected virtual void OnProgressChanged(double oldValue, double newValue)
         {
@@ -72,7 +65,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             return length;
         }
 
-
         private void UpdateStrokeDashArray()
         {
             if (AssociatedObject is not Shape target)
@@ -84,7 +76,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
             if (target.StrokeThickness == 0)
                 return;
-
 
             var totalLength = GetTotalLength(target);
             var firstSection = progress * totalLength / 100 / target.StrokeThickness;

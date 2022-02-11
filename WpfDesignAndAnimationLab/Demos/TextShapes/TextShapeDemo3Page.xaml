@@ -53,8 +53,6 @@
                     <DropShadowEffect BlurRadius="3" ShadowDepth="-1" />
                 </FrameworkElement.Effect>
             </local1:TextShape>
-
         </Grid>
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

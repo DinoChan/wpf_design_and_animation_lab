@@ -25,6 +25,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
         /// </summary>
         public static readonly DependencyProperty StartAngleProperty =
             DependencyProperty.Register(nameof(StartAngle), typeof(double), typeof(EllipseProgressBehavior), new PropertyMetadata(default(double), OnStartAngleChanged));
+
         private double _normalizedMinAngle;
         private double _normalizedMaxAngle;
 
@@ -45,6 +46,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             get { return (double)GetValue(ProgressProperty); }
             set { SetValue(ProgressProperty, value); }
         }
+
         /// <summary>
         /// 获取或设置StartAngle的值
         /// </summary>
@@ -116,6 +118,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             if (oldValue != newValue)
                 target.OnProgressChanged(oldValue, newValue);
         }
+
         private static void OnStartAngleChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var oldValue = (double)args.OldValue;
@@ -126,6 +129,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             var target = obj as EllipseProgressBehavior;
             target?.OnStartAngleChanged(oldValue, newValue);
         }
+
         private void UpdateStrokeDashArray()
         {
             if (AssociatedObject == null || AssociatedObject.StrokeThickness == 0)
@@ -141,11 +145,9 @@ namespace WpfDesignAndAnimationLab.Behaviors
             totalLength /= AssociatedObject.StrokeThickness;
             var progressLenth = Progress * totalLength / 100;
 
-            var result = new DoubleCollection { progressLenth,double.MaxValue };
+            var result = new DoubleCollection { progressLenth, double.MaxValue };
 
             AssociatedObject.StrokeDashArray = result;
-
-
         }
 
         private void UpdateAngle()
@@ -169,8 +171,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             result = result < 0 ? result + divider : result;
             return result;
         }
-
-
 
         private void UpdateNormalizedAngles()
         {

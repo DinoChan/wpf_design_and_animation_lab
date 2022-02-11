@@ -120,6 +120,5 @@
                         Style="{DynamicResource ButtonStyle1}" />
             </Grid>
         </Viewbox>
-
     </Grid>
 </UserControl>

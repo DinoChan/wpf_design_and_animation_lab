@@ -5,7 +5,7 @@
    Copyright (C) 2007-2013 Xceed Software Inc.
 
    This program is provided to you under the terms of the Microsoft Public
-   License (Ms-PL) as published at http://wpftoolkit.codeplex.com/license 
+   License (Ms-PL) as published at http://wpftoolkit.codeplex.com/license
 
    For more features, controls, and fast professional support,
    pick up the Plus Edition at http://xceed.com/wpf_toolkit
@@ -41,7 +41,7 @@ namespace WpfDesignAndAnimationLab.Controls
         /// </summary>
         private readonly DispatcherTimer _displayAfterTimer = new();
 
-        #endregion //Private Members
+        #endregion Private Members
 
         #region Constructors
 
@@ -55,7 +55,7 @@ namespace WpfDesignAndAnimationLab.Controls
             _displayAfterTimer.Tick += DisplayAfterTimerElapsed;
         }
 
-        #endregion //Constructors
+        #endregion Constructors
 
         #region Base Class Overrides
 
@@ -68,8 +68,7 @@ namespace WpfDesignAndAnimationLab.Controls
             ChangeVisualState(false);
         }
 
-
-        #endregion //Base Class Overrides
+        #endregion Base Class Overrides
 
         #region Properties
 
@@ -82,7 +81,7 @@ namespace WpfDesignAndAnimationLab.Controls
             set;
         }
 
-        #endregion //Properties
+        #endregion Properties
 
         #region Dependency Properties
 
@@ -161,7 +160,7 @@ namespace WpfDesignAndAnimationLab.Controls
             ChangeVisualState(true);
         }
 
-        #endregion //IsBusy
+        #endregion IsBusy
 
         #region Busy Content
 
@@ -189,7 +188,7 @@ namespace WpfDesignAndAnimationLab.Controls
             }
         }
 
-        #endregion //Busy Content
+        #endregion Busy Content
 
         #region Busy Content Template
 
@@ -217,7 +216,7 @@ namespace WpfDesignAndAnimationLab.Controls
             }
         }
 
-        #endregion //Busy Content Template
+        #endregion Busy Content Template
 
         #region Display After
 
@@ -245,10 +244,9 @@ namespace WpfDesignAndAnimationLab.Controls
             }
         }
 
+        #endregion Display After
 
-        #endregion //Display After
-
-        #region FocusAfterBusy  
+        #region FocusAfterBusy
 
         /// <summary>
         /// Identifies the FocusAfterBusy dependency property.
@@ -274,7 +272,7 @@ namespace WpfDesignAndAnimationLab.Controls
             }
         }
 
-        #endregion //FocusAfterBusy
+        #endregion FocusAfterBusy
 
         #region Overlay Style
 
@@ -301,7 +299,8 @@ namespace WpfDesignAndAnimationLab.Controls
                 SetValue(OverlayStyleProperty, value);
             }
         }
-        #endregion //Overlay Style
+
+        #endregion Overlay Style
 
         #region ProgressBar Style
 
@@ -329,9 +328,9 @@ namespace WpfDesignAndAnimationLab.Controls
             }
         }
 
-        #endregion //ProgressBar Style
+        #endregion ProgressBar Style
 
-        #endregion //Dependency Properties
+        #endregion Dependency Properties
 
         #region Methods
 
@@ -357,6 +356,6 @@ namespace WpfDesignAndAnimationLab.Controls
             VisualStateManager.GoToState(this, IsContentVisible ? VisualStates.StateVisible : VisualStates.StateHidden, useTransitions);
         }
 
-        #endregion //Methods
+        #endregion Methods
     }
 }

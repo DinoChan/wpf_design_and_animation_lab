@@ -56,8 +56,8 @@
             <Grid>
                 <Grid.OpacityMask>
                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Offset=".5" Color="#0000" x:Name="Stop0"/>
-                        <GradientStop Offset=".5" Color="#F000" x:Name="Stop1"/>
+                        <GradientStop x:Name="Stop0" Offset=".5" Color="#0000" />
+                        <GradientStop x:Name="Stop1" Offset=".5" Color="#F000" />
                         <GradientStop Offset="1" Color="#F000" />
                     </LinearGradientBrush>
                 </Grid.OpacityMask>
@@ -73,7 +73,6 @@
                            Foreground="White"
                            Text="{Binding Value, Source={StaticResource Wrapper}, StringFormat=N0}" />
             </Grid>
-
         </Grid>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

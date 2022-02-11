@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
-
 
 namespace WpfDesignAndAnimationLab.Demos.Shapes
 {
@@ -20,7 +16,6 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
             Children = new ObservableCollection<PointCollection>();
         }
 
-
         /// <summary>
         ///     获取或设置Points的值
         /// </summary>
@@ -29,7 +24,6 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
             get { return (PointCollection)GetValue(PointsProperty); }
             set { SetValue(PointsProperty, value); }
         }
-
 
         /// <summary>
         ///     获取或设置Progress的值
@@ -49,12 +43,10 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
             set { SetValue(ChildrenProperty, value); }
         }
 
-
         protected virtual void OnProgressChanged(double oldValue, double newValue)
         {
             UpdatePoints();
         }
-
 
         protected virtual void OnChildrenChanged(Collection<PointCollection> oldValue, Collection<PointCollection> newValue)
         {
@@ -163,6 +155,6 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
         public static readonly DependencyProperty PointsProperty =
             DependencyProperty.Register("Points", typeof(PointCollection), typeof(ProgressToPointCollectionBridge), new PropertyMetadata(null));
 
-        #endregion
+        #endregion DependencyProperties
     }
 }

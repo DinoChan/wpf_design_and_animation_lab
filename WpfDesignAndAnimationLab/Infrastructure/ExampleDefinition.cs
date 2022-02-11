@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -17,7 +14,6 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
         public ExampleDefinition(string name, Uri sourceCodeUri, Type control) : this(name, sourceCodeUri, new ExampleDefinitionItem(name, control))
         {
-
         }
 
         public string Name { get; private set; }
@@ -30,7 +26,6 @@ namespace WpfDesignAndAnimationLab.Infrastructure
         }
 
         public IEnumerable<ExampleDefinitionItem> Items { get; }
-
     }
 
     public class ExampleDefinitionItem
@@ -44,5 +39,4 @@ namespace WpfDesignAndAnimationLab.Infrastructure
         public string Name { get; private set; }
         public Type Control { get; private set; }
     }
-
 }

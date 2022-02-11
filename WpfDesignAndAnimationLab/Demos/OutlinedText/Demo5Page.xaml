@@ -61,7 +61,6 @@
                                           Color="#c43bb7" />
                     </FrameworkElement.Effect>
                 </local:OutlinedTextControl>
-
             </Grid>
             <Grid Margin="50,0,0,0">
                 <Rectangle Margin="-100" Opacity="0.3">
@@ -90,9 +89,7 @@
                                           Color="#2de4ea" />
                     </FrameworkElement.Effect>
                 </local:OutlinedTextControl>
-
             </Grid>
         </StackPanel>
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

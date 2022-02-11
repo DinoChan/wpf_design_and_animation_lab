@@ -11,12 +11,10 @@ sampler2D  Texture1Sampler : register(S0);
 /// <defaultValue>0</defaultValue>
 float Angle : register(C0);
 
-
 /// <minValue>0</minValue>
 /// <maxValue>1</maxValue>
 /// <defaultValue>0.0</defaultValue>
 float Depth : register(C1);
-
 
 /// <summary>Opacity.</summary>
 /// <minValue>0</minValue>

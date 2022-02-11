@@ -11,7 +11,9 @@
     <FrameworkElement.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard>
-                <Storyboard FillBehavior="HoldEnd" RepeatBehavior="Forever" AutoReverse="True">
+                <Storyboard AutoReverse="True"
+                            FillBehavior="HoldEnd"
+                            RepeatBehavior="Forever">
                     <DoubleAnimation FillBehavior="HoldEnd"
                                      Storyboard.TargetName="ProgressToPointCollectionBridge"
                                      Storyboard.TargetProperty="Progress"
@@ -49,6 +51,5 @@
                  Stretch="Fill"
                  Stroke="DarkOliveGreen"
                  StrokeThickness="2" />
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

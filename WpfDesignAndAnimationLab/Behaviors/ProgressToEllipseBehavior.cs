@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -14,7 +10,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
     {
         /// <summary>
         /// 获取或设置Progress的值
-        /// </summary>  
+        /// </summary>
         public double Progress
         {
             get { return (double)GetValue(ProgressProperty); }
@@ -36,7 +32,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
                 target.OnProgressChanged(oldValue, newValue);
         }
 
-
         protected virtual void OnProgressChanged(double oldValue, double newValue)
         {
             UpdateStrokeDashArray();
@@ -56,7 +51,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             return (AssociatedObject.ActualHeight - AssociatedObject.StrokeThickness) * Math.PI;
         }
 
-
         private void UpdateStrokeDashArray()
         {
             if (AssociatedObject == null || AssociatedObject.StrokeThickness == 0)
@@ -72,7 +66,5 @@ namespace WpfDesignAndAnimationLab.Behaviors
             var result = new DoubleCollection { 0, secondSection, thirdSection, double.MaxValue };
             AssociatedObject.StrokeDashArray = result;
         }
-
-
     }
 }

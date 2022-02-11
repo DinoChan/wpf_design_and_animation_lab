@@ -86,7 +86,6 @@
                         VerticalAlignment="Center"
                         Maximum="1" />
             </Grid>
-
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

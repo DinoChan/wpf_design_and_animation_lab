@@ -42,7 +42,6 @@
             <interactivity:Interaction.Behaviors>
                 <behaviors:PathProgressBehavior x:Name="PathProgressBehavior" Progress="{Binding Source={StaticResource Wrapper}, Path=Value}" />
             </interactivity:Interaction.Behaviors>
-
         </media:Triangle>
         <TextBlock Margin="0,45,0,0"
                    HorizontalAlignment="Center"

@@ -76,9 +76,7 @@ namespace WpfDesignAndAnimationLab.Demos.FancyTexts
         /// <returns></returns>
         public static System.Windows.Media.Imaging.BitmapImage BitmapImageFromText(string strText, Font fnt, Color clrFore, Color clrBack, int blurAmount = 5)
         {
-
             return BitmapToBitmapImage(ImageFromText(strText, fnt, clrFore, clrBack, blurAmount));
         }
-
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WpfDesignAndAnimationLab.Media
 {
@@ -36,7 +32,7 @@ namespace WpfDesignAndAnimationLab.Media
 
         public HslColor Lighten(double amount)
         {
-            return new HslColor(h, s, Clamp(l + (1 - l) * amount , 0, 1), a);
+            return new HslColor(h, s, Clamp(l + (1 - l) * amount, 0, 1), a);
         }
 
         private static double Clamp(double value, double min, double max)
@@ -50,7 +46,7 @@ namespace WpfDesignAndAnimationLab.Media
         }
 
         // Convert an RGB value into an HLS value.
-        static void RgbToHls(int r, int g, int b,
+        private static void RgbToHls(int r, int g, int b,
             out double h, out double l, out double s)
         {
             // Convert RGB to a 0.0 to 1.0 range.
@@ -93,7 +89,7 @@ namespace WpfDesignAndAnimationLab.Media
         }
 
         // Convert an HLS value into an RGB value.
-        static void HlsToRgb(double h, double l, double s,
+        private static void HlsToRgb(double h, double l, double s,
             out int r, out int g, out int b)
         {
             double p2;

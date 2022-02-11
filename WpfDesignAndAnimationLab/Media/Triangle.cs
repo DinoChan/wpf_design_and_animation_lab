@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -21,8 +16,8 @@ namespace WpfDesignAndAnimationLab.Media
         /// </summary>
         public static readonly DependencyProperty DirectionProperty =
             DependencyProperty.Register("Direction", typeof(Direction), typeof(Triangle), new FrameworkPropertyMetadata(Direction.Up, FrameworkPropertyMetadataOptions.AffectsMeasure));
-        private  Geometry _definingGeometry;
 
+        private Geometry _definingGeometry;
 
         /// <summary>
         ///     获取或设置Direction的值
@@ -33,9 +28,7 @@ namespace WpfDesignAndAnimationLab.Media
             set { SetValue(DirectionProperty, value); }
         }
 
-     
-
-        protected sealed override Geometry DefiningGeometry
+        protected override sealed Geometry DefiningGeometry
         {
             get => _definingGeometry;
         }
@@ -60,6 +53,7 @@ namespace WpfDesignAndAnimationLab.Media
                     segment = new LineSegment { Point = new Point(0, size.Height / 2) };
                     figure.Segments.Add(segment);
                     break;
+
                 case Direction.Up:
                     figure.StartPoint = new Point(size.Width / 2, 0);
                     //segment = new LineSegment { Point = new Point(ActualWidth / 2, 0) };
@@ -69,13 +63,15 @@ namespace WpfDesignAndAnimationLab.Media
                     segment = new LineSegment { Point = new Point(0, size.Height) };
                     figure.Segments.Add(segment);
                     break;
+
                 case Direction.Right:
                     figure.StartPoint = new Point(0, 0);
-                    segment = new LineSegment { Point = new Point(size.Width, size.Height/ 2) };
+                    segment = new LineSegment { Point = new Point(size.Width, size.Height / 2) };
                     figure.Segments.Add(segment);
                     segment = new LineSegment { Point = new Point(0, size.Height) };
                     figure.Segments.Add(segment);
                     break;
+
                 case Direction.Down:
                     figure.StartPoint = new Point(0, 0);
                     segment = new LineSegment { Point = new Point(size.Width, 0) };

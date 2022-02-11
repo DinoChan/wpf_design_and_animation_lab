@@ -92,8 +92,6 @@
                                             <DoubleAnimation Storyboard.TargetName="outlinedTextControl"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
                                                              To="1" />
-
-
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed" />
@@ -114,6 +112,5 @@
                         Style="{DynamicResource ButtonStyle1}" />
             </Grid>
         </Viewbox>
-
     </Grid>
 </UserControl>

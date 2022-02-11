@@ -14,7 +14,6 @@
         <Grid.Resources>
             <common:RandomColorCreator x:Key="RandomColorCreator" />
             <common:RandomDoubleCreator x:Key="RandomDoubleCreator" Max="20" />
-
         </Grid.Resources>
         <StackPanel VerticalAlignment="Center">
             <ContentControl Content="&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;" FontFamily="Segoe MDL2 Assets">
@@ -85,14 +84,12 @@
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style>
                 </ContentControl.Style>
             </ContentControl>
-
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
