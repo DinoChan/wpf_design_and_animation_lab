@@ -12,10 +12,10 @@ namespace WpfDesignAndAnimationLab.Common
     {
         public RandomColorCreator()
         {
-            long tick = DateTime.Now.Ticks;
+            var tick = DateTime.Now.Ticks;
             _random =new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
         }
-        private Random _random ;
+        private readonly Random _random ;
 
         public override Color Next => Color.FromRgb((byte)_random.Next(255), (byte)_random.Next(255), (byte)_random.Next(255));
     }

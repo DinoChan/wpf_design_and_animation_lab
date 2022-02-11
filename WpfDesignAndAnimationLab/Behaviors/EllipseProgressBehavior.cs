@@ -111,8 +111,8 @@ namespace WpfDesignAndAnimationLab.Behaviors
         private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var target = obj as EllipseProgressBehavior;
-            double oldValue = (double)args.OldValue;
-            double newValue = (double)args.NewValue;
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
             if (oldValue != newValue)
                 target.OnProgressChanged(oldValue, newValue);
         }
@@ -138,7 +138,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             if (totalLength == 0)
                 return;
 
-            totalLength = totalLength / AssociatedObject.StrokeThickness;
+            totalLength /= AssociatedObject.StrokeThickness;
             var progressLenth = Progress * totalLength / 100;
 
             var result = new DoubleCollection { progressLenth,double.MaxValue };
@@ -163,7 +163,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             }
         }
 
-        private double Mod(double number, double divider)
+        private static double Mod(double number, double divider)
         {
             var result = number % divider;
             result = result < 0 ? result + divider : result;
@@ -178,7 +178,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
             if (result >= 180)
             {
-                result = result - 360;
+                result -= 360;
             }
 
             _normalizedMinAngle = result;
@@ -187,12 +187,12 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
             if (result < 180)
             {
-                result = result + 360;
+                result += 360;
             }
 
             if (result > _normalizedMinAngle + 360)
             {
-                result = result - 360;
+                result -= 360;
             }
 
             _normalizedMaxAngle = result;

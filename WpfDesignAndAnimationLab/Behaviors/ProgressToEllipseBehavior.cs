@@ -30,8 +30,8 @@ namespace WpfDesignAndAnimationLab.Behaviors
         private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var target = obj as ProgressToEllipseBehavior;
-            double oldValue = (double)args.OldValue;
-            double newValue = (double)args.NewValue;
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
             if (oldValue != newValue)
                 target.OnProgressChanged(oldValue, newValue);
         }
@@ -66,7 +66,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             //    return;
 
             var totalLength = GetTotalLength();
-            totalLength = totalLength / AssociatedObject.StrokeThickness;
+            totalLength /= AssociatedObject.StrokeThickness;
             var thirdSection = Progress * totalLength / 100;
             var secondSection = (totalLength - thirdSection) / 2;
             var result = new DoubleCollection { 0, secondSection, thirdSection, double.MaxValue };

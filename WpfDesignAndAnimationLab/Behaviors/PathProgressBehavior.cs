@@ -36,9 +36,9 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
         private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            PathProgressBehavior target = obj as PathProgressBehavior;
-            double oldValue = (double)args.OldValue;
-            double newValue = (double)args.NewValue;
+            var target = obj as PathProgressBehavior;
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
             if (oldValue != newValue)
                 target.OnProgressChanged(oldValue, newValue);
         }
@@ -51,17 +51,17 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
         protected virtual double GetTotalLength(Shape shape)
         {
-            PathGeometry path = shape.RenderedGeometry.GetFlattenedPathGeometry();
+            var path = shape.RenderedGeometry.GetFlattenedPathGeometry();
 
-            double length = 0.0;
+            var length = 0.0;
 
-            foreach (PathFigure pf in path.Figures)
+            foreach (var pf in path.Figures)
             {
-                Point start = pf.StartPoint;
+                var start = pf.StartPoint;
 
                 foreach (PolyLineSegment seg in pf.Segments)
                 {
-                    foreach (Point point in seg.Points)
+                    foreach (var point in seg.Points)
                     {
                         length += (start - point).Length;
                         start = point;
@@ -75,11 +75,10 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
         private void UpdateStrokeDashArray()
         {
-            var target = AssociatedObject as Shape;
-            if (target == null)
+            if (AssociatedObject is not Shape target)
                 return;
 
-            double progress = Progress;
+            var progress = Progress;
             //if (target.ActualHeight == 0 || target.ActualWidth == 0)
             //    return;
 

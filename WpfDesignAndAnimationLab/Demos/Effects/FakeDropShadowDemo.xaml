@@ -25,11 +25,11 @@
                     <BlurEffect Radius="38" />
                 </Grid.Effect>
                 <Grid.Background>
-                    <VisualBrush Stretch="None" Visual="{Binding ElementName=Foreground}" />
+                    <VisualBrush Stretch="None" Visual="{Binding ElementName=ForegroundElement}" />
                 </Grid.Background>
             </Grid>
         </Grid>
-        <Grid x:Name="Foreground">
+        <Grid x:Name="ForegroundElement">
             <TextBlock VerticalAlignment="Center"
                        FontFamily="Lucida Handwriting"
                        FontSize="148"

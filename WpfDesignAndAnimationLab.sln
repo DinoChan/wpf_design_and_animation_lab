@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDesignAndAnimationLab", "WpfDesignAndAnimationLab\WpfDesignAndAnimationLab.csproj", "{1AB1734B-B510-4195-A30F-8925256F9BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDesignAndAnimationLab.Effects", "WpfDesignAndAnimationLab.Effects\WpfDesignAndAnimationLab.Effects.csproj", "{BAECDCF7-8906-4224-9537-35A381005AF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDesignAndAnimationLab.Effects", "WpfDesignAndAnimationLab.Effects\WpfDesignAndAnimationLab.Effects.csproj", "{BAECDCF7-8906-4224-9537-35A381005AF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

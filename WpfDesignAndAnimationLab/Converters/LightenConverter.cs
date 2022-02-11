@@ -14,8 +14,7 @@ namespace WpfDesignAndAnimationLab.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var brush = value as SolidColorBrush;
-            if (brush == null)
+            if (value is not SolidColorBrush brush)
                 return value;
 
             var amount =System.Convert.ToDouble(parameter);

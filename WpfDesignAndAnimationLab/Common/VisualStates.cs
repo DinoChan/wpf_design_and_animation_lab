@@ -383,7 +383,7 @@ namespace WpfDesignAndAnimationLab.Common
             Debug.Assert(stateNames != null, "stateNames should not be null!");
             Debug.Assert(stateNames.Length > 0, "stateNames should not be empty!");
 
-            foreach (string name in stateNames)
+            foreach (var name in stateNames)
             {
                 if (VisualStateManager.GoToState(control, name, useTransitions))
                 {
@@ -418,7 +418,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// <returns>Returns null or the VisualStateGroup object.</returns>
         public static VisualStateGroup TryGetVisualStateGroup(DependencyObject dependencyObject, string groupName)
         {
-            FrameworkElement root = GetImplementationRoot(dependencyObject);
+            var root = GetImplementationRoot(dependencyObject);
             if (root == null)
             {
                 return null;

@@ -13,7 +13,7 @@
     <Grid>
 
         <Grid>
-            <Grid x:Name="Background">
+            <Grid x:Name="BackgroundElement">
                 <TextBlock x:Name="Text"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
@@ -27,13 +27,15 @@
             </Grid>
             <Grid ClipToBounds="True">
                 <Grid.Effect>
-                    <DropShadowEffect BlurRadius="8" ShadowDepth="5" Opacity="0.7" />
+                    <DropShadowEffect BlurRadius="8"
+                                      Opacity="0.7"
+                                      ShadowDepth="5" />
                 </Grid.Effect>
                 <Grid Background="{StaticResource LightBackground}">
                     <Grid.Effect>
                         <effects:ClipEffect>
                             <effects:ClipEffect.Blend>
-                                <VisualBrush Stretch="None" Visual="{Binding ElementName=Background}" />
+                                <VisualBrush Stretch="None" Visual="{Binding ElementName=BackgroundElement}" />
                             </effects:ClipEffect.Blend>
                         </effects:ClipEffect>
                     </Grid.Effect>

@@ -34,8 +34,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
                 return;
 
             AssociatedObject.RenderTransformOrigin = new Point(0.5, 0.5);
-            var rotateTransform = AssociatedObject.RenderTransform as RotateTransform;
-            if (rotateTransform == null)
+            if (AssociatedObject.RenderTransform is not RotateTransform rotateTransform)
             {
                 rotateTransform = new RotateTransform();
                 AssociatedObject.RenderTransform = rotateTransform;

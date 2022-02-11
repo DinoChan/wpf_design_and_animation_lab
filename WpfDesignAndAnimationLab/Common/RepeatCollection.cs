@@ -15,12 +15,12 @@ namespace WpfDesignAndAnimationLab.Common
         {
             get
             {
-                if (this.Count == 0)
+                if (Count == 0)
                     return null;
 
                 var result = this[_offset];
                 _offset++;
-                if (_offset > this.Count - 1)
+                if (_offset > Count - 1)
                     _offset = 0;
 
                 return result;

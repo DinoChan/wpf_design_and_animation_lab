@@ -39,7 +39,7 @@ namespace WpfDesignAndAnimationLab.Controls
         /// <summary>
         /// Timer used to delay the initial display and avoid flickering.
         /// </summary>
-        private DispatcherTimer _displayAfterTimer = new DispatcherTimer();
+        private readonly DispatcherTimer _displayAfterTimer = new();
 
         #endregion //Private Members
 
@@ -148,11 +148,11 @@ namespace WpfDesignAndAnimationLab.Controls
                 _displayAfterTimer.Stop();
                 IsContentVisible = false;
 
-                if (this.FocusAfterBusy != null)
+                if (FocusAfterBusy != null)
                 {
-                    this.FocusAfterBusy.Dispatcher.BeginInvoke(DispatcherPriority.Input, new Action(() =>
+                    FocusAfterBusy.Dispatcher.BeginInvoke(DispatcherPriority.Input, new Action(() =>
                     {
-                        this.FocusAfterBusy.Focus();
+                        FocusAfterBusy.Focus();
                     }
                     ));
                 }

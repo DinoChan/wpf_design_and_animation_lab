@@ -26,7 +26,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
 
         public IEnumerable<ExampleDefinitionItem> Items { get; }

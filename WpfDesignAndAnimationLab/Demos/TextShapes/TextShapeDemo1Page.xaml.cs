@@ -28,22 +28,22 @@ namespace WpfDesignAndAnimationLab.Demos.TextShapes
 
         private void Demo1Page_Loaded(object sender, RoutedEventArgs e)
         {
-           var l= GetLength(TextPath.RenderedGeometry);
+            GetLength(TextPath.RenderedGeometry);
         }
 
-        public  double GetLength( Geometry geo)
+        public static double GetLength( Geometry geo)
         {
-            PathGeometry path = geo.GetFlattenedPathGeometry();
+            var path = geo.GetFlattenedPathGeometry();
 
-            double length = 0.0;
+            var length = 0.0;
 
-            foreach (PathFigure pf in path.Figures)
+            foreach (var pf in path.Figures)
             {
-                Point start = pf.StartPoint;
+                var start = pf.StartPoint;
 
                 foreach (PolyLineSegment seg in pf.Segments)
                 {
-                    foreach (Point point in seg.Points)
+                    foreach (var point in seg.Points)
                     {
                         length += (start - point).Length;
                         start = point;

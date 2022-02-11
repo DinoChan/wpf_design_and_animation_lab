@@ -58,12 +58,10 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
 
         protected virtual void OnChildrenChanged(Collection<PointCollection> oldValue, Collection<PointCollection> newValue)
         {
-            var oldCollection = oldValue as INotifyCollectionChanged;
-            if (oldCollection != null)
+            if (oldValue is INotifyCollectionChanged oldCollection)
                 oldCollection.CollectionChanged -= OnChildrenCollectionChanged;
 
-            var newCollection = newValue as INotifyCollectionChanged;
-            if (newCollection != null)
+            if (newValue is INotifyCollectionChanged newCollection)
                 newCollection.CollectionChanged += OnChildrenCollectionChanged;
 
             UpdatePoints();
@@ -112,7 +110,7 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
             }
         }
 
-        private PointCollection GetCurrentPoints(PointCollection fromPoints, PointCollection toPoints, double percentage)
+        private static PointCollection GetCurrentPoints(PointCollection fromPoints, PointCollection toPoints, double percentage)
         {
             var result = new PointCollection();
             for (var i = 0;

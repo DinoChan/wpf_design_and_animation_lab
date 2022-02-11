@@ -17,7 +17,7 @@
                     FillBehavior="Stop"
                     RepeatBehavior="Forever"
                     Duration="0:0:6">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Effect" Storyboard.TargetProperty="Progress">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Progress">
                 <LinearDoubleKeyFrame KeyTime="00:00:1" Value="0"  />
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
@@ -40,17 +40,17 @@
                     FillBehavior="Stop"
                     RepeatBehavior="Forever"
                     Duration="0:0:6">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Effect" Storyboard.TargetProperty="Center">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Center">
                 <LinearDoubleKeyFrame KeyTime="00:00:1" Value="0"  />
                 <LinearDoubleKeyFrame KeyTime="00:00:2" Value="1" />
                 <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0"  />
                 <LinearDoubleKeyFrame KeyTime="00:00:4" Value="1"  />
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Effect" Storyboard.TargetProperty="Left">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Left">
                 <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value=".6"/>
                 <DiscreteDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Effect" Storyboard.TargetProperty="Right">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Right">
                 <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value=".8"/>
             </DoubleAnimationUsingKeyFrames>
             <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetName="L2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
@@ -91,7 +91,7 @@
         </Grid>-->
         <Grid Background="{Binding Foreground, ElementName=Row}">
             <Grid.Effect>
-                <effects:HorizontalLightenEffect x:Name="Effect" Center="1" Left="0" Right=".4"/>
+                <effects:HorizontalLightenEffect x:Name="HorizontalLightenEffect" Center="1" Left="0" Right=".4"/>
             </Grid.Effect>
         </Grid>
     </Grid>

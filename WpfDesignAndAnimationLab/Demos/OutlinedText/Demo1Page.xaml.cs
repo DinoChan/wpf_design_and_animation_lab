@@ -33,17 +33,17 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 
         public  double GetLength( Geometry geo)
         {
-            PathGeometry path = geo.GetFlattenedPathGeometry();
+            var path = geo.GetFlattenedPathGeometry();
 
-            double length = 0.0;
+            var length = 0.0;
 
-            foreach (PathFigure pf in path.Figures)
+            foreach (var pf in path.Figures)
             {
-                Point start = pf.StartPoint;
+                var start = pf.StartPoint;
 
                 foreach (PolyLineSegment seg in pf.Segments)
                 {
-                    foreach (Point point in seg.Points)
+                    foreach (var point in seg.Points)
                     {
                         length += (start - point).Length;
                         start = point;

@@ -35,8 +35,7 @@ namespace WpfDesignAndAnimationLab.Converters
             if (TargetContentControl == null)
                 return double.NaN;
 
-            var element = TargetContentControl.Content as FrameworkElement;
-            if (element == null)
+            if (TargetContentControl.Content is not FrameworkElement element)
                 return double.NaN;
 
             return element.Height * (100 - progress) / 100;

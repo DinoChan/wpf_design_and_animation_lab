@@ -11,7 +11,7 @@ namespace WpfDesignAndAnimationLab
     {
         public DemoPage()
         {
-            this.DefaultStyleKey = typeof(DemoPage);
+            DefaultStyleKey = typeof(DemoPage);
         }
     }
 }

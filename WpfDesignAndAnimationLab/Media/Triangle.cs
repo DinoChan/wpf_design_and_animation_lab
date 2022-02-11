@@ -42,7 +42,7 @@ namespace WpfDesignAndAnimationLab.Media
 
         protected override Size MeasureOverride(Size availableSize)
         {
-            this.RealizeGeometry(availableSize);
+            RealizeGeometry(availableSize);
             return availableSize;
         }
 

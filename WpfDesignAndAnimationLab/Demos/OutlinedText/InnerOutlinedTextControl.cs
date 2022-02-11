@@ -72,7 +72,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
         private Geometry CreateText()
         {
             // Create the formatted text based on the properties set.
-            FormattedText formattedText = new FormattedText(
+            var formattedText = new FormattedText(
                 Text,
                 CultureInfo.CurrentCulture,
                 FlowDirection.LeftToRight,
