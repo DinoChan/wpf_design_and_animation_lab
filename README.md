@@ -148,7 +148,7 @@ public class RepeatCollection : Collection<object>
 
 修改一下上面的代码，就可以实现彩虹文字的动画：
 
-![image](https://user-images.githubusercontent.com/6076257/155320137-b18abe09-dd52-4137-805d-c4db912f8982.png)
+![38937-20211107160349325-1118605441](https://user-images.githubusercontent.com/6076257/155324511-add0dae0-ed7a-4ab0-816e-71a0f632b62a.gif)
 
 ### 制作一个彩虹按钮
 
@@ -199,14 +199,14 @@ public class RepeatCollection : Collection<object>
 
 运行起来的效果就是将所有颜色旋转 90 度，看起来就像以前的 Apple 的 Logo 配色。在上面的 LinearGradientBrush 里，我偷偷藏了两个白色的 GradientStop （名为 G6 和 G7 那两个），它们的 Offset 都是 0.5，处于正中间的位置。在按钮的 Pressed 状态中，用 DoubleAnimation 将它们前后的所有 GradientStop 的 Offset 都设置为 0 或 1，效果是将所有颜色向两边推。因为现在旋转了 90 度，所以实际上是向上下两个方向推：
 
-![image](https://user-images.githubusercontent.com/6076257/155321336-80690fa4-8077-4837-8550-1661ca77f7bf.png)
+![38937-20211109123705766-1964559255](https://user-images.githubusercontent.com/6076257/155324613-0569d626-bf3e-4616-9388-1f648b98e438.gif)
 
 
 ### 实现两个任天堂 Switch 的加载动画
 
-![image](https://user-images.githubusercontent.com/6076257/155321591-a3359f55-3c46-4b58-9502-73c8bfb23cd5.png)
+![38937-20211209224122307-1780599058](https://user-images.githubusercontent.com/6076257/155324734-9fb48e59-51a4-418a-8047-98dbdf57a966.gif)
 
-![image](https://user-images.githubusercontent.com/6076257/155321681-852f7e0f-7b56-4972-be38-b27f57c4e08d.png)
+![38937-20211209224358515-602311527](https://user-images.githubusercontent.com/6076257/155324767-49932c13-46cb-4c8d-a4fc-d8eb2209d58c.gif)
 
 用拆分文字和 TimeSpanIncreaser 的方案，实现了两个在任天堂 Switch 中最常见的动画。
 
@@ -258,21 +258,92 @@ private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<d
 ![38937-20211224153236491-179101451](https://user-images.githubusercontent.com/6076257/155323076-c832581c-edb8-4618-9d31-379ef8be941a.gif)
 
 
+### 用 OpacityMask 模仿 UWP 的 Text Shimmer 动画
+
+![38937-20211214145317148-511263393](https://user-images.githubusercontent.com/6076257/155325025-a9e4b9ee-4a55-40e0-9491-65e92c14ae48.gif)
+
+在 UWP 的 Windows Composition Samples 中有一个 Text Shimmer 动画，它用于展示如何使用 Composition Light。这个动画很简单，就是用 PointLight 从左到右扫过一行文字。虽然 WPF 没有 Composition Light，但要玩这个简单的动画任然没问题，就是用 OpacityMask 模仿一下而已。
+
+[RadialGradientBrush](https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.media.radialgradientbrush?view=netframework-4.8) 代表一个圆形的渐变画刷，在这里我们要关心它的三个属性：
+
+**RadiusX/RadiusY：** 圆形的水平/垂直半径。
+**Center：** 圆形的最外围的中心。
+**GradientOrigin：** 渐变开始的二位焦点的位置。
+
+这三个属性的作用可以参考下图：
+
+![image](https://user-images.githubusercontent.com/6076257/155325412-61dacadc-9450-457e-9fed-ed37e3857f09.png)
+
+用一个 RadialGradientBrush 作为 OpacityMask 让 TextBlock 从中心点向外渐渐变得透明：
+
+``` XML
+<TextBlock HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           FontFamily="SegoeUI"
+           FontSize="100"
+           FontWeight="Thin"
+           Foreground="DimGray"
+           Text="Text Shimmer">
+    <TextBlock.OpacityMask>
+        <RadialGradientBrush x:Name="Brush" Center=".5,.5" GradientOrigin=".5,.5" RadiusX=".43" RadiusY="2">
+            <GradientStop Color="Black" />
+            <GradientStop Offset=".5" Color="#6000" />
+            <GradientStop Offset="1" Color="#2000" />
+        </RadialGradientBrush>
+    </TextBlock.OpacityMask>
+</TextBlock>
+```
+
+然后对 Center 和 GradientOrigin 做 PointAnimation，实现 OpacityMask 的水平移动，就可以模仿出 PointLight 扫过的效果：
+
+``` XML
+<PointAnimation RepeatBehavior="Forever"
+                Storyboard.TargetName="Brush"
+                Storyboard.TargetProperty="Center"
+                From="-2,.5"
+                To="3,.5"
+                Duration="0:0:3.3" />
+<PointAnimation RepeatBehavior="Forever"
+                Storyboard.TargetName="Brush"
+                Storyboard.TargetProperty="GradientOrigin"
+                From="-2,.5"
+                To="3,.5"
+                Duration="0:0:3.3" />
+```
+
+### 抄一个 CSS3 实现的按钮
+
+![38937-20211224161739795-1793352191](https://user-images.githubusercontent.com/6076257/155326111-a1fed648-b5a3-43a2-aa78-6d7dea1c35c2.gif)
+
+抄一个 CSS3 实现的按钮，顺便熟习下 CSS3。
+
+### 用 Effect 实现线条光影效果
+
+![38937-20220112210307042-825377204](https://user-images.githubusercontent.com/6076257/155326629-176078f6-3532-4aca-b039-96546efc2430.gif)
+
+为了实现这个效果我用到这些知识和技巧：
+
+- Segoe Fluent 图标字体
+- 在 Blend 中创建 Path
+- 计算 Path 的长途
+- Path 的边框动画
+- VisualStudio 的设计时数据支持
+- 自定义 Effect
+
+
 ## License
 
 The project is released under MIT License.
 
-## Screenshots
-
-![](https://github.com/DinoChan/wpf_design_and_animation_lab/blob/master/Screenshots/1.gif?raw=true)
-
-![](https://github.com/DinoChan/wpf_design_and_animation_lab/blob/master/Screenshots/2.gif?raw=true)
-
-![](https://github.com/DinoChan/wpf_design_and_animation_lab/blob/master/Screenshots/3.gif?raw=true)
-
-![](https://github.com/DinoChan/wpf_design_and_animation_lab/blob/master/Screenshots/4.gif?raw=true)
 
 
-另有一个 UWP 版本的项目：
+
+## UWP 的版本
+
+另外，我有另一个用于玩 UWP 动画的项目和：
 
 <https://github.com/DinoChan/uwp_design_and_animation_lab>
+
+![38937-20211112002623785-945408656](https://user-images.githubusercontent.com/6076257/155327213-7138326a-7cea-43d8-8b16-fe703372afb9.gif)
+
+
