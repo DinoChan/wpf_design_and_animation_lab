@@ -340,7 +340,7 @@ The project is released under MIT License.
 
 ## UWP 的版本
 
-另外，我有另一个用于玩 UWP 动画的项目和：
+另外，我有另一个用于玩 UWP 动画的项目：
 
 <https://github.com/DinoChan/uwp_design_and_animation_lab>
 
