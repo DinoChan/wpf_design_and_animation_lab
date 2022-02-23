@@ -255,7 +255,7 @@ private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<d
 }
 ```
 
-![image](https://user-images.githubusercontent.com/6076257/155322926-809ee12a-4ce7-4242-9fcc-984533e98884.png)
+![38937-20211224153236491-179101451](https://user-images.githubusercontent.com/6076257/155323076-c832581c-edb8-4618-9d31-379ef8be941a.gif)
 
 
 ## License
