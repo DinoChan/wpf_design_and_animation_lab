@@ -11,7 +11,6 @@
                                    mc:Ignorable="d">
     <FrameworkElement.Resources>
         <FontFamily x:Key="OstrichSans">/WpfDesignAndAnimationLab;component/Assets/OstrichSans-Light.otf#Ostrich Sans Light</FontFamily>
-
     </FrameworkElement.Resources>
 
     <Grid>
@@ -20,7 +19,6 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
 
             <local:OutlinedTextControl HorizontalAlignment="Center"
                                        FontSize="{Binding ElementName=FontSizeElement, Path=Value}"
@@ -60,7 +58,6 @@
                     <Setter Property="Margin" Value="8" />
                     <Setter Property="FontSize" Value="18" />
                 </Style>
-
             </Grid.Resources>
 
             <Grid.ColumnDefinitions>
@@ -92,7 +89,6 @@
                     Maximum="20"
                     Minimum="0"
                     Value="5" />
-
         </Grid>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

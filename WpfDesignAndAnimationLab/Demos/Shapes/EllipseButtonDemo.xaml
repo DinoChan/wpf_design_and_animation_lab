@@ -87,6 +87,5 @@
                 BorderBrush="LightSeaGreen"
                 Content="Button"
                 Style="{StaticResource EllipseStyle}" />
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Demos\LongShadows\LongShadowDemo5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Demos\OutlinedText\Demo6Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -63,6 +66,10 @@
 
   <ItemGroup>
     <Page Update="Controls\BusyIndicator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Demos\LongShadows\LongShadowDemo5.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

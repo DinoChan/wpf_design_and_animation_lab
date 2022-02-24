@@ -49,7 +49,6 @@
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
-
         </Grid>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

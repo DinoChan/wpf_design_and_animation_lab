@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -23,6 +19,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
         {
             UpdateAngle(e);
         }
+
         private void AssociatedObject_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             UpdateAngle(e);
@@ -34,8 +31,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
                 return;
 
             AssociatedObject.RenderTransformOrigin = new Point(0.5, 0.5);
-            var rotateTransform = AssociatedObject.RenderTransform as RotateTransform;
-            if (rotateTransform == null)
+            if (AssociatedObject.RenderTransform is not RotateTransform rotateTransform)
             {
                 rotateTransform = new RotateTransform();
                 AssociatedObject.RenderTransform = rotateTransform;

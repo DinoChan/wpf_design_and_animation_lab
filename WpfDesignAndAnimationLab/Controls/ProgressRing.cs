@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using WpfDesignAndAnimationLab.Common;
@@ -21,7 +17,7 @@ namespace WpfDesignAndAnimationLab.Controls
         public static readonly DependencyProperty TemplateSettingsProperty =
             DependencyProperty.Register("TemplateSettings", typeof(TemplateSettingValues), typeof(ProgressRing), new PropertyMetadata(null));
 
-        private bool hasAppliedTemplate = false;
+        private bool _hasAppliedTemplate = false;
 
         public ProgressRing()
         {
@@ -44,7 +40,7 @@ namespace WpfDesignAndAnimationLab.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            hasAppliedTemplate = true;
+            _hasAppliedTemplate = true;
             UpdateState(IsActive);
         }
 
@@ -71,9 +67,9 @@ namespace WpfDesignAndAnimationLab.Controls
 
         private void UpdateState(bool isActive)
         {
-            if (hasAppliedTemplate)
+            if (_hasAppliedTemplate)
             {
-                string state = isActive ? VisualStates.StateActive : VisualStates.StateInactive;
+                var state = isActive ? VisualStates.StateActive : VisualStates.StateInactive;
                 VisualStateManager.GoToState(this, state, true);
             }
         }

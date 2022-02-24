@@ -53,7 +53,6 @@
                                             <CubicEase EasingMode="EaseInOut" />
                                         </EasingDoubleKeyFrame.EasingFunction>
                                     </EasingDoubleKeyFrame>
-
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </BeginStoryboard>
@@ -99,7 +98,6 @@
                                             <CubicEase EasingMode="EaseInOut" />
                                         </EasingDoubleKeyFrame.EasingFunction>
                                     </EasingDoubleKeyFrame>
-
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </BeginStoryboard>
@@ -182,7 +180,7 @@
                         </DataTemplate>
                     </ContentControl.ContentTemplate>
                 </ContentControl>
-                <!--<TextBlock Margin="0,-12,0,-4" Text="SWITCH" FontSize="60" FontWeight="Bold" LineHeight="45" Foreground="White" FontFamily="Microsoft Sans Serif"/>-->
+                <!--<TextBlock Margin="0,-12,0,-4" Text="SWITCH" FontSize="60" FontWeight="Bold" LineHeight="45" Foreground="White" FontFamily="Microsoft Sans Serif" />-->
             </StackPanel>
             <!--<Glyphs
 
@@ -192,7 +190,6 @@
    Fill                = "White"
    FontRenderingEmSize = "32"
 />-->
-
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

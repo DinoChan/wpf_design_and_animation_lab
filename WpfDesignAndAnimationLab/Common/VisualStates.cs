@@ -4,12 +4,8 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -52,6 +48,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Disabled state of the Common state group.
         /// </summary>
         public const string StateDisabled = "Disabled";
+
         #endregion GroupCommon
 
         #region GroupFocus
@@ -70,6 +67,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Focused state of the Focus state group.
         /// </summary>
         public const string StateFocused = "Focused";
+
         #endregion GroupFocus
 
         #region GroupSelection
@@ -93,6 +91,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Selected inactive state of the Selection state group.
         /// </summary>
         public const string StateSelectedInactive = "SelectedInactive";
+
         #endregion GroupSelection
 
         #region GroupExpansion
@@ -111,6 +110,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Collapsed state of the Expansion state group.
         /// </summary>
         public const string StateCollapsed = "Collapsed";
+
         #endregion GroupExpansion
 
         #region GroupPopup
@@ -129,7 +129,8 @@ namespace WpfDesignAndAnimationLab.Common
         /// Closed state of the Popup state group.
         /// </summary>
         public const string StatePopupClosed = "PopupClosed";
-        #endregion
+
+        #endregion GroupPopup
 
         #region GroupValidation
 
@@ -152,7 +153,8 @@ namespace WpfDesignAndAnimationLab.Common
         /// Invalid, unfocused state for the ValidationStates group.
         /// </summary>
         public const string StateInvalidUnfocused = "InvalidUnfocused";
-        #endregion
+
+        #endregion GroupValidation
 
         #region GroupExpandDirection
 
@@ -180,7 +182,8 @@ namespace WpfDesignAndAnimationLab.Common
         /// Right expand direction state of ExpandDirection state group.
         /// </summary>
         public const string StateExpandRight = "ExpandRight";
-        #endregion
+
+        #endregion GroupExpandDirection
 
         #region GroupHasItems
 
@@ -198,6 +201,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// NoItems state of the HasItems state group.
         /// </summary>
         public const string StateNoItems = "NoItems";
+
         #endregion GroupHasItems
 
         #region GroupIncrease
@@ -216,6 +220,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// State disabled for increment group.
         /// </summary>
         public const string StateIncreaseDisabled = "IncreaseDisabled";
+
         #endregion GroupIncrease
 
         #region GroupDecrease
@@ -234,6 +239,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// State disabled for decrement group.
         /// </summary>
         public const string StateDecreaseDisabled = "DecreaseDisabled";
+
         #endregion GroupDecrease
 
         #region GroupIteractionMode
@@ -252,6 +258,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Display of the DisplayMode state group.
         /// </summary>
         public const string StateDisplay = "Display";
+
         #endregion GroupIteractionMode
 
         #region GroupLocked
@@ -269,9 +276,9 @@ namespace WpfDesignAndAnimationLab.Common
         /// <summary>
         /// Display of the DisplayMode state group.
         /// </summary>
-        public const string StateUnlocked = "Unlocked"; 
+        public const string StateUnlocked = "Unlocked";
+
         #endregion GroupLocked
-          
 
         #region GroupActive
 
@@ -289,6 +296,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Active state group.
         /// </summary>
         public const string GroupActive = "ActiveStates";
+
         #endregion GroupActive
 
         #region GroupWatermark
@@ -307,6 +315,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// Watermark state group.
         /// </summary>
         public const string GroupWatermark = "WatermarkStates";
+
         #endregion GroupWatermark
 
         #region GroupCalendarButtonFocus
@@ -325,6 +334,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// CalendarButtons Focus state group.
         /// </summary>
         public const string GroupCalendarButtonFocus = "CalendarButtonFocusStates";
+
         #endregion GroupCalendarButtonFocus
 
         #region GroupBusyStatus
@@ -343,7 +353,8 @@ namespace WpfDesignAndAnimationLab.Common
         /// Busyness group name.
         /// </summary>
         public const string GroupBusyStatus = "BusyStatusStates";
-        #endregion
+
+        #endregion GroupBusyStatus
 
         #region GroupVisibility
 
@@ -361,7 +372,8 @@ namespace WpfDesignAndAnimationLab.Common
         /// BusyDisplay group.
         /// </summary>
         public const string GroupVisibility = "VisibilityStates";
-        #endregion
+
+        #endregion GroupVisibility
 
         /// <summary>
         /// Use VisualStateManager to change the visual state of the control.
@@ -383,7 +395,7 @@ namespace WpfDesignAndAnimationLab.Common
             Debug.Assert(stateNames != null, "stateNames should not be null!");
             Debug.Assert(stateNames.Length > 0, "stateNames should not be empty!");
 
-            foreach (string name in stateNames)
+            foreach (var name in stateNames)
             {
                 if (VisualStateManager.GoToState(control, name, useTransitions))
                 {
@@ -418,7 +430,7 @@ namespace WpfDesignAndAnimationLab.Common
         /// <returns>Returns null or the VisualStateGroup object.</returns>
         public static VisualStateGroup TryGetVisualStateGroup(DependencyObject dependencyObject, string groupName)
         {
-            FrameworkElement root = GetImplementationRoot(dependencyObject);
+            var root = GetImplementationRoot(dependencyObject);
             if (root == null)
             {
                 return null;

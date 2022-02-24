@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-
 
 namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 {
     public class OutlinedTextControl : Control
     {
-
         public OutlinedTextControl()
         {
             DefaultStyleKey = typeof(OutlinedTextControl);
@@ -70,8 +62,5 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             get => (string)GetValue(TextProperty);
             set => SetValue(TextProperty, value);
         }
-
-
-      
     }
 }

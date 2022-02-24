@@ -53,7 +53,6 @@
                         <DropShadowEffect ShadowDepth="2" />
                     </Ellipse.Effect>
                 </Ellipse>
-
             </Grid>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="true">
@@ -219,7 +218,6 @@
             <Setter Property="Foreground" Value="{StaticResource SliderThumb.Static.Foreground}" />
             <Setter Property="Template" Value="{StaticResource SliderHorizontal}" />
             <Setter Property="VerticalAlignment" Value="Center" />
-
         </Style>
     </FrameworkElement.Resources>
 
@@ -230,8 +228,6 @@
         </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-
-
             <media:TextShape x:Name="TextPath"
                              HorizontalAlignment="Center"
                              Fill="Black"
@@ -239,8 +235,6 @@
                              Stroke="Purple"
                              StrokeThickness="{Binding ElementName=StrokeWidthElement, Path=Value}"
                              Text="Windows 11" />
-
-
         </StackPanel>
         <Grid Grid.Row="1"
               Width="500"
@@ -250,7 +244,6 @@
                     <Setter Property="Margin" Value="8" />
                     <Setter Property="FontSize" Value="18" />
                 </Style>
-
             </Grid.Resources>
 
             <Grid.ColumnDefinitions>
@@ -282,7 +275,6 @@
                     Maximum="20"
                     Minimum="0"
                     Value="5" />
-
         </Grid>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

@@ -23,7 +23,6 @@
                 <SolidColorBrush>#0075a5</SolidColorBrush>
                 <SolidColorBrush>#Cb70A5</SolidColorBrush>
             </common:RepeatCollection>
-
         </Grid.Resources>
         <StackPanel VerticalAlignment="Center">
             <ContentControl Content="口口口口口口口口口口口口口口口">
@@ -97,14 +96,12 @@
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style>
                 </ContentControl.Style>
             </ContentControl>
-
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

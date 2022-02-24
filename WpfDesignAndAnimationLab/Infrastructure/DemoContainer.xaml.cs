@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -29,21 +19,16 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             DemoItemsElement.SelectedItem = exampleDefinition.Items.FirstOrDefault();
             if (exampleDefinition.Items.Count() == 1)
             {
-                ItemsSperator.Visibility =  Visibility.Collapsed;
+                ItemsSperator.Visibility = Visibility.Collapsed;
                 DemoItemsElement.Visibility = Visibility.Collapsed;
             }
         }
 
-
-
         public ExampleDefinition ExampleDefinition { get; }
-
-
 
         private void DemoItemsElement_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var item = DemoItemsElement.SelectedItem as ExampleDefinitionItem;
-            if (item == null)
+            if (DemoItemsElement.SelectedItem is not ExampleDefinitionItem item)
                 return;
 
             var demo = Activator.CreateInstance(item.Control);

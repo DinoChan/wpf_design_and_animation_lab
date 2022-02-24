@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace WpfDesignAndAnimationLab.Common
 {
     public class DoubleIncreaser : Increaser<double>
     {
         public static readonly DependencyProperty StartProperty =
-            DependencyProperty.Register("Start", typeof(Double), typeof(DoubleIncreaser), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("Start", typeof(double), typeof(DoubleIncreaser), new PropertyMetadata(default(double)));
 
-        private Double _current;
+        private double _current;
 
-        public override Double Next
+        public override double Next
         {
             get
             {
@@ -24,9 +19,9 @@ namespace WpfDesignAndAnimationLab.Common
             }
         }
 
-        public override Double Start
+        public override double Start
         {
-            get { return (Double)GetValue(StartProperty); }
+            get { return (double)GetValue(StartProperty); }
             set { SetValue(StartProperty, value); }
         }
     }

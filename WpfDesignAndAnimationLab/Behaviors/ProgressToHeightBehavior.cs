@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using Microsoft.Xaml.Behaviors;
 
 namespace WpfDesignAndAnimationLab.Behaviors
 {
     public class ProgressToHeightBehavior : Behavior<FrameworkElement>
     {
-
-
         /// <summary>
         /// 获取或设置BasedElement的值
         /// </summary>
@@ -49,8 +42,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             if (newValue != null)
                 newValue.SizeChanged += (s, e) => ChangeAssociatedObjectHeight();
         }
-
-
 
         /// <summary>
         /// 获取或设置Progress的值

@@ -39,12 +39,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page)),
                 new ExampleDefinitionItem("Demo9",typeof(TextShapeDemo3Page))),
 
-
                                              new ExampleDefinition("InnerShadow",null,
                 new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowDemo)),
                  new ExampleDefinitionItem("Variable Size",typeof(VariableSizeInnerShadowDemo))
                    // new ExampleDefinitionItem("Path Inner Shadow",typeof(PathInnerShadowDemo))
-                 
+
                         ),
 
                new ExampleDefinition("ArcProgressBar",null,
@@ -86,14 +85,14 @@ namespace WpfDesignAndAnimationLab.Infrastructure
 
                             new ExampleDefinition("Effects",null,
                 new ExampleDefinitionItem("Lighten",typeof(LightenDemo)),
-                  new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowEffectDemo))
+                  new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowEffectDemo)),
+                  new ExampleDefinitionItem("FakeDropShadow",typeof(FakeDropShadowDemo))
                         ),
 
                                new ExampleDefinition("Transitions",null,
                 new ExampleDefinitionItem("RippleBase",typeof(RippleBasic)),
                  new ExampleDefinitionItem("BusyIndicator",typeof(TransitionBusyIndicatorDemo))
                         ),
-
 
                                                new ExampleDefinition("TextShimmers",null,
                 new ExampleDefinitionItem("UsingOpacityMask",typeof(TextShimmerUsingOpacityMask))
@@ -112,7 +111,6 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                  new ExampleDefinitionItem("Demo 2",typeof(ButtonDesignDemo2))
                         ),
 
-
                                                  new ExampleDefinition("LongShadow",null,
                 new ExampleDefinitionItem("Demo 1",typeof(LongShadowDemo1)),
                   new ExampleDefinitionItem("Demo 2",typeof(LongShadowDemo2)),
@@ -126,7 +124,6 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                   new ExampleDefinitionItem("Demo 1",typeof(GlowEffectDemo1))
 
                         ),
-
         };
     }
 }

@@ -33,9 +33,7 @@
                     <StackPanel.Effect>
                         <BlurEffect Radius="100" RenderingBias="Quality" />
                     </StackPanel.Effect>
-                    <TextBlock Foreground="#c43bb7"
-                              
-                               Text="MICROSOFT" />
+                    <TextBlock Foreground="#c43bb7" Text="MICROSOFT" />
                     <TextBlock Margin="50,0,0,0"
                                Foreground="#2de4ea"
                                Text="WINDOWS" />
@@ -51,13 +49,8 @@
             </Grid>
             <Grid Margin="50,0,0,0">
 
-
                 <TextBlock Foreground="#ebfeff" Text="WINDOWS" />
-
-
-
             </Grid>
         </StackPanel>
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

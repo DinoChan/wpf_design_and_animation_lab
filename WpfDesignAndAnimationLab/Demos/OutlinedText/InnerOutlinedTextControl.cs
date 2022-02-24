@@ -59,7 +59,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             set => SetValue(TextProperty, value);
         }
 
-
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
@@ -72,7 +71,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
         private Geometry CreateTextGeometry()
         {
             // Create the formatted text based on the properties set.
-            FormattedText formattedText = new FormattedText(
+            var formattedText = new FormattedText(
                 Text,
                 CultureInfo.CurrentCulture,
                 FlowDirection.LeftToRight,

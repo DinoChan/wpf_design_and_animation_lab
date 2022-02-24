@@ -13,7 +13,6 @@
                                    d:DesignWidth="1700"
                                    mc:Ignorable="d">
 
-
     <FrameworkElement.Resources>
         <common:ProgressWrapper x:Key="Progress1" />
         <common:ProgressWrapper x:Key="Progress2" />

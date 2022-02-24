@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace WpfDesignAndAnimationLab.Media
 {
     public class ShapeStrokeHelper : DependencyObject
     {
-
         /// <summary>
         /// 获取或设置AttachedShape的值
         /// </summary>
@@ -45,7 +38,5 @@ namespace WpfDesignAndAnimationLab.Media
         protected virtual void OnAttachedShapeChanged(DependencyObject oldValue, DependencyObject newValue)
         {
         }
-
-
     }
 }

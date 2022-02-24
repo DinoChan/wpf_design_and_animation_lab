@@ -17,10 +17,8 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
-
     </FrameworkElement.Resources>
     <Grid>
-
 
         <local:OutlinedTextControl FontFamily="Comic Sans MS"
                                    FontSize="110"
@@ -39,7 +37,5 @@
                 </LinearGradientBrush>
             </local:OutlinedTextControl.Foreground>
         </local:OutlinedTextControl>
-
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

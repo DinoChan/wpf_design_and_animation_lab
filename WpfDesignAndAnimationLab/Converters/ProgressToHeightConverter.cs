@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,7 +10,7 @@ namespace WpfDesignAndAnimationLab.Converters
     {
         /// <summary>
         /// 获取或设置TargetContentControl的值
-        /// </summary>  
+        /// </summary>
         public ContentControl TargetContentControl
         {
             get { return (ContentControl)GetValue(TargetContentControlProperty); }
@@ -27,7 +23,6 @@ namespace WpfDesignAndAnimationLab.Converters
         public static readonly DependencyProperty TargetContentControlProperty =
             DependencyProperty.Register("TargetContentControl", typeof(ContentControl), typeof(ProgressToHeightConverter), new PropertyMetadata(null));
 
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is double == false)
@@ -38,8 +33,7 @@ namespace WpfDesignAndAnimationLab.Converters
             if (TargetContentControl == null)
                 return 0d;
 
-            var element = TargetContentControl.Content as FrameworkElement;
-            if (element == null)
+            if (TargetContentControl.Content is not FrameworkElement element)
                 return 0d;
 
             return element.Height * progress / 100;
@@ -49,7 +43,5 @@ namespace WpfDesignAndAnimationLab.Converters
         {
             throw new NotImplementedException();
         }
-
     }
-
 }

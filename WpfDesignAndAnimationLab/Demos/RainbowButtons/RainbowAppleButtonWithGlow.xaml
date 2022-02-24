@@ -24,7 +24,8 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Padding="{TemplateBinding Padding}"
+                        <Border x:Name="border"
+                                Padding="{TemplateBinding Padding}"
                                 Background="Transparent"
                                 SnapsToDevicePixels="true">
                             <VisualStateManager.VisualStateGroups>
@@ -145,7 +146,6 @@
                                             <GradientStop x:Name="G12" Offset="0.8633" Color="#943f96" />
                                             <GradientStop x:Name="G13" Offset="0.8633" Color="#009fd9" />
                                             <GradientStop x:Name="G14" Offset="01" Color="#009fd9" />
-
                                         </LinearGradientBrush>
                                     </TextBlock.Foreground>
                                 </TextBlock>

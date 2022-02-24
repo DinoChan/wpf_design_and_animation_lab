@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -23,7 +18,6 @@ namespace WpfDesignAndAnimationLab.Media
 
         public TextShape()
         {
-
         }
 
         protected sealed override Geometry DefiningGeometry
@@ -33,7 +27,9 @@ namespace WpfDesignAndAnimationLab.Media
                 return _textGeometry ?? Geometry.Empty;
             }
         }
+
         #region Dependency Properties
+
         /// <summary>
         /// DependencyProperty for <see cref="FontFamily" /> property.
         /// </summary>
@@ -129,14 +125,14 @@ namespace WpfDesignAndAnimationLab.Media
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
-        #endregion
+
+        #endregion Dependency Properties
 
         protected override Size MeasureOverride(Size availableSize)
         {
-            this.RealizeGeometry();
+            RealizeGeometry();
             return new Size(Math.Min(availableSize.Width, _width), Math.Min(availableSize.Height, _height));
         }
-
 
         private void RealizeGeometry()
         {
@@ -150,6 +146,5 @@ namespace WpfDesignAndAnimationLab.Media
             _width = formattedText.Width;
             _textGeometry = formattedText.BuildGeometry(new Point());
         }
-
     }
 }

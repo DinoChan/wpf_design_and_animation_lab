@@ -42,7 +42,6 @@
                                                     <QuarticEase EasingMode="EaseOut" />
                                                 </DoubleAnimation.EasingFunction>
                                             </DoubleAnimation>
-
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="MouseOver">
@@ -128,11 +127,9 @@
                                         <GradientStop x:Name="G12" Offset="0.8633" Color="#943f96" />
                                         <GradientStop x:Name="G13" Offset="0.8633" Color="#009fd9" />
                                         <GradientStop x:Name="G14" Offset="01" Color="#009fd9" />
-
                                     </LinearGradientBrush>
                                 </TextBlock.Foreground>
                             </TextBlock>
-
                         </Border>
                         <ControlTemplate.Triggers />
                     </ControlTemplate>
