@@ -98,6 +98,9 @@
     <Page Update="Demos\TextShapes\TextShapeDemo1Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
+    <Page Update="Demos\TextShapes\TextShapeDemo4Page.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
