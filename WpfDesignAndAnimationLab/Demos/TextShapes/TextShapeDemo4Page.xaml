@@ -6,7 +6,7 @@
                                    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab" xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
-                                   d:DesignHeight="450" FontSize="196"
+                                   d:DesignHeight="450" FontSize="128"
                                    d:DesignWidth="800" Foreground="#dd1d43"
                                    Background="#1b1b1d"
                                    mc:Ignorable="d">

@@ -145,6 +145,16 @@ namespace WpfDesignAndAnimationLab.Media
             _height = formattedText.Height;
             _width = formattedText.Width;
             _textGeometry = formattedText.BuildGeometry(new Point());
+
+            if (Text == " ")
+            {
+                formattedText = new FormattedText(
+                                       "_",
+                                       CultureInfo.CurrentCulture,
+                                       FlowDirection.LeftToRight,
+                                       new Typeface(FontFamily, FontStyle, FontWeight, FontStretch), FontSize, Brushes.Black, 100);
+                _width = formattedText.Width;
+            }
         }
     }
 }
