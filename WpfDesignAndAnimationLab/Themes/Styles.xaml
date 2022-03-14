@@ -15,8 +15,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="#FFF0F0F0" />
-    <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="#FFACACAC" />
+    <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="#FF0179D3" />
+    <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="#FF0179D3" />
     <SolidColorBrush x:Key="SliderThumb.Static.Foreground" Color="#FFE5E5E5" />
     <SolidColorBrush x:Key="SliderThumb.MouseOver.Background" Color="#FFDCECFC" />
     <SolidColorBrush x:Key="SliderThumb.MouseOver.Border" Color="#FF7Eb4EA" />
@@ -145,12 +145,12 @@
                          Visibility="Collapsed" />
                 <Border x:Name="TrackBackground"
                         Grid.Row="1"
-                        Height="12.0"
+                        Height="5.0"
                         Margin="5,0"
                         VerticalAlignment="center"
                         Background="{StaticResource SliderThumb.Track.Background}"
                         BorderBrush="{StaticResource SliderThumb.Track.Border}"
-                        BorderThickness="1">
+                        BorderThickness="0">
                     <Canvas Margin="-6,-1">
                         <Rectangle x:Name="PART_SelectionRange"
                                    Height="4.0"
