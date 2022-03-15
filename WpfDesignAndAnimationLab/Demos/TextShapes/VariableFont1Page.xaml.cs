@@ -3,9 +3,9 @@
     /// <summary>
     /// Demo9Page.xaml 的交互逻辑
     /// </summary>
-    public partial class TextShapeDemo4Page
+    public partial class VariableFont1Page
     {
-        public TextShapeDemo4Page()
+        public VariableFont1Page()
         {
             InitializeComponent();
         }

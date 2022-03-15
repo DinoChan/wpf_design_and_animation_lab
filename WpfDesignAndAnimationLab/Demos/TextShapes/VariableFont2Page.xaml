@@ -1,4 +1,4 @@
-﻿<wpfdesignandanimationlab:DemoPage  xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab" x:Class="WpfDesignAndAnimationLab.Demos.TextShapes.TextShapeDemo5Page"
+﻿<wpfdesignandanimationlab:DemoPage  xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab" x:Class="WpfDesignAndAnimationLab.Demos.TextShapes.VariableFont2Page"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
