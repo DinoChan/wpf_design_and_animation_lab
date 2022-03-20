@@ -7,6 +7,24 @@
              xmlns:converters="clr-namespace:WpfDesignAndAnimationLab.Converters"                       mc:Ignorable="d"  Background="#f9f2e4" 
              d:DesignHeight="450" d:DesignWidth="880">
     <Grid>
+        <FrameworkElement.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation 
+                                     FillBehavior="HoldEnd"
+                                 
+                                     Storyboard.TargetName="Slider"
+                                     Storyboard.TargetProperty="Value"
+                                     From="100"
+                                     To="900"
+                                         BeginTime="0:0:2"
+                                     Duration="0:0:1.5" />
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </FrameworkElement.Triggers>
         <Grid.Resources>
             <FontFamily x:Key="SourceHanSansSC">/WpfDesignAndAnimationLab;component/Assets/SourceHanSansSC-VF.otf#Source Han Sans SC VF</FontFamily>
             <converters:FontWeightConverter x:Key="FontWeightConverter"/>
@@ -218,10 +236,10 @@
             </Style>
         </Grid.Resources>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Segoe UI Variable" Foreground="#3b3abd" FontFamily="Bahnschrift" FontSize="96"  x:Name="TextShape"
+            <TextBlock Text="微软雅黑" Foreground="#3b3abd" FontFamily="Microsoft YaHei" FontSize="168"  x:Name="TextShape"
                        FontWeight="{Binding ElementName=Slider,Path=Value,Converter={StaticResource FontWeightConverter}}"
                       />
-            <Slider  Maximum="900" Minimum="100" Margin="0,30,0,0" x:Name="Slider" />
+            <Slider  Maximum="900" Minimum="100" Margin="0,30,0,0" x:Name="Slider" Value="100" />
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

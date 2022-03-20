@@ -7,6 +7,24 @@
                                     mc:Ignorable="d"  Background="#f9f2e4" 
              d:DesignHeight="450" d:DesignWidth="880">
     <Grid>
+        <FrameworkElement.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation 
+                                     FillBehavior="HoldEnd"
+                                 
+                                     Storyboard.TargetName="TextShape"
+                                     Storyboard.TargetProperty="StrokeThickness"
+                                     From="0"
+                                     To="8"
+                                         BeginTime="0:0:2"
+                                     Duration="0:0:1.5" />
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </FrameworkElement.Triggers>
         <Grid.Resources>
             <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
                 <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -47,7 +65,7 @@
                      Stroke="{StaticResource SliderThumb.Static.Border}"
                      StrokeThickness="1"
                      UseLayoutRounding="True">
-                       
+
                     </Ellipse>
                 </Grid>
                 <ControlTemplate.Triggers>
@@ -216,8 +234,8 @@
             </Style>
         </Grid.Resources>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <media:TextShape Text="微软雅黑" Fill="#3b3abd" Stroke="#3b3abd" FontSize="168" FontWeight="Thin" x:Name="TextShape" StrokeThickness="10" />
-            <Slider Value="{Binding ElementName=TextShape,Path=StrokeThickness}" Maximum="10" Minimum="0" Margin="0,30,0,0"/>
+            <media:TextShape Text="微软雅黑" Fill="#3b3abd" Stroke="#3b3abd" FontSize="168" FontWeight="Thin" x:Name="TextShape" StrokeThickness="0"/>
+            <Slider Value="{Binding ElementName=TextShape,Path=StrokeThickness,Mode=TwoWay}" Maximum="8" Minimum="0" Margin="0,30,0,0" x:Name="Slider"/>
         </StackPanel>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
