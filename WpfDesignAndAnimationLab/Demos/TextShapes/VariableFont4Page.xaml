@@ -9,11 +9,14 @@
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
                                    d:DesignWidth="880"
-                                   Background="#f9f2e4"
+                                   Background="Black"
+                                   FontFamily="Segoe UI Variable"
+                                   FontSize="32"
                                    mc:Ignorable="d">
+
     <Grid>
         <FrameworkElement.Triggers>
-            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <!--<EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard>
                     <Storyboard>
                         <DoubleAnimation BeginTime="0:0:2"
@@ -26,7 +29,7 @@
 
                     </Storyboard>
                 </BeginStoryboard>
-            </EventTrigger>
+            </EventTrigger>-->
         </FrameworkElement.Triggers>
         <Grid.Resources>
             <FontFamily x:Key="SourceHanSansSC">/WpfDesignAndAnimationLab;component/Assets/SourceHanSansSC-VF.otf#Source Han Sans SC VF</FontFamily>
@@ -46,8 +49,8 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="#3b3abd" />
-            <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="#3b3abd" />
+            <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="White" />
+            <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="White" />
             <SolidColorBrush x:Key="SliderThumb.Static.Foreground" Color="#FFE5E5E5" />
             <SolidColorBrush x:Key="SliderThumb.MouseOver.Background" Color="#FFDCECFC" />
             <SolidColorBrush x:Key="SliderThumb.MouseOver.Border" Color="#FF7Eb4EA" />
@@ -57,8 +60,8 @@
             <SolidColorBrush x:Key="SliderThumb.Disabled.Border" Color="#FFD9D9D9" />
 
             <LinearGradientBrush x:Key="SliderThumb.Track.Background" StartPoint="1,1" EndPoint="0,0">
-                <GradientStop Color="#3b3abd" />
-                <GradientStop Offset="0.999" Color="#3b3abd" />
+                <GradientStop Color="Gray" />
+                <GradientStop Offset="0.999" Color="Gray" />
             </LinearGradientBrush>
             <SolidColorBrush x:Key="SliderThumb.Track.Border" Color="#FFD6D6D6" />
             <ControlTemplate x:Key="SliderThumbHorizontalDefault" TargetType="{x:Type Thumb}">
@@ -235,9 +238,121 @@
                 <Setter Property="Template" Value="{StaticResource SliderHorizontal}" />
                 <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style TargetType="HeaderedContentControl">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="HeaderedContentControl">
+                            <Grid Margin="24,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  Content="{TemplateBinding Header}"
+                                                  Opacity="1" />
+                                <ContentPresenter Grid.Column="1"
+                                                  Margin="24,0,0,0"
+                                                  VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+            </Style>
+
+            <Style TargetType="{x:Type ToggleButton}">
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Padding" Value="12,8" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                            <Border x:Name="border"
+                                    Padding="{TemplateBinding Padding}"
+                                    Background="Transparent"
+                                    SnapsToDevicePixels="true">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition GeneratedDuration="00:00:00.5000000"
+                                                              From="Unchecked"
+                                                              To="Checked">
+                                                <VisualTransition.GeneratedEasingFunction>
+                                                    <CircleEase EasingMode="EaseOut" />
+                                                </VisualTransition.GeneratedEasingFunction>
+                                            </VisualTransition>
+                                            <VisualTransition GeneratedDuration="00:00:00.5000000"
+                                                              From="Checked"
+                                                              To="Unchecked">
+                                                <VisualTransition.GeneratedEasingFunction>
+                                                    <CircleEase EasingMode="EaseOut" />
+                                                </VisualTransition.GeneratedEasingFunction>
+                                            </VisualTransition>
+                                        </VisualStateGroup.Transitions>
+                                        <VisualState x:Name="Unchecked" />
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="ContentElement"
+                                                                 Storyboard.TargetProperty="StrokeThickness"
+                                                                 To="2" />
+                                            </Storyboard>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Disabled" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <media:TextShape x:Name="ContentElement"
+                                                 Fill="White"
+                                                 FontFamily="Segoe UI Variable"
+                                                 FontSize="36"
+                                                 FontWeight="Thin"
+                                                 Stroke="White"
+                                                 StrokeThickness="0"
+                                                 Text="{TemplateBinding Content}" />
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </Grid.Resources>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="TextShape"
+        <Viewbox Width="700">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
+            <HeaderedContentControl Header="血型：">
+                <StackPanel Orientation="Horizontal">
+                    <ToggleButton Content="A" />
+                    <ToggleButton Content="B" />
+                    <ToggleButton Content="AB" />
+                    <ToggleButton Content="O" />
+                </StackPanel>
+            </HeaderedContentControl>
+            <HeaderedContentControl>
+                <HeaderedContentControl.Header>
+                    <media:TextShape x:Name="ContentElement"
+                                     Fill="White"
+                                   
+                                     FontSize="32"
+                                 
+                                     Stroke="White"
+                                     StrokeThickness="{Binding ElementName=Slider,Path=Value}"
+                                     Text="血型：" />
+                </HeaderedContentControl.Header>
+
+                <Slider x:Name="Slider"
+                        Maximum="1.5"
+                        Minimum="0"
+                        Value="0" />
+            </HeaderedContentControl>
+            <!--<TextBlock x:Name="TextShape"
                        FontFamily="Microsoft YaHei"
                        FontSize="168"
                        FontWeight="{Binding ElementName=Slider, Path=Value, Converter={StaticResource FontWeightConverter}}"
@@ -247,7 +362,8 @@
                     Margin="0,30,0,0"
                     Maximum="900"
                     Minimum="100"
-                    Value="100" />
+                    Value="100" />-->
         </StackPanel>
+        </Viewbox>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

@@ -43,7 +43,7 @@
                                                           From="MouseOver"
                                                           To="Normal">
                                             <VisualTransition.GeneratedEasingFunction>
-                                                <CircleEase EasingMode="EaseIn" />
+                                                <CircleEase EasingMode="EaseOut" />
                                             </VisualTransition.GeneratedEasingFunction>
                                         </VisualTransition>
                                     </VisualStateGroup.Transitions>
