@@ -37,7 +37,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             new ExampleDefinition("TextShape",null,
                 new ExampleDefinitionItem("Main",typeof(TextShapeDemo1Page)),
                 new ExampleDefinitionItem("StrokeDashOffset ",typeof(TextShapeDemo2Page)),
-                new ExampleDefinitionItem("Demo9",typeof(TextShapeDemo3Page))),
+                new ExampleDefinitionItem("Demo3",typeof(TextShapeDemo3Page)),
+                new ExampleDefinitionItem("VariableFont1",typeof(VariableFont1Page)),
+                  new ExampleDefinitionItem("VariableFont2",typeof(VariableFont2Page)),
+                     new ExampleDefinitionItem("VariableFont3",typeof(VariableFont3Page))
+                ),
 
                                              new ExampleDefinition("InnerShadow",null,
                 new ExampleDefinitionItem("InnerShadow",typeof(InnerShadowDemo)),

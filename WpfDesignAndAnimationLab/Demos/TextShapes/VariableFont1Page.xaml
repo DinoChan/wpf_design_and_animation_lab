@@ -1,0 +1,73 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.TextShapes.VariableFont1Page"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextShapes"
+                                   xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Media"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   Background="#1b1b1d"
+                                   FontSize="128"
+                                   Foreground="#dd1d43"
+                                   mc:Ignorable="d">
+    <FrameworkElement.Resources />
+    <Grid SnapsToDevicePixels="True">
+        <Grid.Resources>
+            <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.1" />
+            <FontFamily x:Key="OstrichSans">/WpfDesignAndAnimationLab;component/Assets/OstrichSans-Light.otf#Ostrich Sans Light</FontFamily>
+            <Style TargetType="ContentControl">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ContentControl">
+                            <ItemsControl ItemsSource="{TemplateBinding Content}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <local1:TextShape x:Name="TextElement"
+                                                          HorizontalAlignment="Center"
+                                                          Fill="#dd1d43"
+                                                          FontWeight="Thin"
+                                                          RenderTransformOrigin=".5,.5"
+                                                          Stroke="#dd1d43"
+                                                          StrokeThickness="0"
+                                                          Text="{Binding}">
+                                            <FrameworkElement.Triggers>
+                                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation BeginTime="{Binding Next, Source={StaticResource TimeSpanIncreaser}}"
+                                                                             Storyboard.TargetName="TextElement"
+                                                                             Storyboard.TargetProperty="StrokeThickness"
+                                                                             To="10"
+                                                                             Duration="0:0:1.2">
+                                                                <DoubleAnimation.EasingFunction>
+                                                                    <CircleEase EasingMode="EaseIn" />
+                                                                </DoubleAnimation.EasingFunction>
+                                                            </DoubleAnimation>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </EventTrigger>
+                                            </FrameworkElement.Triggers>
+                                        </local1:TextShape>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+
+        <ContentControl HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="FROM THIN TO THICK"
+                        FontFamily="Calibri Light" />
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

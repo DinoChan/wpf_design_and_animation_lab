@@ -62,12 +62,13 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
-            var geometry = CreateText();
+            var geometry = CreateTextGeometry();
             // Draw the outline based on the properties that are set.
             drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), geometry);
         }
 
-        private Geometry CreateText()
+
+        private Geometry CreateTextGeometry()
         {
             // Create the formatted text based on the properties set.
             var formattedText = new FormattedText(
