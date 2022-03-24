@@ -10,6 +10,7 @@
                                    d:DesignHeight="450"
                                    d:DesignWidth="880"
                                    Background="#f9f2e4"
+                                   Header="Bad"
                                    mc:Ignorable="d">
     <Grid>
         <FrameworkElement.Triggers>

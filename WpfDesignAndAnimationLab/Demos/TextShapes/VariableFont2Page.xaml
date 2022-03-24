@@ -7,7 +7,7 @@
                                    xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
-                                   d:DesignWidth="880"
+                                   d:DesignWidth="880" Header="Good"
                                    Background="#f9f2e4"
                                    mc:Ignorable="d">
     <Grid>

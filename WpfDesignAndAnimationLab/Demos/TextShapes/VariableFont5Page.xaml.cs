@@ -18,9 +18,9 @@ namespace WpfDesignAndAnimationLab.Demos.TextShapes
     /// <summary>
     /// https://codepen.io/garrettbear/pen/YzXaJNO
     /// </summary>
-    public partial class TextShapeDemo7Page 
+    public partial class VariableFont5Page
     {
-        public TextShapeDemo7Page()
+        public VariableFont5Page()
         {
             InitializeComponent();
         }
