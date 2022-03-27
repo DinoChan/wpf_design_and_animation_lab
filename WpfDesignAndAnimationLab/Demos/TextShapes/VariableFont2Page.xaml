@@ -11,7 +11,7 @@
                                    Background="#f9f2e4"
                                    mc:Ignorable="d">
     <Grid>
-        <FrameworkElement.Triggers>
+        <!--<FrameworkElement.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard>
                     <Storyboard>
@@ -26,7 +26,7 @@
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
-        </FrameworkElement.Triggers>
+        </FrameworkElement.Triggers>-->
         <Grid.Resources>
             <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
                 <Setter Property="OverridesDefaultStyle" Value="true" />

@@ -40,7 +40,8 @@ public class ExampleDefinitions
             new ExampleDefinitionItem("VariableFont2", typeof(VariableFont2Page)),
             new ExampleDefinitionItem("VariableFont3", typeof(VariableFont3Page)),
             new ExampleDefinitionItem("VariableFont4", typeof(VariableFont4Page)),
-            new ExampleDefinitionItem("VariableFont5", typeof(VariableFont5Page))
+            new ExampleDefinitionItem("VariableFont5", typeof(VariableFont5Page)),
+            new ExampleDefinitionItem("VariableFont6", typeof(VariableFont6Page))
         ),
         new("InnerShadow", null,
             new ExampleDefinitionItem("InnerShadow", typeof(InnerShadowDemo)),

@@ -80,10 +80,70 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="T" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="40,20" />
+            <Setter Property="FontSize" Value="240" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                Padding="{TemplateBinding Padding}"
+                                Background="Transparent"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ContentElement"
+                                                             Storyboard.TargetProperty="StrokeThickness"
+                                                             To="4"
+                                                             Duration="0:0:0" />
+
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ContentElement"
+                                                             Storyboard.TargetProperty="StrokeThickness"
+                                                             To="4"
+                                                             Duration="0:0:0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <media:TextShape x:Name="ContentElement"
+                                             Fill="White"
+                                             FontFamily="Segoe UI Variable"
+                                             FontSize="60"
+                                             FontWeight="ExtraLight"
+                                             Stroke="White"
+                                             StrokeThickness="0"
+                                             Text="{TemplateBinding Content}" />
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </FrameworkElement.Resources>
     <Grid>
         <Viewbox Width="740">
-            <Button Content="GET THICK" />
+            <StackPanel>
+                <Button Content="GET THICK" Style="{StaticResource T}" />
+                <Button Margin="0,30,0,0" Content="GET THICK" />
+            </StackPanel>
         </Viewbox>
     </Grid>
 </wpfDesignAndAnimationLab:DemoPage>

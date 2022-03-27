@@ -13,7 +13,7 @@
                                    Header="Bad"
                                    mc:Ignorable="d">
     <Grid>
-        <FrameworkElement.Triggers>
+        <!--<FrameworkElement.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard>
                     <Storyboard>
@@ -28,7 +28,7 @@
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
-        </FrameworkElement.Triggers>
+        </FrameworkElement.Triggers>-->
         <Grid.Resources>
             <FontFamily x:Key="SourceHanSansSC">/WpfDesignAndAnimationLab;component/Assets/SourceHanSansSC-VF.otf#Source Han Sans SC VF</FontFamily>
             <converters:FontWeightConverter x:Key="FontWeightConverter" />

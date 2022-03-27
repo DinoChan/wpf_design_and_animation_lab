@@ -24,24 +24,33 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:DemoPage">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="{StaticResource OverlayCornerRadius}">
-                        <Grid>
-                            <!--<Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.OpacityMask>
+                            <VisualBrush Stretch="None" Visual="{Binding ElementName=RootBorder}" />
+                        </Grid.OpacityMask>
+                        <Border x:Name="RootBorder"
+                                Background="{TemplateBinding Background}"
+                                ClipToBounds="True"
+                                CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                            <Grid>
+                                <!--<Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>-->
-                            <ContentControl Margin="20"
-                                            VerticalAlignment="Top"
-                                            Content="{TemplateBinding Header}"
-                                            FontSize="32"
-                                            Foreground="#9b9e9f" />
-                            <ContentControl Grid.Row="1"
-                                            Margin="{TemplateBinding Padding}"
-                                            HorizontalContentAlignment="Stretch"
-                                            VerticalContentAlignment="Stretch"
-                                            Content="{TemplateBinding Content}" />
-                        </Grid>
-                    </Border>
+                                <ContentControl Margin="20"
+                                                VerticalAlignment="Top"
+                                                Content="{TemplateBinding Header}"
+                                                FontSize="32"
+                                                Foreground="#9b9e9f" />
+                                <ContentControl Grid.Row="1"
+                                                Margin="{TemplateBinding Padding}"
+                                                HorizontalContentAlignment="Stretch"
+                                                VerticalContentAlignment="Stretch"
+                                                Content="{TemplateBinding Content}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
