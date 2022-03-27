@@ -16,7 +16,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Padding" Value="40" />
+            <Setter Property="Padding" Value="40,20" />
             <Setter Property="FontSize" Value="240" />
             <Setter Property="BorderBrush" Value="White" />
             <Setter Property="BorderThickness" Value="3" />
@@ -82,6 +82,8 @@
         </Style>
     </FrameworkElement.Resources>
     <Grid>
-        <Button Content="GET THICK" />
+        <Viewbox Width="740">
+            <Button Content="GET THICK" />
+        </Viewbox>
     </Grid>
 </wpfDesignAndAnimationLab:DemoPage>

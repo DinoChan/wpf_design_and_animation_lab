@@ -10,7 +10,6 @@
                                    d:DesignHeight="450"
                                    d:DesignWidth="880"
                                    Background="Black"
-                                   FontFamily="Segoe UI Variable"
                                    FontSize="32"
                                    mc:Ignorable="d">
 
@@ -325,8 +324,8 @@
                 </Setter>
             </Style>
         </Grid.Resources>
-        <Viewbox Width="700">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
+        <Viewbox Width="740">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="370">
             <HeaderedContentControl Header="血型：">
                 <StackPanel Orientation="Horizontal">
                     <ToggleButton Content="A" />
@@ -344,7 +343,7 @@
                                  
                                      Stroke="White"
                                      StrokeThickness="{Binding ElementName=Slider,Path=Value}"
-                                     Text="血型：" />
+                                     Text="体重：" />
                 </HeaderedContentControl.Header>
 
                 <Slider x:Name="Slider"
