@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Demos\GlowEffects\GlowTextDemo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Demos\LongShadows\LongShadowDemo5.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +76,10 @@
 
   <ItemGroup>
     <Page Update="Controls\BusyIndicator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Demos\GlowEffects\GlowTextDemo.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
