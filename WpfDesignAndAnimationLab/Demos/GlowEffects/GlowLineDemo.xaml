@@ -11,55 +11,60 @@
                                    d:DesignWidth="1000"
                                    Background="Black"
                                    mc:Ignorable="d">
-    <Grid Width="1000"
-          Height="800"
-        >
+    <Grid Width="1000" Height="800">
 
 
-        <Grid RenderTransformOrigin="0.5,0.5">
-            <Grid.LayoutTransform>
-                <ScaleTransform ScaleX="-1"/>
+        <Grid RenderTransformOrigin="00,0.5">
+            <!--<Grid.LayoutTransform>
+                <ScaleTransform ScaleX="-1" />
             </Grid.LayoutTransform>
-            <Grid.RenderTransform >
-                <ScaleTransform ScaleX="-1"/>
-            </Grid.RenderTransform>
-            <Grid>
-            <Grid.Clip>
-                <RectangleGeometry Rect="-1000,400,3000,800" />
-            </Grid.Clip>
-            <Grid Height="400" VerticalAlignment="Top">
-                <Grid.Effect>
-                    <effects:GlowEffect Amount="2" />
-                </Grid.Effect>
-                <Rectangle Fill="White">
-                    <Rectangle.Effect>
-                        <DropShadowEffect BlurRadius="100"
-                                          RenderingBias="Quality"
-                                          ShadowDepth="0"
-                                          Color="White" />
-                    </Rectangle.Effect>
-                </Rectangle>
-            </Grid>
-        </Grid>
-        <Grid>
-            <Grid.Clip>
-                <RectangleGeometry Rect="-1000,00,3000,400" />
-            </Grid.Clip>
-            <Grid Height="400" VerticalAlignment="Bottom">
+            <Grid.RenderTransform>
+                <ScaleTransform ScaleX="-1" />
+            </Grid.RenderTransform>-->
 
-                <Grid.Effect>
-                    <effects:GlowEffect Amount="2" />
-                </Grid.Effect>
-                <Rectangle Fill="White">
-                    <Rectangle.Effect>
-                        <DropShadowEffect BlurRadius="100"
-                                          RenderingBias="Quality"
-                                          ShadowDepth="0"
-                                          Color="White" />
-                    </Rectangle.Effect>
-                </Rectangle>
+            <Grid x:Name="TopElement">
+                <Grid.Clip>
+                    <RectangleGeometry Rect="-1000,00,3000,400" />
+                </Grid.Clip>
+                <Grid Height="400" VerticalAlignment="Bottom">
+
+                    <Grid.Effect>
+                        <effects:GlowEffect Amount="2" />
+                    </Grid.Effect>
+                    <Rectangle Fill="White">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="100"
+                                              RenderingBias="Quality"
+                                              ShadowDepth="0"
+                                              Color="White" />
+                        </Rectangle.Effect>
+                    </Rectangle>
+                </Grid>
+                <Polygon Margin="-500,0" Points="500,400 1500,400 2500,0 -500,0">
+                    <Polygon.OpacityMask>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,.5">
+                            <GradientStop Offset="0" Color="Transparent" />
+                            <GradientStop Offset=".55" Color="#FFFF" />
+                            <GradientStop Offset="0.55" Color="#FFFF" />
+                            <GradientStop Offset="1" Color="Transparent" />
+                        </LinearGradientBrush>
+                    </Polygon.OpacityMask>
+                    <Polygon.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="Transparent" />
+                            <GradientStop Offset="1" Color="#3FFF" />
+                        </LinearGradientBrush>
+                    </Polygon.Fill>
+                    <Polygon.Effect>
+                        <BlurEffect Radius="100" />
+                    </Polygon.Effect>
+                </Polygon>
             </Grid>
-        </Grid>
+            <Grid Margin="-500,0">
+                <Grid.Background>
+                    <VisualBrush Stretch="None" Visual="{Binding ElementName=TopElement}" />
+                </Grid.Background>
+            </Grid>
         </Grid>
     </Grid>
 </wpfDesignAndAnimationLab:DemoPage>
