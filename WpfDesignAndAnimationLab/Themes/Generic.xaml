@@ -6,6 +6,7 @@
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Demos/OutlinedText/OutlinedTextControl.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/ProgressRing.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/BusyIndicator.xaml" />
+        <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Demos/WaveProgressBars/WaveProgressBar.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <SolidColorBrush x:Key="RootBackground" Color="#242537" />
     <SolidColorBrush x:Key="LightBackground" Color="#d8d9e6" />

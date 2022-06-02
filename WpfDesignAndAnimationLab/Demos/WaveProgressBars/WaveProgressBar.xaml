@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.WaveProgressBars">
+
+    <Style TargetType="{x:Type local:WaveProgressBar}">
+        <Setter Property="Background" Value="LightBlue" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:WaveProgressBar}">
+                    <Viewbox x:Name="Root" Stretch="Fill">
+                        <Viewbox.Resources>
+                            <Storyboard x:Key="ProgressStoryboard"
+                                        FillBehavior="HoldEnd"
+                                        Duration="0:0:1">
+                                <PointAnimation Storyboard.TargetName="PART_LineSegment" Storyboard.TargetProperty="Point">
+                                    <PointAnimation.EasingFunction>
+                                        <BackEase Amplitude="0.5" />
+                                    </PointAnimation.EasingFunction>
+                                </PointAnimation>
+                                <PointAnimation Storyboard.TargetName="PART_BezierSegment" Storyboard.TargetProperty="Point1">
+                                    <PointAnimation.EasingFunction>
+                                        <BackEase Amplitude="1.5" />
+                                    </PointAnimation.EasingFunction>
+                                </PointAnimation>
+                                <PointAnimation Storyboard.TargetName="PART_BezierSegment" Storyboard.TargetProperty="Point2">
+                                    <PointAnimation.EasingFunction>
+                                        <BackEase Amplitude="0.1" />
+                                    </PointAnimation.EasingFunction>
+                                </PointAnimation>
+                                <PointAnimation Storyboard.TargetName="PART_BezierSegment" Storyboard.TargetProperty="Point3">
+                                    <PointAnimation.EasingFunction>
+                                        <BackEase Amplitude="0.5" />
+                                    </PointAnimation.EasingFunction>
+                                </PointAnimation>
+                            </Storyboard>
+                        </Viewbox.Resources>
+                        <Path Width="100"
+                              Height="100"
+                              Fill="{TemplateBinding Background}">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathGeometry.Figures>
+                                        <PathFigure StartPoint="0,100">
+                                            <PathFigure.Segments>
+                                                <LineSegment x:Name="PART_LineSegment" Point="0,0" />
+                                                <BezierSegment x:Name="PART_BezierSegment"
+                                                               Point1="35,0"
+                                                               Point2="65,0"
+                                                               Point3="100,0" />
+                                                <LineSegment Point="100,100" />
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

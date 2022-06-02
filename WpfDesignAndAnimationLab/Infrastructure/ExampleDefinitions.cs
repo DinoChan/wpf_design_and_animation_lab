@@ -17,6 +17,7 @@ using WpfDesignAndAnimationLab.Demos.TextEffects;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
 using WpfDesignAndAnimationLab.Demos.TextShimmers;
 using WpfDesignAndAnimationLab.Demos.Transitions;
+using WpfDesignAndAnimationLab.Demos.WaveProgressBars;
 
 namespace WpfDesignAndAnimationLab.Infrastructure;
 
@@ -111,6 +112,11 @@ public class ExampleDefinitions
         new("GlowEffects", null,
             new ExampleDefinitionItem("Neon Love", typeof(NeonLoveDemo)),
             new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
+        ),
+
+              new("WaveProgressBars", null,
+            new ExampleDefinitionItem("Hard Code WaveProgressBar", typeof(HardCodeWaveProgressBar)),
+            new ExampleDefinitionItem("Wave ProgressBar Using ControlTemplate", typeof(WaveProgressBarUsingControlTemplate))
         )
     };
 }
