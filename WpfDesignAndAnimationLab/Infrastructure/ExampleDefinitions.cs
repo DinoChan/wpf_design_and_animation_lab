@@ -115,8 +115,8 @@ public class ExampleDefinitions
         ),
 
               new("WaveProgressBars", null,
-            new ExampleDefinitionItem("Hard Code WaveProgressBar", typeof(HardCodeWaveProgressBar)),
-            new ExampleDefinitionItem("Wave ProgressBar Using ControlTemplate", typeof(WaveProgressBarUsingControlTemplate))
+            new ExampleDefinitionItem("Hard Code", typeof(HardCodeWaveProgressBar)),
+            new ExampleDefinitionItem("Using ControlTemplate", typeof(WaveProgressBarUsingControlTemplate))
         )
     };
 }

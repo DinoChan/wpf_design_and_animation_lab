@@ -18,11 +18,18 @@ namespace WpfDesignAndAnimationLab.Common
             DependencyProperty.Register(nameof(Current), typeof(double), typeof(AnimateDoubleWrapper), new PropertyMetadata(default(double), OnCurrentChanged));
 
         /// <summary>
+        /// 标识 Multiple 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty MultipleProperty =
+            DependencyProperty.Register(nameof(Multiple), typeof(double), typeof(AnimateDoubleWrapper), new PropertyMetadata(1d, OnMultipleChanged));
+
+        /// <summary>
         /// 标识 Target 依赖属性。
         /// </summary>
         public static readonly DependencyProperty TargetProperty =
             DependencyProperty.Register(nameof(Target), typeof(double), typeof(AnimateDoubleWrapper), new PropertyMetadata(default(double), OnTargetChanged));
 
+        private DoubleAnimation _coreAnimation;
         private Storyboard _storyboard = new Storyboard();
 
         /// <summary>
@@ -42,6 +49,16 @@ namespace WpfDesignAndAnimationLab.Common
             get => (double)GetValue(CurrentProperty);
             set => SetValue(CurrentProperty, value);
         }
+
+        /// <summary>
+        /// 获取或设置Multiple的值
+        /// </summary>
+        public double Multiple
+        {
+            get => (double)GetValue(MultipleProperty);
+            set => SetValue(MultipleProperty, value);
+        }
+
         /// <summary>
         /// 获取或设置Target的值
         /// </summary>
@@ -56,7 +73,6 @@ namespace WpfDesignAndAnimationLab.Common
             base.OnApplyTemplate();
             _storyboard.SkipToFill();
         }
-
         /// <summary>
         /// Animation 属性更改时调用此方法。
         /// </summary>
@@ -64,11 +80,12 @@ namespace WpfDesignAndAnimationLab.Common
         /// <param name="newValue">Animation 属性的新值。</param>
         protected virtual void OnAnimationChanged(DoubleAnimation oldValue, DoubleAnimation newValue)
         {
+            _coreAnimation = newValue.Clone();
             _storyboard.Children.Clear();
-            Storyboard.SetTarget(newValue, this);
-            Storyboard.SetTargetProperty(newValue, new PropertyPath(CurrentProperty));
+            Storyboard.SetTarget(_coreAnimation, this);
+            Storyboard.SetTargetProperty(_coreAnimation, new PropertyPath(CurrentProperty));
 
-            _storyboard.Children.Add(newValue);
+            _storyboard.Children.Add(_coreAnimation);
         }
 
         /// <summary>
@@ -81,6 +98,15 @@ namespace WpfDesignAndAnimationLab.Common
         }
 
         /// <summary>
+        /// Multiple 属性更改时调用此方法。
+        /// </summary>
+        /// <param name="oldValue">Multiple 属性的旧值。</param>
+        /// <param name="newValue">Multiple 属性的新值。</param>
+        protected virtual void OnMultipleChanged(double oldValue, double newValue)
+        {
+        }
+
+        /// <summary>
         /// Target 属性更改时调用此方法。
         /// </summary>
         /// <param name="oldValue">Target 属性的旧值。</param>
@@ -88,6 +114,9 @@ namespace WpfDesignAndAnimationLab.Common
         protected virtual void OnTargetChanged(double oldValue, double newValue)
         {
             _storyboard.Stop();
+            if (_coreAnimation != null)
+                _coreAnimation.To = Target * Multiple;
+
             _storyboard.Begin();
         }
 
@@ -112,6 +141,18 @@ namespace WpfDesignAndAnimationLab.Common
             var target = obj as AnimateDoubleWrapper;
             target?.OnCurrentChanged(oldValue, newValue);
         }
+
+        private static void OnMultipleChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
+            if (oldValue == newValue)
+                return;
+
+            var target = obj as AnimateDoubleWrapper;
+            target?.OnMultipleChanged(oldValue, newValue);
+        }
+
         private static void OnTargetChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var oldValue = (double)args.OldValue;
