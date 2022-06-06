@@ -8,7 +8,7 @@
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
                                    d:DesignWidth="800"
-                                   Header="Using Control Template"
+                                   Header="Control Template"
                                    mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style TargetType="ProgressBar">

@@ -1,4 +1,5 @@
-﻿using WpfDesignAndAnimationLab.Demos.ArcProgresses;
+﻿using WpfDesignAndAnimationLab.Demos.AnimateProgressRing;
+using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.Buttons;
 using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.Effects;
@@ -113,10 +114,13 @@ public class ExampleDefinitions
             new ExampleDefinitionItem("Neon Love", typeof(NeonLoveDemo)),
             new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
         ),
-
+           new("AnimateProgressRing", null,
+            new ExampleDefinitionItem("Hard Code", typeof(HardCodeAnimateProgressRing)),
+            new ExampleDefinitionItem("Control Template", typeof(HardCodeAnimateProgressRing))
+        ),
               new("WaveProgressBars", null,
             new ExampleDefinitionItem("Hard Code", typeof(HardCodeWaveProgressBar)),
-            new ExampleDefinitionItem("Using ControlTemplate", typeof(WaveProgressBarUsingControlTemplate))
+            new ExampleDefinitionItem("Control Template", typeof(WaveProgressBarUsingControlTemplate))
         )
     };
 }
