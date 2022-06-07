@@ -1,0 +1,69 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.AnimateProgressRing.AnimateProgressRingUsingControlTemplate"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
+                                   xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.AnimateProgressRing"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   Header="Control Template"
+                                   mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <Style TargetType="ProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Grid x:Name="Root">
+
+                            <common:AnimateDoubleWrapper x:Name="DoubleWrapper"
+                                                         Multiple="100"
+                                                         Target="{TemplateBinding Value}">
+                                <common:AnimateDoubleWrapper.Animation>
+                                    <DoubleAnimation>
+                                        <DoubleAnimation.EasingFunction>
+                                            <QuinticEase EasingMode="EaseIn" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </common:AnimateDoubleWrapper.Animation>
+                            </common:AnimateDoubleWrapper>
+                            <Ellipse StrokeDashCap="Round" StrokeThickness="5">
+                                <Ellipse.Stroke>
+                                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                        <GradientStop Color="#0f85c0" />
+                                        <GradientStop Offset="1" Color="#34B8Fa" />
+                                    </LinearGradientBrush>
+                                </Ellipse.Stroke>
+                                <interactivity:Interaction.Behaviors>
+                                    <behaviors:EllipseProgressBehavior EndAngle="360"
+                                                                       Progress="{Binding Current, ElementName=DoubleWrapper}"
+                                                                       StartAngle="0" />
+                                </interactivity:Interaction.Behaviors>
+                            </Ellipse>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </FrameworkElement.Resources>
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Grid Width="208" Height="208">
+                <Ellipse Stroke="#42c7f5"
+                         StrokeDashCap="Round"
+                         StrokeThickness="5" />
+                <ProgressBar Maximum="1" Value="{Binding ElementName=Slider, Path=Value}" />
+            </Grid>
+            <Slider x:Name="Slider"
+                    Width="200"
+                    Margin="0,38,0,0"
+                    HorizontalAlignment="Center"
+                    Maximum="1"
+                    Minimum="0"
+                    Value=".5" />
+        </StackPanel>
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

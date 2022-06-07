@@ -32,6 +32,11 @@ namespace WpfDesignAndAnimationLab.Common
         private DoubleAnimation _coreAnimation;
         private Storyboard _storyboard = new Storyboard();
 
+        public AnimateDoubleWrapper()
+        {
+            Loaded += OnLoaded;
+        }
+
         /// <summary>
         /// 获取或设置Animation的值
         /// </summary>
@@ -66,12 +71,6 @@ namespace WpfDesignAndAnimationLab.Common
         {
             get => (double)GetValue(TargetProperty);
             set => SetValue(TargetProperty, value);
-        }
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-            _storyboard.SkipToFill();
         }
         /// <summary>
         /// Animation 属性更改时调用此方法。
@@ -163,5 +162,7 @@ namespace WpfDesignAndAnimationLab.Common
             var target = obj as AnimateDoubleWrapper;
             target?.OnTargetChanged(oldValue, newValue);
         }
+
+        private void OnLoaded(object sender, RoutedEventArgs e) => _storyboard.SkipToFill();
     }
 }

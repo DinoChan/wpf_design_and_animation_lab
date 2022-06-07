@@ -116,7 +116,7 @@ public class ExampleDefinitions
         ),
            new("AnimateProgressRing", null,
             new ExampleDefinitionItem("Hard Code", typeof(HardCodeAnimateProgressRing)),
-            new ExampleDefinitionItem("Control Template", typeof(HardCodeAnimateProgressRing))
+            new ExampleDefinitionItem("Control Template", typeof(AnimateProgressRingUsingControlTemplate))
         ),
               new("WaveProgressBars", null,
             new ExampleDefinitionItem("Hard Code", typeof(HardCodeWaveProgressBar)),

@@ -22,30 +22,19 @@
                                 </DoubleAnimation>
                             </Storyboard>
                         </Grid.Resources>
-                        <Grid>
-                            <Ellipse Stroke="#42c7f5"
-                                     StrokeDashCap="Round"
-                                     StrokeThickness="5">
-                                <interactivity:Interaction.Behaviors>
-                                    <behaviors:EllipseProgressBehavior EndAngle="360"
-                                                                       Progress="100"
-                                                                       StartAngle="0" />
-                                </interactivity:Interaction.Behaviors>
-                            </Ellipse>
-                            <Ellipse StrokeDashCap="Round" StrokeThickness="5">
-                                <Ellipse.Stroke>
-                                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                                        <GradientStop Color="#0f85c0" />
-                                        <GradientStop Offset="1" Color="#1498da" />
-                                    </LinearGradientBrush>
-                                </Ellipse.Stroke>
-                                <interactivity:Interaction.Behaviors>
-                                    <behaviors:EllipseProgressBehavior EndAngle="360"
-                                                                       Progress="{Binding Progress, Source={StaticResource ProgressWrapper}}"
-                                                                       StartAngle="0" />
-                                </interactivity:Interaction.Behaviors>
-                            </Ellipse>
-                        </Grid>
+                        <Ellipse StrokeDashCap="Round" StrokeThickness="5">
+                            <Ellipse.Stroke>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                    <GradientStop Color="#0f85c0" />
+                                    <GradientStop Offset="1" Color="#1498da" />
+                                </LinearGradientBrush>
+                            </Ellipse.Stroke>
+                            <interactivity:Interaction.Behaviors>
+                                <behaviors:EllipseProgressBehavior EndAngle="360"
+                                                                   Progress="{Binding Progress, Source={StaticResource ProgressWrapper}}"
+                                                                   StartAngle="0" />
+                            </interactivity:Interaction.Behaviors>
+                        </Ellipse>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
