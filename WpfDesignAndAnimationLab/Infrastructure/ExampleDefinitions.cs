@@ -116,8 +116,8 @@ public class ExampleDefinitions
             new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
         ),
             new("Waves", null,
-            new ExampleDefinitionItem("Simple Wave", typeof(SimpleWaves)),
-            new ExampleDefinitionItem("Control Template", typeof(AnimateProgressRingUsingControlTemplate))
+            new ExampleDefinitionItem("Simple Waves", typeof(SimpleWaves)),
+            new ExampleDefinitionItem("Simple Bubble Waves", typeof(SimpleBubbleWaves))
         ),
            new("AnimateProgressRing", null,
             new ExampleDefinitionItem("Hard Code", typeof(HardCodeAnimateProgressRing)),
