@@ -55,24 +55,12 @@
                                 <Path x:Name="Path"
                                       Data="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
                                       Fill="White"
-                                      Opacity="0.7"
-                                      RenderTransformOrigin="0.375,0.5"
                                       Stretch="Fill">
                                     <Path.LayoutTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform ScaleX="-1" />
-                                            <SkewTransform />
-                                            <RotateTransform />
-                                            <TranslateTransform />
-                                        </TransformGroup>
+                                        <ScaleTransform ScaleX="-1" />
                                     </Path.LayoutTransform>
                                     <Path.RenderTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform ScaleX="-1" />
-                                            <SkewTransform />
-                                            <RotateTransform />
-                                            <TranslateTransform />
-                                        </TransformGroup>
+                                        <ScaleTransform ScaleX="-1" />
                                     </Path.RenderTransform>
                                 </Path>
                             </Grid>
@@ -91,8 +79,7 @@
                    FontSize="48"
                    FontWeight="Thin"
                    Foreground="White"
-                   Text="Simple Waves"
-                   />
+                   Text="Simple Waves" />
         <Grid Grid.Row="1" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
                 <TransformGroup>
