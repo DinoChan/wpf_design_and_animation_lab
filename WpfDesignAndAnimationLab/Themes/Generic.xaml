@@ -9,6 +9,7 @@
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Demos/WaveProgressBars/WaveProgressBar.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Demos/AnimateProgressRing/AnimateProgressRing.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/InnerShadowBox.xaml" />
+        <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/NeuomorphismBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="RootBackground" Color="#242537" />

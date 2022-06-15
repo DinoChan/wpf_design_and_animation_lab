@@ -1,21 +1,39 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls">
+                    xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
+                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+                    xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls"
+                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors">
+
     <Style TargetType="controls:InnerShadowBox">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:InnerShadowBox">
-                    <Grid>
-                        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" />
-                        <Border Margin="-64"
-                                BorderBrush="White"
-                                BorderThickness="64"
-                                CornerRadius="{TemplateBinding CornerRadius}"
-                                Effect="{TemplateBinding InnerShadowEffect}" />
-                        <Border BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="{TemplateBinding CornerRadius}" />
-                        <ContentPresenter />
+                    <Grid x:Name="Root" Clip="{Binding ElementName=GeometryCreator, Path=Result}">
+                        <common:GeometryCreator x:Name="GeometryCreator"
+                                                CornerRadius="{TemplateBinding CornerRadius}"
+                                                GeometryHeight="{Binding ActualHeight, ElementName=Root}"
+                                                GeometryWidth="{Binding ActualWidth, ElementName=Root}" />
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" />
+                            <Grid Effect="{TemplateBinding InnerShadowEffect}">
+                                <Grid>
+                                    <Grid.Clip>
+                                        <CombinedGeometry Geometry1="{Binding ElementName=GeometryCreator, Path=Result}" GeometryCombineMode="Xor">
+                                            <CombinedGeometry.Geometry2>
+                                                <RectangleGeometry Rect="-5000,-5000,10000,10000" />
+                                            </CombinedGeometry.Geometry2>
+                                        </CombinedGeometry>
+                                    </Grid.Clip>
+                                    <Rectangle Margin="-64" Fill="White" />
+                                </Grid>
+                            </Grid>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                        </Grid>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

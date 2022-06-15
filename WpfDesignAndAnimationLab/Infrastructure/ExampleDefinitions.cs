@@ -7,6 +7,7 @@ using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.GlowEffects;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.LongShadows;
+using WpfDesignAndAnimationLab.Demos.Neuomorphism;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.ProgressRings;
@@ -113,6 +114,10 @@ public class ExampleDefinitions
         ),
         new("GlowEffects", null,
             new ExampleDefinitionItem("Neon Love", typeof(NeonLoveDemo)),
+            new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
+        ),
+           new("Neuomorphism", null,
+            new ExampleDefinitionItem("Neuomorphism Panel", typeof(NeuomorphismPanel)),
             new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
         ),
             new("Waves", null,

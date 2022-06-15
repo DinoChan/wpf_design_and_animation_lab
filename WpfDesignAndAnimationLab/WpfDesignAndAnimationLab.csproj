@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Controls\Triangle.cs" />
+    <Compile Remove="Demos\Neuomorphism\NeuomorphismPanelDemo.xaml.cs" />
     <Compile Remove="Demos\OutlinedText\OutlinedTextDemoPage.xaml.cs" />
   </ItemGroup>
 
@@ -20,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="Demos\Neuomorphism\NeuomorphismPanelDemo.xaml" />
     <Page Remove="Demos\OutlinedText\OutlinedTextDemoPage.xaml" />
   </ItemGroup>
 
@@ -78,6 +80,9 @@
     <Page Update="Controls\BusyIndicator.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\NeuomorphismBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="Demos\GlowEffects\GlowTextDemo.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
