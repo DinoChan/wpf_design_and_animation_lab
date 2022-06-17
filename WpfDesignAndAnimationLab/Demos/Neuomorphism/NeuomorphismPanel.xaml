@@ -15,7 +15,7 @@
 
     <Grid>
         <controls:NeuomorphismBox Width="300"
-                                  Height="300"
+                                  Height="300" Visibility="Collapsed"
                                   CornerRadius="50">
             <TextBlock HorizontalAlignment="Center"
                        VerticalAlignment="Center"
@@ -24,6 +24,36 @@
                        Foreground="#001f3f"
                        Text="Neumorphism" />
         </controls:NeuomorphismBox>
+        <Border Background="#bebebe"  Width="300"  CornerRadius="50"  Margin="40,40,0,0"
+                Height="300">
+            <Border.Effect>
+                <BlurEffect Radius="50"/>
+            </Border.Effect>
+        </Border>
+        <Border Background="White"  Width="300"  CornerRadius="50"  Margin="-40,-40,0,0"
+                Height="300">
+            <Border.Effect>
+                <BlurEffect Radius="50" RenderingBias="Quality"/>
+            </Border.Effect>
+        </Border>
+        <Border Background="#bebebe"  Width="300"  CornerRadius="50"  Margin="40,40,0,0"
+                Height="300">
+            <Border.Effect>
+                <BlurEffect Radius="50" RenderingBias="Quality"/>
+            </Border.Effect>
+        </Border>
+        <Border Width="300"
+                Height="300" 
+                Background="#e0e0e0"
+                CornerRadius="50">
+            <!--<Border.Effect>
+                <DropShadowEffect BlurRadius="100"
+                                  ShadowDepth="0"
+                                  Color="#e0e0e0" RenderingBias="Quality" />
+            </Border.Effect>-->
+        </Border>
+
+        
 
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

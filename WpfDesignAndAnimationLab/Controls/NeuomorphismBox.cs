@@ -186,68 +186,38 @@ namespace WpfDesignAndAnimationLab.Controls
 
         private static void OnBlurChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (double)args.OldValue;
-            var newValue = (double)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnBlurChanged(oldValue, newValue);
+            target?.OnBlurChanged((double)args.OldValue, (double)args.NewValue);
         }
 
         private static void OnColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (Color)args.OldValue;
-            var newValue = (Color)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnColorChanged(oldValue, newValue);
+            target?.OnColorChanged((Color)args.OldValue, (Color)args.NewValue);
         }
 
         private static void OnCornerRadiusChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (CornerRadius)args.OldValue;
-            var newValue = (CornerRadius)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnCornerRadiusChanged(oldValue, newValue);
+            target?.OnCornerRadiusChanged((CornerRadius)args.OldValue, (CornerRadius)args.NewValue);
         }
 
         private static void OnDarkShadowColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (Color)args.OldValue;
-            var newValue = (Color)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnDarkShadowColorChanged(oldValue, newValue);
+            target?.OnDarkShadowColorChanged((Color)args.OldValue, (Color)args.NewValue);
         }
 
         private static void OnDistanceChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (double)args.OldValue;
-            var newValue = (double)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnDistanceChanged(oldValue, newValue);
+            target?.OnDistanceChanged((double)args.OldValue, (double)args.NewValue);
         }
 
         private static void OnIntensityChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (double)args.OldValue;
-            var newValue = (double)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnIntensityChanged(oldValue, newValue);
+            target?.OnIntensityChanged((double)args.OldValue, (double)args.NewValue);
         }
 
         private static void OnLightShaowColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
@@ -260,5 +230,7 @@ namespace WpfDesignAndAnimationLab.Controls
             var target = obj as NeuomorphismBox;
             target?.OnLightShaowColorChanged(oldValue, newValue);
         }
+
+
     }
 }
