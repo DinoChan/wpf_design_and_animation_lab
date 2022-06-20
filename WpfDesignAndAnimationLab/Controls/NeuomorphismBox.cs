@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using WpfDesignAndAnimationLab.Common;
 
 namespace WpfDesignAndAnimationLab.Controls
 {
@@ -23,15 +22,7 @@ namespace WpfDesignAndAnimationLab.Controls
         /// 标识 CornerRadius 依赖属性。
         /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(NeuomorphismBox), new PropertyMetadata(new CornerRadius(50), OnCornerRadiusChanged));
-
-        /// <summary>
-        /// 标识 DarkShadowColor 依赖属性。
-        /// </summary>
-        public static readonly DependencyPropertyKey DarkShadowColorPropertyKey =
-            DependencyProperty.RegisterReadOnly(nameof(DarkShadowColor), typeof(Color), typeof(NeuomorphismBox), new PropertyMetadata(Color.FromRgb(224, 224, 224), OnDarkShadowColorChanged));
-
-        public static readonly DependencyProperty DarkShadowColorProperty = DarkShadowColorPropertyKey.DependencyProperty;
+            DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(NeuomorphismBox), new PropertyMetadata(new CornerRadius(50)));
 
         /// <summary>
         /// 标识 Distance 依赖属性。
@@ -46,12 +37,24 @@ namespace WpfDesignAndAnimationLab.Controls
             DependencyProperty.Register(nameof(Intensity), typeof(double), typeof(NeuomorphismBox), new PropertyMetadata(0.15d, OnIntensityChanged));
 
         /// <summary>
-        /// 标识 LightShaowColor 依赖属性。
+        /// 标识 LightSource 依赖属性。
         /// </summary>
-        public static readonly DependencyPropertyKey LightShadowColorPropertyKey =
-            DependencyProperty.RegisterAttachedReadOnly(nameof(LightShadowColor), typeof(Color), typeof(NeuomorphismBox), new PropertyMetadata(default(Color), OnLightShaowColorChanged));
+        public static readonly DependencyProperty LightSourceProperty =
+            DependencyProperty.Register(nameof(LightSource), typeof(NeuomorphismLightSource), typeof(NeuomorphismBox), new PropertyMetadata(default(NeuomorphismLightSource), OnLightSourceChanged));
 
-        public static readonly DependencyProperty LightShadowColorProperty = LightShadowColorPropertyKey.DependencyProperty;
+        /// <summary>
+        /// 标识 Shape 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty ShapeProperty =
+            DependencyProperty.Register(nameof(Shape), typeof(NeuomorphismShape), typeof(NeuomorphismBox), new PropertyMetadata(NeuomorphismShape.Flat, OnShapeChanged));
+
+        /// <summary>
+        /// 标识 TemplateSettings 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty TemplateSettingsProperty =
+            DependencyProperty.Register(nameof(TemplateSettings), typeof(NeuomorphismBoxTemplateSettings), typeof(NeuomorphismBox), new PropertyMetadata(null));
+
+        private bool _hasApplyTemplate;
 
         public NeuomorphismBox()
         {
@@ -86,14 +89,6 @@ namespace WpfDesignAndAnimationLab.Controls
         }
 
         /// <summary>
-        /// 获取或设置DarkShadowColor的值
-        /// </summary>
-        public Color DarkShadowColor
-        {
-            get => (Color)GetValue(DarkShadowColorProperty);
-        }
-
-        /// <summary>
         /// 获取或设置Distance的值
         /// </summary>
         public double Distance
@@ -112,11 +107,38 @@ namespace WpfDesignAndAnimationLab.Controls
         }
 
         /// <summary>
-        /// 获取或设置LightShaowColor的值
+        /// 获取或设置LightSource的值
         /// </summary>
-        public Color LightShadowColor
+        public NeuomorphismLightSource LightSource
         {
-            get => (Color)GetValue(LightShadowColorProperty);
+            get => (NeuomorphismLightSource)GetValue(LightSourceProperty);
+            set => SetValue(LightSourceProperty, value);
+        }
+
+        /// <summary>
+        /// 获取或设置Shape的值
+        /// </summary>
+        public NeuomorphismShape Shape
+        {
+            get => (NeuomorphismShape)GetValue(ShapeProperty);
+            set => SetValue(ShapeProperty, value);
+        }
+
+        /// <summary>
+        /// 获取或设置TemplateSettings的值
+        /// </summary>
+        public NeuomorphismBoxTemplateSettings TemplateSettings
+        {
+            get => (NeuomorphismBoxTemplateSettings)GetValue(TemplateSettingsProperty);
+            set => SetValue(TemplateSettingsProperty, value);
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            _hasApplyTemplate = true;
+            UpdateTemplateSettings();
         }
 
         /// <summary>
@@ -124,63 +146,42 @@ namespace WpfDesignAndAnimationLab.Controls
         /// </summary>
         /// <param name="oldValue">Blur 属性的旧值。</param>
         /// <param name="newValue">Blur 属性的新值。</param>
-        protected virtual void OnBlurChanged(double oldValue, double newValue)
-        {
-        }
+        protected virtual void OnBlurChanged(double oldValue, double newValue) => UpdateTemplateSettings();
 
         /// <summary>
         /// Color 属性更改时调用此方法。
         /// </summary>
         /// <param name="oldValue">Color 属性的旧值。</param>
         /// <param name="newValue">Color 属性的新值。</param>
-        protected virtual void OnColorChanged(Color oldValue, Color newValue)
-        {
-            SetValue(DarkShadowColorPropertyKey, ColorHelper.ColorWithLuminance(newValue, Intensity * -1));
-            SetValue(LightShadowColorPropertyKey, ColorHelper.ColorWithLuminance(newValue, Intensity));
-        }
-
-        /// <summary>
-        /// CornerRadius 属性更改时调用此方法。
-        /// </summary>
-        /// <param name="oldValue">CornerRadius 属性的旧值。</param>
-        /// <param name="newValue">CornerRadius 属性的新值。</param>
-        protected virtual void OnCornerRadiusChanged(CornerRadius oldValue, CornerRadius newValue)
-        {
-        }
-
-        /// <summary>
-        /// DarkShadowColor 属性更改时调用此方法。
-        /// </summary>
-        /// <param name="oldValue">DarkShadowColor 属性的旧值。</param>
-        /// <param name="newValue">DarkShadowColor 属性的新值。</param>
-        protected virtual void OnDarkShadowColorChanged(Color oldValue, Color newValue)
-        {
-        }
+        protected virtual void OnColorChanged(Color oldValue, Color newValue) => UpdateTemplateSettings();
 
         /// <summary>
         /// Distance 属性更改时调用此方法。
         /// </summary>
         /// <param name="oldValue">Distance 属性的旧值。</param>
         /// <param name="newValue">Distance 属性的新值。</param>
-        protected virtual void OnDistanceChanged(double oldValue, double newValue)
-        {
-        }
+        protected virtual void OnDistanceChanged(double oldValue, double newValue) => UpdateTemplateSettings();
 
         /// <summary>
         /// Intensity 属性更改时调用此方法。
         /// </summary>
         /// <param name="oldValue">Intensity 属性的旧值。</param>
         /// <param name="newValue">Intensity 属性的新值。</param>
-        protected virtual void OnIntensityChanged(double oldValue, double newValue)
-        {
-        }
+        protected virtual void OnIntensityChanged(double oldValue, double newValue) => UpdateTemplateSettings();
 
         /// <summary>
-        /// LightShaowColor 属性更改时调用此方法。
+        /// LightSource 属性更改时调用此方法。
         /// </summary>
-        /// <param name="oldValue">LightShaowColor 属性的旧值。</param>
-        /// <param name="newValue">LightShaowColor 属性的新值。</param>
-        protected virtual void OnLightShaowColorChanged(Color oldValue, Color newValue)
+        /// <param name="oldValue">LightSource 属性的旧值。</param>
+        /// <param name="newValue">LightSource 属性的新值。</param>
+        protected virtual void OnLightSourceChanged(NeuomorphismLightSource oldValue, NeuomorphismLightSource newValue) => UpdateTemplateSettings();
+
+        /// <summary>
+        /// Shape 属性更改时调用此方法。
+        /// </summary>
+        /// <param name="oldValue">Shape 属性的旧值。</param>
+        /// <param name="newValue">Shape 属性的新值。</param>
+        protected virtual void OnShapeChanged(NeuomorphismShape oldValue, NeuomorphismShape newValue)
         {
         }
 
@@ -196,18 +197,6 @@ namespace WpfDesignAndAnimationLab.Controls
             target?.OnColorChanged((Color)args.OldValue, (Color)args.NewValue);
         }
 
-        private static void OnCornerRadiusChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            var target = obj as NeuomorphismBox;
-            target?.OnCornerRadiusChanged((CornerRadius)args.OldValue, (CornerRadius)args.NewValue);
-        }
-
-        private static void OnDarkShadowColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            var target = obj as NeuomorphismBox;
-            target?.OnDarkShadowColorChanged((Color)args.OldValue, (Color)args.NewValue);
-        }
-
         private static void OnDistanceChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var target = obj as NeuomorphismBox;
@@ -220,17 +209,23 @@ namespace WpfDesignAndAnimationLab.Controls
             target?.OnIntensityChanged((double)args.OldValue, (double)args.NewValue);
         }
 
-        private static void OnLightShaowColorChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        private static void OnLightSourceChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var oldValue = (Color)args.OldValue;
-            var newValue = (Color)args.NewValue;
-            if (oldValue == newValue)
-                return;
-
             var target = obj as NeuomorphismBox;
-            target?.OnLightShaowColorChanged(oldValue, newValue);
+            target?.OnLightSourceChanged((NeuomorphismLightSource)args.OldValue, (NeuomorphismLightSource)args.NewValue);
         }
 
+        private static void OnShapeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var target = obj as NeuomorphismBox;
+            target?.OnShapeChanged((NeuomorphismShape)args.OldValue, (NeuomorphismShape)args.NewValue);
+        }
+        private void UpdateTemplateSettings()
+        {
+            if (_hasApplyTemplate == false)
+                return;
 
+            TemplateSettings = new NeuomorphismBoxTemplateSettings(Color, Distance, Intensity, Blur, Shape, LightSource);
+        }
     }
 }

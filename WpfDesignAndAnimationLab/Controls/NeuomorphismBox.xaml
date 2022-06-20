@@ -15,22 +15,15 @@
                     <Grid x:Name="Root">
 
                         <Grid>
-                            <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
-                                <Border.Effect>
-                                    <DropShadowEffect BlurRadius="{Binding Blur, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                      ShadowDepth="{Binding Distance, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                      Color="{Binding DarkShadowColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                </Border.Effect>
-                            </Border>
-                            <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
-                                <Border.Effect>
-                                    <DropShadowEffect BlurRadius="{Binding Blur, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                      Direction="135"
-                                                      ShadowDepth="{Binding Distance, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                      Color="{Binding LightShadowColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                </Border.Effect>
-                            </Border>
-                            <Border Background="{TemplateBinding Background}"
+                            <Border Background="White"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
+                                    Effect="{Binding TemplateSettings.LightShadowEffect, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+
+                            <Border Background="White"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
+                                    Effect="{Binding TemplateSettings.DarkShadowEffect, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+
+                            <Border Background="{Binding Background, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     CornerRadius="{TemplateBinding CornerRadius}">
