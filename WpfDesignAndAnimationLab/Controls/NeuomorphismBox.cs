@@ -181,9 +181,7 @@ namespace WpfDesignAndAnimationLab.Controls
         /// </summary>
         /// <param name="oldValue">Shape 属性的旧值。</param>
         /// <param name="newValue">Shape 属性的新值。</param>
-        protected virtual void OnShapeChanged(NeuomorphismShape oldValue, NeuomorphismShape newValue)
-        {
-        }
+        protected virtual void OnShapeChanged(NeuomorphismShape oldValue, NeuomorphismShape newValue) => UpdateTemplateSettings();
 
         private static void OnBlurChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {

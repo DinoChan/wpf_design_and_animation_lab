@@ -31,13 +31,13 @@ namespace WpfDesignAndAnimationLab.Controls
                 case NeuomorphismLightSource.TopLeft:
                     lightDirection = 135;
                     break;
-                case NeuomorphismLightSource.TopRight:
+                case NeuomorphismLightSource.BottomLeft:
                     lightDirection = 225;
                     break;
-                case NeuomorphismLightSource.BottomLeft:
+                case NeuomorphismLightSource.BottomRight:
                     lightDirection = 315;
                     break;
-                case NeuomorphismLightSource.BottomRight:
+                case NeuomorphismLightSource.TopRight:
                     lightDirection = 90;
                     break;
                 default:

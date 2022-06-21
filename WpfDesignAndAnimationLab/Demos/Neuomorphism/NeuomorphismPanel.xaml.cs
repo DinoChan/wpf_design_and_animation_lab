@@ -18,11 +18,23 @@ namespace WpfDesignAndAnimationLab.Demos.Neuomorphism
     /// <summary>
     /// NeuomorphismPanel.xaml 的交互逻辑
     /// </summary>
-    public partial class NeuomorphismPanel 
+    public partial class NeuomorphismPanel
     {
         public NeuomorphismPanel()
         {
             InitializeComponent();
+        }
+
+        private void OnSelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (e.NewValue.HasValue)
+                Background = new SolidColorBrush(e.NewValue.Value);
+        }
+
+        private void OnSizeValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (RadiusSlider != null)
+                RadiusSlider.Maximum = e.NewValue / 2;
         }
     }
 }

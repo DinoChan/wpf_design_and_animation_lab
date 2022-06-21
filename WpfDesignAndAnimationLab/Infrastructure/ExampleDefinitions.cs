@@ -27,7 +27,10 @@ namespace WpfDesignAndAnimationLab.Infrastructure;
 public class ExampleDefinitions
 {
     public static ExampleDefinition[] Definitions { get; } =
-    {
+    {   new("Neuomorphism", null,
+            new ExampleDefinitionItem("Neuomorphism Panel", typeof(NeuomorphismPanel)),
+            new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
+        ),
         new("Outlined Text", null,
             new ExampleDefinitionItem("Main", typeof(Demo1Page)),
             new ExampleDefinitionItem("Buttons", typeof(OutlinedTextButtonDemo)),
@@ -116,10 +119,7 @@ public class ExampleDefinitions
             new ExampleDefinitionItem("Neon Love", typeof(NeonLoveDemo)),
             new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
         ),
-           new("Neuomorphism", null,
-            new ExampleDefinitionItem("Neuomorphism Panel", typeof(NeuomorphismPanel)),
-            new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
-        ),
+
             new("Waves", null,
             new ExampleDefinitionItem("Simple Waves", typeof(SimpleWaves)),
             new ExampleDefinitionItem("Simple Bubble Waves", typeof(SimpleBubbleWaves))
