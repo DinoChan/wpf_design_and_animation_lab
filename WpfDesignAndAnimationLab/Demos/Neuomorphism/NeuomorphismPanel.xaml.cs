@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace WpfDesignAndAnimationLab.Demos.Neuomorphism
 {
     /// <summary>
-    /// NeuomorphismPanel.xaml 的交互逻辑
+    /// https://neumorphism.io/
     /// </summary>
     public partial class NeuomorphismPanel
     {
