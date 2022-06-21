@@ -25,6 +25,17 @@ namespace WpfDesignAndAnimationLab.Controls
             var darkColor = ColorHelper.ColorWithLuminance(color, intensity * -1);
             var lightColor = ColorHelper.ColorWithLuminance(color, intensity);
 
+            var newDarkColor = new Color();
+            newDarkColor.ScR = darkColor.R;
+            newDarkColor.ScG = darkColor.G;
+            newDarkColor.ScB = darkColor.B;
+
+
+            var newLightColor = new Color();
+            newLightColor.ScR = lightColor.R;
+            newLightColor.ScG = lightColor.G;
+            newLightColor.ScB = lightColor.B;
+
             double lightDirection = 0;
             switch (lightSource)
             {
@@ -46,11 +57,19 @@ namespace WpfDesignAndAnimationLab.Controls
 
             var darkDirection = lightDirection - 180;
 
-            LightShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = lightColor, Direction = lightDirection, ShadowDepth = distance };
-            DarkShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = darkColor, Direction = darkDirection, ShadowDepth = distance };
+            LightShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = ConvertToSRGBColor(lightColor), Direction = lightDirection, ShadowDepth = distance };
+            DarkShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = ConvertToSRGBColor(darkColor), Direction = darkDirection, ShadowDepth = distance };
         }
 
+        private Color ConvertToSRGBColor(Color color)
+        {
+            Color newColor = new Color();
+            newColor.ScR = (float)color.R / 255;
+            newColor.ScG = (float)color.G / 255;
+            newColor.ScB = (float)color.B / 255;
 
+            return newColor;
+        }
 
         private Brush CreateBackground(Color color, NeuomorphismShape shape, NeuomorphismLightSource lightSource)
         {
