@@ -29,7 +29,7 @@ public class ExampleDefinitions
     public static ExampleDefinition[] Definitions { get; } =
     {   new("Neuomorphism", null,
             new ExampleDefinitionItem("Neuomorphism Panel", typeof(NeuomorphismPanel)),
-            new ExampleDefinitionItem("Demo 1", typeof(GlowEffectDemo1))
+            new ExampleDefinitionItem("Button", typeof(NeuomorphismButtonDemo))
         ),
         new("Outlined Text", null,
             new ExampleDefinitionItem("Main", typeof(Demo1Page)),

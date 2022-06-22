@@ -417,7 +417,7 @@
                 </HeaderedContentControl>
                 <HeaderedContentControl Header="Radius:">
                     <Slider x:Name="RadiusSlider"
-                            Maximum="250"
+                            Maximum="200"
                             Minimum="0"
                             Value="50" />
                 </HeaderedContentControl>

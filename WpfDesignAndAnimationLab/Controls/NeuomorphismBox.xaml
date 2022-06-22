@@ -15,7 +15,7 @@
                     <Grid x:Name="Root">
 
                         <Grid>
-                           
+
                             <Grid x:Name="ShadowElements">
                                 <Border Background="{Binding TemplateSettings.Background, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                         CornerRadius="{TemplateBinding CornerRadius}"
@@ -28,15 +28,14 @@
                             <Border Background="{Binding TemplateSettings.Background, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="{TemplateBinding CornerRadius}">
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            </Border>
-                            <Grid x:Name="InnerShadowElements" Visibility="Collapsed" >
-                                <controls:InnerShadowBox CornerRadius="{TemplateBinding CornerRadius}"
-                                                         InnerShadowEffect="{Binding TemplateSettings.LightShadowEffect, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                <controls:InnerShadowBox CornerRadius="{TemplateBinding CornerRadius}"
-                                                         InnerShadowEffect="{Binding TemplateSettings.DarkShadowEffect, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                    CornerRadius="{TemplateBinding CornerRadius}" />
+                            
+                            <Grid x:Name="InnerShadowElements" Visibility="Collapsed">
+                                <controls:InnerShadowBox CornerRadius="{TemplateBinding CornerRadius}" InnerShadowEffect="{Binding TemplateSettings.LightShadowEffect, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                <controls:InnerShadowBox CornerRadius="{TemplateBinding CornerRadius}" InnerShadowEffect="{Binding TemplateSettings.DarkShadowEffect, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                             </Grid>
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
