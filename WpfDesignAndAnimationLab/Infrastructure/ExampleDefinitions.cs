@@ -13,6 +13,7 @@ using WpfDesignAndAnimationLab.Demos.OutlinedText;
 using WpfDesignAndAnimationLab.Demos.ProgressRings;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
+using WpfDesignAndAnimationLab.Demos.ScaleMarks;
 using WpfDesignAndAnimationLab.Demos.Shapes;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 using WpfDesignAndAnimationLab.Demos.TextEffects;
@@ -30,6 +31,10 @@ public class ExampleDefinitions
     {   new("Neuomorphism", null,
             new ExampleDefinitionItem("Neuomorphism Panel", typeof(NeuomorphismPanel)),
             new ExampleDefinitionItem("Button", typeof(NeuomorphismButtonDemo))
+        ),
+          new("ScaleMark", null,
+            new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
+            new ExampleDefinitionItem("Gauge Chart", typeof(ScaleMarkDemoUsingArcPanel))
         ),
         new("Outlined Text", null,
             new ExampleDefinitionItem("Main", typeof(Demo1Page)),

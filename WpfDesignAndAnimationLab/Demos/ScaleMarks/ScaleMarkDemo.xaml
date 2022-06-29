@@ -56,11 +56,11 @@
                             <Border Background="#e6e6e6"
                                     BorderBrush="#d0d0d0"
                                     BorderThickness="3"
-                                    CornerRadius="28">
+                                    CornerRadius="22">
                                 <Grid>
                                     <controls:InnerShadowBox Width="366"
                                                              Height="366"
-                                                             CornerRadius="28"
+                                                             CornerRadius="21"
                                                              InnerShadowEffect="{StaticResource InnerShadowEffet}" />
                                     <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                                 </Grid>
@@ -73,10 +73,6 @@
         </Style>
 
 
-        <common:GeometryCreator x:Key="GeometryCreator"
-                                CornerRadius="28"
-                                GeometryHeight="346"
-                                GeometryWidth="346" />
     </FrameworkElement.Resources>
     <Grid>
         <UniformGrid Rows="1">
@@ -134,9 +130,17 @@
                 </ContentControl>
             </ContentControl>
 
-            <ContentControl Style="{StaticResource ClockControl2}">
-                <Grid Margin="10" Clip="{Binding Source={StaticResource GeometryCreator}, Path=Result}">
+            <Grid>
+                <Border x:Name="Border"
+                        Width="340"
+                        Height="340"
+                        BorderBrush="White"
+                        BorderThickness="16" />
+                <ContentControl Style="{StaticResource ClockControl2}">
                     <ContentControl Margin="-100" Content="100001000010000100001000010000100001000010000100001000010000">
+                        <ContentControl.OpacityMask>
+                            <VisualBrush Stretch="None" Visual="{Binding ElementName=Border}" />
+                        </ContentControl.OpacityMask>
                         <ContentControl.ContentTemplate>
                             <DataTemplate>
                                 <ItemsControl ItemsSource="{Binding}">
@@ -164,8 +168,9 @@
                             </DataTemplate>
                         </ContentControl.ContentTemplate>
                     </ContentControl>
-                </Grid>
-            </ContentControl>
+                </ContentControl>
+            </Grid>
+
         </UniformGrid>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>
