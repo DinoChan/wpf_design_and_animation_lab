@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace WpfDesignAndAnimationLab.Demos.ScaleMarks
 {
     /// <summary>
-    /// ScaleMarkDemo.xaml 的交互逻辑
+    /// https://codepen.io/icebob/pen/mdERrdg
     /// </summary>
     public partial class ScaleMarkDemo 
     {
