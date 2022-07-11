@@ -12,62 +12,65 @@
                                    d:DesignWidth="800"
                                    Background="#2c3c47"
                                    mc:Ignorable="d">
+    <Viewbox MaxWidth="800"
+             MaxHeight="800"
+             VerticalAlignment="Center">
+        <Grid>
+            <Grid x:Name="Background"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <ContentControl Content="111111111111">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate>
+                            <ItemsControl ItemsSource="{Binding}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Width="10"
+                                                   Height="4"
+                                                   Fill="#2c3c47" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <h:ArcPanel Width="200"
+                                                    Height="200"
+                                                    AngleToCenter="True"
+                                                    EndAngle="-30"
+                                                    StartAngle="210" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+                <Ellipse Margin="4"
+                         Stroke="#2c3c47"
+                         StrokeDashCap="Round"
+                         StrokeThickness="4">
+                    <interactivity:Interaction.Behaviors>
+                        <local1:EllipseProgressBehavior EndAngle="120"
+                                                        Progress="100"
+                                                        StartAngle="240" />
+                    </interactivity:Interaction.Behaviors>
+                </Ellipse>
 
-    <Grid>
-        <Grid x:Name="Background"
-              HorizontalAlignment="Center"
-              VerticalAlignment="Center">
-            <ContentControl Content="111111111111">
-                <ContentControl.ContentTemplate>
-                    <DataTemplate>
-                        <ItemsControl ItemsSource="{Binding}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Rectangle Width="10"
-                                               Height="4"
-                                               Fill="#2c3c47" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <h:ArcPanel Width="200"
-                                                Height="200"
-                                                AngleToCenter="True"
-                                                EndAngle="-30"
-                                                StartAngle="210" />
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                        </ItemsControl>
-                    </DataTemplate>
-                </ContentControl.ContentTemplate>
-            </ContentControl>
-            <Ellipse Margin="4"
-                     Stroke="#2c3c47"
-                     StrokeDashCap="Round"
-                     StrokeThickness="4">
-                <interactivity:Interaction.Behaviors>
-                    <local1:EllipseProgressBehavior EndAngle="120"
-                                                    Progress="100"
-                                                    StartAngle="240" />
-                </interactivity:Interaction.Behaviors>
-            </Ellipse>
-
+            </Grid>
+            <Grid Width="220"
+                  Height="220"
+                  Margin="0,-5,0,0"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Offset="0.675" Color="#FFE23131" />
+                        <GradientStop Offset="0.366" Color="#FFFBE500" />
+                        <GradientStop Offset="0" Color="#FF25CD6B" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.OpacityMask>
+                    <VisualBrush Stretch="None" Visual="{Binding ElementName=Background}" />
+                </Grid.OpacityMask>
+            </Grid>
         </Grid>
-        <Grid Width="220"
-              Height="220"
-              Margin="0,-5,0,0"
-              HorizontalAlignment="Center"
-              VerticalAlignment="Center">
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Offset="0.675" Color="#FFE23131" />
-                    <GradientStop Offset="0.366" Color="#FFFBE500" />
-                    <GradientStop Offset="0" Color="#FF25CD6B" />
-                </LinearGradientBrush>
-            </Grid.Background>
-            <Grid.OpacityMask>
-                <VisualBrush Stretch="None" Visual="{Binding ElementName=Background}" />
-            </Grid.OpacityMask>
-        </Grid>
-    </Grid>
+    </Viewbox>
 </wpfdesignandanimationlab:DemoPage>
