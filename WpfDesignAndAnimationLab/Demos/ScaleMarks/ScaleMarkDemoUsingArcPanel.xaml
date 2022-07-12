@@ -16,7 +16,7 @@
              MaxHeight="800"
              VerticalAlignment="Center">
         <Grid>
-            <Grid x:Name="Background"
+            <Grid x:Name="BackgroundElement"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
                 <ContentControl Content="111111111111">
@@ -68,7 +68,7 @@
                     </LinearGradientBrush>
                 </Grid.Background>
                 <Grid.OpacityMask>
-                    <VisualBrush Stretch="None" Visual="{Binding ElementName=Background}" />
+                    <VisualBrush Stretch="None" Visual="{Binding ElementName=BackgroundElement}" />
                 </Grid.OpacityMask>
             </Grid>
         </Grid>
