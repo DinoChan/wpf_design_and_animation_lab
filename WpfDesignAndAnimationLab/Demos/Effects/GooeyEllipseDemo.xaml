@@ -72,7 +72,7 @@
                         <ScaleTransform />
                         <SkewTransform />
                         <RotateTransform />
-                        <TranslateTransform  X="150"/>
+                        <TranslateTransform X="150" />
                     </TransformGroup>
                 </Ellipse.RenderTransform>
             </Ellipse>
