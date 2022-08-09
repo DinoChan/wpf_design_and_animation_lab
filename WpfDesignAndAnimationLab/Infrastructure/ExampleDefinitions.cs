@@ -5,6 +5,7 @@ using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.Effects;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.GlowEffects;
+using WpfDesignAndAnimationLab.Demos.Gooey;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
 using WpfDesignAndAnimationLab.Demos.LongShadows;
 using WpfDesignAndAnimationLab.Demos.Neuomorphism;
@@ -31,6 +32,10 @@ public class ExampleDefinitions
     {   new("Neuomorphism", null,
             new ExampleDefinitionItem("Neuomorphism Panel", typeof(NeuomorphismPanel)),
             new ExampleDefinitionItem("Button", typeof(NeuomorphismButtonDemo))
+        ),
+        new("Gooey", null,
+            new ExampleDefinitionItem("Gooey Ellipse", typeof(GooeyEllipseDemo)),
+            new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo))
         ),
           new("ScaleMark", null,
             new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
@@ -96,8 +101,7 @@ public class ExampleDefinitions
         new("Effects", null,
             new ExampleDefinitionItem("Lighten", typeof(LightenDemo)),
             new ExampleDefinitionItem("InnerShadow", typeof(InnerShadowEffectDemo)),
-            new ExampleDefinitionItem("FakeDropShadow", typeof(FakeDropShadowDemo)),
-            new ExampleDefinitionItem("Gooey Ellipse", typeof(GooeyEllipseDemo))
+            new ExampleDefinitionItem("FakeDropShadow", typeof(FakeDropShadowDemo))
         ),
         new("Transitions", null,
             new ExampleDefinitionItem("RippleBase", typeof(RippleBasic)),

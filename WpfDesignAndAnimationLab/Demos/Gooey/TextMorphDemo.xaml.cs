@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfDesignAndAnimationLab.Demos.Effects
+namespace WpfDesignAndAnimationLab.Demos.Gooey
 {
     /// <summary>
-    /// GooeyEllipseDemo.xaml 的交互逻辑
+    /// https://codepen.io/Valgo/pen/PowZaNY
     /// </summary>
-    public partial class GooeyEllipseDemo 
+    public partial class TextMorphDemo : UserControl
     {
-        public GooeyEllipseDemo()
+        public TextMorphDemo()
         {
             InitializeComponent();
         }
