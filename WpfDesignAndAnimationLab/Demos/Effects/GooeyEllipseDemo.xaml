@@ -51,7 +51,7 @@
             <Ellipse x:Name="ellipse"
                      Width="160"
                      Height="160"
-                     Fill="Black"
+                     Fill="MediumVioletRed"
                      RenderTransformOrigin="0.5,0.5">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -65,7 +65,7 @@
             <Ellipse x:Name="ellipse2"
                      Width="120"
                      Height="120"
-                     Fill="Blue"
+                     Fill="Red"
                      RenderTransformOrigin="0.5,0.5">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
