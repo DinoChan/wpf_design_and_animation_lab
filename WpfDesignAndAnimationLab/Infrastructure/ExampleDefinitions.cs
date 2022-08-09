@@ -94,7 +94,8 @@ public class ExampleDefinitions
         new("Effects", null,
             new ExampleDefinitionItem("Lighten", typeof(LightenDemo)),
             new ExampleDefinitionItem("InnerShadow", typeof(InnerShadowEffectDemo)),
-            new ExampleDefinitionItem("FakeDropShadow", typeof(FakeDropShadowDemo))
+            new ExampleDefinitionItem("FakeDropShadow", typeof(FakeDropShadowDemo)),
+            new ExampleDefinitionItem("Gooey Ellipse", typeof(GooeyEllipseDemo))
         ),
         new("Transitions", null,
             new ExampleDefinitionItem("RippleBase", typeof(RippleBasic)),

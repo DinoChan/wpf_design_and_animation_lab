@@ -14,6 +14,8 @@
     <None Remove="Shaders\HorizontalLightenEffect.ps" />
     <None Remove="Shaders\LightenEffect.ps" />
     <None Remove="Shaders\LongShadowEffect.ps" />
+    <None Remove="Shaders\SmoothThresholdEffect.ps" />
+    <None Remove="Shaders\ThresholdEffect.ps" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +28,8 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Shaders\LongShadowEffect.ps" />
+    <Resource Include="Shaders\SmoothThresholdEffect.ps" />
+    <Resource Include="Shaders\ThresholdEffect.ps" />
   </ItemGroup>
 
 </Project>
