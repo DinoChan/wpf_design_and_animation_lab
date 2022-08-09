@@ -34,7 +34,9 @@ public class ExampleDefinitions
         ),
           new("ScaleMark", null,
             new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
-            new ExampleDefinitionItem("Gauge Chart", typeof(ScaleMarkDemoUsingArcPanel))
+            new ExampleDefinitionItem("Gauge Chart", typeof(ScaleMarkDemoUsingArcPanel)),
+            new ExampleDefinitionItem("Using Ellipse", typeof(ScaleMarkDemoUsingEllipse)),
+             new ExampleDefinitionItem("Dense", typeof(DenseDemo))
         ),
         new("Outlined Text", null,
             new ExampleDefinitionItem("Main", typeof(Demo1Page)),
