@@ -57,7 +57,7 @@
             </DataTemplate>
         </Grid.Resources>
         <Grid.Effect>
-            <effects:SmoothThresholdEffect LowerThresh="0.38" UpperThresh="0.44" />
+            <effects:SmoothOpacityThresholdEffect LowerThresh="0.38" UpperThresh="0.44" />
         </Grid.Effect>
         <ItemsControl ItemTemplate="{StaticResource ItemTemplate}">
             <ItemsControl.ItemsPanel>

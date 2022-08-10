@@ -42,7 +42,7 @@
     </FrameworkElement.Triggers>
     <Grid>
         <Grid.Effect>
-            <effects:SmoothThresholdEffect LowerThresh="0.38" UpperThresh="0.44" />
+            <effects:SmoothOpacityThresholdEffect LowerThresh="0.38" UpperThresh="0.44" />
         </Grid.Effect>
         <Grid>
             <Grid.Effect>

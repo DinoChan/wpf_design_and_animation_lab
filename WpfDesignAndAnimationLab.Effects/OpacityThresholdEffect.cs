@@ -17,12 +17,12 @@ using System.Windows.Media.Media3D;
 
 namespace WpfDesignAndAnimationLab.Effects {
 	
-	public class ThresholdEffect : ShaderEffect {
-		public static readonly DependencyProperty InputProperty = ShaderEffect.RegisterPixelShaderSamplerProperty("Input", typeof(ThresholdEffect), 0);
-		public static readonly DependencyProperty ThreshProperty = DependencyProperty.Register("Thresh", typeof(double), typeof(ThresholdEffect), new UIPropertyMetadata(((double)(3.5D)), PixelShaderConstantCallback(0)));
-		public ThresholdEffect() {
+	public class OpacityThresholdEffect : ShaderEffect {
+		public static readonly DependencyProperty InputProperty = ShaderEffect.RegisterPixelShaderSamplerProperty("Input", typeof(OpacityThresholdEffect), 0);
+		public static readonly DependencyProperty ThreshProperty = DependencyProperty.Register("Thresh", typeof(double), typeof(OpacityThresholdEffect), new UIPropertyMetadata(((double)(3.5D)), PixelShaderConstantCallback(0)));
+		public OpacityThresholdEffect() {
 			PixelShader pixelShader = new PixelShader();
-			pixelShader.UriSource = new Uri("/WpfDesignAndAnimationLab.Effects;component/Shaders/ThresholdEffect.ps", UriKind.Relative);
+			pixelShader.UriSource = new Uri("/WpfDesignAndAnimationLab.Effects;component/Shaders/OpacityThresholdEffect.ps", UriKind.Relative);
 			this.PixelShader = pixelShader;
 
 			this.UpdateShaderValue(InputProperty);

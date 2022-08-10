@@ -17,13 +17,13 @@ using System.Windows.Media.Media3D;
 
 namespace WpfDesignAndAnimationLab.Effects {
 	
-	public class SmoothThresholdEffect : ShaderEffect {
-		public static readonly DependencyProperty InputProperty = ShaderEffect.RegisterPixelShaderSamplerProperty("Input", typeof(SmoothThresholdEffect), 0);
-		public static readonly DependencyProperty UpperThreshProperty = DependencyProperty.Register("UpperThresh", typeof(double), typeof(SmoothThresholdEffect), new UIPropertyMetadata(((double)(0.52D)), PixelShaderConstantCallback(0)));
-		public static readonly DependencyProperty LowerThreshProperty = DependencyProperty.Register("LowerThresh", typeof(double), typeof(SmoothThresholdEffect), new UIPropertyMetadata(((double)(0.5D)), PixelShaderConstantCallback(1)));
-		public SmoothThresholdEffect() {
+	public class SmoothOpacityThresholdEffect : ShaderEffect {
+		public static readonly DependencyProperty InputProperty = ShaderEffect.RegisterPixelShaderSamplerProperty("Input", typeof(SmoothOpacityThresholdEffect), 0);
+		public static readonly DependencyProperty UpperThreshProperty = DependencyProperty.Register("UpperThresh", typeof(double), typeof(SmoothOpacityThresholdEffect), new UIPropertyMetadata(((double)(0.52D)), PixelShaderConstantCallback(0)));
+		public static readonly DependencyProperty LowerThreshProperty = DependencyProperty.Register("LowerThresh", typeof(double), typeof(SmoothOpacityThresholdEffect), new UIPropertyMetadata(((double)(0.5D)), PixelShaderConstantCallback(1)));
+		public SmoothOpacityThresholdEffect() {
 			PixelShader pixelShader = new PixelShader();
-			pixelShader.UriSource = new Uri("/WpfDesignAndAnimationLab.Effects;component/Shaders/SmoothThresholdEffect.ps", UriKind.Relative);
+			pixelShader.UriSource = new Uri("/WpfDesignAndAnimationLab.Effects;component/Shaders/SmoothOpacityThresholdEffect.ps", UriKind.Relative);
 			this.PixelShader = pixelShader;
 
 			this.UpdateShaderValue(InputProperty);
