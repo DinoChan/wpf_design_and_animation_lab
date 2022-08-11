@@ -35,7 +35,8 @@ public class ExampleDefinitions
         ),
         new("Gooey", null,
             new ExampleDefinitionItem("Gooey Ellipse", typeof(GooeyEllipseDemo)),
-            new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo))
+            new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo)),
+               new ExampleDefinitionItem("Text Morph2", typeof(TextMorph2Demo))
         ),
           new("ScaleMark", null,
             new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
