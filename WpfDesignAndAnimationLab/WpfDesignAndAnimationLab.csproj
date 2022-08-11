@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Controls\Triangle.cs" />
+    <Compile Remove="Demos\Gooey\TextMorph2Demo.xaml.cs" />
     <Compile Remove="Demos\Neuomorphism\NeuomorphismPanelDemo.xaml.cs" />
     <Compile Remove="Demos\OutlinedText\OutlinedTextDemoPage.xaml.cs" />
   </ItemGroup>
@@ -21,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="Demos\Gooey\TextMorph2Demo.xaml" />
     <Page Remove="Demos\Neuomorphism\NeuomorphismPanelDemo.xaml" />
     <Page Remove="Demos\OutlinedText\OutlinedTextDemoPage.xaml" />
   </ItemGroup>
