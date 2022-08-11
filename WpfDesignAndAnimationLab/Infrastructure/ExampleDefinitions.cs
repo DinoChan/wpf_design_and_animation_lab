@@ -96,7 +96,8 @@ public class ExampleDefinitions
             new ExampleDefinitionItem("Basic", typeof(TextEffectsBasicDemo))
         ),
         new("Progress Ring", null,
-            new ExampleDefinitionItem("Basic", typeof(ProgressRingBasicDemo))
+            new ExampleDefinitionItem("Basic", typeof(ProgressRingBasicDemo)),
+            new ExampleDefinitionItem("Linear Gradient Circle", typeof(LinearGradientCircleLoading))
         ),
         new("Effects", null,
             new ExampleDefinitionItem("Lighten", typeof(LightenDemo)),
