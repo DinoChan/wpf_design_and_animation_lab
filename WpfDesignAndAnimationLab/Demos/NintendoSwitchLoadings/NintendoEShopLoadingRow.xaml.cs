@@ -11,16 +11,14 @@ namespace WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings
     /// </summary>
     public partial class NintendoEShopLoadingRow : UserControl
     {
+        // Using a DependencyProperty as the backing store for Delay.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DelayProperty =
+            DependencyProperty.Register("Delay", typeof(TimeSpan), typeof(NintendoEShopLoadingRow), new PropertyMetadata(default(TimeSpan)));
+
         public NintendoEShopLoadingRow()
         {
             InitializeComponent();
             Loaded += NintendoEShopLoadingRow_Loaded;
-        }
-
-        private async void NintendoEShopLoadingRow_Loaded(object sender, RoutedEventArgs e)
-        {
-            await Task.Delay(TimeSpan.FromSeconds(2) + Delay);
-            (Resources["Storyboard"] as Storyboard).Begin();
         }
 
         public TimeSpan Delay
@@ -29,8 +27,10 @@ namespace WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings
             set { SetValue(DelayProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Delay.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty DelayProperty =
-            DependencyProperty.Register("Delay", typeof(TimeSpan), typeof(NintendoEShopLoadingRow), new PropertyMetadata(default(TimeSpan)));
+        private async void NintendoEShopLoadingRow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2) + Delay);
+            (Resources["Storyboard"] as Storyboard).Begin();
+        }
     }
 }

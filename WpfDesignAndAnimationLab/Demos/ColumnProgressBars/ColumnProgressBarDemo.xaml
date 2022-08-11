@@ -81,8 +81,6 @@
                                                Height="10"
                                                VerticalAlignment="Top" />
                                 </Grid>
-
-
                             </Grid>
                         </ControlTemplate>
                     </Setter.Value>
@@ -111,7 +109,6 @@
                         <GradientStop Color="Black" />
                         <GradientStop Offset="1" Color="Transparent" />
                         <GradientStop Offset="0.6" Color="#41000000" />
-
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
@@ -120,9 +117,6 @@
                 <Rectangle Height="10" VerticalAlignment="Top" />
             </Grid>
         </Grid>-->
-
-
-
 
         <Grid Width="800" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
@@ -142,7 +136,5 @@
                          Foreground="#874ad8"
                          Value="0.7" />
         </Grid>
-
-
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

@@ -15,12 +15,12 @@ namespace WpfDesignAndAnimationLab.Behaviors
             AssociatedObject.MouseLeave += AssociatedObject_MouseLeave;
         }
 
-        private void AssociatedObject_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        private void AssociatedObject_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             UpdateAngle(e);
         }
 
-        private void AssociatedObject_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void AssociatedObject_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             UpdateAngle(e);
         }

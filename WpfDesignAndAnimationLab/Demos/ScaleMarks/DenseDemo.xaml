@@ -23,8 +23,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="5"
-                                           Height="5"
-                                           Fill="#6ab6f8" />
+                                         Height="5"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -37,8 +37,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="4.5"
-                                           Height="4.5"
-                                           Fill="#6ab6f8" />
+                                         Height="4.5"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -51,8 +51,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="4"
-                                           Height="4"
-                                           Fill="#6ab6f8" />
+                                         Height="4"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -65,8 +65,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="3.5"
-                                           Height="3.5"
-                                           Fill="#6ab6f8" />
+                                         Height="3.5"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -80,8 +80,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="3"
-                                           Height="3"
-                                           Fill="#6ab6f8" />
+                                         Height="3"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -95,8 +95,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="3"
-                                           Height="3"
-                                           Fill="#6ab6f8" />
+                                         Height="3"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -112,8 +112,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="5"
-                                           Height="5"
-                                           Fill="#6ab6f8" />
+                                         Height="5"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -126,8 +126,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="4.5"
-                                           Height="4.5"
-                                           Fill="#6ab6f8" />
+                                         Height="4.5"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -140,8 +140,8 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Ellipse Width="4"
-                                           Height="4"
-                                           Fill="#6ab6f8" />
+                                         Height="4"
+                                         Fill="#6ab6f8" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>
@@ -163,7 +163,6 @@
                                               Color="#6ab6f8" />
                         </TextBlock.Effect>
                     </TextBlock>
-
                 </Grid>
             </Grid>
         </Viewbox>

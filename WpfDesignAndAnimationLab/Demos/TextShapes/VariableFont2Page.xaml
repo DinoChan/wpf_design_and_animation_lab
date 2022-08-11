@@ -7,8 +7,9 @@
                                    xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
-                                   d:DesignWidth="880" Header="Good"
+                                   d:DesignWidth="880"
                                    Background="#f9f2e4"
+                                   Header="Good"
                                    mc:Ignorable="d">
     <Grid>
         <!--<FrameworkElement.Triggers>
@@ -22,7 +23,6 @@
                                          From="0"
                                          To="8"
                                          Duration="0:0:1.5" />
-
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>

@@ -9,6 +9,12 @@ namespace WpfDesignAndAnimationLab.Converters
     public class ReverseProgressToHeightConverter : DependencyObject, IValueConverter
     {
         /// <summary>
+        /// 标识 TargetContentControl 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty TargetContentControlProperty =
+            DependencyProperty.Register("TargetContentControl", typeof(ContentControl), typeof(ReverseProgressToHeightConverter), new PropertyMetadata(null));
+
+        /// <summary>
         /// 获取或设置TargetContentControl的值
         /// </summary>
         public ContentControl TargetContentControl
@@ -16,12 +22,6 @@ namespace WpfDesignAndAnimationLab.Converters
             get { return (ContentControl)GetValue(TargetContentControlProperty); }
             set { SetValue(TargetContentControlProperty, value); }
         }
-
-        /// <summary>
-        /// 标识 TargetContentControl 依赖属性。
-        /// </summary>
-        public static readonly DependencyProperty TargetContentControlProperty =
-            DependencyProperty.Register("TargetContentControl", typeof(ContentControl), typeof(ReverseProgressToHeightConverter), new PropertyMetadata(null));
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 using WpfDesignAndAnimationLab.Common;
@@ -12,12 +7,6 @@ namespace WpfDesignAndAnimationLab.Controls
 {
     public class NeuomorphismBoxTemplateSettings
     {
-        public DropShadowEffect LightShadowEffect { get; set; }
-
-        public DropShadowEffect DarkShadowEffect { get; set; }
-
-        public Brush Background { get; set; }
-
         public NeuomorphismBoxTemplateSettings(Color color, double distance, double intensity, double blur, NeuomorphismShape shape, NeuomorphismLightSource lightSource)
         {
             Background = CreateBackground(color, shape, lightSource);
@@ -30,7 +19,6 @@ namespace WpfDesignAndAnimationLab.Controls
             newDarkColor.ScG = darkColor.G;
             newDarkColor.ScB = darkColor.B;
 
-
             var newLightColor = new Color();
             newLightColor.ScR = lightColor.R;
             newLightColor.ScG = lightColor.G;
@@ -42,15 +30,19 @@ namespace WpfDesignAndAnimationLab.Controls
                 case NeuomorphismLightSource.TopLeft:
                     lightDirection = 135;
                     break;
+
                 case NeuomorphismLightSource.BottomLeft:
                     lightDirection = 225;
                     break;
+
                 case NeuomorphismLightSource.BottomRight:
                     lightDirection = 315;
                     break;
+
                 case NeuomorphismLightSource.TopRight:
                     lightDirection = 90;
                     break;
+
                 default:
                     break;
             }
@@ -60,6 +52,10 @@ namespace WpfDesignAndAnimationLab.Controls
             LightShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = ConvertToSRGBColor(lightColor), Direction = lightDirection, ShadowDepth = distance };
             DarkShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = ConvertToSRGBColor(darkColor), Direction = darkDirection, ShadowDepth = distance };
         }
+
+        public Brush Background { get; set; }
+        public DropShadowEffect DarkShadowEffect { get; set; }
+        public DropShadowEffect LightShadowEffect { get; set; }
 
         private Color ConvertToSRGBColor(Color color)
         {
@@ -86,18 +82,22 @@ namespace WpfDesignAndAnimationLab.Controls
                     startPoint = new Point(0, 0);
                     endPoint = new Point(1, 1);
                     break;
+
                 case NeuomorphismLightSource.TopRight:
                     startPoint = new Point(1, 0);
                     endPoint = new Point(0, 1);
                     break;
+
                 case NeuomorphismLightSource.BottomLeft:
                     startPoint = new Point(0, 1);
                     endPoint = new Point(1, 0);
                     break;
+
                 case NeuomorphismLightSource.BottomRight:
                     startPoint = new Point(1, 1);
                     endPoint = new Point(0, 0);
                     break;
+
                 default:
                     break;
             }

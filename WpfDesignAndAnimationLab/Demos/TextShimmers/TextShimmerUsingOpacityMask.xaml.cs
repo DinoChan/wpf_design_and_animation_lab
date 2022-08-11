@@ -16,12 +16,6 @@ namespace WpfDesignAndAnimationLab.Demos.TextShimmers
             TextBlock.SizeChanged += TextBlock_SizeChanged;
         }
 
-        private void TextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            var brush = TextBlock.OpacityMask as RadialGradientBrush;
-            brush.RadiusX = 2 * e.NewSize.Height / e.NewSize.Width;
-        }
-
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             //var brush = new RadialGradientBrush
@@ -65,6 +59,12 @@ namespace WpfDesignAndAnimationLab.Demos.TextShimmers
             //storyboard.Children.Add(centerAnimation);
             //storyboard.Children.Add(gradientOriginAnimation);
             //storyboard.Begin();
+        }
+
+        private void TextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var brush = TextBlock.OpacityMask as RadialGradientBrush;
+            brush.RadiusX = 2 * e.NewSize.Height / e.NewSize.Width;
         }
     }
 }

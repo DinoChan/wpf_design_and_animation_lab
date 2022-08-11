@@ -25,14 +25,9 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupCommon = "CommonStates";
 
         /// <summary>
-        /// Normal state of the Common state group.
+        /// Disabled state of the Common state group.
         /// </summary>
-        public const string StateNormal = "Normal";
-
-        /// <summary>
-        /// Normal state of the Common state group.
-        /// </summary>
-        public const string StateReadOnly = "ReadOnly";
+        public const string StateDisabled = "Disabled";
 
         /// <summary>
         /// MouseOver state of the Common state group.
@@ -40,14 +35,19 @@ namespace WpfDesignAndAnimationLab.Common
         public const string StateMouseOver = "MouseOver";
 
         /// <summary>
+        /// Normal state of the Common state group.
+        /// </summary>
+        public const string StateNormal = "Normal";
+
+        /// <summary>
         /// Pressed state of the Common state group.
         /// </summary>
         public const string StatePressed = "Pressed";
 
         /// <summary>
-        /// Disabled state of the Common state group.
+        /// Normal state of the Common state group.
         /// </summary>
-        public const string StateDisabled = "Disabled";
+        public const string StateReadOnly = "ReadOnly";
 
         #endregion GroupCommon
 
@@ -59,14 +59,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupFocus = "FocusStates";
 
         /// <summary>
-        /// Unfocused state of the Focus state group.
-        /// </summary>
-        public const string StateUnfocused = "Unfocused";
-
-        /// <summary>
         /// Focused state of the Focus state group.
         /// </summary>
         public const string StateFocused = "Focused";
+
+        /// <summary>
+        /// Unfocused state of the Focus state group.
+        /// </summary>
+        public const string StateUnfocused = "Unfocused";
 
         #endregion GroupFocus
 
@@ -83,14 +83,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string StateSelected = "Selected";
 
         /// <summary>
-        /// Unselected state of the Selection state group.
-        /// </summary>
-        public const string StateUnselected = "Unselected";
-
-        /// <summary>
         /// Selected inactive state of the Selection state group.
         /// </summary>
         public const string StateSelectedInactive = "SelectedInactive";
+
+        /// <summary>
+        /// Unselected state of the Selection state group.
+        /// </summary>
+        public const string StateUnselected = "Unselected";
 
         #endregion GroupSelection
 
@@ -102,14 +102,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupExpansion = "ExpansionStates";
 
         /// <summary>
-        /// Expanded state of the Expansion state group.
-        /// </summary>
-        public const string StateExpanded = "Expanded";
-
-        /// <summary>
         /// Collapsed state of the Expansion state group.
         /// </summary>
         public const string StateCollapsed = "Collapsed";
+
+        /// <summary>
+        /// Expanded state of the Expansion state group.
+        /// </summary>
+        public const string StateExpanded = "Expanded";
 
         #endregion GroupExpansion
 
@@ -121,14 +121,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupPopup = "PopupStates";
 
         /// <summary>
-        /// Opened state of the Popup state group.
-        /// </summary>
-        public const string StatePopupOpened = "PopupOpened";
-
-        /// <summary>
         /// Closed state of the Popup state group.
         /// </summary>
         public const string StatePopupClosed = "PopupClosed";
+
+        /// <summary>
+        /// Opened state of the Popup state group.
+        /// </summary>
+        public const string StatePopupOpened = "PopupOpened";
 
         #endregion GroupPopup
 
@@ -140,11 +140,6 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupValidation = "ValidationStates";
 
         /// <summary>
-        /// The valid state for the ValidationStates group.
-        /// </summary>
-        public const string StateValid = "Valid";
-
-        /// <summary>
         /// Invalid, focused state for the ValidationStates group.
         /// </summary>
         public const string StateInvalidFocused = "InvalidFocused";
@@ -153,6 +148,11 @@ namespace WpfDesignAndAnimationLab.Common
         /// Invalid, unfocused state for the ValidationStates group.
         /// </summary>
         public const string StateInvalidUnfocused = "InvalidUnfocused";
+
+        /// <summary>
+        /// The valid state for the ValidationStates group.
+        /// </summary>
+        public const string StateValid = "Valid";
 
         #endregion GroupValidation
 
@@ -169,11 +169,6 @@ namespace WpfDesignAndAnimationLab.Common
         public const string StateExpandDown = "ExpandDown";
 
         /// <summary>
-        /// Up expand direction state of ExpandDirection state group.
-        /// </summary>
-        public const string StateExpandUp = "ExpandUp";
-
-        /// <summary>
         /// Left expand direction state of ExpandDirection state group.
         /// </summary>
         public const string StateExpandLeft = "ExpandLeft";
@@ -182,6 +177,11 @@ namespace WpfDesignAndAnimationLab.Common
         /// Right expand direction state of ExpandDirection state group.
         /// </summary>
         public const string StateExpandRight = "ExpandRight";
+
+        /// <summary>
+        /// Up expand direction state of ExpandDirection state group.
+        /// </summary>
+        public const string StateExpandUp = "ExpandUp";
 
         #endregion GroupExpandDirection
 
@@ -212,14 +212,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupIncrease = "IncreaseStates";
 
         /// <summary>
-        /// State enabled for increment group.
-        /// </summary>
-        public const string StateIncreaseEnabled = "IncreaseEnabled";
-
-        /// <summary>
         /// State disabled for increment group.
         /// </summary>
         public const string StateIncreaseDisabled = "IncreaseDisabled";
+
+        /// <summary>
+        /// State enabled for increment group.
+        /// </summary>
+        public const string StateIncreaseEnabled = "IncreaseEnabled";
 
         #endregion GroupIncrease
 
@@ -231,14 +231,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupDecrease = "DecreaseStates";
 
         /// <summary>
-        /// State enabled for decrement group.
-        /// </summary>
-        public const string StateDecreaseEnabled = "DecreaseEnabled";
-
-        /// <summary>
         /// State disabled for decrement group.
         /// </summary>
         public const string StateDecreaseDisabled = "DecreaseDisabled";
+
+        /// <summary>
+        /// State enabled for decrement group.
+        /// </summary>
+        public const string StateDecreaseEnabled = "DecreaseEnabled";
 
         #endregion GroupDecrease
 
@@ -250,14 +250,14 @@ namespace WpfDesignAndAnimationLab.Common
         public const string GroupInteractionMode = "InteractionModeStates";
 
         /// <summary>
-        /// Edit of the DisplayMode state group.
-        /// </summary>
-        public const string StateEdit = "Edit";
-
-        /// <summary>
         /// Display of the DisplayMode state group.
         /// </summary>
         public const string StateDisplay = "Display";
+
+        /// <summary>
+        /// Edit of the DisplayMode state group.
+        /// </summary>
+        public const string StateEdit = "Edit";
 
         #endregion GroupIteractionMode
 
@@ -283,6 +283,11 @@ namespace WpfDesignAndAnimationLab.Common
         #region GroupActive
 
         /// <summary>
+        /// Active state group.
+        /// </summary>
+        public const string GroupActive = "ActiveStates";
+
+        /// <summary>
         /// Active state.
         /// </summary>
         public const string StateActive = "Active";
@@ -292,14 +297,14 @@ namespace WpfDesignAndAnimationLab.Common
         /// </summary>
         public const string StateInactive = "Inactive";
 
-        /// <summary>
-        /// Active state group.
-        /// </summary>
-        public const string GroupActive = "ActiveStates";
-
         #endregion GroupActive
 
         #region GroupWatermark
+
+        /// <summary>
+        /// Watermark state group.
+        /// </summary>
+        public const string GroupWatermark = "WatermarkStates";
 
         /// <summary>
         /// Non-watermarked state.
@@ -311,19 +316,14 @@ namespace WpfDesignAndAnimationLab.Common
         /// </summary>
         public const string StateWatermarked = "Watermarked";
 
-        /// <summary>
-        /// Watermark state group.
-        /// </summary>
-        public const string GroupWatermark = "WatermarkStates";
-
         #endregion GroupWatermark
 
         #region GroupCalendarButtonFocus
 
         /// <summary>
-        /// Unfocused state for Calendar Buttons.
+        /// CalendarButtons Focus state group.
         /// </summary>
-        public const string StateCalendarButtonUnfocused = "CalendarButtonUnfocused";
+        public const string GroupCalendarButtonFocus = "CalendarButtonFocusStates";
 
         /// <summary>
         /// Focused state for Calendar Buttons.
@@ -331,13 +331,18 @@ namespace WpfDesignAndAnimationLab.Common
         public const string StateCalendarButtonFocused = "CalendarButtonFocused";
 
         /// <summary>
-        /// CalendarButtons Focus state group.
+        /// Unfocused state for Calendar Buttons.
         /// </summary>
-        public const string GroupCalendarButtonFocus = "CalendarButtonFocusStates";
+        public const string StateCalendarButtonUnfocused = "CalendarButtonUnfocused";
 
         #endregion GroupCalendarButtonFocus
 
         #region GroupBusyStatus
+
+        /// <summary>
+        /// Busyness group name.
+        /// </summary>
+        public const string GroupBusyStatus = "BusyStatusStates";
 
         /// <summary>
         /// Busy state for BusyIndicator.
@@ -349,19 +354,14 @@ namespace WpfDesignAndAnimationLab.Common
         /// </summary>
         public const string StateIdle = "Idle";
 
-        /// <summary>
-        /// Busyness group name.
-        /// </summary>
-        public const string GroupBusyStatus = "BusyStatusStates";
-
         #endregion GroupBusyStatus
 
         #region GroupVisibility
 
         /// <summary>
-        /// Visible state name for BusyIndicator.
+        /// BusyDisplay group.
         /// </summary>
-        public const string StateVisible = "Visible";
+        public const string GroupVisibility = "VisibilityStates";
 
         /// <summary>
         /// Hidden state name for BusyIndicator.
@@ -369,11 +369,27 @@ namespace WpfDesignAndAnimationLab.Common
         public const string StateHidden = "Hidden";
 
         /// <summary>
-        /// BusyDisplay group.
+        /// Visible state name for BusyIndicator.
         /// </summary>
-        public const string GroupVisibility = "VisibilityStates";
+        public const string StateVisible = "Visible";
 
         #endregion GroupVisibility
+
+        /// <summary>
+        /// Gets the implementation root of the Control.
+        /// </summary>
+        /// <param name="dependencyObject">The DependencyObject.</param>
+        /// <remarks>
+        /// Implements Silverlight's corresponding internal property on Control.
+        /// </remarks>
+        /// <returns>Returns the implementation root or null.</returns>
+        public static FrameworkElement GetImplementationRoot(DependencyObject dependencyObject)
+        {
+            Debug.Assert(dependencyObject != null, "DependencyObject should not be null.");
+            return (1 == VisualTreeHelper.GetChildrenCount(dependencyObject)) ?
+                VisualTreeHelper.GetChild(dependencyObject, 0) as FrameworkElement :
+                null;
+        }
 
         /// <summary>
         /// Use VisualStateManager to change the visual state of the control.
@@ -402,22 +418,6 @@ namespace WpfDesignAndAnimationLab.Common
                     break;
                 }
             }
-        }
-
-        /// <summary>
-        /// Gets the implementation root of the Control.
-        /// </summary>
-        /// <param name="dependencyObject">The DependencyObject.</param>
-        /// <remarks>
-        /// Implements Silverlight's corresponding internal property on Control.
-        /// </remarks>
-        /// <returns>Returns the implementation root or null.</returns>
-        public static FrameworkElement GetImplementationRoot(DependencyObject dependencyObject)
-        {
-            Debug.Assert(dependencyObject != null, "DependencyObject should not be null.");
-            return (1 == VisualTreeHelper.GetChildrenCount(dependencyObject)) ?
-                VisualTreeHelper.GetChild(dependencyObject, 0) as FrameworkElement :
-                null;
         }
 
         /// <summary>

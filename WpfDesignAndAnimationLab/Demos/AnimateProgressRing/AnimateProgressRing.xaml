@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
                     xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                     xmlns:coomon="clr-namespace:WpfDesignAndAnimationLab.Common"
-                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
                     xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.AnimateProgressRing">
 
     <Style TargetType="{x:Type local:AnimateProgressRing}">

@@ -11,7 +11,6 @@ float Thresh : register(C0);
 
 float4 main(float2 uv : TEXCOORD) : COLOR
 {
-
     float4 color;
     color = tex2D(input, uv.xy);
     if (color.a == 0 || color.a == 1 || Thresh == 0)
@@ -28,4 +27,3 @@ float4 main(float2 uv : TEXCOORD) : COLOR
     resultColor.a = opacity;
     return resultColor;
 }
-

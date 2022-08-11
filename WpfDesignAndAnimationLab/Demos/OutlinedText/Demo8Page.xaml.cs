@@ -21,18 +21,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             SizeChanged += OnPageSizeChanged;
         }
 
-        private void OnPageSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            _hasPoints = false;
-        }
-
-        private void OnItemLoaded(object sender, RoutedEventArgs e)
-        {
-            var element = sender as FrameworkElement;
-            if (_items.ContainsKey(element) == false)
-                _items.Add(element, new Point(0, 0));
-        }
-
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -61,6 +49,18 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
                 var y = sinA * tempDistance; ;
                 item.Key.RenderTransform = new TranslateTransform(x, y);
             }
+        }
+
+        private void OnItemLoaded(object sender, RoutedEventArgs e)
+        {
+            var element = sender as FrameworkElement;
+            if (_items.ContainsKey(element) == false)
+                _items.Add(element, new Point(0, 0));
+        }
+
+        private void OnPageSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            _hasPoints = false;
         }
     }
 }

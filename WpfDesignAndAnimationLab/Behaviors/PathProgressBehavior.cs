@@ -8,10 +8,11 @@ namespace WpfDesignAndAnimationLab.Behaviors
 {
     public class PathProgressBehavior : Behavior<UIElement>
     {
-        protected override void OnAttached()
-        {
-            base.OnAttached();
-        }
+        /// <summary>
+        /// 标识 Progress 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty ProgressProperty =
+            DependencyProperty.Register("Progress", typeof(double), typeof(PathProgressBehavior), new PropertyMetadata(0d, OnProgressChanged));
 
         /// <summary>
         /// 获取或设置Progress的值
@@ -20,26 +21,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
         {
             get { return (double)GetValue(ProgressProperty); }
             set { SetValue(ProgressProperty, value); }
-        }
-
-        /// <summary>
-        /// 标识 Progress 依赖属性。
-        /// </summary>
-        public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.Register("Progress", typeof(double), typeof(PathProgressBehavior), new PropertyMetadata(0d, OnProgressChanged));
-
-        private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            var target = obj as PathProgressBehavior;
-            var oldValue = (double)args.OldValue;
-            var newValue = (double)args.NewValue;
-            if (oldValue != newValue)
-                target.OnProgressChanged(oldValue, newValue);
-        }
-
-        protected virtual void OnProgressChanged(double oldValue, double newValue)
-        {
-            UpdateStrokeDashArray();
         }
 
         protected virtual double GetTotalLength(Shape shape)
@@ -63,6 +44,25 @@ namespace WpfDesignAndAnimationLab.Behaviors
             }
 
             return length;
+        }
+
+        protected override void OnAttached()
+        {
+            base.OnAttached();
+        }
+
+        protected virtual void OnProgressChanged(double oldValue, double newValue)
+        {
+            UpdateStrokeDashArray();
+        }
+
+        private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var target = obj as PathProgressBehavior;
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
+            if (oldValue != newValue)
+                target.OnProgressChanged(oldValue, newValue);
         }
 
         private void UpdateStrokeDashArray()

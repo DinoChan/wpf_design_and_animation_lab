@@ -36,7 +36,6 @@
                                                              InnerShadowEffect="{StaticResource InnerShadowEffet}" />
                                     <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                                 </Grid>
-
                             </Border>
                         </Border>
                     </ControlTemplate>
@@ -64,15 +63,12 @@
                                                              InnerShadowEffect="{StaticResource InnerShadowEffet}" />
                                     <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                                 </Grid>
-
                             </Border>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-
-
     </FrameworkElement.Resources>
     <Grid>
         <UniformGrid Rows="1">
@@ -170,7 +166,6 @@
                     </ContentControl>
                 </ContentControl>
             </Grid>
-
         </UniformGrid>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

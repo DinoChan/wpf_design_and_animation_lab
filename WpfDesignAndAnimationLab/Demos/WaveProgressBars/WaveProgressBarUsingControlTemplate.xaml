@@ -97,9 +97,7 @@
                                         </PathGeometry>
                                     </Path.Data>
                                 </Path>
-
                             </Viewbox>
-
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -136,10 +134,7 @@
                             <RectangleGeometry Rect="0,0,200,200" />
                         </ProgressBar.Clip>
                     </ProgressBar>
-
-
                 </Grid>
-
             </Grid>
 
             <Slider x:Name="Slider"

@@ -53,7 +53,6 @@
                                             <DoubleAnimation Storyboard.TargetName="ContentElement"
                                                              Storyboard.TargetProperty="StrokeThickness"
                                                              To="4" />
-
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
@@ -75,7 +74,6 @@
                                              StrokeThickness="0"
                                              Text="{TemplateBinding Content}" />
                         </Border>
-
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -109,7 +107,6 @@
                                                              Storyboard.TargetProperty="StrokeThickness"
                                                              To="4"
                                                              Duration="0:0:0" />
-
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
@@ -132,7 +129,6 @@
                                              StrokeThickness="0"
                                              Text="{TemplateBinding Content}" />
                         </Border>
-
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

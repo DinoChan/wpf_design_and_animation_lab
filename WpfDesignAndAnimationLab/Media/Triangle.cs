@@ -6,11 +6,6 @@ namespace WpfDesignAndAnimationLab.Media
 {
     public class Triangle : Shape
     {
-        public Triangle()
-        {
-            _definingGeometry = Geometry.Empty;
-        }
-
         /// <summary>
         ///     标识 Direction 依赖属性。
         /// </summary>
@@ -18,6 +13,11 @@ namespace WpfDesignAndAnimationLab.Media
             DependencyProperty.Register("Direction", typeof(Direction), typeof(Triangle), new FrameworkPropertyMetadata(Direction.Up, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         private Geometry _definingGeometry;
+
+        public Triangle()
+        {
+            _definingGeometry = Geometry.Empty;
+        }
 
         /// <summary>
         ///     获取或设置Direction的值
@@ -28,7 +28,7 @@ namespace WpfDesignAndAnimationLab.Media
             set { SetValue(DirectionProperty, value); }
         }
 
-        protected sealed override Geometry DefiningGeometry
+        protected override sealed Geometry DefiningGeometry
         {
             get => _definingGeometry;
         }

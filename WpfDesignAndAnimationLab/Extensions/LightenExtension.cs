@@ -8,8 +8,8 @@ namespace WpfDesignAndAnimationLab.Extensions
     [MarkupExtensionReturnType(typeof(SolidColorBrush))]
     public class LightenExtension : MarkupExtension
     {
-        public SolidColorBrush Source { get; set; }
         public double Amount { get; set; }
+        public SolidColorBrush Source { get; set; }
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {

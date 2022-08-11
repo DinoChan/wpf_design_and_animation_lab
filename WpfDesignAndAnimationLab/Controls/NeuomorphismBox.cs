@@ -218,6 +218,7 @@ namespace WpfDesignAndAnimationLab.Controls
             var target = obj as NeuomorphismBox;
             target?.OnShapeChanged((NeuomorphismShape)args.OldValue, (NeuomorphismShape)args.NewValue);
         }
+
         private void UpdateTemplateSettings()
         {
             if (_hasApplyTemplate == false)

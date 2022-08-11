@@ -24,6 +24,7 @@ namespace WpfDesignAndAnimationLab.Controls
             get { return (CornerRadius)GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
         }
+
         public DropShadowEffect InnerShadowEffect
         {
             get { return (DropShadowEffect)GetValue(InnerShadowEffectProperty); }

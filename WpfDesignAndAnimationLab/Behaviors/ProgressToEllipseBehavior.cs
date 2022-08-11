@@ -9,6 +9,12 @@ namespace WpfDesignAndAnimationLab.Behaviors
     public class ProgressToEllipseBehavior : Behavior<Ellipse>
     {
         /// <summary>
+        /// 标识 Progress 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty ProgressProperty =
+            DependencyProperty.Register("Progress", typeof(double), typeof(ProgressToEllipseBehavior), new PropertyMetadata(0d, OnProgressChanged));
+
+        /// <summary>
         /// 获取或设置Progress的值
         /// </summary>
         public double Progress
@@ -17,24 +23,12 @@ namespace WpfDesignAndAnimationLab.Behaviors
             set { SetValue(ProgressProperty, value); }
         }
 
-        /// <summary>
-        /// 标识 Progress 依赖属性。
-        /// </summary>
-        public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.Register("Progress", typeof(double), typeof(ProgressToEllipseBehavior), new PropertyMetadata(0d, OnProgressChanged));
-
-        private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        protected virtual double GetTotalLength()
         {
-            var target = obj as ProgressToEllipseBehavior;
-            var oldValue = (double)args.OldValue;
-            var newValue = (double)args.NewValue;
-            if (oldValue != newValue)
-                target.OnProgressChanged(oldValue, newValue);
-        }
+            if (AssociatedObject == null)
+                return 0;
 
-        protected virtual void OnProgressChanged(double oldValue, double newValue)
-        {
-            UpdateStrokeDashArray();
+            return (AssociatedObject.ActualHeight - AssociatedObject.StrokeThickness) * Math.PI;
         }
 
         protected override void OnAttached()
@@ -43,12 +37,18 @@ namespace WpfDesignAndAnimationLab.Behaviors
             UpdateStrokeDashArray();
         }
 
-        protected virtual double GetTotalLength()
+        protected virtual void OnProgressChanged(double oldValue, double newValue)
         {
-            if (AssociatedObject == null)
-                return 0;
+            UpdateStrokeDashArray();
+        }
 
-            return (AssociatedObject.ActualHeight - AssociatedObject.StrokeThickness) * Math.PI;
+        private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var target = obj as ProgressToEllipseBehavior;
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
+            if (oldValue != newValue)
+                target.OnProgressChanged(oldValue, newValue);
         }
 
         private void UpdateStrokeDashArray()

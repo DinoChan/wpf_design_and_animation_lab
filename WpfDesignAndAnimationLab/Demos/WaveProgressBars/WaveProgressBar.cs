@@ -4,7 +4,6 @@ using System.Windows.Media.Animation;
 
 namespace WpfDesignAndAnimationLab.Demos.WaveProgressBars
 {
-
     /// <summary>
     /// thanks https://www.cnblogs.com/h82258652/p/16098909.html
     /// </summary>

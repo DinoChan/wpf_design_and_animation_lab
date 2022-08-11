@@ -17,6 +17,15 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
         }
 
         /// <summary>
+        ///     获取或设置Children的值
+        /// </summary>
+        public Collection<PointCollection> Children
+        {
+            get { return (Collection<PointCollection>)GetValue(ChildrenProperty); }
+            set { SetValue(ChildrenProperty, value); }
+        }
+
+        /// <summary>
         ///     获取或设置Points的值
         /// </summary>
         public PointCollection Points
@@ -34,20 +43,6 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
             set { SetValue(ProgressProperty, value); }
         }
 
-        /// <summary>
-        ///     获取或设置Children的值
-        /// </summary>
-        public Collection<PointCollection> Children
-        {
-            get { return (Collection<PointCollection>)GetValue(ChildrenProperty); }
-            set { SetValue(ChildrenProperty, value); }
-        }
-
-        protected virtual void OnProgressChanged(double oldValue, double newValue)
-        {
-            UpdatePoints();
-        }
-
         protected virtual void OnChildrenChanged(Collection<PointCollection> oldValue, Collection<PointCollection> newValue)
         {
             if (oldValue is INotifyCollectionChanged oldCollection)
@@ -57,6 +52,26 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
                 newCollection.CollectionChanged += OnChildrenCollectionChanged;
 
             UpdatePoints();
+        }
+
+        protected virtual void OnProgressChanged(double oldValue, double newValue)
+        {
+            UpdatePoints();
+        }
+
+        private static PointCollection GetCurrentPoints(PointCollection fromPoints, PointCollection toPoints, double percentage)
+        {
+            var result = new PointCollection();
+            for (var i = 0;
+                i < Math.Min(fromPoints.Count, toPoints.Count);
+                i++)
+            {
+                var x = (1 - percentage / 100d) * fromPoints[i].X + percentage / 100d * toPoints[i].X;
+                var y = (1 - percentage / 100d) * fromPoints[i].Y + percentage / 100d * toPoints[i].Y;
+
+                result.Add(new Point(x, y));
+            }
+            return result;
         }
 
         private void OnChildrenCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -102,43 +117,25 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
             }
         }
 
-        private static PointCollection GetCurrentPoints(PointCollection fromPoints, PointCollection toPoints, double percentage)
-        {
-            var result = new PointCollection();
-            for (var i = 0;
-                i < Math.Min(fromPoints.Count, toPoints.Count);
-                i++)
-            {
-                var x = (1 - percentage / 100d) * fromPoints[i].X + percentage / 100d * toPoints[i].X;
-                var y = (1 - percentage / 100d) * fromPoints[i].Y + percentage / 100d * toPoints[i].Y;
-
-                result.Add(new Point(x, y));
-            }
-            return result;
-        }
-
         #region DependencyProperties
-
-        /// <summary>
-        ///     标识 Progress 依赖属性。
-        /// </summary>
-        public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.Register("Progress", typeof(double), typeof(ProgressToPointCollectionBridge), new PropertyMetadata(0d, OnProgressChanged));
-
-        private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            var target = obj as ProgressToPointCollectionBridge;
-            var oldValue = (double)args.OldValue;
-            var newValue = (double)args.NewValue;
-            if (oldValue != newValue)
-                target.OnProgressChanged(oldValue, newValue);
-        }
 
         /// <summary>
         ///     标识 Children 依赖属性。
         /// </summary>
         public static readonly DependencyProperty ChildrenProperty =
             DependencyProperty.Register("Children", typeof(Collection<PointCollection>), typeof(ProgressToPointCollectionBridge), new PropertyMetadata(null, OnChildrenChanged));
+
+        /// <summary>
+        ///     标识 Points 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty PointsProperty =
+            DependencyProperty.Register("Points", typeof(PointCollection), typeof(ProgressToPointCollectionBridge), new PropertyMetadata(null));
+
+        /// <summary>
+        ///     标识 Progress 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty ProgressProperty =
+            DependencyProperty.Register("Progress", typeof(double), typeof(ProgressToPointCollectionBridge), new PropertyMetadata(0d, OnProgressChanged));
 
         private static void OnChildrenChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
@@ -149,11 +146,14 @@ namespace WpfDesignAndAnimationLab.Demos.Shapes
                 target.OnChildrenChanged(oldValue, newValue);
         }
 
-        /// <summary>
-        ///     标识 Points 依赖属性。
-        /// </summary>
-        public static readonly DependencyProperty PointsProperty =
-            DependencyProperty.Register("Points", typeof(PointCollection), typeof(ProgressToPointCollectionBridge), new PropertyMetadata(null));
+        private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var target = obj as ProgressToPointCollectionBridge;
+            var oldValue = (double)args.OldValue;
+            var newValue = (double)args.NewValue;
+            if (oldValue != newValue)
+                target.OnProgressChanged(oldValue, newValue);
+        }
 
         #endregion DependencyProperties
     }

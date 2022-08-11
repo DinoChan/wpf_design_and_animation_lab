@@ -16,6 +16,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
         {
         }
 
+        public IEnumerable<ExampleDefinitionItem> Items { get; }
         public string Name { get; private set; }
 
         public Uri ShourceCodeUri { get; private set; }
@@ -24,8 +25,6 @@ namespace WpfDesignAndAnimationLab.Infrastructure
         {
             return Name;
         }
-
-        public IEnumerable<ExampleDefinitionItem> Items { get; }
     }
 
     public class ExampleDefinitionItem
@@ -36,7 +35,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             Control = control;
         }
 
-        public string Name { get; private set; }
         public Type Control { get; private set; }
+        public string Name { get; private set; }
     }
 }

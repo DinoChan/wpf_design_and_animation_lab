@@ -1,9 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                     xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
-                    xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls"
-                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors">
+                    xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls">
 
     <Style TargetType="controls:InnerShadowBox">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

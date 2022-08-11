@@ -26,8 +26,8 @@ namespace WpfDesignAndAnimationLab.Behaviors
         public static readonly DependencyProperty StartAngleProperty =
             DependencyProperty.Register(nameof(StartAngle), typeof(double), typeof(EllipseProgressBehavior), new PropertyMetadata(default(double), OnStartAngleChanged));
 
-        private double _normalizedMinAngle;
         private double _normalizedMaxAngle;
+        private double _normalizedMinAngle;
 
         /// <summary>
         /// 获取或设置EndAngle的值
@@ -99,6 +99,13 @@ namespace WpfDesignAndAnimationLab.Behaviors
             UpdateStrokeDashArray();
         }
 
+        private static double Mod(double number, double divider)
+        {
+            var result = number % divider;
+            result = result < 0 ? result + divider : result;
+            return result;
+        }
+
         private static void OnEndAngleChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var oldValue = (double)args.OldValue;
@@ -130,26 +137,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             target?.OnStartAngleChanged(oldValue, newValue);
         }
 
-        private void UpdateStrokeDashArray()
-        {
-            if (AssociatedObject == null || AssociatedObject.StrokeThickness == 0)
-                return;
-
-            //if (target.ActualHeight == 0 || target.ActualWidth == 0)
-            //    return;
-
-            var totalLength = GetTotalLength();
-            if (totalLength == 0)
-                return;
-
-            totalLength /= AssociatedObject.StrokeThickness;
-            var progressLenth = Progress * totalLength / 100;
-
-            var result = new DoubleCollection { progressLenth, double.MaxValue };
-
-            AssociatedObject.StrokeDashArray = result;
-        }
-
         private void UpdateAngle()
         {
             UpdateNormalizedAngles();
@@ -163,13 +150,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
             {
                 AssociatedObject.RenderTransform = new RotateTransform { Angle = _normalizedMinAngle - 90 };
             }
-        }
-
-        private static double Mod(double number, double divider)
-        {
-            var result = number % divider;
-            result = result < 0 ? result + divider : result;
-            return result;
         }
 
         private void UpdateNormalizedAngles()
@@ -196,6 +176,26 @@ namespace WpfDesignAndAnimationLab.Behaviors
             }
 
             _normalizedMaxAngle = result;
+        }
+
+        private void UpdateStrokeDashArray()
+        {
+            if (AssociatedObject == null || AssociatedObject.StrokeThickness == 0)
+                return;
+
+            //if (target.ActualHeight == 0 || target.ActualWidth == 0)
+            //    return;
+
+            var totalLength = GetTotalLength();
+            if (totalLength == 0)
+                return;
+
+            totalLength /= AssociatedObject.StrokeThickness;
+            var progressLenth = Progress * totalLength / 100;
+
+            var result = new DoubleCollection { progressLenth, double.MaxValue };
+
+            AssociatedObject.StrokeDashArray = result;
         }
     }
 }

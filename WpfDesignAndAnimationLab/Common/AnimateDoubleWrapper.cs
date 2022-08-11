@@ -72,6 +72,7 @@ namespace WpfDesignAndAnimationLab.Common
             get => (double)GetValue(TargetProperty);
             set => SetValue(TargetProperty, value);
         }
+
         /// <summary>
         /// Animation 属性更改时调用此方法。
         /// </summary>

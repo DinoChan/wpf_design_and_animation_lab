@@ -25,7 +25,6 @@
                                          From="100"
                                          To="900"
                                          Duration="0:0:1.5" />
-
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>-->
@@ -262,7 +261,6 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-
             </Style>
 
             <Style TargetType="{x:Type ToggleButton}">
@@ -318,40 +316,39 @@
                                                  StrokeThickness="0"
                                                  Text="{TemplateBinding Content}" />
                             </Border>
-
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style>
         </Grid.Resources>
         <Viewbox Width="740">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="370">
-            <HeaderedContentControl Header="血型：">
-                <StackPanel Orientation="Horizontal">
-                    <ToggleButton Content="A" />
-                    <ToggleButton Content="B" />
-                    <ToggleButton Content="AB" />
-                    <ToggleButton Content="O" />
-                </StackPanel>
-            </HeaderedContentControl>
-            <HeaderedContentControl>
-                <HeaderedContentControl.Header>
-                    <media:TextShape x:Name="ContentElement"
-                                     Fill="White"
-                                   
-                                     FontSize="32"
-                                 
-                                     Stroke="White"
-                                     StrokeThickness="{Binding ElementName=Slider,Path=Value}"
-                                     Text="体重：" />
-                </HeaderedContentControl.Header>
+            <StackPanel Width="370"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <HeaderedContentControl Header="血型：">
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton Content="A" />
+                        <ToggleButton Content="B" />
+                        <ToggleButton Content="AB" />
+                        <ToggleButton Content="O" />
+                    </StackPanel>
+                </HeaderedContentControl>
+                <HeaderedContentControl>
+                    <HeaderedContentControl.Header>
+                        <media:TextShape x:Name="ContentElement"
+                                         Fill="White"
+                                         FontSize="32"
+                                         Stroke="White"
+                                         StrokeThickness="{Binding ElementName=Slider, Path=Value}"
+                                         Text="体重：" />
+                    </HeaderedContentControl.Header>
 
-                <Slider x:Name="Slider"
-                        Maximum="1.5"
-                        Minimum="0"
-                        Value="0" />
-            </HeaderedContentControl>
-            <!--<TextBlock x:Name="TextShape"
+                    <Slider x:Name="Slider"
+                            Maximum="1.5"
+                            Minimum="0"
+                            Value="0" />
+                </HeaderedContentControl>
+                <!--<TextBlock x:Name="TextShape"
                        FontFamily="Microsoft YaHei"
                        FontSize="168"
                        FontWeight="{Binding ElementName=Slider, Path=Value, Converter={StaticResource FontWeightConverter}}"
@@ -362,7 +359,7 @@
                     Maximum="900"
                     Minimum="100"
                     Value="100" />-->
-        </StackPanel>
+            </StackPanel>
         </Viewbox>
     </Grid>
 </wpfdesignandanimationlab:DemoPage>

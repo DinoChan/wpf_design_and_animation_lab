@@ -6,6 +6,18 @@ namespace WpfDesignAndAnimationLab.Behaviors
     public class ProgressToHeightBehavior : Behavior<FrameworkElement>
     {
         /// <summary>
+        /// 标识 BasedElement 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty BasedElementProperty =
+            DependencyProperty.Register(nameof(BasedElement), typeof(FrameworkElement), typeof(ProgressToHeightBehavior), new PropertyMetadata(default(FrameworkElement), OnBasedElementChanged));
+
+        /// <summary>
+        /// 标识 Progress 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty ProgressProperty =
+            DependencyProperty.Register(nameof(Progress), typeof(double), typeof(ProgressToHeightBehavior), new PropertyMetadata(default(double), OnProgressChanged));
+
+        /// <summary>
         /// 获取或设置BasedElement的值
         /// </summary>
         public FrameworkElement BasedElement
@@ -15,20 +27,18 @@ namespace WpfDesignAndAnimationLab.Behaviors
         }
 
         /// <summary>
-        /// 标识 BasedElement 依赖属性。
+        /// 获取或设置Progress的值
         /// </summary>
-        public static readonly DependencyProperty BasedElementProperty =
-            DependencyProperty.Register(nameof(BasedElement), typeof(FrameworkElement), typeof(ProgressToHeightBehavior), new PropertyMetadata(default(FrameworkElement), OnBasedElementChanged));
-
-        private static void OnBasedElementChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        public double Progress
         {
-            var oldValue = (FrameworkElement)args.OldValue;
-            var newValue = (FrameworkElement)args.NewValue;
-            if (oldValue == newValue)
-                return;
+            get => (double)GetValue(ProgressProperty);
+            set => SetValue(ProgressProperty, value);
+        }
 
-            var target = obj as ProgressToHeightBehavior;
-            target?.OnBasedElementChanged(oldValue, newValue);
+        protected override void OnAttached()
+        {
+            base.OnAttached();
+            ChangeAssociatedObjectHeight();
         }
 
         /// <summary>
@@ -44,19 +54,25 @@ namespace WpfDesignAndAnimationLab.Behaviors
         }
 
         /// <summary>
-        /// 获取或设置Progress的值
+        /// Progress 属性更改时调用此方法。
         /// </summary>
-        public double Progress
+        /// <param name="oldValue">Progress 属性的旧值。</param>
+        /// <param name="newValue">Progress 属性的新值。</param>
+        protected virtual void OnProgressChanged(double oldValue, double newValue)
         {
-            get => (double)GetValue(ProgressProperty);
-            set => SetValue(ProgressProperty, value);
+            ChangeAssociatedObjectHeight();
         }
 
-        /// <summary>
-        /// 标识 Progress 依赖属性。
-        /// </summary>
-        public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.Register(nameof(Progress), typeof(double), typeof(ProgressToHeightBehavior), new PropertyMetadata(default(double), OnProgressChanged));
+        private static void OnBasedElementChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var oldValue = (FrameworkElement)args.OldValue;
+            var newValue = (FrameworkElement)args.NewValue;
+            if (oldValue == newValue)
+                return;
+
+            var target = obj as ProgressToHeightBehavior;
+            target?.OnBasedElementChanged(oldValue, newValue);
+        }
 
         private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
@@ -67,22 +83,6 @@ namespace WpfDesignAndAnimationLab.Behaviors
 
             var target = obj as ProgressToHeightBehavior;
             target?.OnProgressChanged(oldValue, newValue);
-        }
-
-        /// <summary>
-        /// Progress 属性更改时调用此方法。
-        /// </summary>
-        /// <param name="oldValue">Progress 属性的旧值。</param>
-        /// <param name="newValue">Progress 属性的新值。</param>
-        protected virtual void OnProgressChanged(double oldValue, double newValue)
-        {
-            ChangeAssociatedObjectHeight();
-        }
-
-        protected override void OnAttached()
-        {
-            base.OnAttached();
-            ChangeAssociatedObjectHeight();
         }
 
         private void ChangeAssociatedObjectHeight()

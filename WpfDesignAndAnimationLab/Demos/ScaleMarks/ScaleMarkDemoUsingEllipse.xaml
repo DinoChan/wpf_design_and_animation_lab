@@ -24,7 +24,6 @@
                          StrokeDashCap="Flat"
                          StrokeThickness="20" />
             </Grid>
-
         </Grid>
     </Viewbox>
 </wpfdesignandanimationlab:DemoPage>

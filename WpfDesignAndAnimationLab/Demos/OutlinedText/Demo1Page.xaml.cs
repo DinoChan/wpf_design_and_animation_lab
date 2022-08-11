@@ -14,11 +14,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             Loaded += Demo1Page_Loaded;
         }
 
-        private void Demo1Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            //var l= GetLength(TextPath.RenderedGeometry);
-        }
-
         public static double GetLength(Geometry geo)
         {
             var path = geo.GetFlattenedPathGeometry();
@@ -40,6 +35,11 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             }
 
             return length;
+        }
+
+        private void Demo1Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //var l= GetLength(TextPath.RenderedGeometry);
         }
     }
 }

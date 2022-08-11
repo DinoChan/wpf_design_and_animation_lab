@@ -39,16 +39,12 @@
                         <EasingDoubleKeyFrame KeyTime="00:00:2.1" Value="1" />
                         <EasingDoubleKeyFrame KeyTime="00:00:3" Value="0" />
                     </DoubleAnimationUsingKeyFrames>
-
                 </Storyboard>
-
             </BeginStoryboard>
         </EventTrigger>
     </FrameworkElement.Triggers>
     <FrameworkElement.Resources>
         <FontFamily x:Key="OstrichSans">/WpfDesignAndAnimationLab;component/Assets/OstrichSans-Light.otf#Ostrich Sans Light</FontFamily>
-
-
     </FrameworkElement.Resources>
     <wpfDesignAndAnimationLab:DemoPage.Background>
         <ImageBrush ImageSource="/WpfDesignAndAnimationLab;component/Assets/Images/windows.jpg" Stretch="UniformToFill" />

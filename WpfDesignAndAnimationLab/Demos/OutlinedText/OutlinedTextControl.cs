@@ -6,11 +6,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 {
     public class OutlinedTextControl : Control
     {
-        public OutlinedTextControl()
-        {
-            DefaultStyleKey = typeof(OutlinedTextControl);
-        }
-
         /// <summary>
         /// 标识 Stroke 依赖属性。
         /// </summary>
@@ -34,6 +29,11 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             DependencyProperty.Register(nameof(Text), typeof(string), typeof(OutlinedTextControl), new FrameworkPropertyMetadata(
                     string.Empty,
                     FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public OutlinedTextControl()
+        {
+            DefaultStyleKey = typeof(OutlinedTextControl);
+        }
 
         /// <summary>
         /// 获取或设置Stroke的值

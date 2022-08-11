@@ -16,7 +16,6 @@
           Height="800"
           Margin="-200,0">
 
-
         <Grid>
             <Grid.Clip>
                 <RectangleGeometry Rect="-1000,400,3000,800" />
@@ -75,8 +74,6 @@
                                  StrokeThickness="1"
                                  Text="2" />
             </Grid>
-
-
         </Grid>
 
         <Grid>

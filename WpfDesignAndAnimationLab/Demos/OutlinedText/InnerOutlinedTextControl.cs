@@ -67,7 +67,6 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
             drawingContext.DrawGeometry(Foreground, new Pen(Stroke, StrokeThickness), geometry);
         }
 
-
         private Geometry CreateTextGeometry()
         {
             // Create the formatted text based on the properties set.

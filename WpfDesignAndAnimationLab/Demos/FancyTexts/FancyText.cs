@@ -11,6 +11,20 @@ namespace WpfDesignAndAnimationLab.Demos.FancyTexts
     /// </summary>
     public class FancyText
     {
+        /// <summary>
+        /// 文本转图片
+        /// </summary>
+        /// <param name="strText"></param>
+        /// <param name="fnt"></param>
+        /// <param name="clrFore"></param>
+        /// <param name="clrBack"></param>
+        /// <param name="blurAmount"></param>
+        /// <returns></returns>
+        public static System.Windows.Media.Imaging.BitmapImage BitmapImageFromText(string strText, Font fnt, Color clrFore, Color clrBack, int blurAmount = 5)
+        {
+            return BitmapToBitmapImage(ImageFromText(strText, fnt, clrFore, clrBack, blurAmount));
+        }
+
         private static System.Windows.Media.Imaging.BitmapImage BitmapToBitmapImage(System.Drawing.Bitmap bitmap)
         {
             using (var stream = new MemoryStream())
@@ -63,20 +77,6 @@ namespace WpfDesignAndAnimationLab.Demos.FancyTexts
                 }
             }
             return bmpOut;
-        }
-
-        /// <summary>
-        /// 文本转图片
-        /// </summary>
-        /// <param name="strText"></param>
-        /// <param name="fnt"></param>
-        /// <param name="clrFore"></param>
-        /// <param name="clrBack"></param>
-        /// <param name="blurAmount"></param>
-        /// <returns></returns>
-        public static System.Windows.Media.Imaging.BitmapImage BitmapImageFromText(string strText, Font fnt, Color clrFore, Color clrBack, int blurAmount = 5)
-        {
-            return BitmapToBitmapImage(ImageFromText(strText, fnt, clrFore, clrBack, blurAmount));
         }
     }
 }

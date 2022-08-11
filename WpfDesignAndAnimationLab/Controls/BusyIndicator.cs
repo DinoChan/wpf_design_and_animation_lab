@@ -114,16 +114,6 @@ namespace WpfDesignAndAnimationLab.Controls
         /// <summary>
         /// IsBusyProperty property changed handler.
         /// </summary>
-        /// <param name="d">BusyIndicator that changed its IsBusy.</param>
-        /// <param name="e">Event arguments.</param>
-        private static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((BusyIndicator)d).OnIsBusyChanged(e);
-        }
-
-        /// <summary>
-        /// IsBusyProperty property changed handler.
-        /// </summary>
         /// <param name="e">Event arguments.</param>
         protected virtual void OnIsBusyChanged(DependencyPropertyChangedEventArgs e)
         {
@@ -158,6 +148,16 @@ namespace WpfDesignAndAnimationLab.Controls
             }
 
             ChangeVisualState(true);
+        }
+
+        /// <summary>
+        /// IsBusyProperty property changed handler.
+        /// </summary>
+        /// <param name="d">BusyIndicator that changed its IsBusy.</param>
+        /// <param name="e">Event arguments.</param>
+        private static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((BusyIndicator)d).OnIsBusyChanged(e);
         }
 
         #endregion IsBusy
@@ -335,6 +335,16 @@ namespace WpfDesignAndAnimationLab.Controls
         #region Methods
 
         /// <summary>
+        /// Changes the control's visual state(s).
+        /// </summary>
+        /// <param name="useTransitions">True if state transitions should be used.</param>
+        protected virtual void ChangeVisualState(bool useTransitions)
+        {
+            VisualStateManager.GoToState(this, IsBusy ? VisualStates.StateBusy : VisualStates.StateIdle, useTransitions);
+            VisualStateManager.GoToState(this, IsContentVisible ? VisualStates.StateVisible : VisualStates.StateHidden, useTransitions);
+        }
+
+        /// <summary>
         /// Handler for the DisplayAfterTimer.
         /// </summary>
         /// <param name="sender">Event sender.</param>
@@ -344,16 +354,6 @@ namespace WpfDesignAndAnimationLab.Controls
             _displayAfterTimer.Stop();
             IsContentVisible = true;
             ChangeVisualState(true);
-        }
-
-        /// <summary>
-        /// Changes the control's visual state(s).
-        /// </summary>
-        /// <param name="useTransitions">True if state transitions should be used.</param>
-        protected virtual void ChangeVisualState(bool useTransitions)
-        {
-            VisualStateManager.GoToState(this, IsBusy ? VisualStates.StateBusy : VisualStates.StateIdle, useTransitions);
-            VisualStateManager.GoToState(this, IsContentVisible ? VisualStates.StateVisible : VisualStates.StateHidden, useTransitions);
         }
 
         #endregion Methods

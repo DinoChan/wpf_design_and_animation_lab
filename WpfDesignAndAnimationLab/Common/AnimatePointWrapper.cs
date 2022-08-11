@@ -45,6 +45,11 @@ namespace WpfDesignAndAnimationLab.Common
 
         private Storyboard _storyboard = new Storyboard();
 
+        public AnimatePointWrapper()
+        {
+            Loaded += OnLoaded;
+        }
+
         /// <summary>
         /// 获取或设置Animation的值
         /// </summary>
@@ -63,13 +68,6 @@ namespace WpfDesignAndAnimationLab.Common
             set => SetValue(CurrentProperty, value);
         }
 
-        public AnimatePointWrapper()
-        {
-            Loaded += OnLoaded;
-        }
-
-        private void OnLoaded(object sender, RoutedEventArgs e) => _storyboard.SkipToFill();
-
         /// <summary>
         /// 获取或设置MultipleX的值
         /// </summary>
@@ -78,6 +76,7 @@ namespace WpfDesignAndAnimationLab.Common
             get => (double)GetValue(MultipleXProperty);
             set => SetValue(MultipleXProperty, value);
         }
+
         /// <summary>
         /// 获取或设置MultipleY的值
         /// </summary>
@@ -105,8 +104,6 @@ namespace WpfDesignAndAnimationLab.Common
             set => SetValue(TargetYProperty, value);
         }
 
-   
-
         /// <summary>
         /// Animation 属性更改时调用此方法。
         /// </summary>
@@ -131,7 +128,6 @@ namespace WpfDesignAndAnimationLab.Common
         {
         }
 
-
         /// <summary>
         /// MultipleX 属性更改时调用此方法。
         /// </summary>
@@ -139,7 +135,6 @@ namespace WpfDesignAndAnimationLab.Common
         /// <param name="newValue">MultipleX 属性的新值。</param>
         protected virtual void OnMultipleXChanged(double oldValue, double newValue)
         {
-         
         }
 
         /// <summary>
@@ -151,7 +146,6 @@ namespace WpfDesignAndAnimationLab.Common
         {
         }
 
-     
         protected virtual void OnTargetChanged()
         {
             _storyboard.Stop();
@@ -213,6 +207,7 @@ namespace WpfDesignAndAnimationLab.Common
             var target = obj as AnimatePointWrapper;
             target?.OnMultipleXChanged(oldValue, newValue);
         }
+
         private static void OnMultipleYChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var oldValue = (double)args.OldValue;
@@ -223,6 +218,7 @@ namespace WpfDesignAndAnimationLab.Common
             var target = obj as AnimatePointWrapper;
             target?.OnMultipleYChanged(oldValue, newValue);
         }
+
         private static void OnTargetXChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var oldValue = (double)args.OldValue;
@@ -233,6 +229,7 @@ namespace WpfDesignAndAnimationLab.Common
             var target = obj as AnimatePointWrapper;
             target?.OnTargetXChanged(oldValue, newValue);
         }
+
         private static void OnTargetYChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             var oldValue = (double)args.OldValue;
@@ -243,5 +240,7 @@ namespace WpfDesignAndAnimationLab.Common
             var target = obj as AnimatePointWrapper;
             target?.OnTargetYChanged(oldValue, newValue);
         }
+
+        private void OnLoaded(object sender, RoutedEventArgs e) => _storyboard.SkipToFill();
     }
 }

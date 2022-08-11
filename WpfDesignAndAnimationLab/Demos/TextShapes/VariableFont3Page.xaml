@@ -24,7 +24,6 @@
                                          From="100"
                                          To="900"
                                          Duration="0:0:1.5" />
-
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
