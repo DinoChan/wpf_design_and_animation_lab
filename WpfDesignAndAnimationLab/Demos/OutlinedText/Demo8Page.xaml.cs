@@ -7,7 +7,7 @@ using System.Windows.Media;
 namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 {
     /// <summary>
-    /// Demo7Page.xaml 的交互逻辑
+    ///     Demo7Page.xaml 的交互逻辑
     /// </summary>
     public partial class Demo8Page
     {
@@ -46,7 +46,8 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
                 var tempDistance = distance / 100;
                 tempDistance = 10 * Math.Min(Math.PI, tempDistance);
                 var x = cosA * tempDistance;
-                var y = sinA * tempDistance; ;
+                var y = sinA * tempDistance;
+                ;
                 item.Key.RenderTransform = new TranslateTransform(x, y);
             }
         }
@@ -55,12 +56,11 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
         {
             var element = sender as FrameworkElement;
             if (_items.ContainsKey(element) == false)
+            {
                 _items.Add(element, new Point(0, 0));
+            }
         }
 
-        private void OnPageSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            _hasPoints = false;
-        }
+        private void OnPageSizeChanged(object sender, SizeChangedEventArgs e) => _hasPoints = false;
     }
 }

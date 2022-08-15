@@ -3,7 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.GlowEffects"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfDesignAndAnimationLab="clr-namespace:WpfDesignAndAnimationLab"
@@ -92,7 +91,8 @@
                                       Color="White" />
                 </Grid.Effect>
                 <Grid.Clip>
-                    <CombinedGeometry Geometry2="{Binding ElementName=TextShape1, Path=RenderedGeometry}" GeometryCombineMode="Exclude">
+                    <CombinedGeometry Geometry2="{Binding ElementName=TextShape1, Path=RenderedGeometry}"
+                                      GeometryCombineMode="Exclude">
                         <CombinedGeometry.Geometry1>
                             <RectangleGeometry Rect="0,0,1000,1000" />
                         </CombinedGeometry.Geometry1>

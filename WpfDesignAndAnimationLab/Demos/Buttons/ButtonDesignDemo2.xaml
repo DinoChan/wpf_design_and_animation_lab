@@ -2,7 +2,6 @@
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Buttons"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
@@ -193,7 +192,8 @@
                                             BorderThickness="0,1,0,0"
                                             CornerRadius="4">
                                         <Border.OpacityMask>
-                                            <RadialGradientBrush x:Name="Brush" Center=".3,.0" GradientOrigin=".3,.0" RadiusX=".2" RadiusY=".2">
+                                            <RadialGradientBrush x:Name="Brush" Center=".3,.0" GradientOrigin=".3,.0"
+                                                                 RadiusX=".2" RadiusY=".2">
                                                 <GradientStop Color="#F000" />
                                                 <GradientStop Offset=".7" Color="#8000" />
                                                 <GradientStop Offset="1" Color="#5000" />
@@ -218,7 +218,8 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                <Setter TargetName="border" Property="BorderBrush"
+                                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
                             </Trigger>
                             <!--<Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}" />

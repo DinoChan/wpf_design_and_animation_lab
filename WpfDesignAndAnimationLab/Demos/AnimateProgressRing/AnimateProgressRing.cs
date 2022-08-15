@@ -10,10 +10,7 @@ namespace WpfDesignAndAnimationLab.Demos.AnimateProgressRing
         private Storyboard _progressStoryboard;
         private ProgressWrapper _progressWrapper;
 
-        public AnimateProgressRing()
-        {
-            this.DefaultStyleKey = typeof(AnimateProgressRing);
-        }
+        public AnimateProgressRing() => DefaultStyleKey = typeof(AnimateProgressRing);
 
         public override void OnApplyTemplate()
         {
@@ -31,6 +28,7 @@ namespace WpfDesignAndAnimationLab.Demos.AnimateProgressRing
                     _progressWrapper = root.Resources["ProgressWrapper"] as ProgressWrapper;
                 }
             }
+
             UpdateUI(false);
         }
 
@@ -50,7 +48,9 @@ namespace WpfDesignAndAnimationLab.Demos.AnimateProgressRing
                 _progressStoryboard.Begin();
             }
             else if (_progressWrapper != null)
+            {
                 _progressWrapper.Progress = progress;
+            }
         }
     }
 }

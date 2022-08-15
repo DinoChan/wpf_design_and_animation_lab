@@ -12,22 +12,26 @@
                             <Storyboard x:Key="ProgressStoryboard"
                                         FillBehavior="HoldEnd"
                                         Duration="0:0:1">
-                                <PointAnimation Storyboard.TargetName="PART_LineSegment" Storyboard.TargetProperty="Point">
+                                <PointAnimation Storyboard.TargetName="PART_LineSegment"
+                                                Storyboard.TargetProperty="Point">
                                     <PointAnimation.EasingFunction>
                                         <BackEase Amplitude="0.5" />
                                     </PointAnimation.EasingFunction>
                                 </PointAnimation>
-                                <PointAnimation Storyboard.TargetName="PART_BezierSegment" Storyboard.TargetProperty="Point1">
+                                <PointAnimation Storyboard.TargetName="PART_BezierSegment"
+                                                Storyboard.TargetProperty="Point1">
                                     <PointAnimation.EasingFunction>
                                         <BackEase Amplitude="1.5" />
                                     </PointAnimation.EasingFunction>
                                 </PointAnimation>
-                                <PointAnimation Storyboard.TargetName="PART_BezierSegment" Storyboard.TargetProperty="Point2">
+                                <PointAnimation Storyboard.TargetName="PART_BezierSegment"
+                                                Storyboard.TargetProperty="Point2">
                                     <PointAnimation.EasingFunction>
                                         <BackEase Amplitude="0.1" />
                                     </PointAnimation.EasingFunction>
                                 </PointAnimation>
-                                <PointAnimation Storyboard.TargetName="PART_BezierSegment" Storyboard.TargetProperty="Point3">
+                                <PointAnimation Storyboard.TargetName="PART_BezierSegment"
+                                                Storyboard.TargetProperty="Point3">
                                     <PointAnimation.EasingFunction>
                                         <BackEase Amplitude="0.5" />
                                     </PointAnimation.EasingFunction>

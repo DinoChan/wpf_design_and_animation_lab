@@ -5,7 +5,6 @@
                                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Shapes"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -40,7 +39,8 @@
                         Stroke="RoyalBlue"
                         StrokeThickness="5">
             <interactivity:Interaction.Behaviors>
-                <behaviors:PathProgressBehavior x:Name="PathProgressBehavior" Progress="{Binding Source={StaticResource Wrapper}, Path=Value}" />
+                <behaviors:PathProgressBehavior x:Name="PathProgressBehavior"
+                                                Progress="{Binding Source={StaticResource Wrapper}, Path=Value}" />
             </interactivity:Interaction.Behaviors>
         </media:Triangle>
         <TextBlock Margin="0,45,0,0"

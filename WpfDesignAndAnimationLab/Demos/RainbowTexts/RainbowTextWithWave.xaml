@@ -3,7 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.RainbowTexts"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
@@ -39,46 +38,53 @@
                                                                 Content="口口口口口口口口口口口口口口口">
                                                     <ContentControl.Resources>
                                                         <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser"
-                                                                                  Start="{Binding Next, Source={StaticResource BaseTimeSpanIncreaser}}"
-                                                                                  Step="0:0:.3" />
+                                                            Start="{Binding Next, Source={StaticResource BaseTimeSpanIncreaser}}"
+                                                            Step="0:0:.3" />
                                                         <Style TargetType="ContentControl">
                                                             <Setter Property="Template">
                                                                 <Setter.Value>
                                                                     <ControlTemplate TargetType="ContentControl">
-                                                                        <ItemsControl ItemsSource="{TemplateBinding Content}">
+                                                                        <ItemsControl
+                                                                            ItemsSource="{TemplateBinding Content}">
                                                                             <ItemsControl.ItemsPanel>
                                                                                 <ItemsPanelTemplate>
-                                                                                    <StackPanel Orientation="Horizontal" />
+                                                                                    <StackPanel
+                                                                                        Orientation="Horizontal" />
                                                                                 </ItemsPanelTemplate>
                                                                             </ItemsControl.ItemsPanel>
                                                                             <ItemsControl.ItemTemplate>
                                                                                 <DataTemplate>
                                                                                     <TextBlock x:Name="TextElement"
-                                                                                               Foreground="{Binding Next, Source={StaticResource RepeatCollection}}"
-                                                                                               RenderTransformOrigin=".5,.5"
-                                                                                               Text="{Binding}">
+                                                                                        Foreground="{Binding Next, Source={StaticResource RepeatCollection}}"
+                                                                                        RenderTransformOrigin=".5,.5"
+                                                                                        Text="{Binding}">
                                                                                         <TextBlock.Resources>
-                                                                                            <common:TimeSpanWrapper x:Key="TimeSpanWrapper" Value="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+                                                                                            <common:TimeSpanWrapper
+                                                                                                x:Key="TimeSpanWrapper"
+                                                                                                Value="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
                                                                                         </TextBlock.Resources>
                                                                                         <TextBlock.RenderTransform>
                                                                                             <ScaleTransform />
                                                                                         </TextBlock.RenderTransform>
                                                                                         <FrameworkElement.Triggers>
-                                                                                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                                                                            <EventTrigger
+                                                                                                RoutedEvent="FrameworkElement.Loaded">
                                                                                                 <BeginStoryboard>
                                                                                                     <Storyboard>
-                                                                                                        <DoubleAnimation AutoReverse="True"
-                                                                                                                         BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
-                                                                                                                         Storyboard.TargetName="TextElement"
-                                                                                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                                                                                                         To="2.5"
-                                                                                                                         Duration="0:0:.8" />
-                                                                                                        <DoubleAnimation AutoReverse="True"
-                                                                                                                         BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
-                                                                                                                         Storyboard.TargetName="TextElement"
-                                                                                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                                                                                                         To="2.5"
-                                                                                                                         Duration="0:0:.8" />
+                                                                                                        <DoubleAnimation
+                                                                                                            AutoReverse="True"
+                                                                                                            BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
+                                                                                                            Storyboard.TargetName="TextElement"
+                                                                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                                                                            To="2.5"
+                                                                                                            Duration="0:0:.8" />
+                                                                                                        <DoubleAnimation
+                                                                                                            AutoReverse="True"
+                                                                                                            BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
+                                                                                                            Storyboard.TargetName="TextElement"
+                                                                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                                                                            To="2.5"
+                                                                                                            Duration="0:0:.8" />
                                                                                                     </Storyboard>
                                                                                                 </BeginStoryboard>
                                                                                             </EventTrigger>

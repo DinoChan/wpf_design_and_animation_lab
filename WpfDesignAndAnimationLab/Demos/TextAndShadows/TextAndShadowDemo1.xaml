@@ -2,7 +2,6 @@
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextAndShadows"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -26,7 +25,8 @@
 
                 <Setter Property="Foreground">
                     <Setter.Value>
-                        <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="6,0" EndPoint="0,6">
+                        <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="6,0"
+                                             EndPoint="0,6">
                             <LinearGradientBrush.GradientStops>
                                 <GradientStop Offset="1" Color="#7f6065" />
                                 <GradientStop Offset="1" Color="Transparent" />
@@ -50,7 +50,8 @@
                                 <Grid>
                                     <Grid>
                                         <Grid.Resources>
-                                            <Style BasedOn="{StaticResource ShadowTextBlockHelper}" TargetType="TextBlock" />
+                                            <Style BasedOn="{StaticResource ShadowTextBlockHelper}"
+                                                   TargetType="TextBlock" />
                                         </Grid.Resources>
 
                                         <TextBlock x:Name="t1" Text="{TemplateBinding Content}">

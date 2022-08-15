@@ -4,7 +4,6 @@
                                    xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:effects="clr-namespace:Microsoft.Expression.Media.Effects;assembly=Microsoft.Expression.Effects"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Transitions"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"

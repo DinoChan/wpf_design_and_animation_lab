@@ -5,21 +5,19 @@ using System.Windows.Media.Animation;
 namespace WpfDesignAndAnimationLab.Demos.WaveProgressBars
 {
     /// <summary>
-    /// thanks https://www.cnblogs.com/h82258652/p/16098909.html
+    ///     thanks https://www.cnblogs.com/h82258652/p/16098909.html
     /// </summary>
     [TemplatePart(Name = RootTemplateName, Type = typeof(FrameworkElement))]
     public class WaveProgressBar : Control
     {
+        private const string RootTemplateName = "Root";
+
         public static readonly DependencyProperty ProgressProperty = DependencyProperty.Register(
             nameof(Progress), typeof(double), typeof(WaveProgressBar), new PropertyMetadata(0d, OnProgressChanged));
 
-        private const string RootTemplateName = "Root";
         private Storyboard _progressStoryboard;
 
-        public WaveProgressBar()
-        {
-            DefaultStyleKey = typeof(WaveProgressBar);
-        }
+        public WaveProgressBar() => DefaultStyleKey = typeof(WaveProgressBar);
 
         public double Progress
         {
@@ -44,7 +42,9 @@ namespace WpfDesignAndAnimationLab.Demos.WaveProgressBars
         private void PlayAnimation(bool isInit)
         {
             if (_progressStoryboard == null)
+            {
                 return;
+            }
 
             var targetY = 100 * (1 - Progress);
             _progressStoryboard.Stop();

@@ -12,19 +12,17 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             Items = items;
         }
 
-        public ExampleDefinition(string name, Uri sourceCodeUri, Type control) : this(name, sourceCodeUri, new ExampleDefinitionItem(name, control))
+        public ExampleDefinition(string name, Uri sourceCodeUri, Type control) : this(name, sourceCodeUri,
+            new ExampleDefinitionItem(name, control))
         {
         }
 
         public IEnumerable<ExampleDefinitionItem> Items { get; }
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public Uri ShourceCodeUri { get; private set; }
+        public Uri ShourceCodeUri { get; }
 
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() => Name;
     }
 
     public class ExampleDefinitionItem
@@ -35,7 +33,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             Control = control;
         }
 
-        public Type Control { get; private set; }
-        public string Name { get; private set; }
+        public Type Control { get; }
+        public string Name { get; }
     }
 }

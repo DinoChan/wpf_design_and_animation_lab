@@ -1,15 +1,15 @@
-﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.WaveProgressBars.WaveProgressBarUsingControlTemplate"
-                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                                   xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
-                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.WaveProgressBars"
-                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-                                   d:DesignHeight="450"
-                                   d:DesignWidth="800"
-                                   Header="Control Template"
-                                   mc:Ignorable="d">
+﻿<wpfdesignandanimationlab:DemoPage
+    x:Class="WpfDesignAndAnimationLab.Demos.WaveProgressBars.WaveProgressBarUsingControlTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Header="Control Template"
+    mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style TargetType="ProgressBar">
             <Setter Property="Background" Value="DeepSkyBlue" />
@@ -85,7 +85,8 @@
                                             <PathGeometry.Figures>
                                                 <PathFigure StartPoint="0,0">
                                                     <PathFigure.Segments>
-                                                        <LineSegment x:Name="PART_LineSegment" Point="{Binding ElementName=Point0Wrapper, Path=Current}" />
+                                                        <LineSegment x:Name="PART_LineSegment"
+                                                                     Point="{Binding ElementName=Point0Wrapper, Path=Current}" />
                                                         <BezierSegment x:Name="PART_BezierSegment"
                                                                        Point1="{Binding ElementName=Point1Wrapper, Path=Current}"
                                                                        Point2="{Binding ElementName=Point2Wrapper, Path=Current}"

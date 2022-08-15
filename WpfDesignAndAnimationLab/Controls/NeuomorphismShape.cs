@@ -8,6 +8,6 @@
 
         Convex,
 
-        Pressed,
+        Pressed
     }
 }

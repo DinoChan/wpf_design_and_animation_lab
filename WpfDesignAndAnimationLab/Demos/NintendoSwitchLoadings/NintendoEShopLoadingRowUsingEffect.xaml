@@ -11,59 +11,7 @@
              Foreground="Orange"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <Storyboard x:Key="Storyboardold"
-                    FillBehavior="Stop"
-                    RepeatBehavior="Forever"
-                    Duration="0:0:6">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Progress">
-                <LinearDoubleKeyFrame KeyTime="00:00:1" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:1" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-                <LinearDoubleKeyFrame KeyTime="00:00:4" Value="1" />
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
 
-        <Storyboard x:Key="Storyboard"
-                    FillBehavior="Stop"
-                    RepeatBehavior="Forever"
-                    Duration="0:0:6">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Center">
-                <LinearDoubleKeyFrame KeyTime="00:00:1" Value="0" />
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-                <LinearDoubleKeyFrame KeyTime="00:00:4" Value="1" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Left">
-                <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value=".6" />
-                <DiscreteDoubleKeyFrame KeyTime="0:0:3" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HorizontalLightenEffect" Storyboard.TargetProperty="Right">
-                <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value=".8" />
-            </DoubleAnimationUsingKeyFrames>
-            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetName="L2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:1" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-                <LinearDoubleKeyFrame KeyTime="00:00:4" Value="1" />
-            </DoubleAnimationUsingKeyFrames>-->
-        </Storyboard>
-
-        <converters:LightenConverter x:Key="LightenConverter" />
     </UserControl.Resources>
     <Grid>
 

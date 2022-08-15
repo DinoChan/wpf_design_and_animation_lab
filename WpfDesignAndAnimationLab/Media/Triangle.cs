@@ -10,28 +10,23 @@ namespace WpfDesignAndAnimationLab.Media
         ///     标识 Direction 依赖属性。
         /// </summary>
         public static readonly DependencyProperty DirectionProperty =
-            DependencyProperty.Register("Direction", typeof(Direction), typeof(Triangle), new FrameworkPropertyMetadata(Direction.Up, FrameworkPropertyMetadataOptions.AffectsMeasure));
+            DependencyProperty.Register("Direction", typeof(Direction), typeof(Triangle),
+                new FrameworkPropertyMetadata(Direction.Up, FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         private Geometry _definingGeometry;
 
-        public Triangle()
-        {
-            _definingGeometry = Geometry.Empty;
-        }
+        public Triangle() => _definingGeometry = Geometry.Empty;
 
         /// <summary>
         ///     获取或设置Direction的值
         /// </summary>
         public Direction Direction
         {
-            get { return (Direction)GetValue(DirectionProperty); }
-            set { SetValue(DirectionProperty, value); }
+            get => (Direction)GetValue(DirectionProperty);
+            set => SetValue(DirectionProperty, value);
         }
 
-        protected override sealed Geometry DefiningGeometry
-        {
-            get => _definingGeometry;
-        }
+        protected sealed override Geometry DefiningGeometry => _definingGeometry;
 
         protected override Size MeasureOverride(Size availableSize)
         {

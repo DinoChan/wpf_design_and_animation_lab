@@ -25,23 +25,26 @@
                             <BlurEffect x:Name="BlurEffect" Radius="30" />
                         </TextBlock.Effect>
                         <TextBlock.Resources>
-                            <common:TimeSpanWrapper x:Key="TimeSpanWrapper" Value="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
+                            <common:TimeSpanWrapper x:Key="TimeSpanWrapper"
+                                                    Value="{Binding Next, Source={StaticResource TimeSpanIncreaser}}" />
                         </TextBlock.Resources>
                         <FrameworkElement.Triggers>
                             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                                 <BeginStoryboard>
                                     <Storyboard RepeatBehavior="Forever" Duration="0:0:10">
-                                        <DoubleAnimationUsingKeyFrames BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
-                                                                       Storyboard.TargetName="TextBlock"
-                                                                       Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)">
+                                        <DoubleAnimationUsingKeyFrames
+                                            BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
+                                            Storyboard.TargetName="TextBlock"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)">
                                             <LinearDoubleKeyFrame KeyTime="0:0:0" Value="30" />
                                             <LinearDoubleKeyFrame KeyTime="0:0:0.7" Value="0" />
                                             <LinearDoubleKeyFrame KeyTime="0:0:1.3" Value="0" />
                                             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="30" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
-                                                                       Storyboard.TargetName="TextBlock"
-                                                                       Storyboard.TargetProperty="Opacity">
+                                        <DoubleAnimationUsingKeyFrames
+                                            BeginTime="{Binding Value, Source={StaticResource TimeSpanWrapper}}"
+                                            Storyboard.TargetName="TextBlock"
+                                            Storyboard.TargetProperty="Opacity">
                                             <LinearDoubleKeyFrame KeyTime="0" Value="0" />
                                             <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
                                             <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />

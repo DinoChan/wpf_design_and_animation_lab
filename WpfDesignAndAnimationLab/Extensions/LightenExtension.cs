@@ -11,9 +11,7 @@ namespace WpfDesignAndAnimationLab.Extensions
         public double Amount { get; set; }
         public SolidColorBrush Source { get; set; }
 
-        public override object ProvideValue(IServiceProvider serviceProvider)
-        {
-            return new SolidColorBrush(new HslColor(Source.Color).Lighten(Amount).ToRgb());
-        }
+        public override object ProvideValue(IServiceProvider serviceProvider) =>
+            new SolidColorBrush(new HslColor(Source.Color).Lighten(Amount).ToRgb());
     }
 }

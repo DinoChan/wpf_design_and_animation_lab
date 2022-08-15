@@ -8,31 +8,34 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
     public class InnerOutlinedTextControl : Control
     {
         /// <summary>
-        /// 标识 Stroke 依赖属性。
+        ///     标识 Stroke 依赖属性。
         /// </summary>
         public static readonly DependencyProperty StrokeProperty =
-            DependencyProperty.Register(nameof(Stroke), typeof(Brush), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
-                   Brushes.Black,
+            DependencyProperty.Register(nameof(Stroke), typeof(Brush), typeof(InnerOutlinedTextControl),
+                new FrameworkPropertyMetadata(
+                    Brushes.Black,
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
-        /// 标识 StrokeThickness 依赖属性。
+        ///     标识 StrokeThickness 依赖属性。
         /// </summary>
         public static readonly DependencyProperty StrokeThicknessProperty =
-            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
+            DependencyProperty.Register(nameof(StrokeThickness), typeof(double), typeof(InnerOutlinedTextControl),
+                new FrameworkPropertyMetadata(
                     default(double),
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
-        /// 标识 Text 依赖属性。
+        ///     标识 Text 依赖属性。
         /// </summary>
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(nameof(Text), typeof(string), typeof(InnerOutlinedTextControl), new FrameworkPropertyMetadata(
+            DependencyProperty.Register(nameof(Text), typeof(string), typeof(InnerOutlinedTextControl),
+                new FrameworkPropertyMetadata(
                     string.Empty,
                     FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
-        /// 获取或设置Stroke的值
+        ///     获取或设置Stroke的值
         /// </summary>
         public Brush Stroke
         {
@@ -41,9 +44,9 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
         }
 
         /// <summary>
-        /// <summary>
-        /// StrokeThickness
-        /// </summary>
+        ///     <summary>
+        ///         StrokeThickness
+        ///     </summary>
         public double StrokeThickness
         {
             get => (double)GetValue(StrokeThicknessProperty);
@@ -51,7 +54,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
         }
 
         /// <summary>
-        /// 获取或设置Text的值
+        ///     获取或设置Text的值
         /// </summary>
         public string Text
         {
@@ -80,7 +83,7 @@ namespace WpfDesignAndAnimationLab.Demos.OutlinedText
                     FontWeight,
                     FontStretch),
                 FontSize,
-                System.Windows.Media.Brushes.Black,// This brush does not matter since we use the geometry of the text.
+                Brushes.Black, // This brush does not matter since we use the geometry of the text.
                 100);
             // Build the geometry object that represents the text.
 

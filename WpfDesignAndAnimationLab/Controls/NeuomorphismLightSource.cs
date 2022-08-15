@@ -8,6 +8,6 @@
 
         BottomLeft,
 
-        BottomRight,
+        BottomRight
     }
 }

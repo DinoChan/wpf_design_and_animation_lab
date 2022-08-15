@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Windows.Media;
 
 namespace WpfDesignAndAnimationLab.Media
 {
     /// <summary>
-    /// https://www.optifunc.com/blog/hsl-color-for-wpf-and-markup-extension-to-lighten-darken-colors-in-xaml
+    ///     https://www.optifunc.com/blog/hsl-color-for-wpf-and-markup-extension-to-lighten-darken-colors-in-xaml
     /// </summary>
     public class HslColor
     {
@@ -17,29 +18,31 @@ namespace WpfDesignAndAnimationLab.Media
             this.a = a;
         }
 
-        public HslColor(System.Windows.Media.Color rgb)
+        public HslColor(Color rgb)
         {
             RgbToHls(rgb.R, rgb.G, rgb.B, out h, out l, out s);
             a = rgb.A / 255.0;
         }
 
-        public HslColor Lighten(double amount)
-        {
-            return new HslColor(h, s, Clamp(l + (1 - l) * amount, 0, 1), a);
-        }
+        public HslColor Lighten(double amount) => new HslColor(h, s, Clamp(l + (1 - l) * amount, 0, 1), a);
 
-        public System.Windows.Media.Color ToRgb()
+        public Color ToRgb()
         {
             HlsToRgb(h, l, s, out var r, out var g, out var b);
-            return System.Windows.Media.Color.FromArgb((byte)(a * 255.0), (byte)r, (byte)g, (byte)b);
+            return Color.FromArgb((byte)(a * 255.0), (byte)r, (byte)g, (byte)b);
         }
 
         private static double Clamp(double value, double min, double max)
         {
             if (value < min)
+            {
                 return min;
+            }
+
             if (value > max)
+            {
                 return max;
+            }
 
             return value;
         }
@@ -49,8 +52,14 @@ namespace WpfDesignAndAnimationLab.Media
             out int r, out int g, out int b)
         {
             double p2;
-            if (l <= 0.5) p2 = l * (1 + s);
-            else p2 = l + s - l * s;
+            if (l <= 0.5)
+            {
+                p2 = l * (1 + s);
+            }
+            else
+            {
+                p2 = l + s - l * s;
+            }
 
             var p1 = 2 * l - p2;
             double double_r, double_g, double_b;
@@ -75,12 +84,30 @@ namespace WpfDesignAndAnimationLab.Media
 
         private static double QqhToRgb(double q1, double q2, double hue)
         {
-            if (hue > 360) hue -= 360;
-            else if (hue < 0) hue += 360;
+            if (hue > 360)
+            {
+                hue -= 360;
+            }
+            else if (hue < 0)
+            {
+                hue += 360;
+            }
 
-            if (hue < 60) return q1 + (q2 - q1) * hue / 60;
-            if (hue < 180) return q2;
-            if (hue < 240) return q1 + (q2 - q1) * (240 - hue) / 60;
+            if (hue < 60)
+            {
+                return q1 + (q2 - q1) * hue / 60;
+            }
+
+            if (hue < 180)
+            {
+                return q2;
+            }
+
+            if (hue < 240)
+            {
+                return q1 + (q2 - q1) * (240 - hue) / 60;
+            }
+
             return q1;
         }
 
@@ -95,35 +122,67 @@ namespace WpfDesignAndAnimationLab.Media
 
             // Get the maximum and minimum RGB components.
             var max = double_r;
-            if (max < double_g) max = double_g;
-            if (max < double_b) max = double_b;
+            if (max < double_g)
+            {
+                max = double_g;
+            }
+
+            if (max < double_b)
+            {
+                max = double_b;
+            }
 
             var min = double_r;
-            if (min > double_g) min = double_g;
-            if (min > double_b) min = double_b;
+            if (min > double_g)
+            {
+                min = double_g;
+            }
+
+            if (min > double_b)
+            {
+                min = double_b;
+            }
 
             var diff = max - min;
             l = (max + min) / 2;
             if (Math.Abs(diff) < 0.00001)
             {
                 s = 0;
-                h = 0;  // H is really undefined.
+                h = 0; // H is really undefined.
             }
             else
             {
-                if (l <= 0.5) s = diff / (max + min);
-                else s = diff / (2 - max - min);
+                if (l <= 0.5)
+                {
+                    s = diff / (max + min);
+                }
+                else
+                {
+                    s = diff / (2 - max - min);
+                }
 
                 var r_dist = (max - double_r) / diff;
                 var g_dist = (max - double_g) / diff;
                 var b_dist = (max - double_b) / diff;
 
-                if (double_r == max) h = b_dist - g_dist;
-                else if (double_g == max) h = 2 + r_dist - b_dist;
-                else h = 4 + g_dist - r_dist;
+                if (double_r == max)
+                {
+                    h = b_dist - g_dist;
+                }
+                else if (double_g == max)
+                {
+                    h = 2 + r_dist - b_dist;
+                }
+                else
+                {
+                    h = 4 + g_dist - r_dist;
+                }
 
                 h *= 60;
-                if (h < 0) h += 360;
+                if (h < 0)
+                {
+                    h += 360;
+                }
             }
         }
     }

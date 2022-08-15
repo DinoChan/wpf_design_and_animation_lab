@@ -9,28 +9,31 @@ namespace WpfDesignAndAnimationLab.Behaviors
     public class EllipseProgressBehavior : Behavior<Ellipse>
     {
         /// <summary>
-        /// 标识 EndAngle 依赖属性。
+        ///     标识 EndAngle 依赖属性。
         /// </summary>
         public static readonly DependencyProperty EndAngleProperty =
-            DependencyProperty.Register(nameof(EndAngle), typeof(double), typeof(EllipseProgressBehavior), new PropertyMetadata(default(double), OnEndAngleChanged));
+            DependencyProperty.Register(nameof(EndAngle), typeof(double), typeof(EllipseProgressBehavior),
+                new PropertyMetadata(default(double), OnEndAngleChanged));
 
         /// <summary>
-        /// 标识 Progress 依赖属性。
+        ///     标识 Progress 依赖属性。
         /// </summary>
         public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.Register("Progress", typeof(double), typeof(EllipseProgressBehavior), new PropertyMetadata(0d, OnProgressChanged));
+            DependencyProperty.Register("Progress", typeof(double), typeof(EllipseProgressBehavior),
+                new PropertyMetadata(0d, OnProgressChanged));
 
         /// <summary>
-        /// 标识 StartAngle 依赖属性。
+        ///     标识 StartAngle 依赖属性。
         /// </summary>
         public static readonly DependencyProperty StartAngleProperty =
-            DependencyProperty.Register(nameof(StartAngle), typeof(double), typeof(EllipseProgressBehavior), new PropertyMetadata(default(double), OnStartAngleChanged));
+            DependencyProperty.Register(nameof(StartAngle), typeof(double), typeof(EllipseProgressBehavior),
+                new PropertyMetadata(default(double), OnStartAngleChanged));
 
         private double _normalizedMaxAngle;
         private double _normalizedMinAngle;
 
         /// <summary>
-        /// 获取或设置EndAngle的值
+        ///     获取或设置EndAngle的值
         /// </summary>
         public double EndAngle
         {
@@ -39,16 +42,16 @@ namespace WpfDesignAndAnimationLab.Behaviors
         }
 
         /// <summary>
-        /// 获取或设置Progress的值
+        ///     获取或设置Progress的值
         /// </summary>
         public double Progress
         {
-            get { return (double)GetValue(ProgressProperty); }
-            set { SetValue(ProgressProperty, value); }
+            get => (double)GetValue(ProgressProperty);
+            set => SetValue(ProgressProperty, value);
         }
 
         /// <summary>
-        /// 获取或设置StartAngle的值
+        ///     获取或设置StartAngle的值
         /// </summary>
         public double StartAngle
         {
@@ -59,9 +62,12 @@ namespace WpfDesignAndAnimationLab.Behaviors
         protected virtual double GetTotalLength()
         {
             if (AssociatedObject == null || AssociatedObject.ActualHeight == 0)
+            {
                 return 0;
+            }
 
-            return (AssociatedObject.ActualHeight - AssociatedObject.StrokeThickness) * Math.PI * (_normalizedMaxAngle - _normalizedMinAngle) / 360;
+            return (AssociatedObject.ActualHeight - AssociatedObject.StrokeThickness) * Math.PI *
+                (_normalizedMaxAngle - _normalizedMinAngle) / 360;
         }
 
         protected override void OnAttached()
@@ -73,7 +79,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
         }
 
         /// <summary>
-        /// EndAngle 属性更改时调用此方法。
+        ///     EndAngle 属性更改时调用此方法。
         /// </summary>
         /// <param name="oldValue">EndAngle 属性的旧值。</param>
         /// <param name="newValue">EndAngle 属性的新值。</param>
@@ -83,13 +89,10 @@ namespace WpfDesignAndAnimationLab.Behaviors
             UpdateStrokeDashArray();
         }
 
-        protected virtual void OnProgressChanged(double oldValue, double newValue)
-        {
-            UpdateStrokeDashArray();
-        }
+        protected virtual void OnProgressChanged(double oldValue, double newValue) => UpdateStrokeDashArray();
 
         /// <summary>
-        /// StartAngle 属性更改时调用此方法。
+        ///     StartAngle 属性更改时调用此方法。
         /// </summary>
         /// <param name="oldValue">StartAngle 属性的旧值。</param>
         /// <param name="newValue">StartAngle 属性的新值。</param>
@@ -111,7 +114,9 @@ namespace WpfDesignAndAnimationLab.Behaviors
             var oldValue = (double)args.OldValue;
             var newValue = (double)args.NewValue;
             if (oldValue == newValue)
+            {
                 return;
+            }
 
             var target = obj as EllipseProgressBehavior;
             target?.OnEndAngleChanged(oldValue, newValue);
@@ -123,7 +128,9 @@ namespace WpfDesignAndAnimationLab.Behaviors
             var oldValue = (double)args.OldValue;
             var newValue = (double)args.NewValue;
             if (oldValue != newValue)
+            {
                 target.OnProgressChanged(oldValue, newValue);
+            }
         }
 
         private static void OnStartAngleChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
@@ -131,7 +138,9 @@ namespace WpfDesignAndAnimationLab.Behaviors
             var oldValue = (double)args.OldValue;
             var newValue = (double)args.NewValue;
             if (oldValue == newValue)
+            {
                 return;
+            }
 
             var target = obj as EllipseProgressBehavior;
             target?.OnStartAngleChanged(oldValue, newValue);
@@ -141,11 +150,15 @@ namespace WpfDesignAndAnimationLab.Behaviors
         {
             UpdateNormalizedAngles();
             if (AssociatedObject == null)
+            {
                 return;
+            }
 
             AssociatedObject.RenderTransformOrigin = new Point(0.5, 0.5);
             if (AssociatedObject.RenderTransform is RotateTransform transform)
+            {
                 transform.Angle = _normalizedMinAngle - 90;
+            }
             else
             {
                 AssociatedObject.RenderTransform = new RotateTransform { Angle = _normalizedMinAngle - 90 };
@@ -181,14 +194,18 @@ namespace WpfDesignAndAnimationLab.Behaviors
         private void UpdateStrokeDashArray()
         {
             if (AssociatedObject == null || AssociatedObject.StrokeThickness == 0)
+            {
                 return;
+            }
 
             //if (target.ActualHeight == 0 || target.ActualWidth == 0)
             //    return;
 
             var totalLength = GetTotalLength();
             if (totalLength == 0)
+            {
                 return;
+            }
 
             totalLength /= AssociatedObject.StrokeThickness;
             var progressLenth = Progress * totalLength / 100;

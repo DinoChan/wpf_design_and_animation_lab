@@ -11,13 +11,16 @@ namespace WpfDesignAndAnimationLab.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is not SolidColorBrush brush)
+            {
                 return value;
+            }
 
             var amount = System.Convert.ToDouble(parameter);
 
             return new SolidColorBrush(new HslColor(brush.Color).Lighten(amount).ToRgb());
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
+            throw new NotImplementedException();
     }
 }

@@ -159,7 +159,8 @@
                                                                   ContentTemplate="{TemplateBinding BusyContentTemplate}" />
                                                 <ProgressBar Grid.Row="1" Style="{TemplateBinding ProgressBarStyle}">
                                                     <ProgressBar.Width>
-                                                        <MultiBinding Converter="{StaticResource ProgressBarWidthConverter}">
+                                                        <MultiBinding
+                                                            Converter="{StaticResource ProgressBarWidthConverter}">
                                                             <Binding ElementName="busyContent" Path="ActualWidth" />
                                                             <Binding ElementName="_grid" Path="MinWidth" />
                                                         </MultiBinding>

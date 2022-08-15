@@ -4,14 +4,11 @@ using System.Windows.Media.Effects;
 namespace WpfDesignAndAnimationLab.Demos.InnerShadows
 {
     /// <summary>
-    /// VariableSizeInnerShadowDemo.xaml 的交互逻辑
+    ///     VariableSizeInnerShadowDemo.xaml 的交互逻辑
     /// </summary>
     public partial class VariableSizeInnerShadowDemo
     {
-        public VariableSizeInnerShadowDemo()
-        {
-            InitializeComponent();
-        }
+        public VariableSizeInnerShadowDemo() => InitializeComponent();
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {

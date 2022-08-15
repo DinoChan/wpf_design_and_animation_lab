@@ -3,9 +3,7 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextAndShadows"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                                   xmlns:media="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
                                    d:DesignWidth="800"
@@ -15,7 +13,8 @@
     <Grid>
         <Grid.Resources>
             <common:ProgressWrapper x:Key="ProgressWrapper" Progress="1" />
-            <LinearGradientBrush x:Key="ShadowBrush" MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="0,6" EndPoint="6,0">
+            <LinearGradientBrush x:Key="ShadowBrush" MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="0,6"
+                                 EndPoint="6,0">
                 <LinearGradientBrush.GradientStops>
                     <GradientStop Offset="1" Color="#7f6065" />
                     <GradientStop Offset="1" Color="Transparent" />
@@ -48,11 +47,13 @@
                                                         <Grid>
                                                             <Grid.RenderTransform>
                                                                 <TransformGroup>
-                                                                    <ScaleTransform ScaleX="{Binding Progress, Source={StaticResource ProgressWrapper}}" />
+                                                                    <ScaleTransform
+                                                                        ScaleX="{Binding Progress, Source={StaticResource ProgressWrapper}}" />
                                                                     <RotateTransform Angle="45" />
                                                                 </TransformGroup>
                                                             </Grid.RenderTransform>
-                                                            <TextBlock Foreground="{StaticResource ShadowBrush}" Text="{Binding}">
+                                                            <TextBlock Foreground="{StaticResource ShadowBrush}"
+                                                                       Text="{Binding}">
                                                                 <TextBlock.RenderTransform>
                                                                     <RotateTransform Angle="-45" />
                                                                 </TextBlock.RenderTransform>

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
     /// <summary>
-    /// DemoContainer.xaml 的交互逻辑
+    ///     DemoContainer.xaml 的交互逻辑
     /// </summary>
     public partial class DemoContainer : UserControl
     {
@@ -29,7 +29,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
         private void DemoItemsElement_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DemoItemsElement.SelectedItem is not ExampleDefinitionItem item)
+            {
                 return;
+            }
 
             var demo = Activator.CreateInstance(item.Control);
             ContentControl.Content = demo;

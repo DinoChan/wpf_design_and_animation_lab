@@ -4,7 +4,7 @@ using System.Windows.Media;
 namespace WpfDesignAndAnimationLab.Demos.TextShapes
 {
     /// <summary>
-    /// Demo1Page.xaml 的交互逻辑
+    ///     Demo1Page.xaml 的交互逻辑
     /// </summary>
     public partial class TextShapeDemo1Page
     {
@@ -37,9 +37,6 @@ namespace WpfDesignAndAnimationLab.Demos.TextShapes
             return length;
         }
 
-        private void Demo1Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            GetLength(TextPath.RenderedGeometry);
-        }
+        private void Demo1Page_Loaded(object sender, RoutedEventArgs e) => GetLength(TextPath.RenderedGeometry);
     }
 }

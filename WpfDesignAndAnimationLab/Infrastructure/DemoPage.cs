@@ -4,9 +4,6 @@ namespace WpfDesignAndAnimationLab
 {
     public class DemoPage : HeaderedContentControl
     {
-        public DemoPage()
-        {
-            DefaultStyleKey = typeof(DemoPage);
-        }
+        public DemoPage() => DefaultStyleKey = typeof(DemoPage);
     }
 }

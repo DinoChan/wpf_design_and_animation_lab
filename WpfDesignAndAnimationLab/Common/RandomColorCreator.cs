@@ -13,6 +13,7 @@ namespace WpfDesignAndAnimationLab.Common
             _random = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
         }
 
-        public override Color Next => Color.FromRgb((byte)_random.Next(255), (byte)_random.Next(255), (byte)_random.Next(255));
+        public override Color Next =>
+            Color.FromRgb((byte)_random.Next(255), (byte)_random.Next(255), (byte)_random.Next(255));
     }
 }

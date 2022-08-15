@@ -5,7 +5,8 @@ namespace WpfDesignAndAnimationLab.Common
     public class DoubleIncreaser : Increaser<double>
     {
         public static readonly DependencyProperty StartProperty =
-            DependencyProperty.Register("Start", typeof(double), typeof(DoubleIncreaser), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("Start", typeof(double), typeof(DoubleIncreaser),
+                new PropertyMetadata(default(double)));
 
         private double _current;
 
@@ -21,8 +22,8 @@ namespace WpfDesignAndAnimationLab.Common
 
         public override double Start
         {
-            get { return (double)GetValue(StartProperty); }
-            set { SetValue(StartProperty, value); }
+            get => (double)GetValue(StartProperty);
+            set => SetValue(StartProperty, value);
         }
     }
 }

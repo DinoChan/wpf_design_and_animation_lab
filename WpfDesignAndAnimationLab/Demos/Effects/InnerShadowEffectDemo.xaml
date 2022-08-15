@@ -21,7 +21,8 @@
                            Foreground="{StaticResource LightBackground}"
                            TextAlignment="Center">
                     INNER<LineBreak />
-                    SHADOW</TextBlock>
+                    SHADOW
+                </TextBlock>
             </Grid>
             <Grid ClipToBounds="True">
                 <Grid.Effect>

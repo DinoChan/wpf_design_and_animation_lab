@@ -9,24 +9,27 @@ namespace WpfDesignAndAnimationLab.Behaviors
     public class ProgressToEllipseBehavior : Behavior<Ellipse>
     {
         /// <summary>
-        /// 标识 Progress 依赖属性。
+        ///     标识 Progress 依赖属性。
         /// </summary>
         public static readonly DependencyProperty ProgressProperty =
-            DependencyProperty.Register("Progress", typeof(double), typeof(ProgressToEllipseBehavior), new PropertyMetadata(0d, OnProgressChanged));
+            DependencyProperty.Register("Progress", typeof(double), typeof(ProgressToEllipseBehavior),
+                new PropertyMetadata(0d, OnProgressChanged));
 
         /// <summary>
-        /// 获取或设置Progress的值
+        ///     获取或设置Progress的值
         /// </summary>
         public double Progress
         {
-            get { return (double)GetValue(ProgressProperty); }
-            set { SetValue(ProgressProperty, value); }
+            get => (double)GetValue(ProgressProperty);
+            set => SetValue(ProgressProperty, value);
         }
 
         protected virtual double GetTotalLength()
         {
             if (AssociatedObject == null)
+            {
                 return 0;
+            }
 
             return (AssociatedObject.ActualHeight - AssociatedObject.StrokeThickness) * Math.PI;
         }
@@ -37,10 +40,7 @@ namespace WpfDesignAndAnimationLab.Behaviors
             UpdateStrokeDashArray();
         }
 
-        protected virtual void OnProgressChanged(double oldValue, double newValue)
-        {
-            UpdateStrokeDashArray();
-        }
+        protected virtual void OnProgressChanged(double oldValue, double newValue) => UpdateStrokeDashArray();
 
         private static void OnProgressChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
@@ -48,13 +48,17 @@ namespace WpfDesignAndAnimationLab.Behaviors
             var oldValue = (double)args.OldValue;
             var newValue = (double)args.NewValue;
             if (oldValue != newValue)
+            {
                 target.OnProgressChanged(oldValue, newValue);
+            }
         }
 
         private void UpdateStrokeDashArray()
         {
             if (AssociatedObject == null || AssociatedObject.StrokeThickness == 0)
+            {
                 return;
+            }
 
             //if (target.ActualHeight == 0 || target.ActualWidth == 0)
             //    return;

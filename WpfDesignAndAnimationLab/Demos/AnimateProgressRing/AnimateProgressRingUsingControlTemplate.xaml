@@ -1,17 +1,17 @@
-﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.AnimateProgressRing.AnimateProgressRingUsingControlTemplate"
-                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                                   xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
-                                   xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
-                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.AnimateProgressRing"
-                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
-                                   d:DesignHeight="450"
-                                   d:DesignWidth="800"
-                                   Header="Control Template"
-                                   mc:Ignorable="d">
+﻿<wpfdesignandanimationlab:DemoPage
+    x:Class="WpfDesignAndAnimationLab.Demos.AnimateProgressRing.AnimateProgressRingUsingControlTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
+    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Header="Control Template"
+    mc:Ignorable="d">
     <FrameworkElement.Resources>
         <Style TargetType="ProgressBar">
             <Setter Property="Template">

@@ -3,8 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Neuomorphism"
-                                   xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
@@ -12,9 +10,6 @@
                                    Background="#dedede"
                                    mc:Ignorable="d">
     <wpfdesignandanimationlab:DemoPage.Resources>
-        <Color x:Key="ButtonColor">
-            #dedede
-        </Color>
 
         <Style TargetType="controls:NeuomorphismBox">
             <Setter Property="Blur" Value="8" />
@@ -42,10 +37,12 @@
                                     <VisualState x:Name="MouseOver" />
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FlatBackground" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FlatBackground"
+                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
                                                 <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0" />
                                             </DoubleAnimationUsingKeyFrames>
-                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PressedBackground" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PressedBackground"
+                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
                                                 <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1" />
                                             </DoubleAnimationUsingKeyFrames>
                                         </Storyboard>

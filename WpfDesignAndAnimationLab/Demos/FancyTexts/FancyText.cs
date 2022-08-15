@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace WpfDesignAndAnimationLab.Demos.FancyTexts
 {
     /// <summary>
-    /// https://www.cnblogs.com/xunyou/p/11596220.html
+    ///     https://www.cnblogs.com/xunyou/p/11596220.html
     /// </summary>
     public class FancyText
     {
         /// <summary>
-        /// 文本转图片
+        ///     文本转图片
         /// </summary>
         /// <param name="strText"></param>
         /// <param name="fnt"></param>
@@ -20,21 +22,19 @@ namespace WpfDesignAndAnimationLab.Demos.FancyTexts
         /// <param name="clrBack"></param>
         /// <param name="blurAmount"></param>
         /// <returns></returns>
-        public static System.Windows.Media.Imaging.BitmapImage BitmapImageFromText(string strText, Font fnt, Color clrFore, Color clrBack, int blurAmount = 5)
-        {
-            return BitmapToBitmapImage(ImageFromText(strText, fnt, clrFore, clrBack, blurAmount));
-        }
+        public static BitmapImage BitmapImageFromText(string strText, Font fnt, Color clrFore, Color clrBack,
+            int blurAmount = 5) => BitmapToBitmapImage(ImageFromText(strText, fnt, clrFore, clrBack, blurAmount));
 
-        private static System.Windows.Media.Imaging.BitmapImage BitmapToBitmapImage(System.Drawing.Bitmap bitmap)
+        private static BitmapImage BitmapToBitmapImage(Bitmap bitmap)
         {
             using (var stream = new MemoryStream())
             {
-                bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png); // 坑点：格式选Bmp时，不带透明度
+                bitmap.Save(stream, ImageFormat.Png); // 坑点：格式选Bmp时，不带透明度
 
                 stream.Position = 0;
-                var result = new System.Windows.Media.Imaging.BitmapImage();
+                var result = new BitmapImage();
                 result.BeginInit();
-                result.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                result.CacheOption = BitmapCacheOption.OnLoad;
                 result.StreamSource = stream;
                 result.EndInit();
                 result.Freeze();
@@ -45,7 +45,7 @@ namespace WpfDesignAndAnimationLab.Demos.FancyTexts
         private static Bitmap ImageFromText(string strText, Font fnt, Color clrFore, Color clrBack, int blurAmount = 5)
         {
             Bitmap bmpOut = null;
-            var sunNum = 255;  //光晕的值
+            var sunNum = 255; //光晕的值
             using (var g = Graphics.FromHwnd(IntPtr.Zero))
             {
                 var sz = g.MeasureString(strText, fnt);
@@ -72,10 +72,12 @@ namespace WpfDesignAndAnimationLab.Demos.FancyTexts
                                 gBmpOut.DrawImageUnscaled(bmp, x, y);
                             }
                         }
+
                         gBmpOut.DrawString(strText, fnt, brFore, blurAmount / 2, blurAmount / 2);
                     }
                 }
             }
+
             return bmpOut;
         }
     }

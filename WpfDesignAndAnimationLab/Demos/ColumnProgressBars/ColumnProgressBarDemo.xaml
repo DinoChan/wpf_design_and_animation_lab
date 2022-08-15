@@ -3,7 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.ColumnProgressBars"
                                    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -27,7 +26,8 @@
                                   VerticalAlignment="Center">
                                 <Grid.Resources>
                                     <Style TargetType="Rectangle">
-                                        <Setter Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
+                                        <Setter Property="Fill"
+                                                Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
                                         <Setter Property="RadiusX" Value="25" />
                                         <Setter Property="RadiusY" Value="5" />
                                     </Style>
@@ -40,7 +40,8 @@
                                            Opacity="0.1" />
                                 <Rectangle Margin="0,0,0,1" VerticalAlignment="Bottom">
                                     <interactivity:Interaction.Behaviors>
-                                        <local1:ProgressToHeightBehavior BasedElement="{Binding ElementName=Root}" Progress="{Binding Value, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
+                                        <local1:ProgressToHeightBehavior BasedElement="{Binding ElementName=Root}"
+                                                                         Progress="{Binding Value, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
                                     </interactivity:Interaction.Behaviors>
                                 </Rectangle>
 
@@ -51,7 +52,8 @@
                                     </Grid.RowDefinitions>
                                     <Grid>
                                         <interactivity:Interaction.Behaviors>
-                                            <local1:ProgressToHeightBehavior BasedElement="{Binding ElementName=Root}" Progress="{Binding Value, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
+                                            <local1:ProgressToHeightBehavior BasedElement="{Binding ElementName=Root}"
+                                                                             Progress="{Binding Value, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
                                         </interactivity:Interaction.Behaviors>
                                     </Grid>
                                     <Rectangle Grid.RowSpan="2" />
@@ -74,7 +76,8 @@
                                     </Grid.RowDefinitions>
                                     <Grid Margin="0,0,0,5">
                                         <interactivity:Interaction.Behaviors>
-                                            <local1:ProgressToHeightBehavior BasedElement="{Binding ElementName=Root}" Progress="{Binding Value, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
+                                            <local1:ProgressToHeightBehavior BasedElement="{Binding ElementName=Root}"
+                                                                             Progress="{Binding Value, RelativeSource={RelativeSource AncestorType=ProgressBar}}" />
                                         </interactivity:Interaction.Behaviors>
                                     </Grid>
                                     <Rectangle Grid.RowSpan="2"

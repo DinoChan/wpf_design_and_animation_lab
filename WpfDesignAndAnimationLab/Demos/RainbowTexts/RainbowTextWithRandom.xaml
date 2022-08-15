@@ -3,7 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.RainbowTexts"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
@@ -16,7 +15,9 @@
             <common:RandomDoubleCreator x:Key="RandomDoubleCreator" Max="20" />
         </Grid.Resources>
         <StackPanel VerticalAlignment="Center">
-            <ContentControl Content="&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;" FontFamily="Segoe MDL2 Assets">
+            <ContentControl
+                Content="&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;&#xED54;"
+                FontFamily="Segoe MDL2 Assets">
                 <ContentControl.Style>
                     <Style TargetType="ContentControl">
                         <Setter Property="Template">
@@ -34,39 +35,45 @@
                                                             <Setter Property="Template">
                                                                 <Setter.Value>
                                                                     <ControlTemplate TargetType="ContentControl">
-                                                                        <ItemsControl ItemsSource="{TemplateBinding Content}">
+                                                                        <ItemsControl
+                                                                            ItemsSource="{TemplateBinding Content}">
                                                                             <ItemsControl.ItemsPanel>
                                                                                 <ItemsPanelTemplate>
-                                                                                    <StackPanel Orientation="Horizontal" />
+                                                                                    <StackPanel
+                                                                                        Orientation="Horizontal" />
                                                                                 </ItemsPanelTemplate>
                                                                             </ItemsControl.ItemsPanel>
                                                                             <ItemsControl.ItemTemplate>
                                                                                 <DataTemplate>
                                                                                     <TextBlock x:Name="TextElement"
-                                                                                               RenderTransformOrigin=".5,.5"
-                                                                                               Text="{Binding}">
+                                                                                        RenderTransformOrigin=".5,.5"
+                                                                                        Text="{Binding}">
                                                                                         <TextBlock.Foreground>
-                                                                                            <SolidColorBrush Color="{Binding Next, Source={StaticResource RandomColorCreator}}" />
+                                                                                            <SolidColorBrush
+                                                                                                Color="{Binding Next, Source={StaticResource RandomColorCreator}}" />
                                                                                         </TextBlock.Foreground>
                                                                                         <TextBlock.RenderTransform>
                                                                                             <TranslateTransform />
                                                                                         </TextBlock.RenderTransform>
                                                                                         <FrameworkElement.Triggers>
-                                                                                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                                                                            <EventTrigger
+                                                                                                RoutedEvent="FrameworkElement.Loaded">
                                                                                                 <BeginStoryboard>
                                                                                                     <Storyboard>
-                                                                                                        <DoubleAnimation AutoReverse="True"
-                                                                                                                         RepeatBehavior="Forever"
-                                                                                                                         Storyboard.TargetName="TextElement"
-                                                                                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
-                                                                                                                         To="{Binding Next, Source={StaticResource RandomDoubleCreator}}"
-                                                                                                                         Duration="0:0:.07" />
-                                                                                                        <DoubleAnimation AutoReverse="True"
-                                                                                                                         RepeatBehavior="Forever"
-                                                                                                                         Storyboard.TargetName="TextElement"
-                                                                                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                                                                                                                         To="{Binding Next, Source={StaticResource RandomDoubleCreator}}"
-                                                                                                                         Duration="0:0:.1" />
+                                                                                                        <DoubleAnimation
+                                                                                                            AutoReverse="True"
+                                                                                                            RepeatBehavior="Forever"
+                                                                                                            Storyboard.TargetName="TextElement"
+                                                                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                                                                            To="{Binding Next, Source={StaticResource RandomDoubleCreator}}"
+                                                                                                            Duration="0:0:.07" />
+                                                                                                        <DoubleAnimation
+                                                                                                            AutoReverse="True"
+                                                                                                            RepeatBehavior="Forever"
+                                                                                                            Storyboard.TargetName="TextElement"
+                                                                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                                                                                            To="{Binding Next, Source={StaticResource RandomDoubleCreator}}"
+                                                                                                            Duration="0:0:.1" />
                                                                                                     </Storyboard>
                                                                                                 </BeginStoryboard>
                                                                                             </EventTrigger>

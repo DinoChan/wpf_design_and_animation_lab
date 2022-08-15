@@ -6,9 +6,10 @@ namespace WpfDesignAndAnimationLab.Common
     public class DurationIncreaser : Increaser<Duration>
     {
         public static readonly DependencyProperty StartProperty =
-            DependencyProperty.Register("Start", typeof(Duration), typeof(DurationIncreaser), new PropertyMetadata(new Duration(TimeSpan.Zero)));
+            DependencyProperty.Register("Start", typeof(Duration), typeof(DurationIncreaser),
+                new PropertyMetadata(new Duration(TimeSpan.Zero)));
 
-        private Duration _current = new Duration(TimeSpan.Zero);
+        private Duration _current = new(TimeSpan.Zero);
 
         public override Duration Next
         {
@@ -22,8 +23,8 @@ namespace WpfDesignAndAnimationLab.Common
 
         public override Duration Start
         {
-            get { return (Duration)GetValue(StartProperty); }
-            set { SetValue(StartProperty, value); }
+            get => (Duration)GetValue(StartProperty);
+            set => SetValue(StartProperty, value);
         }
     }
 }

@@ -24,7 +24,7 @@ using WpfDesignAndAnimationLab.Common;
 namespace WpfDesignAndAnimationLab.Controls
 {
     /// <summary>
-    /// A control to provide a visual indicator when an application is busy.
+    ///     A control to provide a visual indicator when an application is busy.
     /// </summary>
     [TemplateVisualState(Name = VisualStates.StateIdle, GroupName = VisualStates.GroupBusyStatus)]
     [TemplateVisualState(Name = VisualStates.StateBusy, GroupName = VisualStates.GroupBusyStatus)]
@@ -37,30 +37,25 @@ namespace WpfDesignAndAnimationLab.Controls
         #region Private Members
 
         /// <summary>
-        /// Timer used to delay the initial display and avoid flickering.
+        ///     Timer used to delay the initial display and avoid flickering.
         /// </summary>
         private readonly DispatcherTimer _displayAfterTimer = new();
 
         #endregion Private Members
 
-        #region Constructors
+        #region Properties
 
-        static BusyIndicator()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(BusyIndicator), new FrameworkPropertyMetadata(typeof(BusyIndicator)));
-        }
+        /// <summary>
+        ///     Gets or sets a value indicating whether the BusyContent is visible.
+        /// </summary>
+        protected bool IsContentVisible { get; set; }
 
-        public BusyIndicator()
-        {
-            _displayAfterTimer.Tick += DisplayAfterTimerElapsed;
-        }
-
-        #endregion Constructors
+        #endregion Properties
 
         #region Base Class Overrides
 
         /// <summary>
-        /// Overrides the OnApplyTemplate method.
+        ///     Overrides the OnApplyTemplate method.
         /// </summary>
         public override void OnApplyTemplate()
         {
@@ -70,49 +65,39 @@ namespace WpfDesignAndAnimationLab.Controls
 
         #endregion Base Class Overrides
 
-        #region Properties
+        #region Constructors
 
-        /// <summary>
-        /// Gets or sets a value indicating whether the BusyContent is visible.
-        /// </summary>
-        protected bool IsContentVisible
-        {
-            get;
-            set;
-        }
+        static BusyIndicator() => DefaultStyleKeyProperty.OverrideMetadata(typeof(BusyIndicator),
+            new FrameworkPropertyMetadata(typeof(BusyIndicator)));
 
-        #endregion Properties
+        public BusyIndicator() => _displayAfterTimer.Tick += DisplayAfterTimerElapsed;
+
+        #endregion Constructors
 
         #region Dependency Properties
 
         #region IsBusy
 
         /// <summary>
-        /// Identifies the IsBusy dependency property.
+        ///     Identifies the IsBusy dependency property.
         /// </summary>
         public static readonly DependencyProperty IsBusyProperty = DependencyProperty.Register(
             "IsBusy",
             typeof(bool),
             typeof(BusyIndicator),
-            new PropertyMetadata(false, new PropertyChangedCallback(OnIsBusyChanged)));
+            new PropertyMetadata(false, OnIsBusyChanged));
 
         /// <summary>
-        /// Gets or sets a value indicating whether the busy indicator should show.
+        ///     Gets or sets a value indicating whether the busy indicator should show.
         /// </summary>
         public bool IsBusy
         {
-            get
-            {
-                return (bool)GetValue(IsBusyProperty);
-            }
-            set
-            {
-                SetValue(IsBusyProperty, value);
-            }
+            get => (bool)GetValue(IsBusyProperty);
+            set => SetValue(IsBusyProperty, value);
         }
 
         /// <summary>
-        /// IsBusyProperty property changed handler.
+        ///     IsBusyProperty property changed handler.
         /// </summary>
         /// <param name="e">Event arguments.</param>
         protected virtual void OnIsBusyChanged(DependencyPropertyChangedEventArgs e)
@@ -139,10 +124,8 @@ namespace WpfDesignAndAnimationLab.Controls
 
                 if (FocusAfterBusy != null)
                 {
-                    FocusAfterBusy.Dispatcher.BeginInvoke(DispatcherPriority.Input, new Action(() =>
-                    {
-                        FocusAfterBusy.Focus();
-                    }
+                    FocusAfterBusy.Dispatcher.BeginInvoke(DispatcherPriority.Input, new Action(
+                        () => { FocusAfterBusy.Focus(); }
                     ));
                 }
             }
@@ -151,21 +134,19 @@ namespace WpfDesignAndAnimationLab.Controls
         }
 
         /// <summary>
-        /// IsBusyProperty property changed handler.
+        ///     IsBusyProperty property changed handler.
         /// </summary>
         /// <param name="d">BusyIndicator that changed its IsBusy.</param>
         /// <param name="e">Event arguments.</param>
-        private static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
+        private static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) =>
             ((BusyIndicator)d).OnIsBusyChanged(e);
-        }
 
         #endregion IsBusy
 
         #region Busy Content
 
         /// <summary>
-        /// Identifies the BusyContent dependency property.
+        ///     Identifies the BusyContent dependency property.
         /// </summary>
         public static readonly DependencyProperty BusyContentProperty = DependencyProperty.Register(
             "BusyContent",
@@ -174,18 +155,12 @@ namespace WpfDesignAndAnimationLab.Controls
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Gets or sets a value indicating the busy content to display to the user.
+        ///     Gets or sets a value indicating the busy content to display to the user.
         /// </summary>
         public object BusyContent
         {
-            get
-            {
-                return (object)GetValue(BusyContentProperty);
-            }
-            set
-            {
-                SetValue(BusyContentProperty, value);
-            }
+            get => GetValue(BusyContentProperty);
+            set => SetValue(BusyContentProperty, value);
         }
 
         #endregion Busy Content
@@ -193,7 +168,7 @@ namespace WpfDesignAndAnimationLab.Controls
         #region Busy Content Template
 
         /// <summary>
-        /// Identifies the BusyTemplate dependency property.
+        ///     Identifies the BusyTemplate dependency property.
         /// </summary>
         public static readonly DependencyProperty BusyContentTemplateProperty = DependencyProperty.Register(
             "BusyContentTemplate",
@@ -202,18 +177,12 @@ namespace WpfDesignAndAnimationLab.Controls
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Gets or sets a value indicating the template to use for displaying the busy content to the user.
+        ///     Gets or sets a value indicating the template to use for displaying the busy content to the user.
         /// </summary>
         public DataTemplate BusyContentTemplate
         {
-            get
-            {
-                return (DataTemplate)GetValue(BusyContentTemplateProperty);
-            }
-            set
-            {
-                SetValue(BusyContentTemplateProperty, value);
-            }
+            get => (DataTemplate)GetValue(BusyContentTemplateProperty);
+            set => SetValue(BusyContentTemplateProperty, value);
         }
 
         #endregion Busy Content Template
@@ -221,7 +190,7 @@ namespace WpfDesignAndAnimationLab.Controls
         #region Display After
 
         /// <summary>
-        /// Identifies the DisplayAfter dependency property.
+        ///     Identifies the DisplayAfter dependency property.
         /// </summary>
         public static readonly DependencyProperty DisplayAfterProperty = DependencyProperty.Register(
             "DisplayAfter",
@@ -230,18 +199,12 @@ namespace WpfDesignAndAnimationLab.Controls
             new PropertyMetadata(TimeSpan.FromSeconds(0.1)));
 
         /// <summary>
-        /// Gets or sets a value indicating how long to delay before displaying the busy content.
+        ///     Gets or sets a value indicating how long to delay before displaying the busy content.
         /// </summary>
         public TimeSpan DisplayAfter
         {
-            get
-            {
-                return (TimeSpan)GetValue(DisplayAfterProperty);
-            }
-            set
-            {
-                SetValue(DisplayAfterProperty, value);
-            }
+            get => (TimeSpan)GetValue(DisplayAfterProperty);
+            set => SetValue(DisplayAfterProperty, value);
         }
 
         #endregion Display After
@@ -249,7 +212,7 @@ namespace WpfDesignAndAnimationLab.Controls
         #region FocusAfterBusy
 
         /// <summary>
-        /// Identifies the FocusAfterBusy dependency property.
+        ///     Identifies the FocusAfterBusy dependency property.
         /// </summary>
         public static readonly DependencyProperty FocusAfterBusyProperty = DependencyProperty.Register(
             "FocusAfterBusy",
@@ -258,18 +221,12 @@ namespace WpfDesignAndAnimationLab.Controls
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Gets or sets a Control that should get the focus when the busy indicator disapears.
+        ///     Gets or sets a Control that should get the focus when the busy indicator disapears.
         /// </summary>
         public Control FocusAfterBusy
         {
-            get
-            {
-                return (Control)GetValue(FocusAfterBusyProperty);
-            }
-            set
-            {
-                SetValue(FocusAfterBusyProperty, value);
-            }
+            get => (Control)GetValue(FocusAfterBusyProperty);
+            set => SetValue(FocusAfterBusyProperty, value);
         }
 
         #endregion FocusAfterBusy
@@ -277,7 +234,7 @@ namespace WpfDesignAndAnimationLab.Controls
         #region Overlay Style
 
         /// <summary>
-        /// Identifies the OverlayStyle dependency property.
+        ///     Identifies the OverlayStyle dependency property.
         /// </summary>
         public static readonly DependencyProperty OverlayStyleProperty = DependencyProperty.Register(
             "OverlayStyle",
@@ -286,18 +243,12 @@ namespace WpfDesignAndAnimationLab.Controls
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Gets or sets a value indicating the style to use for the overlay.
+        ///     Gets or sets a value indicating the style to use for the overlay.
         /// </summary>
         public Style OverlayStyle
         {
-            get
-            {
-                return (Style)GetValue(OverlayStyleProperty);
-            }
-            set
-            {
-                SetValue(OverlayStyleProperty, value);
-            }
+            get => (Style)GetValue(OverlayStyleProperty);
+            set => SetValue(OverlayStyleProperty, value);
         }
 
         #endregion Overlay Style
@@ -305,7 +256,7 @@ namespace WpfDesignAndAnimationLab.Controls
         #region ProgressBar Style
 
         /// <summary>
-        /// Identifies the ProgressBarStyle dependency property.
+        ///     Identifies the ProgressBarStyle dependency property.
         /// </summary>
         public static readonly DependencyProperty ProgressBarStyleProperty = DependencyProperty.Register(
             "ProgressBarStyle",
@@ -314,18 +265,12 @@ namespace WpfDesignAndAnimationLab.Controls
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Gets or sets a value indicating the style to use for the progress bar.
+        ///     Gets or sets a value indicating the style to use for the progress bar.
         /// </summary>
         public Style ProgressBarStyle
         {
-            get
-            {
-                return (Style)GetValue(ProgressBarStyleProperty);
-            }
-            set
-            {
-                SetValue(ProgressBarStyleProperty, value);
-            }
+            get => (Style)GetValue(ProgressBarStyleProperty);
+            set => SetValue(ProgressBarStyleProperty, value);
         }
 
         #endregion ProgressBar Style
@@ -335,17 +280,19 @@ namespace WpfDesignAndAnimationLab.Controls
         #region Methods
 
         /// <summary>
-        /// Changes the control's visual state(s).
+        ///     Changes the control's visual state(s).
         /// </summary>
         /// <param name="useTransitions">True if state transitions should be used.</param>
         protected virtual void ChangeVisualState(bool useTransitions)
         {
-            VisualStateManager.GoToState(this, IsBusy ? VisualStates.StateBusy : VisualStates.StateIdle, useTransitions);
-            VisualStateManager.GoToState(this, IsContentVisible ? VisualStates.StateVisible : VisualStates.StateHidden, useTransitions);
+            VisualStateManager.GoToState(this, IsBusy ? VisualStates.StateBusy : VisualStates.StateIdle,
+                useTransitions);
+            VisualStateManager.GoToState(this, IsContentVisible ? VisualStates.StateVisible : VisualStates.StateHidden,
+                useTransitions);
         }
 
         /// <summary>
-        /// Handler for the DisplayAfterTimer.
+        ///     Handler for the DisplayAfterTimer.
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="e">Event arguments.</param>

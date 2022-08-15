@@ -4,7 +4,7 @@ using System.Windows.Media;
 namespace WpfDesignAndAnimationLab.Demos.OutlinedText
 {
     /// <summary>
-    /// Demo1Page.xaml 的交互逻辑
+    ///     Demo1Page.xaml 的交互逻辑
     /// </summary>
     public partial class Demo1Page
     {

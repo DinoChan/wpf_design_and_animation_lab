@@ -7,7 +7,8 @@ namespace WpfDesignAndAnimationLab.Controls
 {
     public class NeuomorphismBoxTemplateSettings
     {
-        public NeuomorphismBoxTemplateSettings(Color color, double distance, double intensity, double blur, NeuomorphismShape shape, NeuomorphismLightSource lightSource)
+        public NeuomorphismBoxTemplateSettings(Color color, double distance, double intensity, double blur,
+            NeuomorphismShape shape, NeuomorphismLightSource lightSource)
         {
             Background = CreateBackground(color, shape, lightSource);
 
@@ -42,15 +43,24 @@ namespace WpfDesignAndAnimationLab.Controls
                 case NeuomorphismLightSource.TopRight:
                     lightDirection = 90;
                     break;
-
-                default:
-                    break;
             }
 
             var darkDirection = lightDirection - 180;
 
-            LightShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = ConvertToSRGBColor(lightColor), Direction = lightDirection, ShadowDepth = distance };
-            DarkShadowEffect = new DropShadowEffect { BlurRadius = blur, Color = ConvertToSRGBColor(darkColor), Direction = darkDirection, ShadowDepth = distance };
+            LightShadowEffect = new DropShadowEffect
+            {
+                BlurRadius = blur,
+                Color = ConvertToSRGBColor(lightColor),
+                Direction = lightDirection,
+                ShadowDepth = distance
+            };
+            DarkShadowEffect = new DropShadowEffect
+            {
+                BlurRadius = blur,
+                Color = ConvertToSRGBColor(darkColor),
+                Direction = darkDirection,
+                ShadowDepth = distance
+            };
         }
 
         public Brush Background { get; set; }
@@ -59,7 +69,7 @@ namespace WpfDesignAndAnimationLab.Controls
 
         private Color ConvertToSRGBColor(Color color)
         {
-            Color newColor = new Color();
+            var newColor = new Color();
             newColor.ScR = (float)color.R / 255;
             newColor.ScG = (float)color.G / 255;
             newColor.ScB = (float)color.B / 255;
@@ -70,10 +80,14 @@ namespace WpfDesignAndAnimationLab.Controls
         private Brush CreateBackground(Color color, NeuomorphismShape shape, NeuomorphismLightSource lightSource)
         {
             if (shape == NeuomorphismShape.Flat || shape == NeuomorphismShape.Pressed)
+            {
                 return new SolidColorBrush(color);
+            }
 
-            var firstGradientColor = ColorHelper.ColorWithLuminance(color, shape == NeuomorphismShape.Convex ? 0.07 : -0.1);
-            var secondGradientColor = ColorHelper.ColorWithLuminance(color, shape == NeuomorphismShape.Concave ? 0.07 : -0.1);
+            var firstGradientColor =
+                ColorHelper.ColorWithLuminance(color, shape == NeuomorphismShape.Convex ? 0.07 : -0.1);
+            var secondGradientColor =
+                ColorHelper.ColorWithLuminance(color, shape == NeuomorphismShape.Concave ? 0.07 : -0.1);
             Point startPoint, endPoint;
 
             switch (lightSource)
@@ -96,9 +110,6 @@ namespace WpfDesignAndAnimationLab.Controls
                 case NeuomorphismLightSource.BottomRight:
                     startPoint = new Point(1, 1);
                     endPoint = new Point(0, 0);
-                    break;
-
-                default:
                     break;
             }
 

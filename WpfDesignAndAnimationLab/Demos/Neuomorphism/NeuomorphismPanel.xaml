@@ -15,11 +15,8 @@
                                    mc:Ignorable="d">
     <wpfdesignandanimationlab:DemoPage.Resources>
         <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#88001f3f" />
-        <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da" />
         <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#001f3f" />
-        <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA" />
         <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#001f3f" />
-        <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA" />
         <Style TargetType="ListBoxItem">
             <Setter Property="Template">
                 <Setter.Value>
@@ -40,24 +37,28 @@
                                 <MultiTrigger.Conditions>
                                     <Condition Property="IsMouseOver" Value="True" />
                                 </MultiTrigger.Conditions>
-                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                                <Setter TargetName="Bd" Property="Background"
+                                        Value="{StaticResource Item.MouseOver.Background}" />
                             </MultiTrigger>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
                                     <Condition Property="Selector.IsSelectionActive" Value="False" />
                                     <Condition Property="IsSelected" Value="True" />
                                 </MultiTrigger.Conditions>
-                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.SelectedInactive.Background}" />
+                                <Setter TargetName="Bd" Property="Background"
+                                        Value="{StaticResource Item.SelectedInactive.Background}" />
                             </MultiTrigger>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
                                     <Condition Property="Selector.IsSelectionActive" Value="True" />
                                     <Condition Property="IsSelected" Value="True" />
                                 </MultiTrigger.Conditions>
-                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.SelectedActive.Background}" />
+                                <Setter TargetName="Bd" Property="Background"
+                                        Value="{StaticResource Item.SelectedActive.Background}" />
                             </MultiTrigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                                <Setter TargetName="Bd" Property="TextElement.Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -98,8 +99,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource ListBox.Disabled.Background}" />
-                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ListBox.Disabled.Border}" />
+                                <Setter TargetName="Bd" Property="Background"
+                                        Value="{StaticResource ListBox.Disabled.Background}" />
+                                <Setter TargetName="Bd" Property="BorderBrush"
+                                        Value="{StaticResource ListBox.Disabled.Border}" />
                             </Trigger>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
@@ -170,16 +173,21 @@
                 </Grid>
                 <ControlTemplate.Triggers>
                     <Trigger Property="IsMouseOver" Value="true">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.MouseOver.Background}" />
-                        <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.MouseOver.Border}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.MouseOver.Background}" />
+                        <Setter TargetName="grip" Property="Stroke"
+                                Value="{StaticResource SliderThumb.MouseOver.Border}" />
                     </Trigger>
                     <Trigger Property="IsDragging" Value="true">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Pressed.Background}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.Pressed.Background}" />
                         <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Pressed.Border}" />
                     </Trigger>
                     <Trigger Property="IsEnabled" Value="false">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Disabled.Background}" />
-                        <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Disabled.Border}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.Disabled.Background}" />
+                        <Setter TargetName="grip" Property="Stroke"
+                                Value="{StaticResource SliderThumb.Disabled.Border}" />
                     </Trigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -199,16 +207,21 @@
                 </Grid>
                 <ControlTemplate.Triggers>
                     <Trigger Property="IsMouseOver" Value="true">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.MouseOver.Background}" />
-                        <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.MouseOver.Border}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.MouseOver.Background}" />
+                        <Setter TargetName="grip" Property="Stroke"
+                                Value="{StaticResource SliderThumb.MouseOver.Border}" />
                     </Trigger>
                     <Trigger Property="IsDragging" Value="true">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Pressed.Background}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.Pressed.Background}" />
                         <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Pressed.Border}" />
                     </Trigger>
                     <Trigger Property="IsEnabled" Value="false">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Disabled.Background}" />
-                        <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Disabled.Border}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.Disabled.Background}" />
+                        <Setter TargetName="grip" Property="Stroke"
+                                Value="{StaticResource SliderThumb.Disabled.Border}" />
                     </Trigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -228,16 +241,21 @@
                 </Grid>
                 <ControlTemplate.Triggers>
                     <Trigger Property="IsMouseOver" Value="true">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.MouseOver.Background}" />
-                        <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.MouseOver.Border}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.MouseOver.Background}" />
+                        <Setter TargetName="grip" Property="Stroke"
+                                Value="{StaticResource SliderThumb.MouseOver.Border}" />
                     </Trigger>
                     <Trigger Property="IsDragging" Value="true">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Pressed.Background}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.Pressed.Background}" />
                         <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Pressed.Border}" />
                     </Trigger>
                     <Trigger Property="IsEnabled" Value="false">
-                        <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Disabled.Background}" />
-                        <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Disabled.Border}" />
+                        <Setter TargetName="grip" Property="Fill"
+                                Value="{StaticResource SliderThumb.Disabled.Background}" />
+                        <Setter TargetName="grip" Property="Stroke"
+                                Value="{StaticResource SliderThumb.Disabled.Border}" />
                     </Trigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -284,10 +302,12 @@
                         </Border>
                         <Track x:Name="PART_Track" Grid.Row="1">
                             <Track.DecreaseRepeatButton>
-                                <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                <RepeatButton Command="{x:Static Slider.DecreaseLarge}"
+                                              Style="{StaticResource RepeatButtonTransparent}" />
                             </Track.DecreaseRepeatButton>
                             <Track.IncreaseRepeatButton>
-                                <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                                <RepeatButton Command="{x:Static Slider.IncreaseLarge}"
+                                              Style="{StaticResource RepeatButtonTransparent}" />
                             </Track.IncreaseRepeatButton>
                             <Track.Thumb>
                                 <Thumb x:Name="Thumb"
@@ -304,12 +324,14 @@
                 <ControlTemplate.Triggers>
                     <Trigger Property="TickPlacement" Value="TopLeft">
                         <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
-                        <Setter TargetName="Thumb" Property="Template" Value="{StaticResource SliderThumbHorizontalTop}" />
+                        <Setter TargetName="Thumb" Property="Template"
+                                Value="{StaticResource SliderThumbHorizontalTop}" />
                         <Setter TargetName="TrackBackground" Property="Margin" Value="5,2,5,0" />
                     </Trigger>
                     <Trigger Property="TickPlacement" Value="BottomRight">
                         <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
-                        <Setter TargetName="Thumb" Property="Template" Value="{StaticResource SliderThumbHorizontalBottom}" />
+                        <Setter TargetName="Thumb" Property="Template"
+                                Value="{StaticResource SliderThumbHorizontalBottom}" />
                         <Setter TargetName="TrackBackground" Property="Margin" Value="5,0,5,2" />
                     </Trigger>
                     <Trigger Property="TickPlacement" Value="Both">

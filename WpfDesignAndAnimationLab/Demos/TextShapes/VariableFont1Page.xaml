@@ -3,7 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextShapes"
                                    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Media"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -17,7 +16,6 @@
     <Grid SnapsToDevicePixels="True">
         <Grid.Resources>
             <common:TimeSpanIncreaser x:Key="TimeSpanIncreaser" Step="0:0:0.1" />
-            <FontFamily x:Key="OstrichSans">/WpfDesignAndAnimationLab;component/Assets/OstrichSans-Light.otf#Ostrich Sans Light</FontFamily>
             <Style TargetType="ContentControl">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -42,11 +40,12 @@
                                                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                                                     <BeginStoryboard>
                                                         <Storyboard>
-                                                            <DoubleAnimation BeginTime="{Binding Next, Source={StaticResource TimeSpanIncreaser}}"
-                                                                             Storyboard.TargetName="TextElement"
-                                                                             Storyboard.TargetProperty="StrokeThickness"
-                                                                             To="10"
-                                                                             Duration="0:0:1.2">
+                                                            <DoubleAnimation
+                                                                BeginTime="{Binding Next, Source={StaticResource TimeSpanIncreaser}}"
+                                                                Storyboard.TargetName="TextElement"
+                                                                Storyboard.TargetProperty="StrokeThickness"
+                                                                To="10"
+                                                                Duration="0:0:1.2">
                                                                 <DoubleAnimation.EasingFunction>
                                                                     <CircleEase EasingMode="EaseIn" />
                                                                 </DoubleAnimation.EasingFunction>

@@ -2,7 +2,6 @@
                                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.InnerShadows"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
@@ -11,7 +10,8 @@
     <Grid>
         <Grid>
             <Grid.Resources>
-                <PathGeometry x:Key="data" Figures="M74,130C40,102.4,0,69.4,0,40.3C0,17.1,15.3,0,40,0 c21.3,0,32.4,14,34,18.1C75.6,14,86.7,0,108,0c24.7,0,40,17.1,40,40.3C148,69.4,108,102.4,74,130z" />
+                <PathGeometry x:Key="data"
+                              Figures="M74,130C40,102.4,0,69.4,0,40.3C0,17.1,15.3,0,40,0 c21.3,0,32.4,14,34,18.1C75.6,14,86.7,0,108,0c24.7,0,40,17.1,40,40.3C148,69.4,108,102.4,74,130z" />
                 <VisualBrush x:Key="heartGlow"
                              Stretch="Uniform"
                              Viewport="-0.25,-0.25,1.5,1.5"

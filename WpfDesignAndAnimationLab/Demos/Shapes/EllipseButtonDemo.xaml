@@ -4,7 +4,6 @@
                                    xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Shapes"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="450"
@@ -26,7 +25,9 @@
                                         <VisualStateGroup.Transitions>
                                             <VisualTransition GeneratedDuration="0:0:1" To="Normal">
                                                 <Storyboard>
-                                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="EllipseProgressBehavior" Storyboard.TargetProperty="Progress">
+                                                    <DoubleAnimationUsingKeyFrames
+                                                        Storyboard.TargetName="EllipseProgressBehavior"
+                                                        Storyboard.TargetProperty="Progress">
                                                         <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
                                                             <EasingDoubleKeyFrame.EasingFunction>
                                                                 <QuinticEase EasingMode="EaseOut" />
@@ -37,7 +38,9 @@
                                             </VisualTransition>
                                             <VisualTransition GeneratedDuration="0:0:1" To="MouseOver">
                                                 <Storyboard>
-                                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="EllipseProgressBehavior" Storyboard.TargetProperty="Progress">
+                                                    <DoubleAnimationUsingKeyFrames
+                                                        Storyboard.TargetName="EllipseProgressBehavior"
+                                                        Storyboard.TargetProperty="Progress">
                                                         <EasingDoubleKeyFrame KeyTime="0:0:1" Value="100">
                                                             <EasingDoubleKeyFrame.EasingFunction>
                                                                 <QuinticEase EasingMode="EaseOut" />
@@ -83,7 +86,6 @@
         </Grid.Resources>
         <Button Width="100"
                 Height="100"
-                HorizontalAlignment="Center"
                 BorderBrush="LightSeaGreen"
                 Content="Button"
                 Style="{StaticResource EllipseStyle}" />

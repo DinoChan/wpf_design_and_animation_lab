@@ -3,13 +3,10 @@
 namespace WpfDesignAndAnimationLab.Demos.Effects
 {
     /// <summary>
-    /// LightenDemoItem.xaml 的交互逻辑
+    ///     LightenDemoItem.xaml 的交互逻辑
     /// </summary>
     public partial class LightenDemoItem : UserControl
     {
-        public LightenDemoItem()
-        {
-            InitializeComponent();
-        }
+        public LightenDemoItem() => InitializeComponent();
     }
 }

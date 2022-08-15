@@ -3,7 +3,6 @@
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:effects="clr-namespace:Microsoft.Expression.Media.Effects;assembly=Microsoft.Expression.Effects"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Transitions"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
                                    d:DesignHeight="650"
@@ -40,7 +39,8 @@
                     </StackPanel>
                     <Grid Background="White">
                         <Grid.Effect>
-                            <effects:RippleTransitionEffect x:Name="effect" Progress="{Binding ElementName=ProgressSlider, Path=Value}">
+                            <effects:RippleTransitionEffect x:Name="effect"
+                                                            Progress="{Binding ElementName=ProgressSlider, Path=Value}">
                                 <effects:RippleTransitionEffect.OldImage>
                                     <VisualBrush Visual="{Binding ElementName=FirstPanel}" />
                                 </effects:RippleTransitionEffect.OldImage>

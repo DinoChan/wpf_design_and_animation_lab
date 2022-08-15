@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using WpfDesignAndAnimationLab.Common;
@@ -11,13 +12,15 @@ namespace WpfDesignAndAnimationLab.Controls
     {
         // Using a DependencyProperty as the backing store for IsActive.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsActiveProperty =
-            DependencyProperty.Register("IsActive", typeof(bool), typeof(ProgressRing), new PropertyMetadata(false, new PropertyChangedCallback(IsActiveChanged)));
+            DependencyProperty.Register("IsActive", typeof(bool), typeof(ProgressRing),
+                new PropertyMetadata(false, IsActiveChanged));
 
         // Using a DependencyProperty as the backing store for TemplateSettings.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TemplateSettingsProperty =
-            DependencyProperty.Register("TemplateSettings", typeof(TemplateSettingValues), typeof(ProgressRing), new PropertyMetadata(null));
+            DependencyProperty.Register("TemplateSettings", typeof(TemplateSettingValues), typeof(ProgressRing),
+                new PropertyMetadata(null));
 
-        private bool _hasAppliedTemplate = false;
+        private bool _hasAppliedTemplate;
 
         public ProgressRing()
         {
@@ -27,14 +30,14 @@ namespace WpfDesignAndAnimationLab.Controls
 
         public bool IsActive
         {
-            get { return (bool)GetValue(IsActiveProperty); }
-            set { SetValue(IsActiveProperty, value); }
+            get => (bool)GetValue(IsActiveProperty);
+            set => SetValue(IsActiveProperty, value);
         }
 
         public TemplateSettingValues TemplateSettings
         {
-            get { return (TemplateSettingValues)GetValue(TemplateSettingsProperty); }
-            set { SetValue(TemplateSettingsProperty, value); }
+            get => (TemplateSettingValues)GetValue(TemplateSettingsProperty);
+            set => SetValue(TemplateSettingsProperty, value);
         }
 
         public override void OnApplyTemplate()
@@ -44,11 +47,11 @@ namespace WpfDesignAndAnimationLab.Controls
             UpdateState(IsActive);
         }
 
-        protected override System.Windows.Size MeasureOverride(System.Windows.Size availableSize)
+        protected override Size MeasureOverride(Size availableSize)
         {
             var width = 20d;
             var height = 20d;
-            if (System.ComponentModel.DesignerProperties.GetIsInDesignMode(this) == false)
+            if (DesignerProperties.GetIsInDesignMode(this) == false)
             {
                 width = double.IsNaN(Width) == false ? Width : availableSize.Width;
                 height = double.IsNaN(Height) == false ? Height : availableSize.Height;

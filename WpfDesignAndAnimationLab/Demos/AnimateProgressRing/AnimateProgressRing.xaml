@@ -15,7 +15,8 @@
                             <Storyboard x:Key="ProgressStoryboard"
                                         FillBehavior="HoldEnd"
                                         Duration="0:0:1">
-                                <DoubleAnimation Storyboard.Target="{StaticResource ProgressWrapper}" Storyboard.TargetProperty="Progress">
+                                <DoubleAnimation Storyboard.Target="{StaticResource ProgressWrapper}"
+                                                 Storyboard.TargetProperty="Progress">
                                     <DoubleAnimation.EasingFunction>
                                         <QuinticEase EasingMode="EaseIn" />
                                     </DoubleAnimation.EasingFunction>

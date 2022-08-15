@@ -3,9 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:converters="clr-namespace:WpfDesignAndAnimationLab.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
-             xmlns:extensions="clr-namespace:WpfDesignAndAnimationLab.Extensions"
-             xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Name="Row"
              d:DesignHeight="450"
@@ -13,32 +10,13 @@
              Foreground="Orange"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <Storyboard x:Key="Storyboard"
-                    FillBehavior="Stop"
-                    RepeatBehavior="Forever"
-                    Duration="0:0:6">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:1" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L2" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:1" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L3" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:2" Value="1" />
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="L1" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                <LinearDoubleKeyFrame KeyTime="00:00:3" Value="0" />
-                <LinearDoubleKeyFrame KeyTime="00:00:4" Value="1" />
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
 
         <converters:LightenConverter x:Key="LightenConverter" />
     </UserControl.Resources>
     <Grid>
 
-        <Grid x:Name="L4" Background="{Binding Foreground, ElementName=Row, Converter={StaticResource LightenConverter}, ConverterParameter=.8}" />
+        <Grid x:Name="L4"
+              Background="{Binding Foreground, ElementName=Row, Converter={StaticResource LightenConverter}, ConverterParameter=.8}" />
 
         <Grid x:Name="L3"
               Background="{Binding Foreground, ElementName=Row, Converter={StaticResource LightenConverter}, ConverterParameter=.6}"

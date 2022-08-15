@@ -4,7 +4,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.OutlinedText"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
@@ -24,13 +23,6 @@
         </Style>
         <SolidColorBrush x:Key="Button.Static.Background" Color="Transparent" />
         <SolidColorBrush x:Key="Button.Static.Border" Color="#22b3ab" />
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
         <Style TargetType="local:OutlinedTextControl">
             <Setter Property="Stroke" Value="{StaticResource Button.Static.Border}" />
             <Setter Property="StrokeThickness" Value="0.3" />

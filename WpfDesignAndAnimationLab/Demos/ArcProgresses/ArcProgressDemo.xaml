@@ -4,7 +4,6 @@
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
                                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.ArcProgresses"
                                    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"

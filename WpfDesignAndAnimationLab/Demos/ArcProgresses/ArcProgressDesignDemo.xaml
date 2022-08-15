@@ -4,7 +4,6 @@
                                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
-                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.ArcProgresses"
                                    xmlns:local1="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
@@ -106,7 +105,8 @@
                                                             StartAngle="-150" />
                         </interactivity:Interaction.Behaviors>
                     </Ellipse>
-                    <TextBlock Foreground="White" Text="{Binding Progress, Source={StaticResource Progress1}, StringFormat=N0}" />
+                    <TextBlock Foreground="White"
+                               Text="{Binding Progress, Source={StaticResource Progress1}, StringFormat=N0}" />
                 </Grid>
             </Grid>
 
@@ -132,7 +132,8 @@
                                                             StartAngle="-150" />
                         </interactivity:Interaction.Behaviors>
                     </Ellipse>
-                    <TextBlock Foreground="#7591af" Text="{Binding Progress, Source={StaticResource Progress2}, StringFormat=N0}" />
+                    <TextBlock Foreground="#7591af"
+                               Text="{Binding Progress, Source={StaticResource Progress2}, StringFormat=N0}" />
                 </Grid>
             </Grid>
 
@@ -145,7 +146,8 @@
                                                             StartAngle="-150" />
                         </interactivity:Interaction.Behaviors>
                     </Ellipse>
-                    <TextBlock Foreground="#00ce9b" Text="{Binding Progress, Source={StaticResource Progress3}, StringFormat=N0}" />
+                    <TextBlock Foreground="#00ce9b"
+                               Text="{Binding Progress, Source={StaticResource Progress3}, StringFormat=N0}" />
                 </Grid>
             </Grid>
 
@@ -173,7 +175,8 @@
                                                             StartAngle="-150" />
                         </interactivity:Interaction.Behaviors>
                     </Ellipse>
-                    <TextBlock Foreground="White" Text="{Binding Progress, Source={StaticResource Progress4}, StringFormat=N0}" />
+                    <TextBlock Foreground="White"
+                               Text="{Binding Progress, Source={StaticResource Progress4}, StringFormat=N0}" />
                 </Grid>
             </Grid>
 
@@ -225,7 +228,8 @@
                                                             StartAngle="-150" />
                         </interactivity:Interaction.Behaviors>
                     </Ellipse>
-                    <TextBlock Foreground="#ffffff" Text="{Binding Progress, Source={StaticResource Progress5}, StringFormat=N0}" />
+                    <TextBlock Foreground="#ffffff"
+                               Text="{Binding Progress, Source={StaticResource Progress5}, StringFormat=N0}" />
                 </Grid>
             </Grid>
         </Grid>
