@@ -21,6 +21,11 @@ dotnet_code_quality_unused_parameters = non_public:suggestion
 [project.json]
 indent_size = 2
 
+# ReSharper properties
+resharper_csharp_wrap_lines = false
+resharper_xmldoc_wrap_lines = false
+resharper_xml_wrap_lines = false
+
 # C# files
 [*.cs]
 # New line preferences
