@@ -70,6 +70,9 @@
       <SubType>Code</SubType>
       <DependentUpon>Demo7Page.xaml.cs</DependentUpon>
     </Compile>
+    <Compile Update="Demos\ProgressRings\LinearGradientFullCircleLoading.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Demos\TextShapes\VariableFont4Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,11 @@
     <Page Update="Demos\OutlinedText\Demo8Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Demos\ProgressRings\LinearGradientFullCircleLoading.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="Demos\TextShapes\TextShapeDemo1Page.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>

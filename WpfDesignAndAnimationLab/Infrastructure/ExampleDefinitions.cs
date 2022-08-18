@@ -98,7 +98,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             ),
             new("Progress Ring", null,
                 new ExampleDefinitionItem("Basic", typeof(ProgressRingBasicDemo)),
-                new ExampleDefinitionItem("Linear Gradient Circle", typeof(LinearGradientCircleLoading))
+                new ExampleDefinitionItem("Linear Gradient Circle", typeof(LinearGradientCircleLoading)),
+                new ExampleDefinitionItem("Linear Gradient Full Circle", typeof(LinearGradientFullCircleLoading))
             ),
             new("Effects", null,
                 new ExampleDefinitionItem("Lighten", typeof(LightenDemo)),
