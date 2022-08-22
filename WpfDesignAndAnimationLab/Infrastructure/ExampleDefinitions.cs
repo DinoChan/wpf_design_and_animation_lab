@@ -35,7 +35,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Button", typeof(NeuomorphismButtonDemo))
             ),
             new("Gooey", null,
-                new ExampleDefinitionItem("Gooey Ellipse", typeof(GooeyEllipseDemo)),
+                new ExampleDefinitionItem("Ellipse", typeof(GooeyEllipseDemo)),
+                new ExampleDefinitionItem("Rectangle", typeof(GooeyRectangleDemo)),
                 new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo))
             ),
             new("ScaleMark", null,

@@ -31,6 +31,9 @@
     <Compile Update="Demos\GlowEffects\GlowTextDemo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Demos\Gooey\GooeyRectangleDemo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Demos\LongShadows\LongShadowDemo5.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -90,6 +93,10 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="Demos\GlowEffects\GlowTextDemo.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Demos\Gooey\GooeyRectangleDemo.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

@@ -1,0 +1,75 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.Gooey.GooeyRectangleDemo"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   mc:Ignorable="d">
+    <wpfdesignandanimationlab:DemoPage.Resources>
+        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TransformRotate1" Storyboard.TargetProperty="(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="90" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TransformRotate2" Storyboard.TargetProperty="(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="90" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TransformRotate3" Storyboard.TargetProperty="(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="-90" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </wpfdesignandanimationlab:DemoPage.Resources>
+    <FrameworkElement.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}" />
+        </EventTrigger>
+    </FrameworkElement.Triggers>
+    <Grid>
+        <Grid.Effect>
+            <effects:SmoothOpacityThresholdEffect LowerThresh="0.38" UpperThresh="0.44" />
+        </Grid.Effect>
+        <Grid>
+            <Grid.Effect>
+                <BlurEffect Radius="30" />
+            </Grid.Effect>
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Border Width="100"
+                            Height="100"
+                            Background="MediumVioletRed"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform x:Name="TransformRotate1" Angle="0" />
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                    <Border Width="100"
+                            Height="100"
+                            Margin="30,0,0,0"
+                            Background="LightSeaGreen"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform x:Name="TransformRotate2" Angle="0" />
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                </StackPanel>
+                <Border Width="100"
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        Background="DodgerBlue"
+                        RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform x:Name="TransformRotate3" Angle="0" />
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>
