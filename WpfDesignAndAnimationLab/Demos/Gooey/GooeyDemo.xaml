@@ -20,7 +20,7 @@
                     <ControlTemplate TargetType="ContentControl">
                         <Border Margin="6"
                                 BorderBrush="#AAA"
-                                BorderThickness="1"
+                                BorderThickness="0"
                                 CornerRadius="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -80,6 +80,27 @@
                              Fill="#00b4aa" />
                 </StackPanel>
             </ContentControl>
+            <!--<ContentControl Style="{StaticResource ContentControlStyle}" Tag="+ Threshold" >
+                <Grid>
+                    <Grid.Effect>
+                        <effects:OpacityThresholdEffect Thresh="0.38" />
+                    </Grid.Effect>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Effect>
+                            <BlurEffect Radius="30" />
+                        </StackPanel.Effect>
+                        <Ellipse Width="160"
+                                 Height="160"
+                                 Fill="#f0555a" />
+
+
+                        <Ellipse Width="160"
+                                 Height="160"
+                                 Margin="5,0,0,0"
+                                 Fill="#00b4aa" />
+                    </StackPanel>
+                </Grid>
+            </ContentControl>-->
             <ContentControl Style="{StaticResource ContentControlStyle}" Tag="+ Threshold">
                 <Grid>
                     <Grid.Effect>

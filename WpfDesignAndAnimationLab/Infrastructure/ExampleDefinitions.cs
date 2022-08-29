@@ -37,7 +37,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             new("Gooey", null,
                 new ExampleDefinitionItem("Ellipse", typeof(GooeyEllipseDemo)),
                 new ExampleDefinitionItem("Rectangle", typeof(GooeyRectangleDemo)),
-                new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo))
+                new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo)),
+                new ExampleDefinitionItem("Demo", typeof(GooeyDemo))
             ),
             new("ScaleMark", null,
                 new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
