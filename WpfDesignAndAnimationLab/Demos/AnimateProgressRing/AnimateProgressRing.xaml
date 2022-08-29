@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
                     xmlns:behaviors="clr-namespace:WpfDesignAndAnimationLab.Behaviors"
                     xmlns:coomon="clr-namespace:WpfDesignAndAnimationLab.Common"
+                    xmlns:interactivity="http://schemas.microsoft.com/xaml/behaviors"
                     xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.AnimateProgressRing">
 
     <Style TargetType="{x:Type local:AnimateProgressRing}">
@@ -15,8 +15,7 @@
                             <Storyboard x:Key="ProgressStoryboard"
                                         FillBehavior="HoldEnd"
                                         Duration="0:0:1">
-                                <DoubleAnimation Storyboard.Target="{StaticResource ProgressWrapper}"
-                                                 Storyboard.TargetProperty="Progress">
+                                <DoubleAnimation Storyboard.Target="{StaticResource ProgressWrapper}" Storyboard.TargetProperty="Progress">
                                     <DoubleAnimation.EasingFunction>
                                         <QuinticEase EasingMode="EaseIn" />
                                     </DoubleAnimation.EasingFunction>

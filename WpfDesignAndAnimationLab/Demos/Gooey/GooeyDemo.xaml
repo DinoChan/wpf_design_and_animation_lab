@@ -56,12 +56,12 @@
 
                     <Ellipse Width="160"
                              Height="160"
-                             Fill="MediumVioletRed" />
+                             Fill="#f0555a" />
 
                     <Ellipse Width="160"
                              Height="160"
                              Margin="5,0,0,0"
-                             Fill="Red" />
+                             Fill="#00b4aa" />
                 </StackPanel>
 
             </ContentControl>
@@ -72,12 +72,12 @@
                     </StackPanel.Effect>
                     <Ellipse Width="160"
                              Height="160"
-                             Fill="MediumVioletRed" />
+                             Fill="#f0555a" />
 
                     <Ellipse Width="160"
                              Height="160"
                              Margin="5,0,0,0"
-                             Fill="Red" />
+                             Fill="#00b4aa" />
                 </StackPanel>
             </ContentControl>
             <ContentControl Style="{StaticResource ContentControlStyle}" Tag="+ Threshold">
@@ -91,13 +91,13 @@
                         </StackPanel.Effect>
                         <Ellipse Width="160"
                                  Height="160"
-                                 Fill="MediumVioletRed" />
+                                 Fill="#f0555a" />
 
 
                         <Ellipse Width="160"
                                  Height="160"
                                  Margin="5,0,0,0"
-                                 Fill="Red" />
+                                 Fill="#00b4aa" />
                     </StackPanel>
                 </Grid>
             </ContentControl>

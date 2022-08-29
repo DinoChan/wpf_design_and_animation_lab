@@ -15,14 +15,11 @@
                                                 GeometryHeight="{Binding ActualHeight, ElementName=Root}"
                                                 GeometryWidth="{Binding ActualWidth, ElementName=Root}" />
                         <Grid>
-                            <Border Background="{TemplateBinding Background}"
-                                    CornerRadius="{TemplateBinding CornerRadius}" />
+                            <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" />
                             <Grid Effect="{TemplateBinding InnerShadowEffect}">
                                 <Grid>
                                     <Grid.Clip>
-                                        <CombinedGeometry
-                                            Geometry1="{Binding ElementName=GeometryCreator, Path=Result}"
-                                            GeometryCombineMode="Xor">
+                                        <CombinedGeometry Geometry1="{Binding ElementName=GeometryCreator, Path=Result}" GeometryCombineMode="Xor">
                                             <CombinedGeometry.Geometry2>
                                                 <RectangleGeometry Rect="-5000,-5000,10000,10000" />
                                             </CombinedGeometry.Geometry2>
@@ -31,10 +28,8 @@
                                     <Rectangle Margin="-64" Fill="White" />
                                 </Grid>
                             </Grid>
-                            <Border BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}">
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                             </Border>
                         </Grid>
                     </Grid>
