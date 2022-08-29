@@ -62,8 +62,8 @@
                 </Ellipse.RenderTransform>
             </Ellipse>
             <Ellipse x:Name="ellipse2"
-                     Width="160"
-                     Height="160"
+                     Width="120"
+                     Height="120"
                      Fill="#00b4aa"
                      RenderTransformOrigin="0.5,0.5">
                 <Ellipse.RenderTransform>
