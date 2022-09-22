@@ -7,7 +7,7 @@ namespace WpfDesignAndAnimationLab.Controls
 {
     public class NeuomorphismBoxTemplateSettings
     {
-        public NeuomorphismBoxTemplateSettings(Color color, double distance, double intensity, double blur,
+        public NeuomorphismBoxTemplateSettings(Color color, double distance, double intensity, double blurRadius,
             NeuomorphismShape shape, NeuomorphismLightSource lightSource)
         {
             Background = CreateBackground(color, shape, lightSource);
@@ -49,14 +49,14 @@ namespace WpfDesignAndAnimationLab.Controls
 
             LightShadowEffect = new DropShadowEffect
             {
-                BlurRadius = blur,
+                BlurRadius = blurRadius,
                 Color = ConvertToSRGBColor(lightColor),
                 Direction = lightDirection,
                 ShadowDepth = distance
             };
             DarkShadowEffect = new DropShadowEffect
             {
-                BlurRadius = blur,
+                BlurRadius = blurRadius,
                 Color = ConvertToSRGBColor(darkColor),
                 Direction = darkDirection,
                 ShadowDepth = distance

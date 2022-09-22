@@ -50,14 +50,40 @@ namespace WpfDesignAndAnimationLab.Controls
                      double.IsInfinity(cr.TopLeft) || double.IsInfinity(cr.TopRight) || double.IsInfinity(cr.BottomLeft) || double.IsInfinity(cr.BottomRight));
         }
 
+
         /// <summary>
-        /// CornerRadius 属性更改时调用此方法。
+        /// 获取或设置BlurRadius的值
         /// </summary>
-        /// <param name="oldValue">CornerRadius 属性的旧值。</param>
-        /// <param name="newValue">CornerRadius 属性的新值。</param>
-        protected virtual void OnCornerRadiusChanged(CornerRadius oldValue, CornerRadius newValue)
+        public double BlurRadius
         {
+            get => (double)GetValue(BlurRadiusProperty);
+            set => SetValue(BlurRadiusProperty, value);
         }
+
+        /// <summary>
+        /// 标识 BlurRadius 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty BlurRadiusProperty =
+            DependencyProperty.Register(nameof(BlurRadius), typeof(double), typeof(ShadowChrome), new FrameworkPropertyMetadata(5d, FrameworkPropertyMetadataOptions.AffectsRender));
+
+
+
+        /// <summary>
+        /// 获取或设置Direction的值
+        /// </summary>
+        public double Direction
+        {
+            get => (double)GetValue(DirectionProperty);
+            set => SetValue(DirectionProperty, value);
+        }
+
+        /// <summary>
+        /// 标识 Direction 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty DirectionProperty =
+            DependencyProperty.Register(nameof(Direction), typeof(double), typeof(ShadowChrome), new FrameworkPropertyMetadata(315d, FrameworkPropertyMetadataOptions.AffectsRender));
+
+
 
         /// <summary>
         /// 获取或设置Color的值
@@ -79,33 +105,24 @@ namespace WpfDesignAndAnimationLab.Controls
 
         protected override void OnRender(DrawingContext drawingContext)
         {
+            var blurRadius = (int)Math.Round(BlurRadius, 0);
 
-
-            Rect shadowBounds = new Rect(new Point(ShadowDepth, ShadowDepth),
+            Rect shadowBounds = new Rect(new Point(blurRadius, blurRadius),
                              new Size(RenderSize.Width, RenderSize.Height));
             Color color = Color;
+            var weights = GetWeights(blurRadius);
 
             if (shadowBounds.Width > 0 && shadowBounds.Height > 0 && color.A > 0)
             {
 
-                var w = GetWei();
-
-                for (int i = 0; i < ShadowDepth; i++)
+                for (int i = 0; i < blurRadius; i++)
                 {
                     var cornerRadius = CornerRadius;
-                    cornerRadius.TopLeft += 0;
-                    cornerRadius.TopLeft = Math.Max(0, cornerRadius.TopLeft);
-                    var geometry = CreateGeometry(RenderSize.Width, RenderSize.Height, cornerRadius, +i);
-                    Brush brush = new SolidColorBrush(Color.FromArgb((byte)(Math.Min(1, w[i]) * 255), Color.R, Color.G, Color.B));
+                    var geometry = CreateGeometry(RenderSize.Width, RenderSize.Height, cornerRadius, -i - 1);
+                    Brush brush = new SolidColorBrush(Color.FromArgb((byte)(Math.Min(1, weights[i]) * 255), Color.R, Color.G, Color.B));
                     drawingContext.DrawGeometry(brush, new Pen(brush, 1), geometry);
                 }
-
-
-
-
             }
-
-
         }
 
         private static ArcSegment CreateArcSegment(Point point, double radius)
@@ -144,14 +161,12 @@ namespace WpfDesignAndAnimationLab.Controls
 
 
 
-        private double[] GetWei()
+        private double[] GetWeights(int radius = 5)
         {
             double sum = 0.0;
-            double difference = 0.0;
-            var radius = 30;
-            var pSamplingWeights = new double[80];
+            var pSamplingWeights = new double[radius + 1];
 
-            for (var i = 0; i < radius + 1; i++)
+            for (var i = 0; i < pSamplingWeights.Length; i++)
             {
                 // Choosing a standard deviation of 1/3rd the radius is standard for a discrete
                 // approximation of the gaussian function.
@@ -171,11 +186,18 @@ namespace WpfDesignAndAnimationLab.Controls
                 pSamplingWeights[i] = weight;
             }
 
-            var result = new double[30];
-            for (int i = 0; i < 30; i++)
+            var sumWeight = 0.0;
+            var result = new double[radius];
+            for (int i = radius - 1; i >= 0; i--)
             {
-                result[i] = pSamplingWeights.Skip(i).Sum();
+                sumWeight += pSamplingWeights[i];
+                result[i] = sumWeight;
             }
+
+            //for (int i = 0; i < radius; i++)
+            //{
+            //    result[i] = pSamplingWeights.Skip(i).Sum();
+            //}
 
             return result;
         }

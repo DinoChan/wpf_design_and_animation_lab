@@ -15,6 +15,7 @@ using WpfDesignAndAnimationLab.Demos.ProgressRings;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
 using WpfDesignAndAnimationLab.Demos.ScaleMarks;
+using WpfDesignAndAnimationLab.Demos.Shadows;
 using WpfDesignAndAnimationLab.Demos.Shapes;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
 using WpfDesignAndAnimationLab.Demos.TextEffects;
