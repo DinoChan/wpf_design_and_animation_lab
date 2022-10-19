@@ -1,6 +1,7 @@
 ﻿using WpfDesignAndAnimationLab.Demos.AnimateProgressRing;
 using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.Buttons;
+using WpfDesignAndAnimationLab.Demos.ColorWheel;
 using WpfDesignAndAnimationLab.Demos.ColumnProgressBars;
 using WpfDesignAndAnimationLab.Demos.Effects;
 using WpfDesignAndAnimationLab.Demos.FancyTexts;
@@ -65,6 +66,11 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("VariableFont4", typeof(VariableFont4Page)),
                 new ExampleDefinitionItem("VariableFont5", typeof(VariableFont5Page)),
                 new ExampleDefinitionItem("VariableFont6", typeof(VariableFont6Page))
+            ),
+            new("ColorWheel", null,
+                new ExampleDefinitionItem("ColorWheel", typeof(ColorWheelDemo))
+               
+                // new ExampleDefinitionItem("Path Inner Shadow",typeof(PathInnerShadowDemo))
             ),
             new("InnerShadow", null,
                 new ExampleDefinitionItem("InnerShadow", typeof(InnerShadowDemo)),
