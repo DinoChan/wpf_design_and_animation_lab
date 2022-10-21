@@ -27,7 +27,7 @@ namespace WpfDesignAndAnimationLab.Demos.TextAnimations
 
         private void OnScrollChanged(object sender, ScrollChangedEventArgs e)
         {
-            MaskElement.Visibility = e.VerticalOffset > 930? Visibility.Visible: Visibility.Collapsed;
+            MaskElement.Visibility = e.VerticalOffset > 810? Visibility.Visible: Visibility.Collapsed;
         }
     }
 }

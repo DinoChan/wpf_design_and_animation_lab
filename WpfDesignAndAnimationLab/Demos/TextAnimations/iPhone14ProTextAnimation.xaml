@@ -12,7 +12,7 @@
                                    Background="Black"
                                    mc:Ignorable="d">
 
-    <Grid>
+    <Grid Height="850">
 
         <TextBlock x:Name="TextElement"
                    Width="800"
