@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.ColorWheel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="750" d:DesignWidth="1800">
     <Grid Background="White">
-        <local:ColorWheelDemo Height="300" Width="300">
+        <local:ColorWheelDemo >
             <!--<FrameworkElement.Clip>
                 <EllipseGeometry  Center="150,150" RadiusY="148" RadiusX="148">
                     
