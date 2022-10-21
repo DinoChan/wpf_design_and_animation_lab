@@ -16,6 +16,7 @@
   <ItemGroup>
     <None Remove="Assets\fixedsys.ttf" />
     <None Remove="Assets\hooge-0857.ttf" />
+    <None Remove="Assets\Images\hero_iphone_14_pro.jpg" />
     <None Remove="Assets\Images\windows.jpg" />
     <None Remove="Assets\OstrichSans-Light.otf" />
     <None Remove="Demos\LongShadows\text.png" />
@@ -172,6 +173,7 @@
   <ItemGroup>
     <Resource Include="Assets\fixedsys.ttf" />
     <Resource Include="Assets\hooge-0857.ttf" />
+    <Resource Include="Assets\Images\hero_iphone_14_pro.jpg" />
     <Resource Include="Assets\Images\windows.jpg" />
     <Resource Include="Assets\OstrichSans-Light.otf" />
     <Resource Include="Demos\LongShadows\text.png" />

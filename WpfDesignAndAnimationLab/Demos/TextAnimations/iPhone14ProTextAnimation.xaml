@@ -1,0 +1,73 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.TextAnimations.iPhone14ProTextAnimation"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:effects="clr-namespace:WpfDesignAndAnimationLab.Effects;assembly=WpfDesignAndAnimationLab.Effects"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.TextAnimations"
+                                   xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="5050"
+                                   d:DesignWidth="1400"
+                                   Background="Black"
+                                   mc:Ignorable="d">
+
+    <Grid>
+
+        <TextBlock x:Name="TextElement"
+                   Width="800"
+                   Margin="20,0"
+                   VerticalAlignment="Center"
+                   FontSize="48"
+                   FontWeight="Bold"
+                   Text="灵动的 iPhone 新玩法，迎面而来。重大的安全新功能，为拯救生命而设计。创新的 4800 万像素主摄，让细节纤毫毕现。更有 iPhone 芯片中的速度之王，为一切提供强大原动力。"
+                   TextWrapping="Wrap" />
+        <Grid>
+            <ScrollViewer Padding="0,30"
+                          Background="Black"
+                          ScrollChanged="OnScrollChanged"
+                          VerticalScrollBarVisibility="Visible">
+                <StackPanel>
+                    <Image Width="1116"
+                           Height="926"
+                           VerticalAlignment="Top"
+                           Source="/WpfDesignAndAnimationLab;component/Assets/Images/hero_iphone_14_pro.jpg" />
+                    <Rectangle x:Name="BackgroundElement"
+                               Height="3000"
+                               Margin="30,0">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterX="0.5" CenterY="0.5" />
+                                        <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                        <RotateTransform Angle="-3" CenterX="0.5" CenterY="0.5" />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#000" />
+                                <GradientStop Offset=".25" Color="#000" />
+                                <GradientStop Offset=".416" Color="#ffb6ff" />
+                                <GradientStop Offset=".583" Color="#b344ff" />
+                                <GradientStop Offset=".75" Color="#000" />
+                                <GradientStop Offset="1" Color="#000" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </StackPanel>
+            </ScrollViewer>
+            <Grid x:Name="MaskElement" Visibility="Collapsed" 
+                  Margin="30,0" 
+                  Background="Black"
+                  IsHitTestVisible="False">
+                <Grid.Effect>
+                    <effects:ClipEffect>
+                        <effects:ClipEffect.Blend>
+                            <VisualBrush Stretch="None" Visual="{Binding ElementName=TextElement}" />
+                        </effects:ClipEffect.Blend>
+                    </effects:ClipEffect>
+                </Grid.Effect>
+            </Grid>
+        </Grid>
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

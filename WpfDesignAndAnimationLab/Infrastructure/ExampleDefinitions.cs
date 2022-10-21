@@ -19,6 +19,7 @@ using WpfDesignAndAnimationLab.Demos.ScaleMarks;
 using WpfDesignAndAnimationLab.Demos.Shadows;
 using WpfDesignAndAnimationLab.Demos.Shapes;
 using WpfDesignAndAnimationLab.Demos.TextAndShadows;
+using WpfDesignAndAnimationLab.Demos.TextAnimations;
 using WpfDesignAndAnimationLab.Demos.TextEffects;
 using WpfDesignAndAnimationLab.Demos.TextShapes;
 using WpfDesignAndAnimationLab.Demos.TextShimmers;
@@ -41,6 +42,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Rectangle", typeof(GooeyRectangleDemo)),
                 new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo)),
                 new ExampleDefinitionItem("Demo", typeof(GooeyDemo))
+            ),
+            new("Text Animations", null,
+                new ExampleDefinitionItem("iPhone 14 Pro", typeof(iPhone14ProTextAnimation))
             ),
             new("ScaleMark", null,
                 new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
