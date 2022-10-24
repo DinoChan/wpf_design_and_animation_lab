@@ -126,6 +126,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             new("TextShimmers", null,
                 new ExampleDefinitionItem("UsingOpacityMask", typeof(TextShimmerUsingOpacityMask))
             ),
+             new("Shadows", null,
+                new ExampleDefinitionItem("DropShadow Color", typeof(DropShadowColorDemo))
+            ),
             new("Shape", null,
                 new ExampleDefinitionItem("TriangleLoading", typeof(TriangleLoading)),
                 new ExampleDefinitionItem("TriangleLoading2", typeof(TriangleLoading2)),
