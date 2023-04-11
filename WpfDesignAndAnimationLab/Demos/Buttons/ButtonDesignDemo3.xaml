@@ -16,11 +16,13 @@
             <Setter Property="Distance" Value="5" />
             <Setter Property="Intensity" Value="0.6" />
             <Setter Property="Color" Value="#88898d" />
-            <Setter Property="CornerRadius" Value="14" />
+            <Setter Property="CornerRadius" Value="8" />
         </Style>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Height" Value="150" />
-            <Setter Property="Width" Value="150" />
+        
+        <Style TargetType="{x:Type Button}" x:Key="MeasurementButtonStyle">
+            <Setter Property="Height" Value="42" />
+            <Setter Property="Width" Value="42" />
+            <Setter Property="Margin" Value="16" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Cursor" Value="Hand" />
@@ -69,8 +71,8 @@
                             <Grid x:Name="InnerShadowElements"
                                   IsHitTestVisible="False"
                                   Opacity="0">
-                                <controls:InnerShadowBox CornerRadius="14" InnerShadowEffect="{Binding ElementName=FlatBackground, Path=TemplateSettings.DarkShadowEffect}" />
-                                <controls:InnerShadowBox CornerRadius="14" InnerShadowEffect="{Binding ElementName=FlatBackground, Path=TemplateSettings.DarkShadowEffect}" />
+                                <controls:InnerShadowBox CornerRadius="8" InnerShadowEffect="{Binding ElementName=FlatBackground, Path=TemplateSettings.DarkShadowEffect}" />
+                                <controls:InnerShadowBox CornerRadius="8" InnerShadowEffect="{Binding ElementName=FlatBackground, Path=TemplateSettings.DarkShadowEffect}" />
                             </Grid>
 
                             <!--<controls:NeuomorphismBox x:Name="PressedBackground"
@@ -89,6 +91,111 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <DataTemplate x:Key="RedTemplate">
+            <Grid>
+                <Rectangle Fill="#c00000"
+                           RadiusX="8"
+                           RadiusY="8"
+                           StrokeThickness="2">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#FFD99999" />
+                            <GradientStop Offset=".7" Color="#FFc66666" />
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+
+                </Rectangle>
+                <Rectangle Width="16"
+                           Height="16"
+                           Fill="#c99999" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PressedRedTemplate">
+            <Grid>
+                <Rectangle Fill="#c00000"
+                           RadiusX="8"
+                           RadiusY="8"
+                           StrokeThickness="2">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                            <GradientStop Color="#FFD99999" />
+                            <GradientStop Offset=".7" Color="#FFc66666" />
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+
+                </Rectangle>
+                <Rectangle Width="16"
+                           Height="16"
+                           Fill="#c99999" />
+            </Grid>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="BlueTemplate">
+            <Grid>
+                <Rectangle Fill="#137DBF"
+                           RadiusX="8"
+                           RadiusY="8"
+                           StrokeThickness="2">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#81CBFA" />
+                            <GradientStop Offset=".7" Color="#519BCA" />
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+
+                </Rectangle>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Segoe MDL2 Assets"
+                           FontSize="20"
+                           Foreground="#33B1FF"
+                           Text="&#xF5B0;" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PressedBlueTemplate">
+            <Grid>
+                <Rectangle Fill="#137DBF"
+                           RadiusX="8"
+                           RadiusY="8"
+                           StrokeThickness="2">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                            <GradientStop Color="#81CBFA" />
+                            <GradientStop Offset=".7" Color="#519BCA" />
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+
+                </Rectangle>
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Segoe MDL2 Assets"
+                           FontSize="20"
+                           Foreground="#33B1FF"
+                           Text="&#xF5B0;" />
+            </Grid>
+        </DataTemplate>
+
+        <Style TargetType="Button" BasedOn="{StaticResource MeasurementButtonStyle}" x:Key="StopButtonStyle">
+            <Setter Property="ContentTemplate" Value="{StaticResource RedTemplate}" />
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="ContentTemplate" Value="{StaticResource PressedRedTemplate}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource MeasurementButtonStyle}" x:Key="StartButtonStyle">
+            <Setter Property="ContentTemplate" Value="{StaticResource BlueTemplate}" />
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="ContentTemplate" Value="{StaticResource PressedBlueTemplate}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
     </wpfdesignandanimationlab:DemoPage.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -97,144 +204,23 @@
         </Grid.ColumnDefinitions>
         <Grid Background="#f8f8f8">
             <StackPanel VerticalAlignment="Center">
-                <Button Width="42"
-                        Height="42"
-                        Margin="16">
-                    <Grid>
-                        <Rectangle Fill="#c00000"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#c55555"
-                                   StrokeThickness="2" />
-                        <Rectangle Width="16"
-                                   Height="16"
-                                   Fill="#c99999" />
-                    </Grid>
-                </Button>
+                <Button Style="{StaticResource StopButtonStyle}" />
 
-                <Button Width="42"
-                        Height="42"
-                        Margin="16">
-                    <Grid>
-                        <Rectangle Fill="#137DBF"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#519BCA"
-                                   StrokeThickness="2" />
-                        <TextBlock HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   FontSize="20"
-                                   Foreground="#33B1FF"
-                                   Text="&#xF5B0;" />
-                    </Grid>
-                </Button>
+                <Button Style="{StaticResource StartButtonStyle}" />
 
-                <Button Width="42"
-                        Height="42"
-                        Margin="16"
-                        IsEnabled="False">
-                    <Grid>
-                        <Rectangle Fill="#c00000"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#c55555"
-                                   StrokeThickness="2" />
-                        <Rectangle Width="16"
-                                   Height="16"
-                                   Fill="#c99999" />
-                    </Grid>
-                </Button>
+                <Button Style="{StaticResource StopButtonStyle}" IsEnabled="False" />
 
-                <Button Width="42"
-                        Height="42"
-                        Margin="16"
-                        IsEnabled="False">
-                    <Grid>
-                        <Rectangle Fill="#137DBF"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#519BCA"
-                                   StrokeThickness="2" />
-                        <TextBlock HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   FontSize="20"
-                                   Foreground="#33B1FF"
-                                   Text="&#xF5B0;" />
-                    </Grid>
-                </Button>
+                <Button Style="{StaticResource StartButtonStyle}" IsEnabled="False" />
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1" Background="#88898d">
             <StackPanel VerticalAlignment="Center">
-                <Button Width="42"
-                        Height="42"
-                        Margin="16">
-                    <Grid>
-                        <Rectangle Fill="#c00000"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#c55555"
-                                   StrokeThickness="2" />
-                        <Rectangle Width="16"
-                                   Height="16"
-                                   Fill="#c99999" />
-                    </Grid>
-                </Button>
-                <Button Width="42"
-                        Height="42"
-                        Margin="16">
-                    <Grid>
-                        <Rectangle Fill="#137DBF"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#519BCA"
-                                   StrokeThickness="2" />
-                        <TextBlock HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   FontSize="20"
-                                   Foreground="#33B1FF"
-                                   Text="&#xF5B0;" />
-                    </Grid>
-                </Button>
+                <Button Style="{StaticResource StopButtonStyle}"/>
+                <Button Style="{StaticResource StartButtonStyle}" />
 
-                <Button Width="42"
-                        Height="42"
-                        Margin="16"
-                        IsEnabled="False">
-                    <Grid>
-                        <Rectangle Fill="#c00000"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#c55555"
-                                   StrokeThickness="2" />
-                        <Rectangle Width="16"
-                                   Height="16"
-                                   Fill="#c99999" />
-                    </Grid>
+                <Button Style="{StaticResource StopButtonStyle}" IsEnabled="False" />
 
-                </Button>
-
-                <Button Width="42"
-                        Height="42"
-                        Margin="16"
-                        IsEnabled="False">
-                    <Grid>
-                        <Rectangle Fill="#137DBF"
-                                   RadiusX="14"
-                                   RadiusY="14"
-                                   Stroke="#519BCA"
-                                   StrokeThickness="2" />
-                        <TextBlock HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   FontFamily="Segoe MDL2 Assets"
-                                   FontSize="20"
-                                   Foreground="#33B1FF"
-                                   Text="&#xF5B0;" />
-                    </Grid>
-                </Button>
+                <Button Style="{StaticResource StartButtonStyle}" IsEnabled="False" />
 
             </StackPanel>
         </Grid>
