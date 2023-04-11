@@ -9,8 +9,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:InnerShadowBox">
-                    <Grid x:Name="Root" Clip="{Binding ElementName=GeometryCreator, Path=Result}">
-                        <common:GeometryCreator x:Name="GeometryCreator"
+                    <Grid x:Name="Root" Clip="{Binding ElementName=OuterGeometryCreator, Path=Result}">
+                        <common:GeometryCreator x:Name="InnerGeometryCreator"
+                                                CornerRadius="{TemplateBinding CornerRadius}"
+                                                GeometryHeight="{Binding ActualHeight, ElementName=Root}"
+                                                GeometryWidth="{Binding ActualWidth, ElementName=Root}" />
+                        <common:GeometryCreator x:Name="OuterGeometryCreator"
+                                                Padding="1"
                                                 CornerRadius="{TemplateBinding CornerRadius}"
                                                 GeometryHeight="{Binding ActualHeight, ElementName=Root}"
                                                 GeometryWidth="{Binding ActualWidth, ElementName=Root}" />
@@ -19,7 +24,7 @@
                             <Grid Effect="{TemplateBinding InnerShadowEffect}">
                                 <Grid>
                                     <Grid.Clip>
-                                        <CombinedGeometry Geometry1="{Binding ElementName=GeometryCreator, Path=Result}" GeometryCombineMode="Xor">
+                                        <CombinedGeometry Geometry1="{Binding ElementName=InnerGeometryCreator, Path=Result}" GeometryCombineMode="Xor">
                                             <CombinedGeometry.Geometry2>
                                                 <RectangleGeometry Rect="-5000,-5000,10000,10000" />
                                             </CombinedGeometry.Geometry2>

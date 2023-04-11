@@ -138,7 +138,8 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             ),
             new("Buttons", null,
                 new ExampleDefinitionItem("Demo 1", typeof(ButtonDesignDemo1)),
-                new ExampleDefinitionItem("Demo 2", typeof(ButtonDesignDemo2))
+                new ExampleDefinitionItem("Demo 2", typeof(ButtonDesignDemo2)),
+                new ExampleDefinitionItem("Demo 3", typeof(ButtonDesignDemo3))
             ),
             new("LongShadow", null,
                 new ExampleDefinitionItem("Demo 1", typeof(LongShadowDemo1)),

@@ -27,6 +27,12 @@ namespace WpfDesignAndAnimationLab.Common
                 new PropertyMetadata(default(double), OnGeometryWidthChanged));
 
         /// <summary>
+        /// 标识 Padding 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty PaddingProperty =
+            DependencyProperty.Register(nameof(Padding), typeof(Thickness), typeof(GeometryCreator), new PropertyMetadata(default(Thickness), OnPaddingChanged));
+
+        /// <summary>
         ///     标识 Result 依赖属性。
         /// </summary>
         public static readonly DependencyProperty ResultProperty =
@@ -61,6 +67,15 @@ namespace WpfDesignAndAnimationLab.Common
         }
 
         /// <summary>
+        /// 获取或设置Padding的值
+        /// </summary>
+        public Thickness Padding
+        {
+            get => (Thickness)GetValue(PaddingProperty);
+            set => SetValue(PaddingProperty, value);
+        }
+
+        /// <summary>
         ///     获取或设置Result的值
         /// </summary>
         public Geometry Result
@@ -89,6 +104,13 @@ namespace WpfDesignAndAnimationLab.Common
         /// <param name="oldValue">GeometryWidth 属性的旧值。</param>
         /// <param name="newValue">GeometryWidth 属性的新值。</param>
         protected virtual void OnGeometryWidthChanged(double oldValue, double newValue) => MakeGeometry();
+
+        /// <summary>
+        /// Padding 属性更改时调用此方法。
+        /// </summary>
+        /// <param name="oldValue">Padding 属性的旧值。</param>
+        /// <param name="newValue">Padding 属性的新值。</param>
+        protected virtual void OnPaddingChanged(Thickness oldValue, Thickness newValue) => MakeGeometry();
 
         private static void OnCornerRadiusChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
@@ -129,6 +151,17 @@ namespace WpfDesignAndAnimationLab.Common
             target?.OnGeometryWidthChanged(oldValue, newValue);
         }
 
+        private static void OnPaddingChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            var oldValue = (Thickness)args.OldValue;
+            var newValue = (Thickness)args.NewValue;
+            if (oldValue == newValue)
+                return;
+
+            var target = obj as GeometryCreator;
+            target?.OnPaddingChanged(oldValue, newValue);
+        }
+
         private ArcSegment CreateArcSegment(Point point, double radius) => new ArcSegment
         {
             Point = point,
@@ -139,20 +172,22 @@ namespace WpfDesignAndAnimationLab.Common
 
         private void MakeGeometry()
         {
-            var figure = new PathFigure { IsClosed = true, StartPoint = new Point(0, CornerRadius.TopLeft) };
-            figure.Segments.Add(CreateArcSegment(new Point(CornerRadius.TopLeft, 0), CornerRadius.TopLeft));
-            figure.Segments.Add(new LineSegment { Point = new Point(GeometryWidth - CornerRadius.TopRight, 0) });
-            figure.Segments.Add(CreateArcSegment(new Point(GeometryWidth, CornerRadius.TopRight),
-                CornerRadius.TopLeft));
-            figure.Segments.Add(new LineSegment
-            {
-                Point = new Point(GeometryWidth, GeometryHeight - CornerRadius.TopRight)
-            });
-            figure.Segments.Add(CreateArcSegment(new Point(GeometryWidth - CornerRadius.BottomRight, GeometryHeight),
-                CornerRadius.BottomRight));
-            figure.Segments.Add(new LineSegment { Point = new Point(CornerRadius.BottomLeft, GeometryHeight) });
-            figure.Segments.Add(CreateArcSegment(new Point(0, GeometryHeight - CornerRadius.BottomLeft),
-                CornerRadius.BottomLeft));
+            var p1 = new Point(Padding.Left, Padding.Left + CornerRadius.TopLeft);
+            var p2 = new Point(Padding.Left + CornerRadius.TopLeft, Padding.Top);
+            var p3 = new Point(GeometryWidth - Padding.Right - CornerRadius.TopRight, Padding.Top);
+            var p4 = new Point(GeometryWidth - Padding.Right, Padding.Top + CornerRadius.TopRight);
+            var p5 = new Point(GeometryWidth - Padding.Right, GeometryHeight - Padding.Bottom - CornerRadius.BottomRight);
+            var p6 = new Point(GeometryWidth - Padding.Right - CornerRadius.BottomRight, GeometryHeight - Padding.Bottom);
+            var p7 = new Point(Padding.Left + CornerRadius.BottomLeft, GeometryHeight - Padding.Bottom);
+            var p8 = new Point(Padding.Left, GeometryHeight - Padding.Bottom - CornerRadius.BottomLeft);
+            var figure = new PathFigure { IsClosed = true, StartPoint = p1 };
+            figure.Segments.Add(CreateArcSegment(p2, CornerRadius.TopLeft));
+            figure.Segments.Add(new LineSegment { Point = p3 });
+            figure.Segments.Add(CreateArcSegment(p4, CornerRadius.TopLeft));
+            figure.Segments.Add(new LineSegment { Point = p5 });
+            figure.Segments.Add(CreateArcSegment(p6, CornerRadius.BottomRight));
+            figure.Segments.Add(new LineSegment { Point = p7 });
+            figure.Segments.Add(CreateArcSegment(p8, CornerRadius.BottomLeft));
             var pathGeometry = new PathGeometry();
             pathGeometry.Figures.Add(figure);
             Result = pathGeometry;
