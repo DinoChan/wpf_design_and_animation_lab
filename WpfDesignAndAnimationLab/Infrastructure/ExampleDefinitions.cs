@@ -1,4 +1,5 @@
-﻿using WpfDesignAndAnimationLab.Demos.AnimateProgressRing;
+﻿using WpfDesignAndAnimationLab.Demos.Activation;
+using WpfDesignAndAnimationLab.Demos.AnimateProgressRing;
 using WpfDesignAndAnimationLab.Demos.ArcProgresses;
 using WpfDesignAndAnimationLab.Demos.Buttons;
 using WpfDesignAndAnimationLab.Demos.ColorWheel;
@@ -45,6 +46,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             ),
             new("Text Animations", null,
                 new ExampleDefinitionItem("iPhone 14 Pro", typeof(iPhone14ProTextAnimation))
+            ),
+            new("Activation", null,
+                new ExampleDefinitionItem("ActivationDemo", typeof(ActivationDemo1))
             ),
             new("ScaleMark", null,
                 new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),

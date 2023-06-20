@@ -1,0 +1,212 @@
+﻿<wpfdesignandanimationlab:DemoPage x:Class="WpfDesignAndAnimationLab.Demos.Activation.ActivationDemo1"
+                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:controls="clr-namespace:WpfDesignAndAnimationLab.Controls"
+                                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                   xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Demos.Activation"
+                                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                   xmlns:wpfdesignandanimationlab="clr-namespace:WpfDesignAndAnimationLab"
+                                   d:DesignHeight="450"
+                                   d:DesignWidth="800"
+                                   Background="#88898d"
+                                   mc:Ignorable="d">
+    <wpfdesignandanimationlab:DemoPage.Resources>
+        <Style TargetType="controls:NeuomorphismBox">
+            <Setter Property="Blur" Value="19" />
+            <Setter Property="Distance" Value="5" />
+            <Setter Property="Intensity" Value="0.6" />
+            <Setter Property="Color" Value="#88898d" />
+            <Setter Property="CornerRadius" Value="4" />
+        </Style>
+
+        <Style x:Key="MeasurementButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="42" />
+            <!--<Setter Property="Width" Value="42" />-->
+            <Setter Property="Margin" Value="16" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="00:00:00.1500000" />
+                                        <VisualTransition GeneratedDuration="00:00:00.0500000" To="Pressed" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" />
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FlatBackground" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value=".5" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="InnerShadowElements" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value=".4" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <controls:NeuomorphismBox x:Name="FlatBackground" Margin="1" />
+                            <ContentControl x:Name="PART_ContentPresenter"
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{TemplateBinding Content}"
+                                            ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
+                            <Grid x:Name="InnerShadowElements"
+                                  IsHitTestVisible="False"
+                                  Opacity="0">
+                                <controls:InnerShadowBox CornerRadius="4" InnerShadowEffect="{Binding ElementName=FlatBackground, Path=TemplateSettings.DarkShadowEffect}" />
+                                <controls:InnerShadowBox CornerRadius="4" InnerShadowEffect="{Binding ElementName=FlatBackground, Path=TemplateSettings.DarkShadowEffect}" />
+                            </Grid>
+
+                            <!--<controls:NeuomorphismBox x:Name="PressedBackground"
+                                                      Opacity="0.4"
+                                                      Shape="Pressed"  />-->
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True" />
+                            <Trigger Property="IsPressed" Value="True" />
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value=".16" />
+                                <!--<Setter Property="Opacity" Value="0" TargetName="FlatBackground" />-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <DataTemplate x:Key="BlueTemplate">
+            <Grid>
+                <Rectangle Fill="#137DBF"
+                           RadiusX="4"
+                           RadiusY="4"
+                           StrokeThickness="2">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#81CBFA" />
+                            <GradientStop Offset=".7" Color="#519BCA" />
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+
+                </Rectangle>
+                <Grid Margin="12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="20"
+                                   Text="&#xF5B0;" />
+                    </Grid>
+                    <ContentControl Grid.Column="1"
+                                    Margin="8,0,4,0"
+                                    VerticalAlignment="Center"
+                                    Content="{Binding}"
+                                    FontSize="18" />
+                </Grid>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PressedBlueTemplate">
+            <Grid>
+                <Rectangle Fill="#137DBF"
+                           RadiusX="4"
+                           RadiusY="4"
+                           StrokeThickness="2">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                            <GradientStop Color="#81CBFA" />
+                            <GradientStop Offset=".7" Color="#519BCA" />
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+
+                </Rectangle>
+                <Grid Margin="12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="20"
+                                   Text="&#xF5B0;" />
+                    </Grid>
+                    <ContentControl Grid.Column="1"
+                                    Margin="8,0,4,0"
+                                    VerticalAlignment="Center"
+                                    Content="{Binding}"
+                                    FontSize="18" />
+                </Grid>
+            </Grid>
+        </DataTemplate>
+
+        <Style x:Key="StartButtonStyle"
+               BasedOn="{StaticResource MeasurementButtonStyle}"
+               TargetType="Button">
+            <Setter Property="ContentTemplate" Value="{StaticResource BlueTemplate}" />
+            <Setter Property="Foreground" Value="#99D8FF" />
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="ContentTemplate" Value="{StaticResource PressedBlueTemplate}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </wpfdesignandanimationlab:DemoPage.Resources>
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center">
+            <Button Width="138"
+                    Margin="8"
+                    HorizontalAlignment="Center"
+                    Click="EnableButton"
+                    Content="激活" />
+            <Button Width="138"
+                    Margin="8"
+                    HorizontalAlignment="Center"
+                    Click="DisableButton"
+                    Content="禁用" />
+        </StackPanel>
+        <Grid Grid.Column="1" Background="#88898d">
+            <StackPanel VerticalAlignment="Center">
+                <controls:ActivationContentControl x:Name="ButtonElement"
+                                                   Margin="16"
+                                                   IsEnabled="False"
+                                                   HorizontalAlignment="Center">
+                    <Button Margin="0"
+                            HorizontalAlignment="Center"
+                            Content="开始测量"
+                            Style="{StaticResource StartButtonStyle}" />
+                </controls:ActivationContentControl>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</wpfdesignandanimationlab:DemoPage>

@@ -89,6 +89,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Controls\ActivationContentControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Controls\BusyIndicator.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
