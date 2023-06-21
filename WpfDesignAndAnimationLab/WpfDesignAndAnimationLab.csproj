@@ -86,9 +86,15 @@
     <Compile Update="Demos\TextShapes\VariableFont3Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Demos\Wobble\WobbleDemo1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Controls\WobbleContentControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Controls\ActivationContentControl.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

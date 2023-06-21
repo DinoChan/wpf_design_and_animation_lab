@@ -11,6 +11,7 @@
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/InnerShadowBox.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/NeuomorphismBox.xaml" />
         <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/ActivationContentControl.xaml" />
+        <ResourceDictionary Source="/WpfDesignAndAnimationLab;component/Controls/WobbleContentControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="RootBackground" Color="#242537" />

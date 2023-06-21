@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using WpfDesignAndAnimationLab.Common;
 
@@ -17,23 +12,23 @@ namespace WpfDesignAndAnimationLab.Controls
             IsEnabledChanged += ActivationContentControl_IsEnabledChanged;
         }
 
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            UpdateVisualStates(false);
+        }
+
         private void ActivationContentControl_IsEnabledChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
         {
             UpdateVisualStates();
         }
 
-        private void UpdateVisualStates(bool useTransitions=true)
+        private void UpdateVisualStates(bool useTransitions = true)
         {
             if (this.IsEnabled)
                 VisualStateManager.GoToState(this, VisualStates.StateNormal, useTransitions);
             else
                 VisualStateManager.GoToState(this, VisualStates.StateDisabled, useTransitions);
-        }
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-            UpdateVisualStates(false);
         }
     }
 }

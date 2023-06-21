@@ -4,8 +4,6 @@
                     xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <converters:ProgressBarWidthConverter x:Key="ActivationContentControl" />
-
     <Style TargetType="{x:Type local:ActivationContentControl}">
         <Setter Property="Template">
             <Setter.Value>

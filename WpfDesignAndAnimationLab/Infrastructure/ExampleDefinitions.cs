@@ -27,6 +27,7 @@ using WpfDesignAndAnimationLab.Demos.TextShimmers;
 using WpfDesignAndAnimationLab.Demos.Transitions;
 using WpfDesignAndAnimationLab.Demos.WaveProgressBars;
 using WpfDesignAndAnimationLab.Demos.Waves;
+using WpfDesignAndAnimationLab.Demos.Wobble;
 
 namespace WpfDesignAndAnimationLab.Infrastructure
 {
@@ -49,6 +50,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             ),
             new("Activation", null,
                 new ExampleDefinitionItem("ActivationDemo", typeof(ActivationDemo1))
+            ),
+            new("Wobble", null,
+                new ExampleDefinitionItem("WobbleDemo", typeof(WobbleDemo1))
             ),
             new("ScaleMark", null,
                 new ExampleDefinitionItem("ScaleMark", typeof(ScaleMarkDemo)),
