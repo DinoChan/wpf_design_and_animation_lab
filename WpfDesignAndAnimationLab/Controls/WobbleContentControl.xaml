@@ -4,8 +4,6 @@
                     xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <converters:ProgressBarWidthConverter x:Key="ActivationContentControl" />
-
     <Style TargetType="{x:Type local:WobbleContentControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -16,15 +14,12 @@
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition From="*"
                                                       To="Right">
-                                        <VisualTransition.GeneratedEasingFunction>
-                                            <QuarticEase EasingMode="EaseInOut" />
-                                        </VisualTransition.GeneratedEasingFunction>
-                                        <Storyboard>
+                                        <Storyboard BeginTime="0:0:0.5">
                                             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="20"/>
-                                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0">
+                                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="40"/>
+                                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0">
                                                     <EasingDoubleKeyFrame.EasingFunction>
-                                                        <BackEase EasingMode="EaseOut" Amplitude="2"/>
+                                                        <BounceEase EasingMode="EaseOut" Bounciness="4" Bounces="5"/>
                                                     </EasingDoubleKeyFrame.EasingFunction>
                                                 </EasingDoubleKeyFrame>
                                             </DoubleAnimationUsingKeyFrames>
@@ -33,15 +28,12 @@
 
                                     <VisualTransition From="*"
                                                       To="Left">
-                                        <VisualTransition.GeneratedEasingFunction>
-                                            <QuarticEase EasingMode="EaseInOut" />
-                                        </VisualTransition.GeneratedEasingFunction>
-                                        <Storyboard>
+                                        <Storyboard BeginTime="0:0:0.5">
                                             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-20"/>
-                                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0">
+                                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-40"/>
+                                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0">
                                                     <EasingDoubleKeyFrame.EasingFunction>
-                                                        <BackEase EasingMode="EaseOut" Amplitude="2"/>
+                                                        <BounceEase EasingMode="EaseOut" Bounciness="4" Bounces="5"/>
                                                     </EasingDoubleKeyFrame.EasingFunction>
                                                 </EasingDoubleKeyFrame>
                                             </DoubleAnimationUsingKeyFrames>
@@ -50,10 +42,7 @@
 
                                     <VisualTransition From="*"
                                                       To="Up">
-                                        <VisualTransition.GeneratedEasingFunction>
-                                            <QuarticEase EasingMode="EaseInOut" />
-                                        </VisualTransition.GeneratedEasingFunction>
-                                        <Storyboard>
+                                        <Storyboard BeginTime="0:0:0.5">
                                             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
                                                 <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="-20"/>
                                                 <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0">
@@ -67,10 +56,7 @@
 
                                     <VisualTransition From="*"
                                                       To="Down">
-                                        <VisualTransition.GeneratedEasingFunction>
-                                            <QuarticEase EasingMode="EaseInOut" />
-                                        </VisualTransition.GeneratedEasingFunction>
-                                        <Storyboard>
+                                        <Storyboard BeginTime="0:0:0.5">
                                             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
                                                 <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="20"/>
                                                 <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0">

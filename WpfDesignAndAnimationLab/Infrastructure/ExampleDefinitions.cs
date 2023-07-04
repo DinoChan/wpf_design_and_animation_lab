@@ -13,6 +13,7 @@ using WpfDesignAndAnimationLab.Demos.LongShadows;
 using WpfDesignAndAnimationLab.Demos.Neuomorphism;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
 using WpfDesignAndAnimationLab.Demos.OutlinedText;
+using WpfDesignAndAnimationLab.Demos.ProgressAndLoading;
 using WpfDesignAndAnimationLab.Demos.ProgressRings;
 using WpfDesignAndAnimationLab.Demos.RainbowButtons;
 using WpfDesignAndAnimationLab.Demos.RainbowTexts;
@@ -44,6 +45,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("Rectangle", typeof(GooeyRectangleDemo)),
                 new ExampleDefinitionItem("Text Morph", typeof(TextMorphDemo)),
                 new ExampleDefinitionItem("Demo", typeof(GooeyDemo))
+            ),
+               new("Progress and Loading", null,
+                new ExampleDefinitionItem("ProgressDemo1", typeof(ProgressDemo1))
             ),
             new("Text Animations", null,
                 new ExampleDefinitionItem("iPhone 14 Pro", typeof(iPhone14ProTextAnimation))
@@ -81,7 +85,7 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             ),
             new("ColorWheel", null,
                 new ExampleDefinitionItem("ColorWheel", typeof(ColorWheelDemo))
-               
+
                 // new ExampleDefinitionItem("Path Inner Shadow",typeof(PathInnerShadowDemo))
             ),
             new("InnerShadow", null,

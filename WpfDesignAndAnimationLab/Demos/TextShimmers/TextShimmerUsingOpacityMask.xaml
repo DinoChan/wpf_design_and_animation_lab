@@ -45,7 +45,7 @@
                    RenderTransformOrigin="0.5,0.5"
                    Text="Text Shimmer">
             <TextBlock.OpacityMask>
-                <RadialGradientBrush x:Name="Brush" Center=".5,.5" GradientOrigin=".5,.5" RadiusX=".2" RadiusY="2">
+                <RadialGradientBrush x:Name="Brush" Center="-3,.5" GradientOrigin="-3,.5" RadiusX=".2" RadiusY="2">
                     <!--<RadialGradientBrush.RelativeTransform>
                         <ScaleTransform x:Name="ScaleTransform" CenterX="0" ScaleX="-1" />
                     </RadialGradientBrush.RelativeTransform>

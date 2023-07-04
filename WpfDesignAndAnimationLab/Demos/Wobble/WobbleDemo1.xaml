@@ -12,8 +12,8 @@
                                    mc:Ignorable="d">
     <wpfdesignandanimationlab:DemoPage.Resources>
         <Style TargetType="controls:NeuomorphismBox">
-            <Setter Property="Blur" Value="19" />
-            <Setter Property="Distance" Value="5" />
+            <Setter Property="Blur" Value="15" />
+            <Setter Property="Distance" Value="4" />
             <Setter Property="Intensity" Value="0.6" />
             <Setter Property="Color" Value="#88898d" />
             <Setter Property="CornerRadius" Value="4" />
