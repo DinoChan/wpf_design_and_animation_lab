@@ -16,6 +16,7 @@
   <ItemGroup>
     <None Remove="Assets\fixedsys.ttf" />
     <None Remove="Assets\hooge-0857.ttf" />
+    <None Remove="Assets\Images\BingWallpaper.jpg" />
     <None Remove="Assets\Images\hero_iphone_14_pro.jpg" />
     <None Remove="Assets\Images\windows.jpg" />
     <None Remove="Assets\OstrichSans-Light.otf" />
@@ -33,6 +34,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Demos\GlowEffects\GlowTextDemo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Demos\Gooey\GooeyImageDemo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Demos\Gooey\GooeyRectangleDemo.xaml.cs">
@@ -185,6 +189,7 @@
   <ItemGroup>
     <Resource Include="Assets\fixedsys.ttf" />
     <Resource Include="Assets\hooge-0857.ttf" />
+    <Resource Include="Assets\Images\BingWallpaper.jpg" />
     <Resource Include="Assets\Images\hero_iphone_14_pro.jpg" />
     <Resource Include="Assets\Images\windows.jpg" />
     <Resource Include="Assets\OstrichSans-Light.otf" />
