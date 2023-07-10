@@ -9,6 +9,7 @@ using WpfDesignAndAnimationLab.Demos.FancyTexts;
 using WpfDesignAndAnimationLab.Demos.GlowEffects;
 using WpfDesignAndAnimationLab.Demos.Gooey;
 using WpfDesignAndAnimationLab.Demos.InnerShadows;
+using WpfDesignAndAnimationLab.Demos.ItemsControls;
 using WpfDesignAndAnimationLab.Demos.LongShadows;
 using WpfDesignAndAnimationLab.Demos.Neuomorphism;
 using WpfDesignAndAnimationLab.Demos.NintendoSwitchLoadings;
@@ -49,6 +50,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
             ),
                new("Progress and Loading", null,
                 new ExampleDefinitionItem("ProgressDemo1", typeof(ProgressDemo1))
+            ),
+                new("ItemsControl", null,
+                new ExampleDefinitionItem("Indicator", typeof(IndicatorDemo))
             ),
             new("Text Animations", null,
                 new ExampleDefinitionItem("iPhone 14 Pro", typeof(iPhone14ProTextAnimation))
