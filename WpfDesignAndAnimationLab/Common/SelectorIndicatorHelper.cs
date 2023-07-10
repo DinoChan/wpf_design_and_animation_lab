@@ -9,11 +9,11 @@ namespace WpfDesignAndAnimationLab.Common
         public static readonly DependencyProperty IsLeftToRightProperty =
             DependencyProperty.Register(nameof(IsLeftToRight), typeof(bool), typeof(SelectorIndicatorHelper));
 
-        public static readonly DependencyProperty LeftPositionProperty =
-            DependencyProperty.Register(nameof(LeftPosition), typeof(double), typeof(SelectorIndicatorHelper));
+        public static readonly DependencyProperty MarginLeftProperty =
+            DependencyProperty.Register(nameof(MarginLeft), typeof(double), typeof(SelectorIndicatorHelper));
 
-        public static readonly DependencyProperty RightPositionProperty =
-            DependencyProperty.Register(nameof(RightPosition), typeof(double), typeof(SelectorIndicatorHelper));
+        public static readonly DependencyProperty MarginRightProperty =
+            DependencyProperty.Register(nameof(MarginRight), typeof(double), typeof(SelectorIndicatorHelper));
 
         public static readonly DependencyProperty SelectorProperty =
             DependencyProperty.Register(nameof(Selector), typeof(Selector), typeof(SelectorIndicatorHelper), new PropertyMetadata(default(Selector), OnSelectorChanged));
@@ -24,16 +24,16 @@ namespace WpfDesignAndAnimationLab.Common
             set => SetValue(IsLeftToRightProperty, value);
         }
 
-        public double LeftPosition
+        public double MarginLeft
         {
-            get => (double)GetValue(LeftPositionProperty);
-            set => SetValue(LeftPositionProperty, value);
+            get => (double)GetValue(MarginLeftProperty);
+            set => SetValue(MarginLeftProperty, value);
         }
 
-        public double RightPosition
+        public double MarginRight
         {
-            get => (double)GetValue(RightPositionProperty);
-            set => SetValue(RightPositionProperty, value);
+            get => (double)GetValue(MarginRightProperty);
+            set => SetValue(MarginRightProperty, value);
         }
 
         public Selector Selector
@@ -68,8 +68,8 @@ namespace WpfDesignAndAnimationLab.Common
         {
             if (e.AddedItems == null || e.AddedItems.Count == 0)
             {
-                LeftPosition = 0;
-                RightPosition = 0;
+                MarginLeft = 0;
+                MarginRight = 0;
                 IsLeftToRight = false;
             }
             else
@@ -91,8 +91,8 @@ namespace WpfDesignAndAnimationLab.Common
             var panel = VisualTreeHelper.GetParent(container) as FrameworkElement;
             var transform = container.TransformToVisual(panel);
             var transformPoint = transform.Transform(new Point(0, 0));
-            LeftPosition = transformPoint.X;
-            RightPosition = panel.ActualWidth - LeftPosition - container.ActualWidth; 
+            MarginLeft = transformPoint.X;
+            MarginRight = panel.ActualWidth - MarginLeft - container.ActualWidth; 
         }
     }
 }

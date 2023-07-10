@@ -30,18 +30,18 @@
                             </Grid.RowDefinitions>
 
                             <common:SelectorIndicatorHelper x:Name="IndicatorHelper" Selector="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabControl}}" />
-                            <common:AnimateDoubleWrapper x:Name="LeftWrapper" Target="{Binding ElementName=IndicatorHelper, Path=LeftPosition}">
+                            <common:AnimateDoubleWrapper x:Name="LeftWrapper" Target="{Binding ElementName=IndicatorHelper, Path=MarginLeft}">
                                 <common:AnimateDoubleWrapper.Animation>
-                                    <DoubleAnimation Duration="0:0:0.3">
+                                    <DoubleAnimation Duration="0:0:0.4">
                                         <DoubleAnimation.EasingFunction>
                                             <ExponentialEase EasingMode="EaseIn" Exponent="4" />
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
                                 </common:AnimateDoubleWrapper.Animation>
                             </common:AnimateDoubleWrapper>
-                            <common:AnimateDoubleWrapper x:Name="RightWrapper" Target="{Binding ElementName=IndicatorHelper, Path=RightPosition}">
+                            <common:AnimateDoubleWrapper x:Name="RightWrapper" Target="{Binding ElementName=IndicatorHelper, Path=MarginRight}">
                                 <common:AnimateDoubleWrapper.Animation>
-                                    <DoubleAnimation Duration="0:0:0.3">
+                                    <DoubleAnimation Duration="0:0:0.4">
                                         <DoubleAnimation.EasingFunction>
                                             <ExponentialEase EasingMode="EaseOut" Exponent="09" />
                                         </DoubleAnimation.EasingFunction>
@@ -50,18 +50,18 @@
                             </common:AnimateDoubleWrapper>
 
 
-                            <common:AnimateDoubleWrapper x:Name="LeftWrapper2" Target="{Binding ElementName=IndicatorHelper, Path=LeftPosition}">
+                            <common:AnimateDoubleWrapper x:Name="LeftWrapper2" Target="{Binding ElementName=IndicatorHelper, Path=MarginLeft}">
                                 <common:AnimateDoubleWrapper.Animation>
-                                    <DoubleAnimation Duration="0:0:0.3">
+                                    <DoubleAnimation Duration="0:0:0.4">
                                         <DoubleAnimation.EasingFunction>
                                             <ExponentialEase EasingMode="EaseOut" Exponent="09" />
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
                                 </common:AnimateDoubleWrapper.Animation>
                             </common:AnimateDoubleWrapper>
-                            <common:AnimateDoubleWrapper x:Name="RightWrapper2" Target="{Binding ElementName=IndicatorHelper, Path=RightPosition}">
+                            <common:AnimateDoubleWrapper x:Name="RightWrapper2" Target="{Binding ElementName=IndicatorHelper, Path=MarginRight}">
                                 <common:AnimateDoubleWrapper.Animation>
-                                    <DoubleAnimation Duration="0:0:0.3">
+                                    <DoubleAnimation Duration="0:0:0.4">
                                         <DoubleAnimation.EasingFunction>
                                             <ExponentialEase EasingMode="EaseIn" Exponent="4" />
                                         </DoubleAnimation.EasingFunction>
@@ -93,6 +93,8 @@
                                     <Rectangle Grid.Column="1"
                                                Height="3"
                                                Margin="7,0,7,-2"
+                                               RadiusX="2"
+                                               RadiusY="2"
                                                VerticalAlignment="Bottom"
                                                Fill="#e3008c" />
                                 </Grid>
