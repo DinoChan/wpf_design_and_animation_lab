@@ -20,6 +20,12 @@ namespace WpfDesignAndAnimationLab.Common
                 new PropertyMetadata(default(double), OnCurrentChanged));
 
         /// <summary>
+        /// 标识 IsStoryboardEnabled 依赖属性。
+        /// </summary>
+        public static readonly DependencyProperty IsStoryboardEnabledProperty =
+            DependencyProperty.Register(nameof(IsStoryboardEnabled), typeof(bool), typeof(AnimateDoubleWrapper), new PropertyMetadata(true));
+
+        /// <summary>
         ///     标识 Multiple 依赖属性。
         /// </summary>
         public static readonly DependencyProperty MultipleProperty =
@@ -33,8 +39,8 @@ namespace WpfDesignAndAnimationLab.Common
             DependencyProperty.Register(nameof(Target), typeof(double), typeof(AnimateDoubleWrapper),
                 new PropertyMetadata(default(double), OnTargetChanged));
 
-        private DoubleAnimation _coreAnimation;
         private readonly Storyboard _storyboard = new();
+        private DoubleAnimation _coreAnimation;
 
         public AnimateDoubleWrapper() => Loaded += OnLoaded;
 
@@ -54,6 +60,15 @@ namespace WpfDesignAndAnimationLab.Common
         {
             get => (double)GetValue(CurrentProperty);
             set => SetValue(CurrentProperty, value);
+        }
+
+        /// <summary>
+        /// 获取或设置IsStoryboardEnabled的值
+        /// </summary>
+        public bool IsStoryboardEnabled
+        {
+            get => (bool)GetValue(IsStoryboardEnabledProperty);
+            set => SetValue(IsStoryboardEnabledProperty, value);
         }
 
         /// <summary>
@@ -120,7 +135,15 @@ namespace WpfDesignAndAnimationLab.Common
                 _coreAnimation.To = Target * Multiple;
             }
 
-            _storyboard.Begin();
+            if (IsStoryboardEnabled)
+            {
+                _storyboard.Begin();
+            }
+            else
+            {
+                _storyboard.Begin();
+                _storyboard.SkipToFill();
+            }
         }
 
         private static void OnAnimationChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)

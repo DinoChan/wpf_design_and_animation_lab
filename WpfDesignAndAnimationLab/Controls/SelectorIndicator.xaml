@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:WpfDesignAndAnimationLab.Converters"
+                    xmlns:local="clr-namespace:WpfDesignAndAnimationLab.Controls"
+                    xmlns:common="clr-namespace:WpfDesignAndAnimationLab.Common"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Style TargetType="{x:Type local:SelectorIndicator}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SelectorIndicator}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <common:AnimateDoubleWrapper x:Name="LeftWrapper" Target="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MarginLeft}" IsStoryboardEnabled="{TemplateBinding IsStoryboardEnabled}">
+                                <common:AnimateDoubleWrapper.Animation>
+                                    <DoubleAnimation Duration="0:0:0.3">
+                                        <DoubleAnimation.EasingFunction>
+                                            <ExponentialEase EasingMode="EaseIn" Exponent="4" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </common:AnimateDoubleWrapper.Animation>
+                            </common:AnimateDoubleWrapper>
+                            <common:AnimateDoubleWrapper x:Name="RightWrapper" Target="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MarginRight}" IsStoryboardEnabled="{TemplateBinding IsStoryboardEnabled}">
+                                <common:AnimateDoubleWrapper.Animation>
+                                    <DoubleAnimation Duration="0:0:0.3">
+                                        <DoubleAnimation.EasingFunction>
+                                            <ExponentialEase EasingMode="EaseOut" Exponent="09" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </common:AnimateDoubleWrapper.Animation>
+                            </common:AnimateDoubleWrapper>
+
+
+                            <common:AnimateDoubleWrapper x:Name="LeftWrapper2" Target="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MarginLeft}" IsStoryboardEnabled="{TemplateBinding IsStoryboardEnabled}">
+                                <common:AnimateDoubleWrapper.Animation>
+                                    <DoubleAnimation Duration="0:0:0.3">
+                                        <DoubleAnimation.EasingFunction>
+                                            <ExponentialEase EasingMode="EaseOut" Exponent="09" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </common:AnimateDoubleWrapper.Animation>
+                            </common:AnimateDoubleWrapper>
+                            <common:AnimateDoubleWrapper x:Name="RightWrapper2" Target="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=MarginRight}" IsStoryboardEnabled="{TemplateBinding IsStoryboardEnabled}">
+                                <common:AnimateDoubleWrapper.Animation>
+                                    <DoubleAnimation Duration="0:0:0.3">
+                                        <DoubleAnimation.EasingFunction>
+                                            <ExponentialEase EasingMode="EaseIn" Exponent="4" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </common:AnimateDoubleWrapper.Animation>
+                            </common:AnimateDoubleWrapper>
+                            <common:Switcher
+                                x:Name="LeftSwitcher"
+                                FalseResult="{Binding ElementName=LeftWrapper2}"
+                                TrueResult="{Binding ElementName=LeftWrapper}"
+                                Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsLeftToRight}" />
+
+                            <common:Switcher
+                                x:Name="RightSwitcher"
+                                FalseResult="{Binding ElementName=RightWrapper2}"
+                                TrueResult="{Binding ElementName=RightWrapper}"
+                                Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsLeftToRight}" />
+                            <Grid Visibility="{TemplateBinding IndicatorVisibility}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Width="{Binding ElementName=LeftSwitcher, Path=Result.Current}" />
+                                <Rectangle Grid.Column="2" Width="{Binding ElementName=RightSwitcher, Path=Result.Current}" />
+                                <Rectangle
+                                    Grid.Column="1"
+                                    Height="3"
+                                    Margin="4,0,4,-4"
+                                    VerticalAlignment="Bottom"
+                                    Fill="#00b7c3"
+                                    RadiusX="2"
+                                    RadiusY="2" />
+                            </Grid>
+                            <ContentPresenter />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

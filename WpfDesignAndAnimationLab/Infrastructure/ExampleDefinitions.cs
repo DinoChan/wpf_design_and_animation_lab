@@ -52,7 +52,9 @@ namespace WpfDesignAndAnimationLab.Infrastructure
                 new ExampleDefinitionItem("ProgressDemo1", typeof(ProgressDemo1))
             ),
                 new("ItemsControl", null,
-                new ExampleDefinitionItem("Indicator", typeof(IndicatorDemo))
+                new ExampleDefinitionItem("Indicator", typeof(IndicatorDemo)),
+                new ExampleDefinitionItem("RadioButtons Indicator", typeof(RadioButtonsIndicatorDemo))
+
             ),
             new("Text Animations", null,
                 new ExampleDefinitionItem("iPhone 14 Pro", typeof(iPhone14ProTextAnimation))

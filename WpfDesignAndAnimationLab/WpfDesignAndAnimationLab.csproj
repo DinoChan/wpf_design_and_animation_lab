@@ -42,6 +42,9 @@
     <Compile Update="Demos\Gooey\GooeyRectangleDemo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Demos\ItemsControls\RadioButtonsIndicatorDemo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Demos\LongShadows\LongShadowDemo5.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +99,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Controls\SelectorIndicator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Controls\WobbleContentControl.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
